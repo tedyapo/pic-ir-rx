@@ -4,21 +4,27 @@
  *
  * Created on May 24, 2020, 1:45 PM
  */
+
 // CONFIG1
-#pragma config FOSC = INTOSCCLK  // Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
-#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
-#pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
-#pragma config MCLRE = ON       // RE3/MCLR Pin Function Select bit (RE3/MCLR pin function is MCLR)
-#pragma config CP = OFF         // Code Protection bit (Program memory code protection is disabled)
-#pragma config BOREN = OFF      // Brown-out Reset Selection bits (BOR disabled)
-#pragma config BORV = 19        // Brown-out Reset Voltage selection bit (Brown-out Reset Voltage (VBOR) set to 1.9 V nominal)
-#pragma config PLLEN = ON       // INTOSC PLL Enable bit (INTOSC Frequency is 16MHz (32x))
+#pragma config FOSC = INTOSC    // Oscillator Selection Bits (INTOSC oscillator: I/O function on CLKIN pin)
+#pragma config WDTE = OFF       // Watchdog Timer Enable (WDT disabled)
+#pragma config PWRTE = ON       // Power-up Timer Enable (PWRT enabled)
+#pragma config MCLRE = ON       // MCLR Pin Function Select (MCLR/VPP pin function is MCLR)
+#pragma config CP = OFF         // Flash Program Memory Code Protection (Program memory code protection is disabled)
+#pragma config BOREN = OFF      // Brown-out Reset Enable (Brown-out Reset disabled)
+#pragma config CLKOUTEN = ON    // Clock Out Enable (CLKOUT function is enabled on the CLKOUT pin)
+#pragma config IESO = ON        // Internal/External Switchover Mode (Internal/External Switchover Mode is enabled)
+#pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enable (Fail-Safe Clock Monitor is enabled)
 
 // CONFIG2
-#pragma config VCAPEN = DIS     // Voltage Regulator Capacitor Enable bits (All VCAP pin functions are disabled)
+#pragma config WRT = OFF        // Flash Memory Self-Write Protection (Write protection off)
+#pragma config STVREN = ON      // Stack Overflow/Underflow Reset Enable (Stack Overflow or Underflow will cause a Reset)
+#pragma config BORV = LO        // Brown-out Reset Voltage Selection (Brown-out Reset Voltage (Vbor), low trip point selected.)
+#pragma config LPBOR = OFF      // Low-Power Brown Out Reset (Low-Power BOR is disabled)
+#pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
 #include <xc.h>
-#include <pic16f723a.h>
+#include <pic16lf1508.h>
 #include <stdint.h>
 
 // receiver states
@@ -119,42 +125,54 @@ void send_hex_byte(uint8_t value)
   putchar( hex_table[((value >> 0) & 0xf)]);
 }
 
+// NB: RA2 is int
+// NB: RB7 is TX
+
 void main(void) {
-    OSCCONbits.IRCF = 0b01; // 4 MHz
+  OSCCONbits.SCS = 0b10; // use internal oscillator 
+  OSCCONbits.IRCF = 0b1101; // 4 MHz
 
-    ANSELB = 0; // PORTB all digital    
-    TRISC = 0; // PORTC all outputs
-    TRISB = 0b00000001; // INT input
+  ANSELA = 0;
+  TRISA = 0b00000100; // RA2/INT is input
+  WPUA = 0;
+  
+  ANSELB = 0; // PORTB all digital    
+  TRISB = 0; // all outputs
+  WPUB = 0;
+
+  ANSELC = 0;
+  TRISC = 0; // PORTC all outputs
     
-    OPTION_REGbits.PSA = 0; // assign prescaler to timer0
-    OPTION_REGbits.PS = 0b101; // prescale by 64
-    OPTION_REGbits.T0CS = 0; // timer0 clocked from Fosc/4
+  OPTION_REGbits.PSA = 0; // assign prescaler to timer0
+  OPTION_REGbits.PS = 0b101; // prescale by 64
+  OPTION_REGbits.T0CS = 0; // timer0 clocked from Fosc/4
     
-    INTCONbits.GIE = 1; // enable interrupts
-    OPTION_REGbits.INTEDG = 0; // interrupt on falling edge
-    INTCONbits.INTE = 1; // enable INT pin interrupts
+  INTCONbits.GIE = 1; // enable interrupts
+  OPTION_REGbits.INTEDG = 0; // interrupt on falling edge
+  INTCONbits.INTE = 1; // enable INT pin interrupts
 
-    // init the AUSART
-    TXSTAbits.TXEN = 1;
-    TXSTAbits.SYNC = 0;
-    RCSTAbits.SPEN = 1;
+  // init the AUSART
+  TXSTAbits.TXEN = 1;
+  TXSTAbits.SYNC = 0;
+  RCSTAbits.SPEN = 1;
 
-    // 9600 baud for 4 MHz clock
-    TXSTAbits.BRGH = 1;
-    SPBRG = 25;
+  // 9600 baud for 4 MHz clock
+  TXSTAbits.BRGH = 1;
+  BAUDCONbits.BRGH16 = 0;
+  SPBRG = 25;
 
-    while(1){
-      // poll for received code
-      if (STATE_DONE == rx_state){
-	// a code was received, send it out the serial port
-	send_hex_byte((received_code >> 24) & 0xff);
-	send_hex_byte((received_code >> 16) & 0xff);
-	send_hex_byte((received_code >>  8) & 0xff);
-	send_hex_byte((received_code >>  0) & 0xff);
-	// listen for next code
-	rx_state = STATE_RESET;
-      }
+  while(1){
+    // poll for received code
+    if (STATE_DONE == rx_state){
+      // a code was received, send it out the serial port
+      send_hex_byte((received_code >> 24) & 0xff);
+      send_hex_byte((received_code >> 16) & 0xff);
+      send_hex_byte((received_code >>  8) & 0xff);
+      send_hex_byte((received_code >>  0) & 0xff);
+      // listen for next code
+      rx_state = STATE_RESET;
     }
+  }
     
-    return;
+  return;
 }

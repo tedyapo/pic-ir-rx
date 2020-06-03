@@ -44,18 +44,18 @@
 // Note: timings based on 4 MHz fosc with timer0 prescale=64
 // preamble
 // measured 216-218 ticks: add +/-10% tolerance
-#define PREAMBLE_MIN_TICKS 195
-#define PREAMBLE_MAX_TICKS 239
+#define PREAMBLE_MIN_TICKS 112
+#define PREAMBLE_MAX_TICKS 255
 
 // logic 0
 // measured 18 ticks: add +/-10% tolerance
-#define ZERO_MIN_TICKS 16
-#define ZERO_MAX_TICKS 20
+#define ZERO_MIN_TICKS 6
+#define ZERO_MAX_TICKS 26
 
 // logic 1
 // measured 35 ticks: add +/-10% tolerance
-#define ONE_MIN_TICKS 32
-#define ONE_MAX_TICKS 39
+#define ONE_MIN_TICKS 27
+#define ONE_MAX_TICKS 55
 
 // IR receiver states
 typedef enum {STATE_RESET = 0,        // waiting for preamble sequence
@@ -123,8 +123,8 @@ void __interrupt() ISR(void)
     }
     if (32 == ir_code.n_bits){
       // full word received; check for valid code
-      if ( (ir_code.address == ((~ir_code.address_b) & 0xff)) &&
-           (ir_code.command == ((~ir_code.command_b) & 0xff)) ){ 
+      if (1 || ( (ir_code.address == ((~ir_code.address_b) & 0xff)) &&
+           (ir_code.command == ((~ir_code.command_b) & 0xff))) ){ 
         ir_code.state = STATE_DONE;
       } else {
         ir_code.state = STATE_RESET;
@@ -169,7 +169,7 @@ void process_remote_command(NEC_IR_code_t* code){
 void main(void) {
   OSCCONbits.SCS = 0b10;    // use internal oscillator   
   OSCCONbits.IRCF = 0b1101; // 4 MHz HF INTOSC
-
+  
   // PORTA configuration
   ANSELA = 0;         // PORTA all digital
   TRISA = 0b00000100; // RA2/INT is input
@@ -235,14 +235,17 @@ void main(void) {
     if (STATE_DONE == ir_code.state){
       
       // a code was received, send it out the serial port
-      printf("0x%08lx\r\n", (unsigned long)ir_code.code);
+      printf("\r\ncode: 0x%08lx\r\n", (unsigned long)ir_code.code);
+      printf("command:   0x%02x\r\n", ir_code.command);
+      printf("command_b: 0x%02x\r\n", ir_code.command_b);
+      printf("address:   0x%02x\r\n", ir_code.address);
+      printf("address_b: 0x%02x\r\n", ir_code.address_b);
 
-      /*
       // dump timing stats
-      for(int i=0; i<33; i++){
-        printf("%d %d\n", i, (int)stats[i]);
+      printf("preamble: %d\r\n", (int)stats[0]);
+      for(int i=1; i<33; i++){
+        printf("bit %d: %d\r\n", 32-i, (int)stats[i]);
       }
-      */
       
       process_remote_command(&ir_code);
       

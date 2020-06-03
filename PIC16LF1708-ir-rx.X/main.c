@@ -215,7 +215,7 @@ void main(void) {
   TXSTAbits.SYNC = 0;
   RCSTAbits.SPEN = 1;
 
-  //  baud steeings for 4 MHz clock
+  //  baud settings for 4 MHz clock
 //#define BAUD_19200
 #define BAUD_115200  
   

@@ -151,7 +151,7 @@ void putch(char value)
   while(!PIR1bits.TXIF){ /* spin */ }
   TXREG = value;
   // note: TXIF not valid for two cycles; add nop in case of inlining
-  __asm("NOP");
+  asm("NOP");
 }
 
 // todo: do something with the commands

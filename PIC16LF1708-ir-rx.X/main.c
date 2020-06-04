@@ -43,19 +43,19 @@
 // IR pulse timings
 // Note: timings based on 4 MHz fosc with timer0 prescale=64
 // preamble
-// measured 216-218 ticks: add +/-10% tolerance
-#define PREAMBLE_MIN_TICKS 112
-#define PREAMBLE_MAX_TICKS 255
+// measured 212 ticks: add +/-15% tolerance
+#define PREAMBLE_MIN_TICKS 180
+#define PREAMBLE_MAX_TICKS 243
 
 // logic 0
-// measured 18 ticks: add +/-10% tolerance
-#define ZERO_MIN_TICKS 6
-#define ZERO_MAX_TICKS 26
+// measured 17 ticks: add +/-15% tolerance
+#define ZERO_MIN_TICKS 14
+#define ZERO_MAX_TICKS 20
 
 // logic 1
-// measured 35 ticks: add +/-10% tolerance
-#define ONE_MIN_TICKS 27
-#define ONE_MAX_TICKS 55
+// measured 35 ticks: add +/-15% tolerance
+#define ONE_MIN_TICKS 29
+#define ONE_MAX_TICKS 41
 
 // IR receiver states
 typedef enum {STATE_RESET = 0,        // waiting for preamble sequence
@@ -77,6 +77,12 @@ typedef struct {
       uint8_t address_b;            
       uint8_t address;
     };
+    struct {
+      // note: the order here is implementation-defined
+      //       this struct is NOT portable between compilers
+      uint16_t padding;            
+      uint16_t extended_address;            
+    };    
   };
 } NEC_IR_code_t;
 
@@ -123,8 +129,8 @@ void __interrupt() ISR(void)
     }
     if (32 == ir_code.n_bits){
       // full word received; check for valid code
-      if (1 || ( (ir_code.address == ((~ir_code.address_b) & 0xff)) &&
-           (ir_code.command == ((~ir_code.command_b) & 0xff))) ){ 
+      // note 8 or 16 bit extended address allowed
+      if (ir_code.command == ((~ir_code.command_b) & 0xff)){ 
         ir_code.state = STATE_DONE;
       } else {
         ir_code.state = STATE_RESET;
@@ -233,19 +239,24 @@ void main(void) {
   while(1){
     // poll for received code
     if (STATE_DONE == ir_code.state){
-      
-      // a code was received, send it out the serial port
-      printf("\r\ncode: 0x%08lx\r\n", (unsigned long)ir_code.code);
-      printf("command:   0x%02x\r\n", ir_code.command);
-      printf("command_b: 0x%02x\r\n", ir_code.command_b);
-      printf("address:   0x%02x\r\n", ir_code.address);
-      printf("address_b: 0x%02x\r\n", ir_code.address_b);
 
+
+      // a code was received, send it out the serial port
+      printf("\r\ncode:             0x%08lx\r\n", (unsigned long)ir_code.code);
+      printf("command:          0x%02x\r\n", ir_code.command);
+      printf("command_b:        0x%02x\r\n", ir_code.command_b);
+      printf("address:          0x%02x\r\n", ir_code.address);
+      printf("address_b:        0x%02x\r\n", ir_code.address_b);
+      printf("extended address: 0x%04x\r\n", (unsigned int)ir_code.extended_address);      
+
+//#define DUMP_STATS
+#ifdef DUMP_STATS      
       // dump timing stats
       printf("preamble: %d\r\n", (int)stats[0]);
       for(int i=1; i<33; i++){
         printf("bit %d: %d\r\n", 32-i, (int)stats[i]);
       }
+#endif // #ifdef DUMP_STATS
       
       process_remote_command(&ir_code);
       

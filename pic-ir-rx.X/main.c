@@ -158,7 +158,7 @@ void main(void) {
 
   // 9600 baud for 4 MHz clock
   TXSTAbits.BRGH = 1;
-  BAUDCONbits.BRGH16 = 0;
+  BAUDCONbits.BRG16 = 0;
   SPBRG = 25;
 
   while(1){

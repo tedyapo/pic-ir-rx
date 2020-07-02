@@ -45,35 +45,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include <stdio.h>
-
-
-
-
-// NEC IR code and associated rx state
-typedef struct {
-  uint8_t n_bits;
-  rx_state_t state;
-  union {
-    uint32_t code;
-    struct {
-      // note: the order here is implementation-defined
-      //       this struct is NOT portable between compilers
-      uint8_t command_b;            
-      uint8_t command;
-      union {
-        struct {
-          uint8_t address_b;            
-          uint8_t address;
-        };
-        struct {
-          uint16_t extended_address;
-        };
-      };
-    };
-  };
-} NEC_IR_code_t;
-
-
+#include "IR_receiver.h"
 
 // timing stats for analysis/tuning
 uint8_t stats[33];
@@ -218,6 +190,13 @@ void main(void)
      OPA1_Initialize();
      OPA2_Initialize();
      //initLED();
+     
+    // Enable the Global Interrupts
+    INTERRUPT_GlobalInterruptEnable();
+
+    // Enable the Peripheral Interrupts
+    INTERRUPT_PeripheralInterruptEnable();
+    
      while(1){
      IO_RA5_SetHigh();  // 
      IO_RC5_SetHigh();

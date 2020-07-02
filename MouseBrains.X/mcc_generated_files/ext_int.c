@@ -28,6 +28,8 @@
 #include "ext_int.h"
 #include <stdint.h>
 #include <stdio.h>
+#include "../IR_receiver.h"
+
 // IR pulse timings
 // Note: timings based on 4 MHz fosc with timer0 prescale=64
 // preamble
@@ -44,12 +46,7 @@
 // measured 35 ticks: add +/-15% tolerance
 #define ONE_MIN_TICKS 29
 #define ONE_MAX_TICKS 41
-// IR receiver states
-typedef enum {STATE_RESET = 0,        // waiting for preamble sequence
-              STATE_RECEIVING,        // receiving bit stream
-              STATE_DONE}             // received; waiting to be processed
-  rx_state_t;
-  
+
 NEC_IR_code_t ir_code = {0, STATE_RESET};
 
 void (*INT_InterruptHandler)(void);
@@ -61,8 +58,21 @@ void INT_ISR(void)
     // Callback function gets called everytime this ISR executes
     INT_CallBack();    
 }
-void __interrupt() ISR(void)
+
+void INT_CallBack(void)
 {
+    // Add your custom callback code here
+    if(INT_InterruptHandler)
+    {
+        INT_InterruptHandler();
+    }
+}
+
+void INT_SetInterruptHandler(void (* InterruptHandler)(void)){
+    INT_InterruptHandler = InterruptHandler;
+}
+
+void INT_DefaultInterruptHandler(void){
   // time: elapsed since last negative edge, i.e. negative + positive periods
   uint8_t time = TMR0;
   TMR0 = 0;
@@ -119,31 +129,13 @@ void __interrupt() ISR(void)
   INTCONbits.INTF = 0;
 }
 
-void INT_CallBack(void)
-{
-    // Add your custom callback code here
-    if(INT_InterruptHandler)
-    {
-        INT_InterruptHandler();
-    }
-}
-
-void INT_SetInterruptHandler(void (* InterruptHandler)(void)){
-    INT_InterruptHandler = InterruptHandler;
-}
-
-void INT_DefaultInterruptHandler(void){
-    // add your INT interrupt custom code
-    // or set custom function using INT_SetInterruptHandler()
-}
-
 void EXT_INT_Initialize(void)
 {
     
     // Clear the interrupt flag
     // Set the external interrupt edge detect
     EXT_INT_InterruptFlagClear();   
-    EXT_INT_risingEdgeSet();    
+    EXT_INT_fallingEdgeSet();    
     // Set Default Interrupt Handler
     INT_SetInterruptHandler(INT_DefaultInterruptHandler);
     EXT_INT_InterruptEnable();      

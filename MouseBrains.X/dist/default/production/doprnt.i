@@ -1,10 +1,10 @@
 
-# 1 "/Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c"
+# 1 "/opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c"
 
-# 4 "/Applications/microchip/xc8/v2.10/pic/include/__size_t.h"
+# 4 "/opt/microchip/xc8/v2.00/pic/include/__size_t.h"
 typedef unsigned size_t;
 
-# 7 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdarg.h"
+# 7 "/opt/microchip/xc8/v2.00/pic/include/c90/stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -13,17 +13,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdio.h"
+# 43 "/opt/microchip/xc8/v2.00/pic/include/c90/stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 29 "/Applications/microchip/xc8/v2.10/pic/include/c90/errno.h"
+# 29 "/opt/microchip/xc8/v2.00/pic/include/c90/errno.h"
 extern int errno;
 
-# 12 "/Applications/microchip/xc8/v2.10/pic/include/c90/conio.h"
+# 12 "/opt/microchip/xc8/v2.00/pic/include/c90/conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -37,7 +37,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdio.h"
+# 88 "/opt/microchip/xc8/v2.00/pic/include/c90/stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -64,7 +64,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 4 "/Applications/microchip/xc8/v2.10/pic/include/c90/ctype.h"
+# 4 "/opt/microchip/xc8/v2.00/pic/include/c90/ctype.h"
 extern __bit isalpha(char);
 extern __bit isupper(char);
 extern __bit islower(char);
@@ -81,7 +81,7 @@ extern __bit iscntrl(char);
 extern char toupper(char);
 extern char tolower(char);
 
-# 7 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdlib.h"
+# 7 "/opt/microchip/xc8/v2.00/pic/include/c90/stdlib.h"
 typedef unsigned short wchar_t;
 
 # 15
@@ -134,11 +134,11 @@ extern void free(void *);
 extern void * realloc(void *, size_t);
 
 
-# 13 "/Applications/microchip/xc8/v2.10/pic/include/c90/xc8debug.h"
+# 13 "/opt/microchip/xc8/v2.00/pic/include/c90/xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 104 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdlib.h"
+# 104 "/opt/microchip/xc8/v2.00/pic/include/c90/stdlib.h"
 extern int atexit(void (*)(void));
 extern char * getenv(const char *);
 extern char ** environ;
@@ -159,7 +159,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 14 "/Applications/microchip/xc8/v2.10/pic/include/c90/string.h"
+# 14 "/opt/microchip/xc8/v2.00/pic/include/c90/string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
 extern void * memset(void *, int, size_t);
@@ -197,7 +197,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 30 "/Applications/microchip/xc8/v2.10/pic/include/c90/math.h"
+# 30 "/opt/microchip/xc8/v2.00/pic/include/c90/math.h"
 extern double fabs(double);
 extern double floor(double);
 extern double ceil(double);
@@ -226,7 +226,7 @@ extern double trunc(double);
 extern double round(double);
 
 
-# 12 "/Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c"
+# 12 "/opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c"
 #pragma warning disable 350
 
 # 358
@@ -247,12 +247,12 @@ const static unsigned long hexpowers[] = {1, 0x10, 0x100, 0x1000,
 # 463
 int
 
-# 477
+# 472
 printf(const char * f, ...)
 {
 va_list ap;
 
-# 512
+# 507
 char c;
 
 int width;
@@ -260,10 +260,10 @@ int width;
 
 int prec;
 
-# 525
+# 520
 unsigned char flag;
 
-# 540
+# 535
 union {
 unsigned long vd;
 double integ;
@@ -294,7 +294,7 @@ flag = 0;
 for(;;) {
 switch(*f) {
 
-# 596
+# 591
 case '0':
 flag |= 0x04;
 f++;
@@ -304,7 +304,7 @@ continue;
 break;
 }
 
-# 614
+# 609
 if(isdigit((unsigned)*f)) {
 width = 0;
 do {
@@ -312,10 +312,10 @@ width *= 10;
 width += *f++ - '0';
 } while(isdigit((unsigned)*f));
 
-# 625
+# 620
 }
 
-# 659
+# 652
 loop:
 
 switch(c = *f++) {
@@ -329,12 +329,12 @@ case 'l':
 flag |= 0x10;
 goto loop;
 
-# 723
+# 716
 case 'd':
 case 'i':
 break;
 
-# 744
+# 737
 case 'x':
 
 
@@ -342,25 +342,25 @@ flag |= 0x80;
 
 break;
 
-# 828
+# 821
 default:
 
-# 839
+# 832
 continue;
 
-# 848
+# 841
 }
 
-# 1277
+# 1270
 if((flag & 0x80) == 0x00)
 
 {
 
 if(flag & 0x10)
-val = (unsigned long)(*(long *)__va_arg((*(long **)ap), (long)0));
+val = (*(long *)__va_arg((*(long **)ap), (long)0));
 else
 
-val = (unsigned long)(*(int *)__va_arg((*(int **)ap), (int)0));
+val = (long)(*(int *)__va_arg((*(int **)ap), (int)0));
 
 if((long)val < 0) {
 flag |= 0x03;
@@ -376,7 +376,7 @@ else
 
 {
 
-# 1307
+# 1300
 if(flag & 0x10)
 val = (*(unsigned long *)__va_arg((*(unsigned long **)ap), (unsigned long)0));
 else
@@ -385,7 +385,7 @@ else
 val = (*(unsigned *)__va_arg((*(unsigned **)ap), (unsigned)0));
 }
 
-# 1320
+# 1313
 switch((unsigned char)(flag & 0x80)) {
 
 
@@ -393,7 +393,7 @@ switch((unsigned char)(flag & 0x80)) {
 
 case 0x00:
 
-# 1331
+# 1324
 for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
 if(val < dpowers[c])
 break;
@@ -411,14 +411,14 @@ break;
 
 break;
 
-# 1362
+# 1355
 }
 
-# 1371
+# 1364
 if(width && flag & 0x03)
 width--;
 
-# 1407
+# 1400
 if(width > c)
 width -= c;
 else
@@ -433,7 +433,7 @@ if(flag & 0x04) {
 if(flag & 0x03)
 (putch('-') );
 
-# 1441
+# 1434
 if(width)
 do
 (putch('0') );
@@ -445,17 +445,17 @@ while(--width);
 
 if(width
 
-# 1454
+# 1447
 )
 do
 (putch(' ') );
 while(--width);
 
-# 1464
+# 1457
 if(flag & 0x03)
 (putch('-') );
 
-# 1495
+# 1488
 }
 
 
@@ -472,35 +472,35 @@ switch((unsigned char)(flag & 0x80))
 
 case 0x00:
 
-# 1515
-c = (val / dpowers[(unsigned int)prec]) % 10 + '0';
+# 1508
+c = (val / dpowers[prec]) % 10 + '0';
 
 break;
 
-# 1523
+# 1516
 case 0x80:
 
 {
-unsigned char idx = (val / hexpowers[(unsigned int)prec]) & 0xF;
+unsigned char idx = (val / hexpowers[prec]) & 0xF;
 
-# 1532
+# 1525
 c = "0123456789abcdef"[idx];
 
 }
 
 break;
 
-# 1549
+# 1542
 }
 (putch(c) );
 }
 
-# 1559
+# 1552
 }
 
 alldone:
 
-# 1566
+# 1559
 return 0;
 }
 

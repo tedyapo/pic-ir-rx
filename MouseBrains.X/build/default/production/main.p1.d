@@ -2,6 +2,7 @@
  build/default/production/main.p1:  \
  main.c  \
 mcc_generated_files/mcc.h  \
+IR_receiver.h  \
 mcc_generated_files/opa1.h  \
 mcc_generated_files/opa2.h  \
 mcc_generated_files/device_config.h  \

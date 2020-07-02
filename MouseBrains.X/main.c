@@ -47,11 +47,7 @@
 #include <stdio.h>
 
 
-// IR receiver states
-typedef enum {STATE_RESET = 0,        // waiting for preamble sequence
-              STATE_RECEIVING,        // receiving bit stream
-              STATE_DONE}             // received; waiting to be processed
-  rx_state_t;
+
 
 // NEC IR code and associated rx state
 typedef struct {
@@ -77,7 +73,7 @@ typedef struct {
   };
 } NEC_IR_code_t;
 
-NEC_IR_code_t ir_code = {0, STATE_RESET};
+
 
 // timing stats for analysis/tuning
 uint8_t stats[33];
@@ -105,18 +101,6 @@ uint16_t battery_voltage()
   //       ==> Vdd (mV) = 1047552 / ADRES
   return 1047552L / ADRES;
 }
-
-// write a character to the serial port
-//   printf() calls this to output characters
-void putche(char value)
-{
-  // wait for room in the FIFO
-  while(!PIR1bits.TXIF){ /* spin */ }
-  TXREG = value;
-  // note: TXIF not valid for two cycles; add nop in case of inlining
-  asm("NOP");
-}
-
 
 // initialize the registers for LED PWM generattion
 // note: red using CCP1 output on pin RC5

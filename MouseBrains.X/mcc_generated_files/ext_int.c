@@ -26,6 +26,31 @@
  */
 #include <xc.h>
 #include "ext_int.h"
+#include <stdint.h>
+#include <stdio.h>
+// IR pulse timings
+// Note: timings based on 4 MHz fosc with timer0 prescale=64
+// preamble
+// measured 212 ticks: add +/-15% tolerance
+#define PREAMBLE_MIN_TICKS 180
+#define PREAMBLE_MAX_TICKS 243
+
+// logic 0
+// measured 17 ticks: add +/-15% tolerance
+#define ZERO_MIN_TICKS 14
+#define ZERO_MAX_TICKS 20
+
+// logic 1
+// measured 35 ticks: add +/-15% tolerance
+#define ONE_MIN_TICKS 29
+#define ONE_MAX_TICKS 41
+// IR receiver states
+typedef enum {STATE_RESET = 0,        // waiting for preamble sequence
+              STATE_RECEIVING,        // receiving bit stream
+              STATE_DONE}             // received; waiting to be processed
+  rx_state_t;
+  
+NEC_IR_code_t ir_code = {0, STATE_RESET};
 
 void (*INT_InterruptHandler)(void);
 
@@ -36,7 +61,63 @@ void INT_ISR(void)
     // Callback function gets called everytime this ISR executes
     INT_CallBack();    
 }
+void __interrupt() ISR(void)
+{
+  // time: elapsed since last negative edge, i.e. negative + positive periods
+  uint8_t time = TMR0;
+  TMR0 = 0;
 
+  // if timer0 overflowed, pulse too long to be valid --> reset state
+  if (INTCONbits.TMR0IF){
+    time = 0; // invalid time will cause state reset below
+  }
+  INTCONbits.TMR0IF = 0;
+  
+  switch(ir_code.state){
+  case STATE_RESET:
+    // check for valid preamble time
+    if (time >= PREAMBLE_MIN_TICKS && time <= PREAMBLE_MAX_TICKS){
+      ir_code.n_bits = 0;
+      ir_code.state = STATE_RECEIVING;
+      stats[0] = time; // temporarily collect stats
+    }
+    break;
+  case STATE_RECEIVING:
+    // shift the previous bits and check for valid new bit
+    ir_code.code <<= 1;
+    if (time >= ONE_MIN_TICKS && time <= ONE_MAX_TICKS){
+      stats[1+ir_code.n_bits] = time; // temporarily collect stats
+      ir_code.code |= 1;
+      ir_code.n_bits++;
+    } else if (time >= ZERO_MIN_TICKS && time <= ZERO_MAX_TICKS){
+      stats[1+ir_code.n_bits] = time; // temporarily collect stats
+      ir_code.n_bits++;      
+    } else {
+      // not a valid bit
+      ir_code.state = STATE_RESET;
+      break;
+    }
+    if (32 == ir_code.n_bits){
+      // full word received; check for valid code
+      // note 8 or 16 bit extended address allowed
+      if (ir_code.command == ((~ir_code.command_b) & 0xff)){ 
+        ir_code.state = STATE_DONE;
+      } else {
+        ir_code.state = STATE_RESET;
+      }
+    }
+    break;
+  case STATE_DONE:
+    // wait for main loop to reset state
+    // note: no new codes are received until main loop resets receiver
+    break;
+  default:
+    // any unexpected state gets reset
+    ir_code.state = STATE_RESET;
+  }
+  
+  INTCONbits.INTF = 0;
+}
 
 void INT_CallBack(void)
 {
@@ -62,7 +143,7 @@ void EXT_INT_Initialize(void)
     // Clear the interrupt flag
     // Set the external interrupt edge detect
     EXT_INT_InterruptFlagClear();   
-    EXT_INT_fallingEdgeSet();    
+    EXT_INT_risingEdgeSet();    
     // Set Default Interrupt Handler
     INT_SetInterruptHandler(INT_DefaultInterruptHandler);
     EXT_INT_InterruptEnable();      

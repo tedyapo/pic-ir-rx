@@ -52,6 +52,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INLVLB `Vuc ~T0 @X0 0 e@909 ]
 "6421
 [v _INLVLC `Vuc ~T0 @X0 0 e@910 ]
+"357
+[s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"367
+[s S27 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S27 . . T0IF . T0IE ]
+"356
+[u S25 `S26 1 `S27 1 ]
+[n S25 . . . ]
+"374
+[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
 "8490
 [v _INTPPS `Vuc ~T0 @X0 0 e@3600 ]
 "8690
@@ -5051,28 +5062,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 105: INLVLC = 0xFF;
 "105
 [e = _INLVLC -> -> 255 `i `uc ]
-[; ;pin_manager.c: 114: INTPPS = 0x02;
-"114
-[e = _INTPPS -> -> 2 `i `uc ]
-[; ;pin_manager.c: 115: RXPPS = 0x0D;
-"115
-[e = _RXPPS -> -> 13 `i `uc ]
-[; ;pin_manager.c: 116: RB7PPS = 0x14;
+[; ;pin_manager.c: 113: INTCONbits.IOCIE = 1;
+"113
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+[; ;pin_manager.c: 116: INTPPS = 0x02;
 "116
-[e = _RB7PPS -> -> 20 `i `uc ]
-[; ;pin_manager.c: 117: }
+[e = _INTPPS -> -> 2 `i `uc ]
+[; ;pin_manager.c: 117: RXPPS = 0x0D;
 "117
+[e = _RXPPS -> -> 13 `i `uc ]
+[; ;pin_manager.c: 118: RB7PPS = 0x14;
+"118
+[e = _RB7PPS -> -> 20 `i `uc ]
+[; ;pin_manager.c: 119: }
+"119
 [e :UE 616 ]
 }
-"119
+"121
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"120
+"122
 {
-[; ;pin_manager.c: 119: void PIN_MANAGER_IOC(void)
-[; ;pin_manager.c: 120: {
+[; ;pin_manager.c: 121: void PIN_MANAGER_IOC(void)
+[; ;pin_manager.c: 122: {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-[; ;pin_manager.c: 121: }
-"121
+[; ;pin_manager.c: 123: }
+"123
 [e :UE 617 ]
 }

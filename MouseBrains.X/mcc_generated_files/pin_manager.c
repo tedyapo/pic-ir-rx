@@ -109,6 +109,8 @@ void PIN_MANAGER_Initialize(void)
 
 
    
+    // Enable IOCI interrupt 
+    INTCONbits.IOCIE = 1; 
     
 	
     INTPPS = 0x02;   //RA2->EXT_INT:INT;    

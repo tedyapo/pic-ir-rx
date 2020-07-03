@@ -92,7 +92,7 @@ void initLED()
   CCPTMRSbits.P3TSEL = 0b00; // PWM3 based on timer2
   PWM3DCH = 0; // initial duty cycle = 0
   PWM3DCLbits.PWM3DCL = 0; // initial duty cycle = 0
-  PWM3CONbits.PWM3POL = 0; // active-high output
+  PWM3CONbits.PWM3POL = 1; // active-low output
   TRISC &= 0b11101111; // enable RC4 output
   PWM3CONbits.PWM3EN = 1; // start PWM3
 
@@ -103,7 +103,7 @@ void initLED()
   CCPTMRSbits.P4TSEL = 0b00; // PWM4 based on timer2
   PWM4DCH = 0; // intial duty cycle = 0
   PWM4DCLbits.PWM4DCL = 0; // intial duty cycle = 0
-  PWM4CONbits.PWM4POL = 0; // active-high output
+  PWM4CONbits.PWM4POL = 1; // active-low output
   TRISA &= 0b11011111; // disable RA5 output
   PWM4CONbits.PWM4EN = 1; // start PWM4
 
@@ -114,8 +114,8 @@ void initLED()
   TRISC |= 0b00100000; // disable RC5 output
   RC5PPS = 0b01100; // route CCP1 output to RC5 pin
   CCP1CONbits.CCP1M = 0b1100; // CCP1 in PWM mode
-  CCPR1L = 0; // initial duty cycle = 0
-  CCP1CONbits.DC1B = 0; // initial duty cycle = 0
+  CCPR1L = 255; // initial duty cycle = 1023, which is off for common anode
+  CCP1CONbits.DC1B = 0x3; // initial duty cycle = 1023, off for C.A.
   TRISC &= 0b11011111; // enable RC5 output  
 }
 
@@ -124,7 +124,8 @@ void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
   // note: only setting upper 8 bits of 10-bit PWM value
   //       so max duty cycle is 1020/1023  
   // red on CCP1/RC5
-  CCPR1L = red;
+  // note: CCP1 doesn't have selectable 
+  CCPR1L = 255 - red;
   // green on PWM3/RC4
   PWM3DCH = green;
   // blue on PWM4/RA5

@@ -1,7 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2577 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
-[v _DAC1CON0 `Vuc ~T0 @X0 0 e@280 ]
-"2687
+"2687 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
 [v _DAC1CON1 `Vuc ~T0 @X0 0 e@281 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
@@ -4920,7 +4918,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 137: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 138: extern __bank0 __bit __powerdown;
 [; ;pic.h: 139: extern __bank0 __bit __timeout;
-[; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef __int24 int24_t;
@@ -4949,58 +4946,62 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 282: typedef uint32_t uintmax_t;
 [; ;stdint.h: 289: typedef int16_t intptr_t;
 [; ;stdint.h: 294: typedef uint16_t uintptr_t;
-[; ;dac.h: 93: void DAC_Initialize(void);
-[; ;dac.h: 140: void DAC_SetOutput(uint8_t inputData);
-[; ;dac.h: 177: uint8_t DAC_GetOutput(void);
-"58 mcc_generated_files/dac.c
-[v _DAC_Initialize `(v ~T0 @X0 1 ef ]
-"59
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+"7 mousehat-dac.c
+[v _microamps `ui ~T0 @X0 1 e ]
+[; ;mousehat-dac.c: 7: uint16_t microamps;
+"8
+[v _Vdd_mv `ui ~T0 @X0 1 e ]
+[; ;mousehat-dac.c: 8: uint16_t Vdd_mv;
+"15
+[v _setCurrent `(v ~T0 @X0 1 e ]
+"16
 {
-[; ;dac.c: 58: void DAC_Initialize(void)
-[; ;dac.c: 59: {
-[e :U _DAC_Initialize ]
+[; ;mousehat-dac.c: 15: void setCurrent(microamps, Vdd_mv)
+[; ;mousehat-dac.c: 16: {
+[e :U _setCurrent ]
+[v _microamps `i ~T0 @X0 1 p ]
+[v _Vdd_mv `i ~T0 @X0 1 p ]
 [f ]
-[; ;dac.c: 61: DAC1CON0 = 0x80;
-"61
-[e = _DAC1CON0 -> -> 128 `i `uc ]
-[; ;dac.c: 63: DAC1CON1 = 0xFF;
-"63
-[e = _DAC1CON1 -> -> 255 `i `uc ]
-[; ;dac.c: 64: }
-"64
-[e :UE 616 ]
-}
-"66
-[v _DAC_SetOutput `(v ~T0 @X0 1 ef1`uc ]
-"67
-{
-[; ;dac.c: 66: void DAC_SetOutput(uint8_t inputData)
-[; ;dac.c: 67: {
-[e :U _DAC_SetOutput ]
-"66
-[v _inputData `uc ~T0 @X0 1 r1 ]
-"67
-[f ]
-[; ;dac.c: 68: DAC1CON1 = inputData;
-"68
-[e = _DAC1CON1 _inputData ]
-[; ;dac.c: 69: }
-"69
+"17
+[v _Vdac_mv `ui ~T0 @X0 1 a ]
+[; ;mousehat-dac.c: 17: uint16_t Vdac_mv = Vdd_mv -
+[; ;mousehat-dac.c: 18: ((uint32_t)(4700) * microamps + 500) / 1000;
+"18
+[e = _Vdac_mv -> - -> -> _Vdd_mv `l `ul / + * -> -> 4700 `i `ul -> -> _microamps `l `ul -> -> -> 500 `i `l `ul -> -> -> 1000 `i `l `ul `ui ]
+[; ;mousehat-dac.c: 19: DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+"19
+[e = _DAC1CON1 -> / + * -> 256 `l -> _Vdac_mv `l -> / _Vdd_mv -> 2 `i `l -> _Vdd_mv `l `uc ]
+[; ;mousehat-dac.c: 20: }
+"20
 [e :UE 617 ]
-}
-"71
-[v _DAC_GetOutput `(uc ~T0 @X0 1 ef ]
-"72
-{
-[; ;dac.c: 71: uint8_t DAC_GetOutput(void)
-[; ;dac.c: 72: {
-[e :U _DAC_GetOutput ]
-[f ]
-[; ;dac.c: 73: return DAC1CON1;
-"73
-[e ) _DAC1CON1 ]
-[e $UE 618  ]
-[; ;dac.c: 74: }
-"74
-[e :UE 618 ]
 }

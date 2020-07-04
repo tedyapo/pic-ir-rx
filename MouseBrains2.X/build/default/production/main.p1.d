@@ -2,6 +2,7 @@
  build/default/production/main.p1:  \
  main.c  \
 mcc_generated_files/mcc.h  \
+mousehat-dac.c  \
 IR_receiver.h  \
 mcc_generated_files/opa1.h  \
 mcc_generated_files/opa2.h  \

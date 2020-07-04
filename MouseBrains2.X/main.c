@@ -42,6 +42,7 @@
 */
 //MouseBrains2
 #include "mcc_generated_files/mcc.h"
+#include "mousehat-dac.c"
 #include <xc.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -132,9 +133,9 @@ void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
   PWM4DCH = blue;
 }
 
-uint8_t LED_red = 0;
-uint8_t LED_green = 0;
-uint8_t LED_blue = 0;
+uint8_t LED_red;
+uint8_t LED_green;
+uint8_t LED_blue;
 
 // todo: do something with the commands
 void process_remote_command(NEC_IR_code_t* code){
@@ -155,10 +156,17 @@ void process_remote_command(NEC_IR_code_t* code){
     LED_blue += 10;
     break;
   case 0x88: // 2
-    LED_blue -= 10;    
+      LED_red = 225;
+      LED_green = 155;
+      LED_blue = 0;
+    //setLEDColor(225, 155, 0);   
+    //LED_blue -= 10;    
     break;
   case 0x48: // 3
-    //printf("%d\n", (int)battery_voltage());
+      LED_red = 255;
+      LED_green = 0;
+      LED_blue = 0;
+   // printf("%d\n", (int)battery_voltage());
     break;
   case 0x28: // 4
     break;
@@ -176,6 +184,8 @@ void process_remote_command(NEC_IR_code_t* code){
     break;
   }
   setLEDColor(LED_red, LED_green, LED_blue);
+  __delay_ms(1000);
+  setLEDColor(0, 0, 0);
 }
 
 
@@ -190,15 +200,15 @@ void main(void)
      OPA1_Initialize();
      OPA2_Initialize();
      initLED();
-     //(0, 255, 255); = blue
-     //(255, 255, 0); = green
-     //(30, 255, 100); = turq
-     //(255, 70, 0); = yellow
-     //(255, 0, 255); = red
-     //(30, 100, 255) = pink
-     //(30, 220, 255); = purple
-     //(255, 255, 255); = dim 
-     setLEDColor(255, 0, 255);
+     //(255, 0, 0); = blue
+     //(255, 0, 255); = green
+     //(200, 0, 30); = turq
+     //(0, 130, 255); = yellow
+     //(0, 255, 0); = red
+     //(225, 155, 0) = pink
+     //(225, 65, 0); = purple
+     //(0, 0, 0); = dim 
+     //setLEDColor(0, 0, 0);
     // Enable the Global Interrupts
     INTERRUPT_GlobalInterruptEnable();
 
@@ -206,7 +216,6 @@ void main(void)
     INTERRUPT_PeripheralInterruptEnable();
     
     while(1){    
-     setLEDColor(255, 0, 255);
      //printf("\n hello");
     if ((int)battery_voltage() < 2500)
      {
@@ -215,8 +224,12 @@ void main(void)
         setLEDColor(255, 0, 255);
      }
     else
-       setLEDColor(255, 255, 255); 
-     
+    //setLEDColor(); 
+    DAC1CON1 = 0xFF;  
+    __delay_ms(1000);
+    DAC1CON1 = 0x90;
+    __delay_ms(1000);
+    //setLEDColor(225, 155, 0);
     if (STATE_DONE == ir_code.state){
       // a code was received, send it out the serial port
       printf("\r\ncode:         0x%08lx\r\n", (unsigned long)ir_code.code);

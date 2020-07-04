@@ -7662,6 +7662,9 @@ extern NEC_IR_code_t ir_code;
 
 
 extern uint8_t stats[33];
+extern uint16_t microamps;
+extern uint16_t Vdd_mv;
+extern uint16_t Vdac_mv;
 
 # 50 "mcc_generated_files/ext_int.c"
 NEC_IR_code_t ir_code = {0, STATE_RESET};

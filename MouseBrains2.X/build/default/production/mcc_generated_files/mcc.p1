@@ -5012,8 +5012,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;opa2.h: 93: void OPA2_Initialize(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;dac.h: 93: void DAC_Initialize(void);
-[; ;dac.h: 129: void DAC_SetOutput(uint8_t inputData);
-[; ;dac.h: 163: uint8_t DAC_GetOutput(void);
+[; ;dac.h: 140: void DAC_SetOutput(uint8_t inputData);
+[; ;dac.h: 177: uint8_t DAC_GetOutput(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];

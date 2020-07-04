@@ -7651,10 +7651,10 @@ typedef unsigned char bool;
 # 93 "mcc_generated_files/dac.h"
 void DAC_Initialize(void);
 
-# 129
+# 140
 void DAC_SetOutput(uint8_t inputData);
 
-# 163
+# 177
 uint8_t DAC_GetOutput(void);
 
 # 15 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdbool.h"

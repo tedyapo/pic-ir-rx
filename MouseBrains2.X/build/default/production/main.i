@@ -7651,10 +7651,10 @@ typedef unsigned char bool;
 # 93 "mcc_generated_files/dac.h"
 void DAC_Initialize(void);
 
-# 129
+# 140
 void DAC_SetOutput(uint8_t inputData);
 
-# 163
+# 177
 uint8_t DAC_GetOutput(void);
 
 # 15 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdbool.h"
@@ -7756,6 +7756,18 @@ void OSCILLATOR_Initialize(void);
 # 102
 void WDT_Initialize(void);
 
+# 7 "mousehat-dac.c"
+uint16_t microamps;
+uint16_t Vdd_mv;
+
+# 15
+void setCurrent(microamps, Vdd_mv)
+{
+uint16_t Vdac_mv = Vdd_mv -
+((uint32_t)(4700) * microamps + 500) / 1000;
+DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+}
+
 # 2 "IR_receiver.h"
 typedef enum {STATE_RESET = 0,
 STATE_RECEIVING,
@@ -7790,8 +7802,11 @@ extern NEC_IR_code_t ir_code;
 
 
 extern uint8_t stats[33];
+extern uint16_t microamps;
+extern uint16_t Vdd_mv;
+extern uint16_t Vdac_mv;
 
-# 51 "main.c"
+# 52 "main.c"
 uint8_t stats[33];
 
 
@@ -7818,7 +7833,7 @@ ADCON0bits.ADON = 0;
 return 1047552L / ADRES;
 }
 
-# 81
+# 82
 void initLED()
 {
 
@@ -7833,7 +7848,7 @@ RC4PPS = 0b01110;
 CCPTMRSbits.P3TSEL = 0b00;
 PWM3DCH = 0;
 PWM3DCLbits.PWM3DCL = 0;
-PWM3CONbits.PWM3POL = 0;
+PWM3CONbits.PWM3POL = 1;
 TRISC &= 0b11101111;
 PWM3CONbits.PWM3EN = 1;
 
@@ -7844,16 +7859,16 @@ RA5PPS = 0b01111;
 CCPTMRSbits.P4TSEL = 0b00;
 PWM4DCH = 0;
 PWM4DCLbits.PWM4DCL = 0;
-PWM4CONbits.PWM4POL = 0;
+PWM4CONbits.PWM4POL = 1;
 TRISA &= 0b11011111;
 PWM4CONbits.PWM4EN = 1;
 
-# 114
+# 115
 TRISC |= 0b00100000;
 RC5PPS = 0b01100;
 CCP1CONbits.CCP1M = 0b1100;
-CCPR1L = 0;
-CCP1CONbits.DC1B = 0;
+CCPR1L = 255;
+CCP1CONbits.DC1B = 0x3;
 TRISC &= 0b11011111;
 }
 
@@ -7862,16 +7877,17 @@ void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
 
 
 
-CCPR1L = red;
+
+CCPR1L = 255 - red;
 
 PWM3DCH = green;
 
 PWM4DCH = blue;
 }
 
-uint8_t LED_red = 0;
-uint8_t LED_green = 0;
-uint8_t LED_blue = 0;
+uint8_t LED_red;
+uint8_t LED_green;
+uint8_t LED_blue;
 
 
 void process_remote_command(NEC_IR_code_t* code){
@@ -7892,9 +7908,16 @@ case 0x08:
 LED_blue += 10;
 break;
 case 0x88:
-LED_blue -= 10;
+LED_red = 225;
+LED_green = 155;
+LED_blue = 0;
+
+
 break;
 case 0x48:
+LED_red = 255;
+LED_green = 0;
+LED_blue = 0;
 
 break;
 case 0x28:
@@ -7913,9 +7936,11 @@ default:
 break;
 }
 setLEDColor(LED_red, LED_green, LED_blue);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
 }
 
-# 184
+# 195
 void main(void)
 {
 
@@ -7925,16 +7950,13 @@ OPA1_Initialize();
 OPA2_Initialize();
 initLED();
 
-# 200
-setLEDColor(255, 0, 255);
-
+# 213
 (INTCONbits.GIE = 1);
 
 
 (INTCONbits.PEIE = 1);
 
 while(1){
-setLEDColor(255, 0, 255);
 
 if ((int)battery_voltage() < 2500)
 {
@@ -7943,7 +7965,11 @@ if ((int)battery_voltage() < 2500)
 setLEDColor(255, 0, 255);
 }
 else
-setLEDColor(255, 255, 255);
+
+DAC1CON1 = 0xFF;
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+DAC1CON1 = 0x90;
+_delay((unsigned long)((1000)*(4000000/4000.0)));
 
 if (STATE_DONE == ir_code.state){
 
@@ -7954,7 +7980,7 @@ printf("address:          0x%02x\r\n", ir_code.address);
 printf("address_b:        0x%02x\r\n", ir_code.address_b);
 printf("extended address: 0x%04x\r\n", (unsigned int)ir_code.extended_address);
 
-# 237
+# 251
 process_remote_command(&ir_code);
 
 

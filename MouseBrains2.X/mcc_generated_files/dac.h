@@ -43,10 +43,10 @@
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
 */
-
+#include <xc.h>
 #ifndef DAC_H
 #define DAC_H
-
+#define CURRENT_SOURCE_RESISTANCE_OHMS 4700
 /**
   Section: Included Files
 */
@@ -91,7 +91,18 @@
     </code>
 */
 void DAC_Initialize(void);
-
+//
+// Set the current-source output to specified current (in integer microamps)
+//  note: this function needs a relatively recently measured value for Vdd
+//        to produce accurate output currents, but measuring the Vdd each
+//        time may introduce too much delay, so call battery_voltage()
+//        periodically to get a Vdd measurement
+/*void setCurrent(uint16_t microamps, uint16_t Vdd_mv)
+{
+  uint16_t Vdac_mv = Vdd_mv - 
+    ((uint32_t)(CURRENT_SOURCE_RESISTANCE_OHMS) * microamps + 500) / 1000;
+  DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+}*/
 /**
   @Summary
     Set Input data into DAC.
@@ -127,6 +138,9 @@ void DAC_Initialize(void);
     </code>
 */
 void DAC_SetOutput(uint8_t inputData);
+
+
+
 
 /**
   @Summary

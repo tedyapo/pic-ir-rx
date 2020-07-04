@@ -1,5 +1,5 @@
 
-# 1 "mcc_generated_files/dac.c"
+# 1 "mousehat-dac.c"
 
 # 18 "/Applications/microchip/xc8/v2.10/pic/include/xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -7461,9 +7461,6 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 15 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdbool.h"
-typedef unsigned char bool;
-
 # 13 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdint.h"
 typedef signed char int8_t;
 
@@ -7550,31 +7547,77 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 93 "mcc_generated_files/dac.h"
-void DAC_Initialize(void);
+# 4 "/Applications/microchip/xc8/v2.10/pic/include/__size_t.h"
+typedef unsigned size_t;
 
-# 140
-void DAC_SetOutput(uint8_t inputData);
+# 7 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdarg.h"
+typedef void * va_list[1];
 
-# 177
-uint8_t DAC_GetOutput(void);
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
 
-# 58 "mcc_generated_files/dac.c"
-void DAC_Initialize(void)
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdio.h"
+struct __prbuf
 {
+char * ptr;
+void (* func)(char);
+};
 
-DAC1CON0 = 0x80;
+# 29 "/Applications/microchip/xc8/v2.10/pic/include/c90/errno.h"
+extern int errno;
 
-DAC1CON1 = 0xFF;
-}
+# 12 "/Applications/microchip/xc8/v2.10/pic/include/c90/conio.h"
+extern void init_uart(void);
 
-void DAC_SetOutput(uint8_t inputData)
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "/Applications/microchip/xc8/v2.10/pic/include/c90/stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 7 "mousehat-dac.c"
+uint16_t microamps;
+uint16_t Vdd_mv;
+
+# 15
+void setCurrent(microamps, Vdd_mv)
 {
-DAC1CON1 = inputData;
+uint16_t Vdac_mv = Vdd_mv -
+((uint32_t)(4700) * microamps + 500) / 1000;
+DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
 }
-
-uint8_t DAC_GetOutput(void)
-{
-return DAC1CON1;
-}
-

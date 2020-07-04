@@ -229,11 +229,10 @@ extern double round(double);
 # 12 "/Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c"
 #pragma warning disable 350
 
-# 366
-const static unsigned long hexpowers[] = {1, 0x10, 0x100, 0x1000,
+# 358
+const static unsigned int dpowers[] = {1, 10, 100, 1000, 10000,
 
-0x10000, 0x100000, 0x1000000, 0x10000000
-
+# 363
 };
 
 # 463
@@ -247,12 +246,11 @@ va_list ap;
 # 512
 char c;
 
-int width;
+# 521
+signed char prec;
 
 
-int prec;
 
-# 525
 unsigned char flag;
 
 # 540
@@ -261,7 +259,7 @@ unsigned long vd;
 double integ;
 } tmpval;
 
-unsigned long val;
+unsigned int val;
 unsigned len;
 const char * cp;
 
@@ -278,53 +276,18 @@ if(c != '%')
 continue;
 }
 
-
-width = 0;
-
+# 565
 flag = 0;
 
-for(;;) {
-switch(*f) {
-
-# 596
-case '0':
-flag |= 0x04;
-f++;
-continue;
-
-}
-break;
-}
-
-# 614
-if(isdigit((unsigned)*f)) {
-width = 0;
-do {
-width *= 10;
-width += *f++ - '0';
-} while(isdigit((unsigned)*f));
-
-# 625
-}
-
-# 659
-loop:
-
+# 661
 switch(c = *f++) {
 
 case 0:
 goto alldone;
 
-
-case 'l':
-
-flag |= 0x10;
-goto loop;
-
-# 744
-case 'x':
-
-# 749
+# 723
+case 'd':
+case 'i':
 break;
 
 # 828
@@ -336,49 +299,30 @@ continue;
 # 848
 }
 
-# 1299
+# 1279
 {
 
-# 1307
-if(flag & 0x10)
-val = (*(unsigned long *)__va_arg((*(unsigned long **)ap), (unsigned long)0));
-else
+# 1285
+val = (unsigned int)(*(int *)__va_arg((*(int **)ap), (int)0));
 
-
-val = (*(unsigned *)__va_arg((*(unsigned **)ap), (unsigned)0));
+if((int)val < 0) {
+flag |= 0x03;
+val = -val;
 }
 
-# 1342
-for(c = 1 ; c != sizeof hexpowers/sizeof hexpowers[0] ; c++)
-if(val < hexpowers[c])
+}
+
+# 1331
+for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
+if(val < dpowers[c])
 break;
 
-# 1407
-if(width > c)
-width -= c;
-else
-width = 0;
-
-
-if(flag & 0x04) {
-
-# 1441
-if(width)
-do
-(putch('0') );
-while(--width);
-
-} else
-
+# 1448
 {
 
-if(width
-
-# 1454
-)
-do
-(putch(' ') );
-while(--width);
+# 1464
+if(flag & 0x03)
+(putch('-') );
 
 # 1495
 }
@@ -391,14 +335,8 @@ while(prec--) {
 # 1504
 {
 
-# 1525
-{
-unsigned char idx = (val / hexpowers[(unsigned int)prec]) & 0xF;
-
-# 1532
-c = "0123456789abcdef"[idx];
-
-}
+# 1515
+c = (val / dpowers[(unsigned char)prec]) % 10 + '0';
 
 # 1549
 }

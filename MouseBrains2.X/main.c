@@ -50,6 +50,23 @@
 
 // timing stats for analysis/tuning
 uint8_t stats[33];
+// LEDs
+uint8_t LED_red;
+uint8_t LED_green;
+uint8_t LED_blue;
+
+// flag
+uint8_t flag;
+
+// DAC variables
+uint16_t microamps;
+uint16_t Vdd_mv;
+uint16_t Vdac_mv;
+
+// freq/ current
+uint8_t frequency;
+uint8_t duty;
+uint8_t current;
 
 // measure Vdd using FVR/ADC
 // assumes 4 MHz clock; ADC uses FOSC/8
@@ -132,41 +149,138 @@ void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
   // blue on PWM4/RA5
   PWM4DCH = blue;
 }
+//*******************************INFORMATION CODES******************
+//
+//
+void lowBattery(){ // blink red until battery is replaced
+  setLEDColor(0, 255, 255);
+  __delay_ms(250);
+  setLEDColor(0, 0, 0);
+  __delay_ms(500);
+}
 
-uint8_t LED_red;
-uint8_t LED_green;
-uint8_t LED_blue;
+void startUp(){ // blink green a few times
+   for (int i = 0; i < 5; i++){
+   setLEDColor(255, 0, 255);
+  __delay_ms(100);
+  setLEDColor(0, 0, 0);
+  __delay_ms(100);
+  }
+   duty = 0;
+}
 
-// todo: do something with the commands
+void selectSomething(){ // not clear if current or frequency are selected
+    // blinks blue a few times
+  setLEDColor(255, 0, 0);
+  __delay_ms(500);
+  setLEDColor(0, 0, 0);
+  __delay_ms(500);
+  setLEDColor(255, 0, 0);
+  __delay_ms(500);
+  setLEDColor(0, 0, 0);
+  __delay_ms(500);
+}
+
+void selectFrequency(){
+    flag = 1;
+    setLEDColor(255, 0, 255);
+    __delay_ms(1000);
+    setLEDColor(0, 0, 0);
+    printf("\n Frequency selected");
+}
+
+// **********************************END INFORMATION CODES
+
+
+/*void setFrequency(duty){
+    DAC1CON1;
+    __delay_ms(duty);
+    DAC1CON1;
+    __delay_ms(duty); // how to get value for duty here??
+}*/
+
+void setCurrent(microamps, Vdd_mv)
+{
+Vdac_mv = Vdd_mv -
+    ((uint32_t)(CURRENT_SOURCE_RESISTANCE_OHMS) * microamps + 500) / 1000;
+DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+}
+
+/// todo: do something with the commands
+     //(255, 0, 0); = blue
+     //(255, 0, 255); = green
+     //(200, 0, 30); = turq
+     //(0, 130, 255); = yellow
+     //(0, 255, 0); = red
+    //(0,100,255);? orange
+     //(225, 155, 0) = pink
+     //(225, 65, 0); = purple
+     //(0, 0, 0); = dim 
 void process_remote_command(NEC_IR_code_t* code){
+  setLEDColor(0, 0, 0);
+  
   switch(code->command){
   case 0xa0: // up arrow
-    LED_red += 10;
+      setLEDColor(0, 0, 0);
+      if (flag == 1){
+        if (duty >= 0 && duty <=150){
+        duty = duty + 30;
+        }
+        else {
+        duty = 150;
+        selectSomething();
+        }
+       //setFrequency(duty);
+       //if frequency is zero or 150 (limits), blink turquoise?
+       printf("%d\n", (duty));
+      }
+      else if (flag == 2){
+       //call DAC function;  
+      }
+      else{
+       selectSomething();   
+      }
     break;
   case 0xb0: // down arrow
-    LED_red -= 10;
+      if (flag == 1){
+          if (duty >= 0 && duty <=150){
+          duty = duty - 30;
+          printf("%d\n", (duty));
+          }
+          else{
+          duty = 150;
+          selectSomething();
+          }
+       }            
+       //setFrequency(duty);
+       //
+      else if (flag == 2){
+       //call DAC function;  
+      }
+      else{
+       selectSomething();   
+      }
     break;    
-  case 0x50: // right arrow
-    LED_green += 10;
+  case 0x50: // right arrow, selects frequency (green)
+    selectFrequency();
     break;
-  case 0x10: // left arrow
-    LED_green -= 10;
+  case 0x10: // left arrow, selects current (yellow)
+    LED_red = 0;
+    LED_green = 130;
+    LED_blue = 255;
+    flag = 2;
     break;
-  case 0x08: // 1
-    LED_blue += 10;
+  case 0x08: // 1, resets current or frequency select (red)
+    LED_red = 0;
+    LED_green = 255;
+    LED_blue = 0;
+    printf("\n reset select");
+    flag = 0;
     break;
-  case 0x88: // 2
-      LED_red = 225;
-      LED_green = 155;
-      LED_blue = 0;
-    //setLEDColor(225, 155, 0);   
-    //LED_blue -= 10;    
+  case 0x88: // 2, resets frequency to 0  
+    duty = 0;
     break;
-  case 0x48: // 3
-      LED_red = 255;
-      LED_green = 0;
-      LED_blue = 0;
-   // printf("%d\n", (int)battery_voltage());
+  case 0x48: // 3, resets current to 0
     break;
   case 0x28: // 4
     break;
@@ -178,7 +292,8 @@ void process_remote_command(NEC_IR_code_t* code){
     break;
   case 0x98: // 8
     break;
-  case 0x58: // 9
+  case 0x58: // 9, check battery voltage
+       // printf("%d\n", (int)battery_voltage())
     break;                        
   default:
     break;
@@ -200,6 +315,10 @@ void main(void)
      OPA1_Initialize();
      OPA2_Initialize();
      initLED();
+     INTERRUPT_GlobalInterruptEnable();
+     INTERRUPT_PeripheralInterruptEnable();
+     startUp();
+
      //(255, 0, 0); = blue
      //(255, 0, 255); = green
      //(200, 0, 30); = turq
@@ -208,36 +327,27 @@ void main(void)
      //(225, 155, 0) = pink
      //(225, 65, 0); = purple
      //(0, 0, 0); = dim 
-     //setLEDColor(0, 0, 0);
-    // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
-
-    // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
-    
+     //setLEDColor(0, 0, 0);   
     while(1){    
      //printf("\n hello");
     if ((int)battery_voltage() < 2500)
      {
-         //IO_RC5_SetLow(); 
+        lowBattery();
          //printf("%d\n", (int)battery_voltage());
-        setLEDColor(255, 0, 255);
      }
-    else
-    //setLEDColor(); 
-    DAC1CON1 = 0xFF;  
+    /*DAC1CON1 = 0xFF;  
     __delay_ms(1000);
     DAC1CON1 = 0x90;
-    __delay_ms(1000);
-    //setLEDColor(225, 155, 0);
+    __delay_ms(1000);*/
+    
     if (STATE_DONE == ir_code.state){
       // a code was received, send it out the serial port
-      printf("\r\ncode:         0x%08lx\r\n", (unsigned long)ir_code.code);
-      printf("command:          0x%02x\r\n", ir_code.command);
-      printf("command_b:        0x%02x\r\n", ir_code.command_b);
-      printf("address:          0x%02x\r\n", ir_code.address);
-      printf("address_b:        0x%02x\r\n", ir_code.address_b);
-      printf("extended address: 0x%04x\r\n", (unsigned int)ir_code.extended_address);      
+      //printf("\r\ncode:         0x%08lx\r\n", (unsigned long)ir_code.code);
+      //printf("command:          0x%02x\r\n", ir_code.command);
+      //printf("command_b:        0x%02x\r\n", ir_code.command_b);
+      //printf("address:          0x%02x\r\n", ir_code.address);
+      //printf("address_b:        0x%02x\r\n", ir_code.address_b);
+      //printf("extended address: 0x%04x\r\n", (unsigned int)ir_code.extended_address);      
 
 //#define DUMP_STATS
 #ifdef DUMP_STATS      
@@ -259,19 +369,5 @@ void main(void)
 }
 
 
-  /*  while (1)
-    {    
-       IO_RA5_SetHigh();  // 
-       IO_RC5_SetHigh();   
-      // IO_RC4_SetHigh();  // 
-       // __delay_ms(500); 
-       IO_RA5_SetLow(); 
-       IO_RC5_SetLow();   
-       //IO_RC4_SetLow();  // 
-       //__delay_ms(500); 
-        DAC1CON1 = 0x55; //27
-        __delay_ms(3000);
-        DAC1CON1 = 0x00; //58
-        __delay_ms(3000);
-    } */
+
 

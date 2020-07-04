@@ -7760,14 +7760,6 @@ void WDT_Initialize(void);
 uint16_t microamps;
 uint16_t Vdd_mv;
 
-# 15
-void setCurrent(microamps, Vdd_mv)
-{
-uint16_t Vdac_mv = Vdd_mv -
-((uint32_t)(4700) * microamps + 500) / 1000;
-DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
-}
-
 # 2 "IR_receiver.h"
 typedef enum {STATE_RESET = 0,
 STATE_RECEIVING,
@@ -7802,12 +7794,26 @@ extern NEC_IR_code_t ir_code;
 
 
 extern uint8_t stats[33];
-extern uint16_t microamps;
-extern uint16_t Vdd_mv;
-extern uint16_t Vdac_mv;
 
 # 52 "main.c"
 uint8_t stats[33];
+
+uint8_t LED_red;
+uint8_t LED_green;
+uint8_t LED_blue;
+
+
+uint8_t flag;
+
+
+uint16_t microamps;
+uint16_t Vdd_mv;
+uint16_t Vdac_mv;
+
+
+uint8_t frequency;
+uint8_t duty;
+uint8_t current;
 
 
 
@@ -7833,7 +7839,7 @@ ADCON0bits.ADON = 0;
 return 1047552L / ADRES;
 }
 
-# 82
+# 99
 void initLED()
 {
 
@@ -7863,7 +7869,7 @@ PWM4CONbits.PWM4POL = 1;
 TRISA &= 0b11011111;
 PWM4CONbits.PWM4EN = 1;
 
-# 115
+# 132
 TRISC |= 0b00100000;
 RC5PPS = 0b01100;
 CCP1CONbits.CCP1M = 0b1100;
@@ -7885,40 +7891,119 @@ PWM3DCH = green;
 PWM4DCH = blue;
 }
 
-uint8_t LED_red;
-uint8_t LED_green;
-uint8_t LED_blue;
 
 
+void lowBattery(){
+setLEDColor(0, 255, 255);
+_delay((unsigned long)((250)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+_delay((unsigned long)((500)*(4000000/4000.0)));
+}
+
+void startUp(){
+for (int i = 0; i < 5; i++){
+setLEDColor(255, 0, 255);
+_delay((unsigned long)((100)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+_delay((unsigned long)((100)*(4000000/4000.0)));
+}
+duty = 0;
+}
+
+void selectSomething(){
+
+setLEDColor(255, 0, 0);
+_delay((unsigned long)((500)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+_delay((unsigned long)((500)*(4000000/4000.0)));
+setLEDColor(255, 0, 0);
+_delay((unsigned long)((500)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+_delay((unsigned long)((500)*(4000000/4000.0)));
+}
+
+void selectFrequency(){
+flag = 1;
+setLEDColor(255, 0, 255);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+printf("\n Frequency selected");
+}
+
+# 202
+void setCurrent(microamps, Vdd_mv)
+{
+Vdac_mv = Vdd_mv -
+((uint32_t)(4700) * microamps + 500) / 1000;
+DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+}
+
+# 219
 void process_remote_command(NEC_IR_code_t* code){
+setLEDColor(0, 0, 0);
+
 switch(code->command){
 case 0xa0:
-LED_red += 10;
+setLEDColor(0, 0, 0);
+if (flag == 1){
+if (duty >= 0 && duty <=150){
+duty = duty + 30;
+}
+else {
+duty = 150;
+selectSomething();
+}
+
+
+printf("%d\n", (duty));
+}
+else if (flag == 2){
+
+}
+else{
+selectSomething();
+}
 break;
 case 0xb0:
-LED_red -= 10;
+if (flag == 1){
+if (duty >= 0 && duty <=150){
+duty = duty - 30;
+printf("%d\n", (duty));
+}
+else{
+duty = 150;
+selectSomething();
+}
+}
+
+
+else if (flag == 2){
+
+}
+else{
+selectSomething();
+}
 break;
 case 0x50:
-LED_green += 10;
+selectFrequency();
 break;
 case 0x10:
-LED_green -= 10;
+LED_red = 0;
+LED_green = 130;
+LED_blue = 255;
+flag = 2;
 break;
 case 0x08:
-LED_blue += 10;
+LED_red = 0;
+LED_green = 255;
+LED_blue = 0;
+printf("\n reset select");
+flag = 0;
 break;
 case 0x88:
-LED_red = 225;
-LED_green = 155;
-LED_blue = 0;
-
-
+duty = 0;
 break;
 case 0x48:
-LED_red = 255;
-LED_green = 0;
-LED_blue = 0;
-
 break;
 case 0x28:
 break;
@@ -7931,6 +8016,7 @@ break;
 case 0x98:
 break;
 case 0x58:
+
 break;
 default:
 break;
@@ -7940,7 +8026,7 @@ _delay((unsigned long)((1000)*(4000000/4000.0)));
 setLEDColor(0, 0, 0);
 }
 
-# 195
+# 310
 void main(void)
 {
 
@@ -7949,38 +8035,23 @@ DAC_Initialize();
 OPA1_Initialize();
 OPA2_Initialize();
 initLED();
-
-# 213
 (INTCONbits.GIE = 1);
-
-
 (INTCONbits.PEIE = 1);
+startUp();
 
+# 331
 while(1){
 
 if ((int)battery_voltage() < 2500)
 {
+lowBattery();
 
-
-setLEDColor(255, 0, 255);
 }
-else
 
-DAC1CON1 = 0xFF;
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-DAC1CON1 = 0x90;
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-
+# 343
 if (STATE_DONE == ir_code.state){
 
-printf("\r\ncode:         0x%08lx\r\n", (unsigned long)ir_code.code);
-printf("command:          0x%02x\r\n", ir_code.command);
-printf("command_b:        0x%02x\r\n", ir_code.command_b);
-printf("address:          0x%02x\r\n", ir_code.address);
-printf("address_b:        0x%02x\r\n", ir_code.address_b);
-printf("extended address: 0x%04x\r\n", (unsigned int)ir_code.extended_address);
-
-# 251
+# 361
 process_remote_command(&ir_code);
 
 

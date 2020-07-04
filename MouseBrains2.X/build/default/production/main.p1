@@ -1,7 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2687 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
-[v _DAC1CON1 `Vuc ~T0 @X0 0 e@281 ]
-"2501
+"2501 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
 [v _FVRCON `Vuc ~T0 @X0 0 e@279 ]
 "1830
 [v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
@@ -129,31 +127,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _CCP1CONbits `VS273 ~T0 @X0 0 e@659 ]
 "5699
 [v _CCPR1L `Vuc ~T0 @X0 0 e@657 ]
-"141 main.c
-[c E4376 0 1 2 .. ]
-[n E4376 . STATE_RESET STATE_RECEIVING STATE_DONE  ]
-"19 IR_receiver.h
-[s S624 `uc 1 `uc 1 ]
-[n S624 . address_b address ]
-"23
-[s S625 `ui 1 ]
-[n S625 . extended_address ]
-"18
-[u S623 `S624 1 `S625 1 ]
-[n S623 . . . ]
-"13
-[s S622 `uc 1 `uc 1 `S623 1 ]
-[n S622 . command_b command . ]
-"11
-[u S621 `ul 1 `S622 1 ]
-[n S621 . code . ]
-"8
-[s S620 `uc 1 `E4376 1 `S621 1 ]
-[n S620 . n_bits state . ]
 [v F4174 `(v ~T0 @X0 1 tf1`ul ]
 "92 /Applications/microchip/xc8/v2.10/pic/include/pic.h
 [v __delay `JF4174 ~T0 @X0 0 e ]
 [p i __delay ]
+"195 /Applications/microchip/xc8/v2.10/pic/include/c90/stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"2687 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+[v _DAC1CON1 `Vuc ~T0 @X0 0 e@281 ]
+"219 main.c
+[c E4371 0 1 2 .. ]
+[n E4371 . STATE_RESET STATE_RECEIVING STATE_DONE  ]
+"19 IR_receiver.h
+[s S623 `uc 1 `uc 1 ]
+[n S623 . address_b address ]
+"23
+[s S624 `ui 1 ]
+[n S624 . extended_address ]
+"18
+[u S622 `S623 1 `S624 1 ]
+[n S622 . . . ]
+"13
+[s S621 `uc 1 `uc 1 `S622 1 ]
+[n S621 . command_b command . ]
+"11
+[u S620 `ul 1 `S621 1 ]
+[n S620 . code . ]
+"8
+[s S619 `uc 1 `E4371 1 `S620 1 ]
+[n S619 . n_bits state . ]
 [p mainexit ]
 "77 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
@@ -175,9 +177,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "374
 [v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
 "31 IR_receiver.h
-[v _ir_code `S620 ~T0 @X0 0 e ]
-"195 /Applications/microchip/xc8/v2.10/pic/include/c90/stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+[v _ir_code `S619 ~T0 @X0 0 e ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -5213,29 +5213,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 "8
 [v _Vdd_mv `ui ~T0 @X0 1 e ]
 [; ;mousehat-dac.c: 8: uint16_t Vdd_mv;
-"15
-[v _setCurrent `(v ~T0 @X0 1 e ]
-"16
-{
-[; ;mousehat-dac.c: 15: void setCurrent(microamps, Vdd_mv)
-[; ;mousehat-dac.c: 16: {
-[e :U _setCurrent ]
-[v _microamps `i ~T0 @X0 1 p ]
-[v _Vdd_mv `i ~T0 @X0 1 p ]
-[f ]
-"17
-[v _Vdac_mv `ui ~T0 @X0 1 a ]
-[; ;mousehat-dac.c: 17: uint16_t Vdac_mv = Vdd_mv -
-[; ;mousehat-dac.c: 18: ((uint32_t)(4700) * microamps + 500) / 1000;
-"18
-[e = _Vdac_mv -> - -> -> _Vdd_mv `l `ul / + * -> -> 4700 `i `ul -> -> _microamps `l `ul -> -> -> 500 `i `l `ul -> -> -> 1000 `i `l `ul `ui ]
-[; ;mousehat-dac.c: 19: DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
-"19
-[e = _DAC1CON1 -> / + * -> 256 `l -> _Vdac_mv `l -> / _Vdd_mv -> 2 `i `l -> _Vdd_mv `l `uc ]
-[; ;mousehat-dac.c: 20: }
-"20
-[e :UE 619 ]
-}
 [; ;IR_receiver.h: 2: typedef enum {STATE_RESET = 0,
 [; ;IR_receiver.h: 3: STATE_RECEIVING,
 [; ;IR_receiver.h: 4: STATE_DONE}
@@ -5262,474 +5239,720 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;IR_receiver.h: 29: } NEC_IR_code_t;
 [; ;IR_receiver.h: 31: extern NEC_IR_code_t ir_code;
 [; ;IR_receiver.h: 34: extern uint8_t stats[33];
-[; ;IR_receiver.h: 35: extern uint16_t microamps;
-[; ;IR_receiver.h: 36: extern uint16_t Vdd_mv;
-[; ;IR_receiver.h: 37: extern uint16_t Vdac_mv;
 "52 main.c
 [v _stats `uc ~T0 @X0 -> 33 `i e ]
 [; ;main.c: 52: uint8_t stats[33];
-"57
+"54
+[v _LED_red `uc ~T0 @X0 1 e ]
+[; ;main.c: 54: uint8_t LED_red;
+"55
+[v _LED_green `uc ~T0 @X0 1 e ]
+[; ;main.c: 55: uint8_t LED_green;
+"56
+[v _LED_blue `uc ~T0 @X0 1 e ]
+[; ;main.c: 56: uint8_t LED_blue;
+"59
+[v _flag `uc ~T0 @X0 1 e ]
+[; ;main.c: 59: uint8_t flag;
+[; ;main.c: 62: uint16_t microamps;
+[; ;main.c: 63: uint16_t Vdd_mv;
+"64
+[v _Vdac_mv `ui ~T0 @X0 1 e ]
+[; ;main.c: 64: uint16_t Vdac_mv;
+"67
+[v _frequency `uc ~T0 @X0 1 e ]
+[; ;main.c: 67: uint8_t frequency;
+"68
+[v _duty `uc ~T0 @X0 1 e ]
+[; ;main.c: 68: uint8_t duty;
+"69
+[v _current `uc ~T0 @X0 1 e ]
+[; ;main.c: 69: uint8_t current;
+"74
 [v _battery_voltage `(ui ~T0 @X0 1 ef ]
-"58
+"75
 {
-[; ;main.c: 57: uint16_t battery_voltage()
-[; ;main.c: 58: {
+[; ;main.c: 74: uint16_t battery_voltage()
+[; ;main.c: 75: {
 [e :U _battery_voltage ]
 [f ]
-[; ;main.c: 59: FVRCON = 0b10000001;
-"59
-[e = _FVRCON -> -> 129 `i `uc ]
-[; ;main.c: 60: ADCON0 = 0b01111101;
-"60
-[e = _ADCON0 -> -> 125 `i `uc ]
-[; ;main.c: 61: ADCON1 = 0b10010000;
-"61
-[e = _ADCON1 -> -> 144 `i `uc ]
-[; ;main.c: 62: while(!FVRCONbits.FVRRDY){ }
-"62
-[e $U 627  ]
-[e :U 628 ]
-{
-}
-[e :U 627 ]
-[e $ ! != -> . . _FVRCONbits 0 4 `i -> -> -> 0 `i `Vuc `i 628  ]
-[e :U 629 ]
-[; ;main.c: 63: __nop();
-"63
-[e ( ___nop ..  ]
-[; ;main.c: 64: __nop();
-"64
-[e ( ___nop ..  ]
-[; ;main.c: 65: __nop();
-"65
-[e ( ___nop ..  ]
-[; ;main.c: 66: __nop();
-"66
-[e ( ___nop ..  ]
-[; ;main.c: 67: __nop();
-"67
-[e ( ___nop ..  ]
-[; ;main.c: 68: ADCON0bits.GO_nDONE = 1;
-"68
-[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 69: while(ADCON0bits.GO_nDONE){ }
-"69
-[e $U 630  ]
-[e :U 631 ]
-{
-}
-[e :U 630 ]
-[e $ != -> . . _ADCON0bits 0 1 `i -> -> -> 0 `i `Vuc `i 631  ]
-[e :U 632 ]
-[; ;main.c: 70: ADCON0bits.ADON = 0;
-"70
-[e = . . _ADCON0bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 75: return 1047552L / ADRES;
-"75
-[e ) -> / -> 1047552 `l -> _ADRES `l `ui ]
-[e $UE 626  ]
-[; ;main.c: 76: }
+[; ;main.c: 76: FVRCON = 0b10000001;
 "76
-[e :UE 626 ]
-}
-"82
-[v _initLED `(v ~T0 @X0 1 ef ]
-"83
+[e = _FVRCON -> -> 129 `i `uc ]
+[; ;main.c: 77: ADCON0 = 0b01111101;
+"77
+[e = _ADCON0 -> -> 125 `i `uc ]
+[; ;main.c: 78: ADCON1 = 0b10010000;
+"78
+[e = _ADCON1 -> -> 144 `i `uc ]
+[; ;main.c: 79: while(!FVRCONbits.FVRRDY){ }
+"79
+[e $U 626  ]
+[e :U 627 ]
 {
-[; ;main.c: 82: void initLED()
-[; ;main.c: 83: {
+}
+[e :U 626 ]
+[e $ ! != -> . . _FVRCONbits 0 4 `i -> -> -> 0 `i `Vuc `i 627  ]
+[e :U 628 ]
+[; ;main.c: 80: __nop();
+"80
+[e ( ___nop ..  ]
+[; ;main.c: 81: __nop();
+"81
+[e ( ___nop ..  ]
+[; ;main.c: 82: __nop();
+"82
+[e ( ___nop ..  ]
+[; ;main.c: 83: __nop();
+"83
+[e ( ___nop ..  ]
+[; ;main.c: 84: __nop();
+"84
+[e ( ___nop ..  ]
+[; ;main.c: 85: ADCON0bits.GO_nDONE = 1;
+"85
+[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 86: while(ADCON0bits.GO_nDONE){ }
+"86
+[e $U 629  ]
+[e :U 630 ]
+{
+}
+[e :U 629 ]
+[e $ != -> . . _ADCON0bits 0 1 `i -> -> -> 0 `i `Vuc `i 630  ]
+[e :U 631 ]
+[; ;main.c: 87: ADCON0bits.ADON = 0;
+"87
+[e = . . _ADCON0bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 92: return 1047552L / ADRES;
+"92
+[e ) -> / -> 1047552 `l -> _ADRES `l `ui ]
+[e $UE 625  ]
+[; ;main.c: 93: }
+"93
+[e :UE 625 ]
+}
+"99
+[v _initLED `(v ~T0 @X0 1 ef ]
+"100
+{
+[; ;main.c: 99: void initLED()
+[; ;main.c: 100: {
 [e :U _initLED ]
 [f ]
-[; ;main.c: 85: PR2 = 255;
-"85
-[e = _PR2 -> -> 255 `i `uc ]
-[; ;main.c: 86: T2CONbits.T2CKPS = 0b10;
-"86
-[e = . . _T2CONbits 0 0 -> -> 2 `i `uc ]
-[; ;main.c: 87: T2CONbits.TMR2ON = 1;
-"87
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 91: TRISC |= 0b00010000;
-"91
-[e =| _TRISC -> -> 16 `i `uc ]
-[; ;main.c: 92: RC4PPS = 0b01110;
-"92
-[e = _RC4PPS -> -> 14 `i `uc ]
-[; ;main.c: 93: CCPTMRSbits.P3TSEL = 0b00;
-"93
-[e = . . _CCPTMRSbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 94: PWM3DCH = 0;
-"94
-[e = _PWM3DCH -> -> 0 `i `uc ]
-[; ;main.c: 95: PWM3DCLbits.PWM3DCL = 0;
-"95
-[e = . . _PWM3DCLbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 96: PWM3CONbits.PWM3POL = 1;
-"96
-[e = . . _PWM3CONbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 97: TRISC &= 0b11101111;
-"97
-[e =& _TRISC -> -> 239 `i `uc ]
-[; ;main.c: 98: PWM3CONbits.PWM3EN = 1;
-"98
-[e = . . _PWM3CONbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 102: TRISA |= 0b00100000;
+[; ;main.c: 102: PR2 = 255;
 "102
-[e =| _TRISA -> -> 32 `i `uc ]
-[; ;main.c: 103: RA5PPS = 0b01111;
+[e = _PR2 -> -> 255 `i `uc ]
+[; ;main.c: 103: T2CONbits.T2CKPS = 0b10;
 "103
-[e = _RA5PPS -> -> 15 `i `uc ]
-[; ;main.c: 104: CCPTMRSbits.P4TSEL = 0b00;
+[e = . . _T2CONbits 0 0 -> -> 2 `i `uc ]
+[; ;main.c: 104: T2CONbits.TMR2ON = 1;
 "104
-[e = . . _CCPTMRSbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 105: PWM4DCH = 0;
-"105
-[e = _PWM4DCH -> -> 0 `i `uc ]
-[; ;main.c: 106: PWM4DCLbits.PWM4DCL = 0;
-"106
-[e = . . _PWM4DCLbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 107: PWM4CONbits.PWM4POL = 1;
-"107
-[e = . . _PWM4CONbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 108: TRISA &= 0b11011111;
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 108: TRISC |= 0b00010000;
 "108
-[e =& _TRISA -> -> 223 `i `uc ]
-[; ;main.c: 109: PWM4CONbits.PWM4EN = 1;
+[e =| _TRISC -> -> 16 `i `uc ]
+[; ;main.c: 109: RC4PPS = 0b01110;
 "109
-[e = . . _PWM4CONbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 115: TRISC |= 0b00100000;
+[e = _RC4PPS -> -> 14 `i `uc ]
+[; ;main.c: 110: CCPTMRSbits.P3TSEL = 0b00;
+"110
+[e = . . _CCPTMRSbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 111: PWM3DCH = 0;
+"111
+[e = _PWM3DCH -> -> 0 `i `uc ]
+[; ;main.c: 112: PWM3DCLbits.PWM3DCL = 0;
+"112
+[e = . . _PWM3DCLbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 113: PWM3CONbits.PWM3POL = 1;
+"113
+[e = . . _PWM3CONbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 114: TRISC &= 0b11101111;
+"114
+[e =& _TRISC -> -> 239 `i `uc ]
+[; ;main.c: 115: PWM3CONbits.PWM3EN = 1;
 "115
-[e =| _TRISC -> -> 32 `i `uc ]
-[; ;main.c: 116: RC5PPS = 0b01100;
-"116
-[e = _RC5PPS -> -> 12 `i `uc ]
-[; ;main.c: 117: CCP1CONbits.CCP1M = 0b1100;
-"117
-[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
-[; ;main.c: 118: CCPR1L = 255;
-"118
-[e = _CCPR1L -> -> 255 `i `uc ]
-[; ;main.c: 119: CCP1CONbits.DC1B = 0x3;
+[e = . . _PWM3CONbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 119: TRISA |= 0b00100000;
 "119
-[e = . . _CCP1CONbits 0 1 -> -> 3 `i `uc ]
-[; ;main.c: 120: TRISC &= 0b11011111;
+[e =| _TRISA -> -> 32 `i `uc ]
+[; ;main.c: 120: RA5PPS = 0b01111;
 "120
-[e =& _TRISC -> -> 223 `i `uc ]
-[; ;main.c: 121: }
+[e = _RA5PPS -> -> 15 `i `uc ]
+[; ;main.c: 121: CCPTMRSbits.P4TSEL = 0b00;
 "121
-[e :UE 633 ]
-}
+[e = . . _CCPTMRSbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 122: PWM4DCH = 0;
+"122
+[e = _PWM4DCH -> -> 0 `i `uc ]
+[; ;main.c: 123: PWM4DCLbits.PWM4DCL = 0;
 "123
-[v _setLEDColor `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+[e = . . _PWM4DCLbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 124: PWM4CONbits.PWM4POL = 1;
 "124
+[e = . . _PWM4CONbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 125: TRISA &= 0b11011111;
+"125
+[e =& _TRISA -> -> 223 `i `uc ]
+[; ;main.c: 126: PWM4CONbits.PWM4EN = 1;
+"126
+[e = . . _PWM4CONbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 132: TRISC |= 0b00100000;
+"132
+[e =| _TRISC -> -> 32 `i `uc ]
+[; ;main.c: 133: RC5PPS = 0b01100;
+"133
+[e = _RC5PPS -> -> 12 `i `uc ]
+[; ;main.c: 134: CCP1CONbits.CCP1M = 0b1100;
+"134
+[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
+[; ;main.c: 135: CCPR1L = 255;
+"135
+[e = _CCPR1L -> -> 255 `i `uc ]
+[; ;main.c: 136: CCP1CONbits.DC1B = 0x3;
+"136
+[e = . . _CCP1CONbits 0 1 -> -> 3 `i `uc ]
+[; ;main.c: 137: TRISC &= 0b11011111;
+"137
+[e =& _TRISC -> -> 223 `i `uc ]
+[; ;main.c: 138: }
+"138
+[e :UE 632 ]
+}
+"140
+[v _setLEDColor `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"141
 {
-[; ;main.c: 123: void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
-[; ;main.c: 124: {
+[; ;main.c: 140: void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
+[; ;main.c: 141: {
 [e :U _setLEDColor ]
-"123
+"140
 [v _red `uc ~T0 @X0 1 r1 ]
 [v _green `uc ~T0 @X0 1 r2 ]
 [v _blue `uc ~T0 @X0 1 r3 ]
-"124
+"141
 [f ]
-[; ;main.c: 129: CCPR1L = 255 - red;
-"129
+[; ;main.c: 146: CCPR1L = 255 - red;
+"146
 [e = _CCPR1L -> - -> 255 `i -> _red `i `uc ]
-[; ;main.c: 131: PWM3DCH = green;
-"131
+[; ;main.c: 148: PWM3DCH = green;
+"148
 [e = _PWM3DCH _green ]
-[; ;main.c: 133: PWM4DCH = blue;
-"133
+[; ;main.c: 150: PWM4DCH = blue;
+"150
 [e = _PWM4DCH _blue ]
-[; ;main.c: 134: }
-"134
+[; ;main.c: 151: }
+"151
+[e :UE 633 ]
+}
+"155
+[v _lowBattery `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 155: void lowBattery(){
+[e :U _lowBattery ]
+[f ]
+[; ;main.c: 156: setLEDColor(0, 255, 255);
+"156
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 255 `i `uc -> -> 255 `i `uc ]
+[; ;main.c: 157: _delay((unsigned long)((250)*(4000000/4000.0)));
+"157
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 158: setLEDColor(0, 0, 0);
+"158
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 159: _delay((unsigned long)((500)*(4000000/4000.0)));
+"159
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 160: }
+"160
 [e :UE 634 ]
 }
-"136
-[v _LED_red `uc ~T0 @X0 1 e ]
-[; ;main.c: 136: uint8_t LED_red;
-"137
-[v _LED_green `uc ~T0 @X0 1 e ]
-[; ;main.c: 137: uint8_t LED_green;
-"138
-[v _LED_blue `uc ~T0 @X0 1 e ]
-[; ;main.c: 138: uint8_t LED_blue;
-"141
-[v _process_remote_command `(v ~T0 @X0 1 ef1`*S620 ]
+"162
+[v _startUp `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 141: void process_remote_command(NEC_IR_code_t* code){
-[e :U _process_remote_command ]
-[v _code `*S620 ~T0 @X0 1 r1 ]
+[; ;main.c: 162: void startUp(){
+[e :U _startUp ]
 [f ]
-[; ;main.c: 142: switch(code->command){
-"142
-[e $U 637  ]
+[; ;main.c: 163: for (int i = 0; i < 5; i++){
+"163
 {
-[; ;main.c: 143: case 0xa0:
-"143
-[e :U 638 ]
-[; ;main.c: 144: LED_red += 10;
-"144
-[e =+ _LED_red -> -> 10 `i `uc ]
-[; ;main.c: 145: break;
-"145
-[e $U 636  ]
-[; ;main.c: 146: case 0xb0:
-"146
-[e :U 639 ]
-[; ;main.c: 147: LED_red -= 10;
-"147
-[e =- _LED_red -> -> 10 `i `uc ]
-[; ;main.c: 148: break;
-"148
-[e $U 636  ]
-[; ;main.c: 149: case 0x50:
-"149
-[e :U 640 ]
-[; ;main.c: 150: LED_green += 10;
-"150
-[e =+ _LED_green -> -> 10 `i `uc ]
-[; ;main.c: 151: break;
-"151
-[e $U 636  ]
-[; ;main.c: 152: case 0x10:
-"152
-[e :U 641 ]
-[; ;main.c: 153: LED_green -= 10;
-"153
-[e =- _LED_green -> -> 10 `i `uc ]
-[; ;main.c: 154: break;
-"154
-[e $U 636  ]
-[; ;main.c: 155: case 0x08:
-"155
-[e :U 642 ]
-[; ;main.c: 156: LED_blue += 10;
-"156
-[e =+ _LED_blue -> -> 10 `i `uc ]
-[; ;main.c: 157: break;
-"157
-[e $U 636  ]
-[; ;main.c: 158: case 0x88:
-"158
-[e :U 643 ]
-[; ;main.c: 159: LED_red = 225;
-"159
-[e = _LED_red -> -> 225 `i `uc ]
-[; ;main.c: 160: LED_green = 155;
-"160
-[e = _LED_green -> -> 155 `i `uc ]
-[; ;main.c: 161: LED_blue = 0;
-"161
-[e = _LED_blue -> -> 0 `i `uc ]
-[; ;main.c: 164: break;
-"164
-[e $U 636  ]
-[; ;main.c: 165: case 0x48:
-"165
-[e :U 644 ]
-[; ;main.c: 166: LED_red = 255;
-"166
-[e = _LED_red -> -> 255 `i `uc ]
-[; ;main.c: 167: LED_green = 0;
-"167
-[e = _LED_green -> -> 0 `i `uc ]
-[; ;main.c: 168: LED_blue = 0;
-"168
-[e = _LED_blue -> -> 0 `i `uc ]
-[; ;main.c: 170: break;
-"170
-[e $U 636  ]
-[; ;main.c: 171: case 0x28:
-"171
-[e :U 645 ]
-[; ;main.c: 172: break;
-"172
-[e $U 636  ]
-[; ;main.c: 173: case 0xa8:
-"173
-[e :U 646 ]
-[; ;main.c: 174: break;
-"174
-[e $U 636  ]
-[; ;main.c: 175: case 0x68:
-"175
-[e :U 647 ]
-[; ;main.c: 176: break;
-"176
-[e $U 636  ]
-[; ;main.c: 177: case 0x18:
-"177
-[e :U 648 ]
-[; ;main.c: 178: break;
-"178
-[e $U 636  ]
-[; ;main.c: 179: case 0x98:
-"179
-[e :U 649 ]
-[; ;main.c: 180: break;
-"180
-[e $U 636  ]
-[; ;main.c: 181: case 0x58:
-"181
-[e :U 650 ]
-[; ;main.c: 182: break;
-"182
-[e $U 636  ]
-[; ;main.c: 183: default:
-"183
-[e :U 651 ]
-[; ;main.c: 184: break;
-"184
-[e $U 636  ]
-"185
-}
-[; ;main.c: 185: }
-[e $U 636  ]
-"142
-[e :U 637 ]
-[e [\ . . . *U _code 2 1 1 , $ -> -> 160 `i `uc 638
- , $ -> -> 176 `i `uc 639
- , $ -> -> 80 `i `uc 640
- , $ -> -> 16 `i `uc 641
- , $ -> -> 8 `i `uc 642
- , $ -> -> 136 `i `uc 643
- , $ -> -> 72 `i `uc 644
- , $ -> -> 40 `i `uc 645
- , $ -> -> 168 `i `uc 646
- , $ -> -> 104 `i `uc 647
- , $ -> -> 24 `i `uc 648
- , $ -> -> 152 `i `uc 649
- , $ -> -> 88 `i `uc 650
- 651 ]
-"185
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 636  ]
+[e $U 637  ]
 [e :U 636 ]
-[; ;main.c: 186: setLEDColor(LED_red, LED_green, LED_blue);
+{
+[; ;main.c: 164: setLEDColor(255, 0, 255);
+"164
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 255 `i `uc ]
+[; ;main.c: 165: _delay((unsigned long)((100)*(4000000/4000.0)));
+"165
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 166: setLEDColor(0, 0, 0);
+"166
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 167: _delay((unsigned long)((100)*(4000000/4000.0)));
+"167
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"168
+}
+"163
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 5 `i 636  ]
+[e :U 637 ]
+"168
+}
+[; ;main.c: 168: }
+[; ;main.c: 169: duty = 0;
+"169
+[e = _duty -> -> 0 `i `uc ]
+[; ;main.c: 170: }
+"170
+[e :UE 635 ]
+}
+"172
+[v _selectSomething `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 172: void selectSomething(){
+[e :U _selectSomething ]
+[f ]
+[; ;main.c: 174: setLEDColor(255, 0, 0);
+"174
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 175: _delay((unsigned long)((500)*(4000000/4000.0)));
+"175
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 176: setLEDColor(0, 0, 0);
+"176
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 177: _delay((unsigned long)((500)*(4000000/4000.0)));
+"177
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 178: setLEDColor(255, 0, 0);
+"178
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 179: _delay((unsigned long)((500)*(4000000/4000.0)));
+"179
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 180: setLEDColor(0, 0, 0);
+"180
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 181: _delay((unsigned long)((500)*(4000000/4000.0)));
+"181
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 182: }
+"182
+[e :UE 639 ]
+}
+"184
+[v _selectFrequency `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 184: void selectFrequency(){
+[e :U _selectFrequency ]
+[f ]
+[; ;main.c: 185: flag = 1;
+"185
+[e = _flag -> -> 1 `i `uc ]
+[; ;main.c: 186: setLEDColor(255, 0, 255);
 "186
-[e ( _setLEDColor (3 , , _LED_red _LED_green _LED_blue ]
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 255 `i `uc ]
 [; ;main.c: 187: _delay((unsigned long)((1000)*(4000000/4000.0)));
 "187
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 [; ;main.c: 188: setLEDColor(0, 0, 0);
 "188
 [e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 189: }
+[; ;main.c: 189: printf("\n Frequency selected");
 "189
-[e :UE 635 ]
+[e ( _printf :s 1C ]
+[; ;main.c: 190: }
+"190
+[e :UE 640 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"195
-[v _main `(v ~T0 @X0 1 ef ]
-"196
-{
-[; ;main.c: 195: void main(void)
-[; ;main.c: 196: {
-[e :U _main ]
-[f ]
-[; ;main.c: 198: SYSTEM_Initialize();
-"198
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 199: DAC_Initialize();
-"199
-[e ( _DAC_Initialize ..  ]
-[; ;main.c: 200: OPA1_Initialize();
-"200
-[e ( _OPA1_Initialize ..  ]
-[; ;main.c: 201: OPA2_Initialize();
-"201
-[e ( _OPA2_Initialize ..  ]
-[; ;main.c: 202: initLED();
 "202
-[e ( _initLED ..  ]
-[; ;main.c: 213: (INTCONbits.GIE = 1);
-"213
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 216: (INTCONbits.PEIE = 1);
-"216
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 218: while(1){
-"218
-[e :U 654 ]
+[v _setCurrent `(v ~T0 @X0 1 e ]
+"203
 {
-[; ;main.c: 220: if ((int)battery_voltage() < 2500)
-"220
-[e $ ! < -> ( _battery_voltage ..  `i -> 2500 `i 656  ]
-[; ;main.c: 221: {
-"221
-{
-[; ;main.c: 224: setLEDColor(255, 0, 255);
-"224
-[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 255 `i `uc ]
-"225
+[; ;main.c: 202: void setCurrent(microamps, Vdd_mv)
+[; ;main.c: 203: {
+[e :U _setCurrent ]
+[v _microamps `i ~T0 @X0 1 p ]
+[v _Vdd_mv `i ~T0 @X0 1 p ]
+[f ]
+[; ;main.c: 204: Vdac_mv = Vdd_mv -
+[; ;main.c: 205: ((uint32_t)(4700) * microamps + 500) / 1000;
+"205
+[e = _Vdac_mv -> - -> -> _Vdd_mv `l `ul / + * -> -> 4700 `i `ul -> -> _microamps `l `ul -> -> -> 500 `i `l `ul -> -> -> 1000 `i `l `ul `ui ]
+[; ;main.c: 206: DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+"206
+[e = _DAC1CON1 -> / + * -> 256 `l -> _Vdac_mv `l -> / _Vdd_mv -> 2 `i `l -> _Vdd_mv `l `uc ]
+[; ;main.c: 207: }
+"207
+[e :UE 641 ]
 }
-[; ;main.c: 225: }
-[e $U 657  ]
-"226
-[e :U 656 ]
-[; ;main.c: 226: else
-[; ;main.c: 228: DAC1CON1 = 0xFF;
-"228
-[e = _DAC1CON1 -> -> 255 `i `uc ]
-[e :U 657 ]
-[; ;main.c: 229: _delay((unsigned long)((1000)*(4000000/4000.0)));
-"229
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 230: DAC1CON1 = 0x90;
-"230
-[e = _DAC1CON1 -> -> 144 `i `uc ]
-[; ;main.c: 231: _delay((unsigned long)((1000)*(4000000/4000.0)));
-"231
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 233: if (STATE_DONE == ir_code.state){
-"233
-[e $ ! == -> . `E4376 2 `i -> . _ir_code 1 `i 658  ]
+"219
+[v _process_remote_command `(v ~T0 @X0 1 ef1`*S619 ]
 {
-[; ;main.c: 235: printf("\r\ncode:         0x%08lx\r\n", (unsigned long)ir_code.code);
+[; ;main.c: 219: void process_remote_command(NEC_IR_code_t* code){
+[e :U _process_remote_command ]
+[v _code `*S619 ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 220: setLEDColor(0, 0, 0);
+"220
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 222: switch(code->command){
+"222
+[e $U 644  ]
+{
+[; ;main.c: 223: case 0xa0:
+"223
+[e :U 645 ]
+[; ;main.c: 224: setLEDColor(0, 0, 0);
+"224
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 225: if (flag == 1){
+"225
+[e $ ! == -> _flag `i -> 1 `i 646  ]
+{
+[; ;main.c: 226: if (duty >= 0 && duty <=150){
+"226
+[e $ ! && >= -> _duty `i -> 0 `i <= -> _duty `i -> 150 `i 647  ]
+{
+[; ;main.c: 227: duty = duty + 30;
+"227
+[e = _duty -> + -> _duty `i -> 30 `i `uc ]
+"228
+}
+[; ;main.c: 228: }
+[e $U 648  ]
+"229
+[e :U 647 ]
+[; ;main.c: 229: else {
+{
+[; ;main.c: 230: duty = 150;
+"230
+[e = _duty -> -> 150 `i `uc ]
+[; ;main.c: 231: selectSomething();
+"231
+[e ( _selectSomething ..  ]
+"232
+}
+[e :U 648 ]
+[; ;main.c: 232: }
+[; ;main.c: 235: printf("%d\n", (duty));
 "235
-[e ( _printf , (. :s 1C . . _ir_code 2 0 ]
-[; ;main.c: 236: printf("command:          0x%02x\r\n", ir_code.command);
+[e ( _printf , (. :s 2C -> _duty `i ]
 "236
-[e ( _printf , (. :s 2C -> . . . _ir_code 2 1 1 `i ]
-[; ;main.c: 237: printf("command_b:        0x%02x\r\n", ir_code.command_b);
+}
+[; ;main.c: 236: }
+[e $U 649  ]
 "237
-[e ( _printf , (. :s 3C -> . . . _ir_code 2 1 0 `i ]
-[; ;main.c: 238: printf("address:          0x%02x\r\n", ir_code.address);
-"238
-[e ( _printf , (. :s 4C -> . . . . . _ir_code 2 1 2 0 1 `i ]
-[; ;main.c: 239: printf("address_b:        0x%02x\r\n", ir_code.address_b);
+[e :U 646 ]
+[; ;main.c: 237: else if (flag == 2){
+[e $ ! == -> _flag `i -> 2 `i 650  ]
+{
 "239
-[e ( _printf , (. :s 5C -> . . . . . _ir_code 2 1 2 0 0 `i ]
-[; ;main.c: 240: printf("extended address: 0x%04x\r\n", (unsigned int)ir_code.extended_address);
+}
+[; ;main.c: 239: }
+[e $U 651  ]
 "240
-[e ( _printf , (. :s 6C . . . . . _ir_code 2 1 2 1 0 ]
-[; ;main.c: 251: process_remote_command(&ir_code);
+[e :U 650 ]
+[; ;main.c: 240: else{
+{
+[; ;main.c: 241: selectSomething();
+"241
+[e ( _selectSomething ..  ]
+"242
+}
+[e :U 651 ]
+[e :U 649 ]
+[; ;main.c: 242: }
+[; ;main.c: 243: break;
+"243
+[e $U 643  ]
+[; ;main.c: 244: case 0xb0:
+"244
+[e :U 652 ]
+[; ;main.c: 245: if (flag == 1){
+"245
+[e $ ! == -> _flag `i -> 1 `i 653  ]
+{
+[; ;main.c: 246: if (duty >= 0 && duty <=150){
+"246
+[e $ ! && >= -> _duty `i -> 0 `i <= -> _duty `i -> 150 `i 654  ]
+{
+[; ;main.c: 247: duty = duty - 30;
+"247
+[e = _duty -> - -> _duty `i -> 30 `i `uc ]
+[; ;main.c: 248: printf("%d\n", (duty));
+"248
+[e ( _printf , (. :s 3C -> _duty `i ]
+"249
+}
+[; ;main.c: 249: }
+[e $U 655  ]
+"250
+[e :U 654 ]
+[; ;main.c: 250: else{
+{
+[; ;main.c: 251: duty = 150;
 "251
-[e ( _process_remote_command (1 &U _ir_code ]
-[; ;main.c: 254: ir_code.state = STATE_RESET;
+[e = _duty -> -> 150 `i `uc ]
+[; ;main.c: 252: selectSomething();
+"252
+[e ( _selectSomething ..  ]
+"253
+}
+[e :U 655 ]
 "254
-[e = . _ir_code 1 . `E4376 0 ]
-"255
+}
+[; ;main.c: 253: }
+[; ;main.c: 254: }
+[e $U 656  ]
+"257
+[e :U 653 ]
+[; ;main.c: 257: else if (flag == 2){
+[e $ ! == -> _flag `i -> 2 `i 657  ]
+{
+"259
+}
+[; ;main.c: 259: }
+[e $U 658  ]
+"260
+[e :U 657 ]
+[; ;main.c: 260: else{
+{
+[; ;main.c: 261: selectSomething();
+"261
+[e ( _selectSomething ..  ]
+"262
 }
 [e :U 658 ]
-"256
+[e :U 656 ]
+[; ;main.c: 262: }
+[; ;main.c: 263: break;
+"263
+[e $U 643  ]
+[; ;main.c: 264: case 0x50:
+"264
+[e :U 659 ]
+[; ;main.c: 265: selectFrequency();
+"265
+[e ( _selectFrequency ..  ]
+[; ;main.c: 266: break;
+"266
+[e $U 643  ]
+[; ;main.c: 267: case 0x10:
+"267
+[e :U 660 ]
+[; ;main.c: 268: LED_red = 0;
+"268
+[e = _LED_red -> -> 0 `i `uc ]
+[; ;main.c: 269: LED_green = 130;
+"269
+[e = _LED_green -> -> 130 `i `uc ]
+[; ;main.c: 270: LED_blue = 255;
+"270
+[e = _LED_blue -> -> 255 `i `uc ]
+[; ;main.c: 271: flag = 2;
+"271
+[e = _flag -> -> 2 `i `uc ]
+[; ;main.c: 272: break;
+"272
+[e $U 643  ]
+[; ;main.c: 273: case 0x08:
+"273
+[e :U 661 ]
+[; ;main.c: 274: LED_red = 0;
+"274
+[e = _LED_red -> -> 0 `i `uc ]
+[; ;main.c: 275: LED_green = 255;
+"275
+[e = _LED_green -> -> 255 `i `uc ]
+[; ;main.c: 276: LED_blue = 0;
+"276
+[e = _LED_blue -> -> 0 `i `uc ]
+[; ;main.c: 277: printf("\n reset select");
+"277
+[e ( _printf :s 4C ]
+[; ;main.c: 278: flag = 0;
+"278
+[e = _flag -> -> 0 `i `uc ]
+[; ;main.c: 279: break;
+"279
+[e $U 643  ]
+[; ;main.c: 280: case 0x88:
+"280
+[e :U 662 ]
+[; ;main.c: 281: duty = 0;
+"281
+[e = _duty -> -> 0 `i `uc ]
+[; ;main.c: 282: break;
+"282
+[e $U 643  ]
+[; ;main.c: 283: case 0x48:
+"283
+[e :U 663 ]
+[; ;main.c: 284: break;
+"284
+[e $U 643  ]
+[; ;main.c: 285: case 0x28:
+"285
+[e :U 664 ]
+[; ;main.c: 286: break;
+"286
+[e $U 643  ]
+[; ;main.c: 287: case 0xa8:
+"287
+[e :U 665 ]
+[; ;main.c: 288: break;
+"288
+[e $U 643  ]
+[; ;main.c: 289: case 0x68:
+"289
+[e :U 666 ]
+[; ;main.c: 290: break;
+"290
+[e $U 643  ]
+[; ;main.c: 291: case 0x18:
+"291
+[e :U 667 ]
+[; ;main.c: 292: break;
+"292
+[e $U 643  ]
+[; ;main.c: 293: case 0x98:
+"293
+[e :U 668 ]
+[; ;main.c: 294: break;
+"294
+[e $U 643  ]
+[; ;main.c: 295: case 0x58:
+"295
+[e :U 669 ]
+[; ;main.c: 297: break;
+"297
+[e $U 643  ]
+[; ;main.c: 298: default:
+"298
+[e :U 670 ]
+[; ;main.c: 299: break;
+"299
+[e $U 643  ]
+"300
 }
-[e :U 653 ]
-"218
-[e $U 654  ]
-[e :U 655 ]
-[; ;main.c: 255: }
-[; ;main.c: 256: }
-[; ;main.c: 258: return;
-"258
-[e $UE 652  ]
-[; ;main.c: 259: }
-"259
-[e :UE 652 ]
+[; ;main.c: 300: }
+[e $U 643  ]
+"222
+[e :U 644 ]
+[e [\ . . . *U _code 2 1 1 , $ -> -> 160 `i `uc 645
+ , $ -> -> 176 `i `uc 652
+ , $ -> -> 80 `i `uc 659
+ , $ -> -> 16 `i `uc 660
+ , $ -> -> 8 `i `uc 661
+ , $ -> -> 136 `i `uc 662
+ , $ -> -> 72 `i `uc 663
+ , $ -> -> 40 `i `uc 664
+ , $ -> -> 168 `i `uc 665
+ , $ -> -> 104 `i `uc 666
+ , $ -> -> 24 `i `uc 667
+ , $ -> -> 152 `i `uc 668
+ , $ -> -> 88 `i `uc 669
+ 670 ]
+"300
+[e :U 643 ]
+[; ;main.c: 301: setLEDColor(LED_red, LED_green, LED_blue);
+"301
+[e ( _setLEDColor (3 , , _LED_red _LED_green _LED_blue ]
+[; ;main.c: 302: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"302
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 303: setLEDColor(0, 0, 0);
+"303
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 304: }
+"304
+[e :UE 642 ]
 }
-[p f _printf 12615700 ]
-[a 1C 13 10 99 111 100 101 58 32 32 32 32 32 32 32 32 32 48 120 37 48 56 108 120 13 10 0 ]
-[a 6C 101 120 116 101 110 100 101 100 32 97 100 100 114 101 115 115 58 32 48 120 37 48 52 120 13 10 0 ]
-[a 5C 97 100 100 114 101 115 115 95 98 58 32 32 32 32 32 32 32 32 48 120 37 48 50 120 13 10 0 ]
-[a 3C 99 111 109 109 97 110 100 95 98 58 32 32 32 32 32 32 32 32 48 120 37 48 50 120 13 10 0 ]
-[a 4C 97 100 100 114 101 115 115 58 32 32 32 32 32 32 32 32 32 32 48 120 37 48 50 120 13 10 0 ]
-[a 2C 99 111 109 109 97 110 100 58 32 32 32 32 32 32 32 32 32 32 48 120 37 48 50 120 13 10 0 ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"310
+[v _main `(v ~T0 @X0 1 ef ]
+"311
+{
+[; ;main.c: 310: void main(void)
+[; ;main.c: 311: {
+[e :U _main ]
+[f ]
+[; ;main.c: 313: SYSTEM_Initialize();
+"313
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 314: DAC_Initialize();
+"314
+[e ( _DAC_Initialize ..  ]
+[; ;main.c: 315: OPA1_Initialize();
+"315
+[e ( _OPA1_Initialize ..  ]
+[; ;main.c: 316: OPA2_Initialize();
+"316
+[e ( _OPA2_Initialize ..  ]
+[; ;main.c: 317: initLED();
+"317
+[e ( _initLED ..  ]
+[; ;main.c: 318: (INTCONbits.GIE = 1);
+"318
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 319: (INTCONbits.PEIE = 1);
+"319
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 320: startUp();
+"320
+[e ( _startUp ..  ]
+[; ;main.c: 331: while(1){
+"331
+[e :U 673 ]
+{
+[; ;main.c: 333: if ((int)battery_voltage() < 2500)
+"333
+[e $ ! < -> ( _battery_voltage ..  `i -> 2500 `i 675  ]
+[; ;main.c: 334: {
+"334
+{
+[; ;main.c: 335: lowBattery();
+"335
+[e ( _lowBattery ..  ]
+"337
+}
+[e :U 675 ]
+[; ;main.c: 337: }
+[; ;main.c: 343: if (STATE_DONE == ir_code.state){
+"343
+[e $ ! == -> . `E4371 2 `i -> . _ir_code 1 `i 676  ]
+{
+[; ;main.c: 361: process_remote_command(&ir_code);
+"361
+[e ( _process_remote_command (1 &U _ir_code ]
+[; ;main.c: 364: ir_code.state = STATE_RESET;
+"364
+[e = . _ir_code 1 . `E4371 0 ]
+"365
+}
+[e :U 676 ]
+"366
+}
+[e :U 672 ]
+"331
+[e $U 673  ]
+[e :U 674 ]
+[; ;main.c: 365: }
+[; ;main.c: 366: }
+[; ;main.c: 368: return;
+"368
+[e $UE 671  ]
+[; ;main.c: 369: }
+"369
+[e :UE 671 ]
+}
+[p f _printf 8388736 ]
+[a 4C 10 32 114 101 115 101 116 32 115 101 108 101 99 116 0 ]
+[a 1C 10 32 70 114 101 113 117 101 110 99 121 32 115 101 108 101 99 116 101 100 0 ]
+[a 2C 37 100 10 0 ]
+[a 3C 37 100 10 0 ]

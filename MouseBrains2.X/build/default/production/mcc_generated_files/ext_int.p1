@@ -5057,9 +5057,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;IR_receiver.h: 29: } NEC_IR_code_t;
 [; ;IR_receiver.h: 31: extern NEC_IR_code_t ir_code;
 [; ;IR_receiver.h: 34: extern uint8_t stats[33];
-[; ;IR_receiver.h: 35: extern uint16_t microamps;
-[; ;IR_receiver.h: 36: extern uint16_t Vdd_mv;
-[; ;IR_receiver.h: 37: extern uint16_t Vdac_mv;
 "50 mcc_generated_files/ext_int.c
 [v _ir_code `S617 ~T0 @X0 1 e ]
 [i _ir_code
@@ -5122,8 +5119,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;ext_int.c: 71: void INT_SetInterruptHandler(void (* InterruptHandler)(void)){
 [e :U _INT_SetInterruptHandler ]
-[v F4324 `(v ~T0 @X0 0 tf ]
-[v _InterruptHandler `*F4324 ~T0 @X0 1 r1 ]
+[v F4321 `(v ~T0 @X0 0 tf ]
+[v _InterruptHandler `*F4321 ~T0 @X0 1 r1 ]
 [f ]
 [; ;ext_int.c: 72: INT_InterruptHandler = InterruptHandler;
 "72

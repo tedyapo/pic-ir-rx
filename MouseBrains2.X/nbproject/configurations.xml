@@ -51,7 +51,6 @@
       <itemPath>Makefile</itemPath>
       <itemPath>MyConfig.mc3</itemPath>
     </logicalFolder>
-    <itemPath>mousehat-dac.c</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>

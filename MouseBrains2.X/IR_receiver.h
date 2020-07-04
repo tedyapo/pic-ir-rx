@@ -32,10 +32,7 @@ extern NEC_IR_code_t ir_code;
 
 // timing stats for analysis/tuning
 extern uint8_t stats[33];
-extern uint16_t microamps;
-extern uint16_t Vdd_mv;
-extern uint16_t Vdac_mv;
-//void setCurrent(microamps, Vdd_mv);
+
 
 
 

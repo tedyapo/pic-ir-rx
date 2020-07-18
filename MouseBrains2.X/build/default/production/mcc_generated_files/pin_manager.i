@@ -1,17 +1,17 @@
 
 # 1 "mcc_generated_files/pin_manager.c"
 
-# 18 "/Applications/microchip/xc8/v2.10/pic/include/xc.h"
+# 18 "/opt/microchip/xc8/v2.20/pic/include/xc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "/Applications/microchip/xc8/v2.10/pic/include/c90/xc8debug.h"
+# 13 "/opt/microchip/xc8/v2.20/pic/include/c90/xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 52 "/Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h"
+# 52 "/opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h"
 extern volatile unsigned char INDF0 __at(0x000);
 
 asm("INDF0 equ 00h");
@@ -7435,7 +7435,7 @@ extern volatile __bit nTO __at(0x1C);
 extern volatile __bit nWPUEN __at(0x4AF);
 
 
-# 30 "/Applications/microchip/xc8/v2.10/pic/include/pic.h"
+# 30 "/opt/microchip/xc8/v2.20/pic/include/pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 

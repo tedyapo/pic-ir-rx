@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"1 /Applications/microchip/xc8/v2.10/pic/sources/c90/pic/compiler_support.c
+"1 /opt/microchip/xc8/v2.20/pic/sources/c90/pic/compiler_support.c
 [v ___BTEMP12 `Suc ~T0 @X0 1 e ]
 [; ;compiler_support.c: 1: __persistent unsigned char __BTEMP12;
 "2

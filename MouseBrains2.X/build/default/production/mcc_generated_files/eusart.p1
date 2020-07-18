@@ -8,7 +8,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F4312 `(v ~T0 @X0 0 tf ]
 [v F4315 `(v ~T0 @X0 0 tf ]
 [v F4318 `(v ~T0 @X0 0 tf ]
-"3751 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"3751 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [v _BAUD1CON `Vuc ~T0 @X0 0 e@415 ]
 "3391
 [v _RC1STA `Vuc ~T0 @X0 0 e@413 ]
@@ -33,7 +33,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EUSART_SetErrorHandler `(v ~T0 @X0 0 ef1`*F4308 ]
 "64 mcc_generated_files/eusart.c
 [v _EUSART_DefaultErrorHandler `(v ~T0 @X0 0 ef ]
-"586 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"586 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S35 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
 "596
@@ -68,7 +68,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1708.h: 52: extern volatile unsigned char INDF0 __at(0x000);
-"54 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"54 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [; ;pic16lf1708.h: 54: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16lf1708.h: 57: typedef union {

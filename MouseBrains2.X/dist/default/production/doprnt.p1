@@ -1,10 +1,10 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"10 /Applications/microchip/xc8/v2.10/pic/include/c90/stdarg.h
+"10 /opt/microchip/xc8/v2.20/pic/include/c90/stdarg.h
 [v ___va_start `(*v ~T0 @X0 0 ef ]
 [p i ___va_start ]
-"16 /Applications/microchip/xc8/v2.10/pic/include/c90/conio.h
+"16 /opt/microchip/xc8/v2.20/pic/include/c90/conio.h
 [v _putch `(v ~T0 @X0 0 ef1`uc ]
-"13 /Applications/microchip/xc8/v2.10/pic/include/c90/stdarg.h
+"13 /opt/microchip/xc8/v2.20/pic/include/c90/stdarg.h
 [v ___va_arg `(*v ~T0 @X0 0 ev`*v ]
 [p i ___va_arg ]
 [; ;__size_t.h: 4: typedef unsigned size_t;
@@ -154,7 +154,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 53: extern double fmod(double, double);
 [; ;math.h: 54: extern double trunc(double);
 [; ;math.h: 55: extern double round(double);
-"12 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c
+"12 /opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
 [p n 350 ]
 "358
 [v _dpowers `Cui ~T0 @X0 -> 0 `x s ]

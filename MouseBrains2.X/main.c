@@ -93,9 +93,9 @@ uint16_t battery_voltage()
 }
 
 // initialize the registers for LED PWM generation
-// note: red using CCP1 output on pin RC5
-//       green using PWM3 output on pin RC4
-//       blue using PWM4 output on pin RA5
+// note: blue using CCP1 output on pin RC5
+//       red using PWM3 output on pin RC4
+//       green using PWM4 output on pin RA5
 void initLED()
 {
   // init timer2, used as base for all three PWM outputs
@@ -103,7 +103,7 @@ void initLED()
   T2CONbits.T2CKPS = 0b10; // timer2 prescaler 16 --> 244 Hz output
   T2CONbits.TMR2ON = 1; // enable timer2
 
-  // init the green channel on PWM3/RC4
+  // init the red channel on PWM3/RC4
   // see ds. p 166
   TRISC |= 0b00010000; // disable RC4 output
   RC4PPS = 0b01110;  // route PWM3 output to RC4  
@@ -114,7 +114,7 @@ void initLED()
   TRISC &= 0b11101111; // enable RC4 output
   PWM3CONbits.PWM3EN = 1; // start PWM3
 
-  // init the blue channel on PWM4/RA5
+  // init the green channel on PWM4/RA5
   // see ds. p 166
   TRISA |= 0b00100000; // disable RA5 output
   RA5PPS = 0b01111;  // route PWM4 output to RA5 
@@ -125,7 +125,7 @@ void initLED()
   TRISA &= 0b11011111; // disable RA5 output
   PWM4CONbits.PWM4EN = 1; // start PWM4
 
-  // init the red channel on CCP1/RC5
+  // init the blue channel on CCP1/RC5
   // see ds. p 264
   // note: CCP1 does not have selectable PWM polarity
   //       so period value must be flipped
@@ -141,13 +141,13 @@ void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
 {
   // note: only setting upper 8 bits of 10-bit PWM value
   //       so max duty cycle is 1020/1023  
-  // red on CCP1/RC5
-  // note: CCP1 doesn't have selectable 
-  CCPR1L = 255 - red;
-  // green on PWM3/RC4
-  PWM3DCH = green;
-  // blue on PWM4/RA5
-  PWM4DCH = blue;
+  // blue on CCP1/RC5
+  // note: CCP1 doesn't have selectable polarity
+  CCPR1L = 255 - blue;
+  // red on PWM3/RC4
+  PWM3DCH = red;
+  // green on PWM4/RA5
+  PWM4DCH = green;
 }
 //*******************************INFORMATION CODES******************
 //

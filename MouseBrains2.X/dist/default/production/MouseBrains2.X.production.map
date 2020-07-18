@@ -1,13 +1,13 @@
-Microchip MPLAB XC8 Compiler V2.10 ()
+Microchip MPLAB XC8 Compiler V2.20
 
 Linker command line:
 
--W-3 --edf=/Applications/microchip/xc8/v2.10/pic/dat/en_msgs.txt -cs \
+-W-3 --edf=/opt/microchip/xc8/v2.20/pic/dat/en_msgs.txt -cn \
   -h+dist/default/production/MouseBrains2.X.production.sym \
   --cmf=dist/default/production/MouseBrains2.X.production.cmf -z -Q16LF1708 \
-  -o/tmp/xcMRfMhxF --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/MouseBrains2.X.production.map -E1 -ver=XC8 \
-  -ASTACK=02071h-021EFh -pstack=STACK -ACODE=00h-07FFhx2 \
+  -o/tmp/xcXlJOFhg --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/MouseBrains2.X.production.map -E1 \
+  -ver=XC8 Compiler -ASTACK=02071h-021EFh -pstack=STACK -ACODE=00h-07FFhx2 \
   -ASTRCODE=00h-0FFFh -ASTRING=00h-0FFhx16 -ACONST=00h-0FFhx16 \
   -AENTRY=00h-0FFhx16 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
   -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
@@ -25,11 +25,11 @@ Linker command line:
   -ASFR22=0B00h-0B6Fh -ASFR23=0B80h-0BEFh -ASFR24=0C00h-0C6Fh \
   -ASFR25=0C80h-0CEFh -ASFR26=0D00h-0D6Fh -ASFR27=0D80h-0DEFh \
   -ASFR28=0E00h-0E6Fh -ASFR29=0E80h-0EEFh -ASFR30=0F00h-0F6Fh \
-  -ASFR31=0F80h-0FEFh -preset_vec=00h,intentry=04h,init,end_init \
-  -ppowerup=CODE -pcinit=CODE -pfunctab=ENTRY -ACONFIG=08007h-08008h \
-  -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
-  -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xckVpDitM.o \
-  dist/default/production/MouseBrains2.X.production.o 
+  -ASFR31=0F80h-0FEFh -ACONFIG=08007h-08008h -DCONFIG=2 \
+  -AIDLOC=08000h-08003h -DIDLOC=2 \
+  -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
+  -pfunctab=ENTRY -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
+  /tmp/xcXBADkdk.o dist/default/production/MouseBrains2.X.production.o 
 
 Object code version is 3.11
 
@@ -38,13 +38,14 @@ Machine type is 16LF1708
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xckVpDitM.o
+/tmp/xcXBADkdk.o
                 end_init                             14       14        2        8       0
                 reset_vec                             0        0        2        0       0
-                config                             8007     8007        2    1000E       0
+                config                             8007     8007        2        0       4
 dist/default/production/MouseBrains2.X.production.o
                 cinit                                16       16       1A        8       0
                 intentry                              4        4       10        8       0
+                config                             8007     8007        2        0       4
                 text34                              234      234       65        8       0
                 text33                              51E      51E        B      A0A       0
                 text32                              58E      58E        4      B04       0
@@ -241,7 +242,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   SFR31          
 
         CLASS   CONFIG         
-                config                             8007     8007        2         0
+                config                             8007     8007        2         4
 
         CLASS   IDLOC          
 
@@ -303,15 +304,14 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
                 stringtext1                    000529  00000A  000533       A52       0  STRCODE     2
-                text11                         000505  000024  000529       A0A       0  CODE        2
                 stringtext2                    0004E1  000024  000505       9C2       0  STRCODE     2
-                text16                         000582  000011  000593       B04       0  CODE        2
+                text11                         000505  000024  000529       A0A       0  CODE        2
                 text18                         000533  00004B  00057E       A66       0  CODE        2
+                text16                         000582  000011  000593       B04       0  CODE        2
                 stringtext4                    00057E  000004  000582       AFC       0  STRCODE     2
+                cstackBANK0                    000020  000035  000055        20       1  BANK0       1
                 bssCOMMON                      000070  00000C  00007C        70       1  COMMON      1
                 bssBANK1                       0000A0  000021  0000C1        A0       1  BANK1       1
-                config                         008007  000002  008009     1000E       0  CONFIG      2
-                cstackBANK0                    000020  000035  000055        20       1  BANK0       1
                 intentry                       000004  0004DD  0004E1         8       0  CODE        2
 
 
@@ -493,23 +493,6 @@ _WDT_Initialize                                text16       00582
 _WPUA                                          (abs)        0020C
 _WPUB                                          (abs)        0020D
 _WPUC                                          (abs)        0020E
-__CFG_BOREN$OFF                                (abs)        00000
-__CFG_BORV$LO                                  (abs)        00000
-__CFG_CLKOUTEN$ON                              (abs)        00000
-__CFG_CP$OFF                                   (abs)        00000
-__CFG_FCMEN$ON                                 (abs)        00000
-__CFG_FOSC$INTOSC                              (abs)        00000
-__CFG_IESO$OFF                                 (abs)        00000
-__CFG_LPBOR$OFF                                (abs)        00000
-__CFG_LVP$ON                                   (abs)        00000
-__CFG_MCLRE$ON                                 (abs)        00000
-__CFG_PLLEN$OFF                                (abs)        00000
-__CFG_PPS1WAY$ON                               (abs)        00000
-__CFG_PWRTE$OFF                                (abs)        00000
-__CFG_STVREN$ON                                (abs)        00000
-__CFG_WDTE$OFF                                 (abs)        00000
-__CFG_WRT$OFF                                  (abs)        00000
-__CFG_ZCDDIS$ON                                (abs)        00000
 __Habs1                                        abs1         00000
 __Hbank0                                       bank0        00000
 __Hbank1                                       bank1        00000
@@ -557,7 +540,6 @@ __HcstackCOMMON                                cstackCOMMON 00000
 __Heeprom_data                                 eeprom_data  00000
 __Hend_init                                    end_init     00016
 __Hfunctab                                     functab      00000
-__Hidloc                                       idloc        00000
 __Hinit                                        init         00014
 __Hintentry                                    intentry     00014
 __Hmaintext                                    maintext     00000
@@ -597,10 +579,11 @@ __Hsfr6                                        sfr6         00000
 __Hsfr7                                        sfr7         00000
 __Hsfr8                                        sfr8         00000
 __Hsfr9                                        sfr9         00000
-__Hspace_0                                     (abs)        08009
+__Hspace_0                                     (abs)        00593
 __Hspace_1                                     (abs)        000C1
 __Hspace_2                                     (abs)        00000
 __Hspace_3                                     (abs)        00000
+__Hspace_4                                     (abs)        10010
 __Hstack                                       stack        00000
 __Hstrings                                     strings      00000
 __Hstringtext1                                 stringtext1  00000
@@ -650,13 +633,12 @@ __Lcinit                                       cinit        00016
 __Lclrtext                                     clrtext      00000
 __Lcode                                        code         00000
 __Lcommon                                      common       00000
-__Lconfig                                      config       08007
+__Lconfig                                      config       00000
 __LcstackBANK0                                 cstackBANK0  00000
 __LcstackCOMMON                                cstackCOMMON 00000
 __Leeprom_data                                 eeprom_data  00000
 __Lend_init                                    end_init     00014
 __Lfunctab                                     functab      00000
-__Lidloc                                       idloc        00000
 __Linit                                        init         00014
 __Lintentry                                    intentry     00004
 __Lmaintext                                    maintext     00000
@@ -700,6 +682,7 @@ __Lspace_0                                     (abs)        00000
 __Lspace_1                                     (abs)        00000
 __Lspace_2                                     (abs)        00000
 __Lspace_3                                     (abs)        00000
+__Lspace_4                                     (abs)        00000
 __Lstack                                       stack        00000
 __Lstrings                                     strings      00000
 __Lstringtext1                                 stringtext1  00000
@@ -708,7 +691,7 @@ __Lstringtext3                                 stringtext3  00000
 __Lstringtext4                                 stringtext4  00000
 __Lstringtext5                                 stringtext5  00000
 __Ltext                                        text         00000
-__S0                                           (abs)        08009
+__S0                                           (abs)        00593
 __S1                                           (abs)        000C1
 __S2                                           (abs)        00000
 ___aldiv                                       text14       001B2
@@ -1063,7 +1046,7 @@ Total ram usage:        2 bytes
 
  *************** function _printf *****************
  Defined at:
-		line 477 in file "/Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c"
+		line 477 in file "/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c"
  Parameters:    Size  Location     Type
   f               2   11[BANK0 ] PTR const unsigned char 
 		 -> STR_4(15), STR_3(4), STR_2(4), STR_1(21), 
@@ -1165,7 +1148,7 @@ Total ram usage:        1 bytes
 
  *************** function ___lwmod *****************
  Defined at:
-		line 5 in file "/Applications/microchip/xc8/v2.10/pic/sources/c90/common/lwmod.c"
+		line 5 in file "/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c"
  Parameters:    Size  Location     Type
   divisor         2    7[BANK0 ] unsigned int 
   dividend        2    9[BANK0 ] unsigned int 
@@ -1196,7 +1179,7 @@ Total ram usage:        6 bytes
 
  *************** function ___lwdiv *****************
  Defined at:
-		line 5 in file "/Applications/microchip/xc8/v2.10/pic/sources/c90/common/lwdiv.c"
+		line 5 in file "/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c"
  Parameters:    Size  Location     Type
   divisor         2    0[BANK0 ] unsigned int 
   dividend        2    2[BANK0 ] unsigned int 
@@ -1354,7 +1337,7 @@ Total ram usage:        2 bytes
 
  *************** function ___aldiv *****************
  Defined at:
-		line 5 in file "/Applications/microchip/xc8/v2.10/pic/sources/c90/common/aldiv.c"
+		line 5 in file "/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c"
  Parameters:    Size  Location     Type
   divisor         4    0[BANK0 ] long 
   dividend        4    4[BANK0 ] long 
@@ -2009,15 +1992,20 @@ Total ram usage:        2 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/aldiv.c
-		___aldiv       		CODE           	01B2	0000	131
-
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/aldiv.c estimated size: 131
-
 mcc_generated_files/opa2.c
 		_OPA2_Initialize		CODE           	0586	0000	5
 
 mcc_generated_files/opa2.c estimated size: 5
+
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
+		_printf        		CODE           	00FF	0000	180
+
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c estimated size: 180
+
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+		___lwdiv       		CODE           	035B	0000	54
+
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c estimated size: 54
 
 mcc_generated_files/tmr2.c
 		_TMR2_Initialize		CODE           	0545	0000	9
@@ -2028,6 +2016,11 @@ mcc_generated_files/interrupt_manager.c
 		_INTERRUPT_InterruptManager		CODE           	0004	0000	17
 
 mcc_generated_files/interrupt_manager.c estimated size: 17
+
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
+		___aldiv       		CODE           	01B2	0000	131
+
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c estimated size: 131
 
 mcc_generated_files/tmr0.c
 		_TMR0_Initialize		CODE           	0533	0000	11
@@ -2049,11 +2042,6 @@ mcc_generated_files/ext_int.c
 
 mcc_generated_files/ext_int.c estimated size: 139
 
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/lwmod.c
-		___lwmod       		CODE           	041F	0000	46
-
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/lwmod.c estimated size: 46
-
 mcc_generated_files/opa1.c
 		_OPA1_Initialize		CODE           	058A	0000	5
 
@@ -2072,10 +2060,10 @@ mcc_generated_files/mcc.c
 
 mcc_generated_files/mcc.c estimated size: 45
 
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c
-		_printf        		CODE           	00FF	0000	180
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+		___lwmod       		CODE           	041F	0000	46
 
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c estimated size: 180
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c estimated size: 46
 
 mcc_generated_files/eusart.c
 		_putch         		CODE           	0579	0000	6
@@ -2104,9 +2092,4 @@ main.c
 		_lowBattery    		CODE           	044C	0000	44
 
 main.c estimated size: 600
-
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/lwdiv.c
-		___lwdiv       		CODE           	035B	0000	54
-
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/lwdiv.c estimated size: 54
 

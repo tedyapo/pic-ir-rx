@@ -21,7 +21,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [s S617 `uc 1 `E4289 1 `S618 1 ]
 [n S617 . n_bits state . ]
 [v F4195 `(v ~T0 @X0 0 tf ]
-"357 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"357 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
 "367
@@ -35,11 +35,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "296 mcc_generated_files/ext_int.h
 [v _INT_CallBack `(v ~T0 @X0 0 ef ]
 [v F4192 `(v ~T0 @X0 0 tf ]
-"753 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"753 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
 "34 mcc_generated_files/../IR_receiver.h
 [v _stats `uc ~T0 @X0 -> 0 `x e ]
-"1398 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"1398 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [s S74 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S74 . PS PSA TMR0SE TMR0CS INTEDG nWPUEN ]
 "1406
@@ -54,7 +54,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1708.h: 52: extern volatile unsigned char INDF0 __at(0x000);
-"54 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"54 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [; ;pic16lf1708.h: 54: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16lf1708.h: 57: typedef union {

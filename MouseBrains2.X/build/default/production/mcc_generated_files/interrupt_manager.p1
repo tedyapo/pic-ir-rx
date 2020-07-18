@@ -1,7 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T10 __interrupt  ]
-"357 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"357 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
 "367
@@ -20,7 +20,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1708.h: 52: extern volatile unsigned char INDF0 __at(0x000);
-"54 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"54 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [; ;pic16lf1708.h: 54: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16lf1708.h: 57: typedef union {

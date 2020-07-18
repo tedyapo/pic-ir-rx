@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2501 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"2501 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [v _FVRCON `Vuc ~T0 @X0 0 e@279 ]
 "1830
 [v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
@@ -16,10 +16,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S123 . . . ]
 "2522
 [v _FVRCONbits `VS123 ~T0 @X0 0 e@279 ]
-"31 /Applications/microchip/xc8/v2.10/pic/include/pic.h
+"31 /opt/microchip/xc8/v2.20/pic/include/pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"1836 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"1836 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [s S94 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
 [n S94 . ADON GO_nDONE CHS ]
 "1841
@@ -128,12 +128,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "5699
 [v _CCPR1L `Vuc ~T0 @X0 0 e@657 ]
 [v F4174 `(v ~T0 @X0 1 tf1`ul ]
-"92 /Applications/microchip/xc8/v2.10/pic/include/pic.h
+"92 /opt/microchip/xc8/v2.20/pic/include/pic.h
 [v __delay `JF4174 ~T0 @X0 0 e ]
 [p i __delay ]
-"195 /Applications/microchip/xc8/v2.10/pic/include/c90/stdio.h
+"195 /opt/microchip/xc8/v2.20/pic/include/c90/stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"2687 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"2687 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [v _DAC1CON1 `Vuc ~T0 @X0 0 e@281 ]
 "219 main.c
 [c E4371 0 1 2 .. ]
@@ -165,7 +165,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OPA1_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/opa2.h
 [v _OPA2_Initialize `(v ~T0 @X0 0 ef ]
-"357 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"357 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
 "367
@@ -182,7 +182,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1708.h: 52: extern volatile unsigned char INDF0 __at(0x000);
-"54 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+"54 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
 [; ;pic16lf1708.h: 54: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16lf1708.h: 57: typedef union {
@@ -5432,15 +5432,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _blue `uc ~T0 @X0 1 r3 ]
 "141
 [f ]
-[; ;main.c: 146: CCPR1L = 255 - red;
+[; ;main.c: 146: CCPR1L = 255 - blue;
 "146
-[e = _CCPR1L -> - -> 255 `i -> _red `i `uc ]
-[; ;main.c: 148: PWM3DCH = green;
+[e = _CCPR1L -> - -> 255 `i -> _blue `i `uc ]
+[; ;main.c: 148: PWM3DCH = red;
 "148
-[e = _PWM3DCH _green ]
-[; ;main.c: 150: PWM4DCH = blue;
+[e = _PWM3DCH _red ]
+[; ;main.c: 150: PWM4DCH = green;
 "150
-[e = _PWM4DCH _blue ]
+[e = _PWM4DCH _green ]
 [; ;main.c: 151: }
 "151
 [e :UE 633 ]

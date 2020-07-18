@@ -5,10 +5,9 @@ ___lwdiv@counter 24 0 BANK0 1
 _EUSART_SetFramingErrorHandler 567 0 CODE 0
 __end_of_process_remote_command FF 0 CODE 0
 __end_of_startUp 35B 0 CODE 0
-__CFG_WRT$OFF 0 0 ABS 0
 startUp@i 22 0 BANK0 1
 _PR2 1B 0 ABS 0
-__S0 8009 0 ABS 0
+__S0 593 0 ABS 0
 __S1 C1 0 ABS 0
 __S2 0 0 ABS 0
 __Hintentry 14 0 CODE 0
@@ -47,8 +46,8 @@ _T2CON 1C 0 ABS 0
 _ADRES 9B 0 ABS 0
 wtemp0 7E 0 ABS 0
 _RXPPS E24 0 ABS 0
-__Hconfig 8009 0 CONFIG 0
-__Lconfig 8007 0 CONFIG 0
+__Hconfig 8009 0 CONFIG 4
+__Lconfig 0 0 CONFIG 4
 __Hstringtext1 0 0 ABS 0
 __Lstringtext1 0 0 ABS 0
 __pstringtext1 529 0 STRCODE 0
@@ -61,13 +60,11 @@ __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 _putch 579 0 CODE 0
 __size_of_INT_SetInterruptHandler 0 0 ABS 0
-__CFG_STVREN$ON 0 0 ABS 0
 _selectSomething 299 0 CODE 0
 _stats A0 0 BANK1 1
 __end_of_TMR2_Initialize 54D 0 CODE 0
 int$flags 7E 0 ABS 0
 setLEDColor@green 20 0 BANK0 1
-__CFG_ZCDDIS$ON 0 0 ABS 0
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 __end_of_WDT_Initialize 586 0 CODE 0
@@ -82,7 +79,6 @@ __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
 _PIR1bits 11 0 ABS 0
-__CFG_CLKOUTEN$ON 0 0 ABS 0
 ___int_sp 0 0 STACK 2
 ?___aldiv 20 0 BANK0 1
 _CCPR1L 291 0 ABS 0
@@ -157,7 +153,6 @@ __end_of_main 3F1 0 CODE 0
 __end_of_INT_SetInterruptHandler 561 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-__CFG_LVP$ON 0 0 ABS 0
 end_of_initialization 2C 0 CODE 0
 ___aldiv@sign 29 0 BANK0 1
 __HnvBANK0 0 0 ABS 0
@@ -304,14 +299,12 @@ _TMR2_Initialize 545 0 CODE 0
 _selectFrequency 477 0 CODE 0
 _ir_code 71 0 COMMON 1
 __end_of_battery_voltage 41F 0 CODE 0
-__Hidloc 0 0 IDLOC 0
-__Lidloc 0 0 IDLOC 0
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 _EUSART_ErrorHandler 4F 0 BANK0 1
 ___lwmod 41F 0 CODE 0
 _startUp 326 0 CODE 0
-__Hspace_0 8009 0 ABS 0
+__Hspace_0 593 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __end_of_INT_CallBack 529 0 CODE 0
 ?_printf 2B 0 BANK0 1
@@ -333,7 +326,8 @@ __size_of_main 0 0 ABS 0
 _dpowers 529 0 STRCODE 0
 __end_of_INTERRUPT_InterruptManager 14 0 CODE 0
 __size_of_selectSomething 0 0 ABS 0
-__CFG_BORV$LO 0 0 ABS 0
+__Hspace_4 10010 0 ABS 0
+__Lspace_4 0 0 ABS 0
 __size_of_TMR0_Initialize 0 0 ABS 0
 __size_of_battery_voltage 0 0 ABS 0
 _PIN_MANAGER_Initialize 390 0 CODE 0
@@ -401,7 +395,6 @@ __Lbank17 0 0 BANK17 1
 __ptext22 58A 0 CODE 0
 __Hbank27 0 0 BANK27 1
 __Lbank27 0 0 BANK27 1
-__CFG_PLLEN$OFF 0 0 ABS 0
 __ptext13 3F1 0 CODE 0
 __ptext32 58E 0 CODE 0
 __Hbank18 0 0 BANK18 1
@@ -427,7 +420,6 @@ __ptext16 582 0 CODE 0
 __ptext26 561 0 CODE 0
 __size_of_EUSART_Write 0 0 ABS 0
 __end_of_EUSART_SetOverrunErrorHandler 567 0 CODE 0
-__CFG_BOREN$OFF 0 0 ABS 0
 __end_of_printf 1B2 0 CODE 0
 __ptext17 545 0 CODE 0
 __end_of___lwmod 44C 0 CODE 0
@@ -436,7 +428,6 @@ ___lwmod@divisor 27 0 BANK0 1
 __ptext18 533 0 CODE 0
 _RC1STAbits 19D 0 ABS 0
 _TX1STAbits 19E 0 ABS 0
-__CFG_PWRTE$OFF 0 0 ABS 0
 __ptext28 56D 0 CODE 0
 __HbssCOMMON 0 0 ABS 0
 __LbssCOMMON 0 0 ABS 0
@@ -446,7 +437,6 @@ __ptext29 573 0 CODE 0
 _timer0ReloadVal 70 0 COMMON 1
 _INTCONbits B 0 ABS 0
 _FVRCONbits 117 0 ABS 0
-__CFG_PPS1WAY$ON 0 0 ABS 0
 __Hend_init 16 0 CODE 0
 __Lend_init 14 0 CODE 0
 EUSART_SetOverrunErrorHandler@interruptHandler 20 0 BANK0 1
@@ -470,7 +460,6 @@ __end_of_lowBattery 477 0 CODE 0
 __size_of___aldiv 0 0 ABS 0
 __end_of_INT_ISR 592 0 CODE 0
 intlevel0 0 0 ENTRY 0
-__CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 ENTRY 0
 process_remote_command@code 3D 0 BANK0 1
 __size_of_INT_ISR 0 0 ABS 0
@@ -478,7 +467,6 @@ intlevel2 0 0 ENTRY 0
 _EUSART_DefaultFramingErrorHandler 0 0 ABS 0
 intlevel3 0 0 ENTRY 0
 intlevel4 0 0 ENTRY 0
-__CFG_LPBOR$OFF 0 0 ABS 0
 intlevel5 0 0 ENTRY 0
 __size_of_WDT_Initialize 0 0 ABS 0
 __size_of_DAC_Initialize 0 0 ABS 0
@@ -491,13 +479,10 @@ ___aldiv@quotient 2A 0 BANK0 1
 ___lwdiv@quotient 25 0 BANK0 1
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
-__CFG_IESO$OFF 0 0 ABS 0
 __pmaintext 3C1 0 CODE 0
-__CFG_MCLRE$ON 0 0 ABS 0
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0
 _OPTION_REGbits 95 0 ABS 0
 __size_of_startUp 0 0 ABS 0
-__CFG_FOSC$INTOSC 0 0 ABS 0
 __initialization 16 0 CODE 0
 INT_DefaultInterruptHandler@time 78 0 COMMON 1
 _EUSART_DefaultErrorHandler 0 0 ABS 0
@@ -507,14 +492,11 @@ __size_of_EXT_INT_Initialize 0 0 ABS 0
 ___lwmod@dividend 29 0 BANK0 1
 _INT_InterruptHandler 4D 0 BANK0 1
 ___lwmod@counter 7B 0 COMMON 1
-__CFG_CP$OFF 0 0 ABS 0
-__CFG_FCMEN$ON 0 0 ABS 0
 __end_of_TMR0_Initialize 53D 0 CODE 0
 ___aldiv@dividend 24 0 BANK0 1
 %segments
 reset_vec 0 3 CODE 0 0
 intentry 8 9C1 CODE 8 0
-config 1000E 10011 CONFIG 1000E 0
 bssCOMMON 70 7B COMMON 70 1
 bssBANK1 A0 C0 BANK1 A0 1
 cstackBANK0 20 54 BANK0 20 1
@@ -526,40 +508,40 @@ stringtext4 AFC B03 STRCODE AFC 0
 text16 B04 B25 CODE B04 0
 %locals
 dist/default/production/MouseBrains2.X.production.o
-/tmp/xcDiJ7qCg.s
-5916 16 0 CODE 0
-5919 16 0 CODE 0
-5988 16 0 CODE 0
-5989 17 0 CODE 0
-5990 18 0 CODE 0
-5991 19 0 CODE 0
-5992 1A 0 CODE 0
-5993 1B 0 CODE 0
-5994 1C 0 CODE 0
-5998 1D 0 CODE 0
-5999 1E 0 CODE 0
-6000 1F 0 CODE 0
-6001 20 0 CODE 0
-6002 21 0 CODE 0
-6003 22 0 CODE 0
-6007 25 0 CODE 0
-6008 26 0 CODE 0
-6009 27 0 CODE 0
-6010 28 0 CODE 0
-6011 29 0 CODE 0
-6012 2A 0 CODE 0
-6018 2C 0 CODE 0
-6020 2C 0 CODE 0
-6021 2D 0 CODE 0
-6022 2E 0 CODE 0
-5977 555 0 CODE 0
-5978 555 0 CODE 0
-5979 556 0 CODE 0
-5980 556 0 CODE 0
-5981 557 0 CODE 0
-5982 558 0 CODE 0
-5983 559 0 CODE 0
-5984 55A 0 CODE 0
+/tmp/xcXKfcaDJ.s
+5904 16 0 CODE 0
+5907 16 0 CODE 0
+5976 16 0 CODE 0
+5977 17 0 CODE 0
+5978 18 0 CODE 0
+5979 19 0 CODE 0
+5980 1A 0 CODE 0
+5981 1B 0 CODE 0
+5982 1C 0 CODE 0
+5986 1D 0 CODE 0
+5987 1E 0 CODE 0
+5988 1F 0 CODE 0
+5989 20 0 CODE 0
+5990 21 0 CODE 0
+5991 22 0 CODE 0
+5995 25 0 CODE 0
+5996 26 0 CODE 0
+5997 27 0 CODE 0
+5998 28 0 CODE 0
+5999 29 0 CODE 0
+6000 2A 0 CODE 0
+6006 2C 0 CODE 0
+6008 2C 0 CODE 0
+6009 2D 0 CODE 0
+6010 2E 0 CODE 0
+5965 555 0 CODE 0
+5966 555 0 CODE 0
+5967 556 0 CODE 0
+5968 556 0 CODE 0
+5969 557 0 CODE 0
+5970 558 0 CODE 0
+5971 559 0 CODE 0
+5972 55A 0 CODE 0
 main.c
 310 3C1 0 CODE 0
 313 3C1 0 CODE 0
@@ -642,7 +624,7 @@ main.c
 188 490 0 CODE 0
 189 497 0 CODE 0
 190 49E 0 CODE 0
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
 477 FF 0 CODE 0
 550 FF 0 CODE 0
 553 104 0 CODE 0
@@ -675,7 +657,7 @@ mcc_generated_files/eusart.c
 134 53E 0 CODE 0
 138 541 0 CODE 0
 139 544 0 CODE 0
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/lwmod.c
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
 5 41F 0 CODE 0
 12 41F 0 CODE 0
 13 424 0 CODE 0
@@ -689,7 +671,7 @@ mcc_generated_files/eusart.c
 22 443 0 CODE 0
 24 447 0 CODE 0
 25 44B 0 CODE 0
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/lwdiv.c
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
 5 35B 0 CODE 0
 13 35B 0 CODE 0
 14 35E 0 CODE 0
@@ -715,7 +697,7 @@ main.c
 160 476 0 CODE 0
 140 505 0 CODE 0
 146 506 0 CODE 0
-148 509 0 CODE 0
+148 50A 0 CODE 0
 150 50D 0 CODE 0
 151 511 0 CODE 0
 99 2E2 0 CODE 0
@@ -760,7 +742,7 @@ main.c
 87 405 0 CODE 0
 92 406 0 CODE 0
 93 41E 0 CODE 0
-/Applications/microchip/xc8/v2.10/pic/sources/c90/common/aldiv.c
+/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
 5 1B2 0 CODE 0
 13 1B2 0 CODE 0
 14 1B4 0 CODE 0

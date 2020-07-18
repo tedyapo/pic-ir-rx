@@ -9,7 +9,7 @@ STATE_RESET 0
 STATE_RECEIVING 1
 STATE_DONE 2
 ]
-"219 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
+"225 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [e E4371 . `uc
 STATE_RESET 0
 STATE_RECEIVING 1
@@ -39,17 +39,17 @@ STATE_DONE 2
 [v _initLED initLED `(v  1 e 1 0 ]
 "140
 [v _setLEDColor setLEDColor `(v  1 e 1 0 ]
-"155
+"161
 [v _lowBattery lowBattery `(v  1 e 1 0 ]
-"162
+"168
 [v _startUp startUp `(v  1 e 1 0 ]
-"172
+"178
 [v _selectSomething selectSomething `(v  1 e 1 0 ]
-"184
+"190
 [v _selectFrequency selectFrequency `(v  1 e 1 0 ]
-"219
+"225
 [v _process_remote_command process_remote_command `(v  1 e 1 0 ]
-"310
+"316
 [v _main main `(v  1 e 1 0 ]
 "58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/dac.c
 [v _DAC_Initialize DAC_Initialize `(v  1 e 1 0 ]
@@ -448,19 +448,19 @@ STATE_DONE 2
 [v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
 "58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
-"310 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
+"316 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"369
+"375
 } 0
-"162
+"168
 [v _startUp startUp `(v  1 e 1 0 ]
 {
-"163
+"169
 [v startUp@i i `i  1 a 2 2 ]
-"170
+"176
 } 0
-"219
+"225
 [v _process_remote_command process_remote_command `(v  1 e 1 0 ]
 {
 [s S391 . 2 `uc 1 address_b 1 0 `uc 1 address 1 1 ]
@@ -472,17 +472,17 @@ STATE_DONE 2
 [v process_remote_command@code code `*.1S406  1 a 1 wreg ]
 [v process_remote_command@code code `*.1S406  1 a 1 wreg ]
 [v process_remote_command@code code `*.1S406  1 a 1 29 ]
-"304
+"310
 } 0
-"172
+"178
 [v _selectSomething selectSomething `(v  1 e 1 0 ]
 {
-"182
+"188
 } 0
-"184
+"190
 [v _selectFrequency selectFrequency `(v  1 e 1 0 ]
 {
-"190
+"196
 } 0
 "477 /opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -540,10 +540,10 @@ STATE_DONE 2
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"155 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
+"161 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _lowBattery lowBattery `(v  1 e 1 0 ]
 {
-"160
+"166
 } 0
 "140
 [v _setLEDColor setLEDColor `(v  1 e 1 0 ]
@@ -552,9 +552,9 @@ STATE_DONE 2
 [v setLEDColor@red red `uc  1 a 1 wreg ]
 [v setLEDColor@green green `uc  1 p 1 0 ]
 [v setLEDColor@blue blue `uc  1 p 1 1 ]
-"146
-[v setLEDColor@red red `uc  1 a 1 2 ]
-"151
+"147
+[v setLEDColor@red red `uc  1 a 1 3 ]
+"157
 } 0
 "99
 [v _initLED initLED `(v  1 e 1 0 ]

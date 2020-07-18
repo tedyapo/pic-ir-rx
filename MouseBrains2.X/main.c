@@ -122,7 +122,7 @@ void initLED()
   PWM4DCH = 0; // intial duty cycle = 0
   PWM4DCLbits.PWM4DCL = 0; // intial duty cycle = 0
   PWM4CONbits.PWM4POL = 1; // active-low output
-  TRISA &= 0b11011111; // disable RA5 output
+  TRISA &= 0b11011111; // enable RA5 output
   PWM4CONbits.PWM4EN = 1; // start PWM4
 
   // init the blue channel on CCP1/RC5
@@ -143,6 +143,12 @@ void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
   //       so max duty cycle is 1020/1023  
   // blue on CCP1/RC5
   // note: CCP1 doesn't have selectable polarity
+  //       so output must be disabled to get zero LED duty cycle
+  if (0 == blue){
+    TRISC |= 0b00100000; // disable RC5 output 
+  } else {
+    TRISC &= 0b11011111; // enable RC5 output  
+  }
   CCPR1L = 255 - blue;
   // red on PWM3/RC4
   PWM3DCH = red;

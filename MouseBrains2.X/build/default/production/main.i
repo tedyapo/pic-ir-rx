@@ -7881,9 +7881,12 @@ TRISC &= 0b11011111;
 void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
 {
 
-
-
-
+# 147
+if (0 == blue){
+TRISC |= 0b00100000;
+} else {
+TRISC &= 0b11011111;
+}
 CCPR1L = 255 - blue;
 
 PWM3DCH = red;
@@ -7930,7 +7933,7 @@ setLEDColor(0, 0, 0);
 printf("\n Frequency selected");
 }
 
-# 202
+# 208
 void setCurrent(microamps, Vdd_mv)
 {
 Vdac_mv = Vdd_mv -
@@ -7938,7 +7941,7 @@ Vdac_mv = Vdd_mv -
 DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
 }
 
-# 219
+# 225
 void process_remote_command(NEC_IR_code_t* code){
 setLEDColor(0, 0, 0);
 
@@ -8026,7 +8029,7 @@ _delay((unsigned long)((1000)*(4000000/4000.0)));
 setLEDColor(0, 0, 0);
 }
 
-# 310
+# 316
 void main(void)
 {
 
@@ -8039,7 +8042,7 @@ initLED();
 (INTCONbits.PEIE = 1);
 startUp();
 
-# 331
+# 337
 while(1){
 
 if ((int)battery_voltage() < 2500)
@@ -8048,10 +8051,10 @@ lowBattery();
 
 }
 
-# 343
+# 349
 if (STATE_DONE == ir_code.state){
 
-# 361
+# 367
 process_remote_command(&ir_code);
 
 

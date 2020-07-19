@@ -11,83 +11,89 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production/MouseBrains2.X.production.o
-cinit CODE 0 16 16 1A 2
-text1 CODE 0 32E 32E 35 2
-text2 CODE 0 30 30 CF 2
-text3 CODE 0 299 299 51 2
-text4 CODE 0 483 483 28 2
-text5 CODE 0 FF FF B3 2
-text6 CODE 0 591 591 5 2
-text7 CODE 0 555 555 8 2
-text8 CODE 0 456 456 2D 2
-text9 CODE 0 363 363 35 2
-text10 CODE 0 3F9 3F9 2F 2
-text11 CODE 0 4ED 4ED 19 2
-text12 CODE 0 2EA 2EA 44 2
-text13 CODE 0 428 428 2E 2
-text14 CODE 0 1B2 1B2 82 2
-text15 CODE 0 4CF 4CF 1E 2
-text16 CODE 0 59A 59A 4 2
-text17 CODE 0 55D 55D 8 2
-text18 CODE 0 54B 54B A 2
-text19 CODE 0 398 398 31 2
-text20 CODE 0 565 565 8 2
-text21 CODE 0 59E 59E 4 2
-text22 CODE 0 5A2 5A2 4 2
-text23 CODE 0 52A 52A C 2
-text24 CODE 0 573 573 6 2
-text25 CODE 0 4AB 4AB 24 2
-text26 CODE 0 579 579 6 2
-text27 CODE 0 57F 57F 6 2
-text28 CODE 0 585 585 6 2
-text29 CODE 0 58B 58B 6 2
-text31 CODE 0 5AA 5AA 1 2
-text32 CODE 0 5A6 5A6 4 2
-text33 CODE 0 536 536 B 2
-text34 CODE 0 234 234 65 2
-nvBANK0 BANK0 1 4D 4D 8 1
-maintext CODE 0 3C9 3C9 30 2
-cstackCOMMON COMMON 1 77 77 5 1
-cstackBANK0 BANK0 1 20 20 1F 1
-stringtext1 STRCODE 0 541 541 A 2
-stringtext2 STRCODE 0 506 506 15 2
-stringtext3 STRCODE 0 51B 51B F 2
-stringtext4 STRCODE 0 596 596 4 2
-intentry CODE 0 4 4 10 2
-bssBANK0 BANK0 1 3F 3F E 1
-bssBANK1 BANK1 1 A0 A0 21 1
-clrtext CODE 0 56D 56D 6 2
-bssCOMMON COMMON 1 70 70 7 1
-config CONFIG 4 8007 8007 2 2
-$/tmp/xcXiJONAH.o
+$dist/default/production/MouseBrains2.X.production.obj
+cinit CODE 0 1C 1C 30 2
+text1 CODE 0 3E3 3E3 48 2
+text2 CODE 0 4C 4C 115 2
+text3 CODE 0 161 161 A3 2
+text4 CODE 0 4D4 4D4 30 2
+text5 CODE 0 2ED 2ED 53 2
+text6 CODE 0 340 340 52 2
+text7 CODE 0 392 392 51 2
+text8 CODE 0 55F 55F 2A 2
+text9 CODE 0 589 589 28 2
+text10 CODE 0 615 615 1D 2
+text11 CODE 0 6E7 6E7 5 2
+text12 CODE 0 6A5 6A5 8 2
+text13 CODE 0 504 504 2E 2
+text14 CODE 0 204 204 82 2
+text15 CODE 0 532 532 2D 2
+text16 CODE 0 632 632 1B 2
+text17 CODE 0 42B 42B 44 2
+text18 CODE 0 5F7 5F7 1E 2
+text19 CODE 0 6F0 6F0 4 2
+text20 CODE 0 6AD 6AD 8 2
+text21 CODE 0 69B 69B A 2
+text22 CODE 0 46F 46F 33 2
+text23 CODE 0 6B5 6B5 8 2
+text24 CODE 0 6F4 6F4 4 2
+text25 CODE 0 6F8 6F8 4 2
+text26 CODE 0 684 684 C 2
+text27 CODE 0 6C9 6C9 6 2
+text28 CODE 0 5B1 5B1 24 2
+text29 CODE 0 6CF 6CF 6 2
+text30 CODE 0 6D5 6D5 6 2
+text31 CODE 0 6DB 6DB 6 2
+text32 CODE 0 6E1 6E1 6 2
+text34 CODE 0 700 700 1 2
+text35 CODE 0 6FC 6FC 4 2
+text36 CODE 0 690 690 B 2
+text37 CODE 0 286 286 67 2
+nvBANK0 BANK0 1 60 60 8 1
+maintext CODE 0 4A2 4A2 32 2
+cstackCOMMON COMMON 1 70 70 6 1
+cstackBANK0 BANK0 1 20 20 2B 1
+inittext CODE 0 6BD 6BD 6 2
+stringtext1 STRCODE 0 64D 64D 15 2
+stringtext2 STRCODE 0 662 662 13 2
+stringtext3 STRCODE 0 675 675 F 2
+intentry CODE 0 4 4 16 2
+bssBANK0 BANK0 1 4B 4B 15 1
+bssBANK1 BANK1 1 C2 C2 21 1
+idataBANK0 CODE 0 6EC 6EC 4 2
+idataBANK1 CODE 0 5D5 5D5 22 2
+dataBANK0 BANK0 1 68 68 4 1
+dataBANK1 BANK1 1 A0 A0 22 1
+clrtext CODE 0 6C3 6C3 6 2
+bssCOMMON COMMON 1 76 76 5 1
+$/tmp/xchFzt66F.obj
 reset_vec CODE 0 0 0 2 2
-end_init CODE 0 14 14 2 2
-config CONFIG 4 8007 8007 2 2
+end_init CODE 0 1A 1A 2 2
+config CONFIG 0 8007 8007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 55-6F 1
-RAM C1-EF 1
+RAM 6C-6F 1
+RAM E3-EF 1
 RAM 120-16F 1
 RAM 1A0-1EF 1
 RAM 220-26F 1
 RAM 2A0-2EF 1
 RAM 320-32F 1
-BANK0 55-6F 1
-BANK1 C1-EF 1
+BANK0 6C-6F 1
+BANK1 E3-EF 1
 BANK2 120-16F 1
 BANK3 1A0-1EF 1
 BANK4 220-26F 1
 BANK5 2A0-2EF 1
 BANK6 320-32F 1
 CONST 2-3 2
-CONST 5AB-FFF 2
+CONST 701-FFF 2
 ENTRY 2-3 2
-ENTRY 5AB-FFF 2
+ENTRY 701-FFF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -111,9 +117,9 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 2071-21EF 1
+STACK 2093-21EF 1
 CODE 2-3 2
-CODE 5AB-FFF 2
+CODE 701-FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -125,11 +131,11 @@ SFR7 380-3EF 1
 SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-21EF 1
-COMMON 7C-7D 1
+COMMON 7B-7D 1
 STRCODE 2-3 2
-STRCODE 5AB-FFF 2
+STRCODE 701-FFF 2
 STRING 2-3 2
-STRING 5AB-FFF 2
+STRING 701-FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -143,409 +149,460 @@ STRING 5AB-FFF 2
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$dist/default/production/MouseBrains2.X.production.o
-16 cinit CODE >5904:/tmp/xcXkdhoHk.s
-16 cinit CODE >5907:/tmp/xcXkdhoHk.s
-16 cinit CODE >5976:/tmp/xcXkdhoHk.s
-17 cinit CODE >5977:/tmp/xcXkdhoHk.s
-18 cinit CODE >5978:/tmp/xcXkdhoHk.s
-19 cinit CODE >5979:/tmp/xcXkdhoHk.s
-1A cinit CODE >5980:/tmp/xcXkdhoHk.s
-1B cinit CODE >5981:/tmp/xcXkdhoHk.s
-1C cinit CODE >5982:/tmp/xcXkdhoHk.s
-1D cinit CODE >5986:/tmp/xcXkdhoHk.s
-1E cinit CODE >5987:/tmp/xcXkdhoHk.s
-1F cinit CODE >5988:/tmp/xcXkdhoHk.s
-20 cinit CODE >5989:/tmp/xcXkdhoHk.s
-21 cinit CODE >5990:/tmp/xcXkdhoHk.s
-22 cinit CODE >5991:/tmp/xcXkdhoHk.s
-25 cinit CODE >5995:/tmp/xcXkdhoHk.s
-26 cinit CODE >5996:/tmp/xcXkdhoHk.s
-27 cinit CODE >5997:/tmp/xcXkdhoHk.s
-28 cinit CODE >5998:/tmp/xcXkdhoHk.s
-29 cinit CODE >5999:/tmp/xcXkdhoHk.s
-2A cinit CODE >6000:/tmp/xcXkdhoHk.s
-2C cinit CODE >6006:/tmp/xcXkdhoHk.s
-2C cinit CODE >6008:/tmp/xcXkdhoHk.s
-2D cinit CODE >6009:/tmp/xcXkdhoHk.s
-2E cinit CODE >6010:/tmp/xcXkdhoHk.s
-4 intentry CODE >52:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
-6 intentry CODE >55:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
-9 intentry CODE >57:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
-C intentry CODE >58:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
-D intentry CODE >59:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
-10 intentry CODE >61:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
-12 intentry CODE >67:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
-234 text34 CODE >75:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-234 text34 CODE >77:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-239 text34 CODE >78:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-23A text34 CODE >81:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-23B text34 CODE >82:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-23C text34 CODE >84:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-23D text34 CODE >86:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-23E text34 CODE >89:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-246 text34 CODE >90:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-247 text34 CODE >91:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-249 text34 CODE >92:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-24F text34 CODE >97:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-256 text34 CODE >98:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-25E text34 CODE >99:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-266 text34 CODE >100:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-267 text34 CODE >101:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-26B text34 CODE >102:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-274 text34 CODE >103:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-27D text34 CODE >107:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-27E text34 CODE >108:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-27F text34 CODE >110:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-283 text34 CODE >113:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-287 text34 CODE >114:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-28B text34 CODE >115:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-28C text34 CODE >86:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-297 text34 CODE >127:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-297 text34 CODE >129:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-298 text34 CODE >130:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-536 text33 CODE >62:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-536 text33 CODE >65:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-53B text33 CODE >67:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-540 text33 CODE >69:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-5A6 text32 CODE >54:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-5A6 text32 CODE >56:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-5A7 text32 CODE >59:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-5A9 text32 CODE >60:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-5AA text31 CODE >121:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-5AA text31 CODE >123:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-58B text29 CODE >58:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/dac.c
-58B text29 CODE >61:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/dac.c
-58E text29 CODE >63:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/dac.c
-590 text29 CODE >64:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/dac.c
-585 text28 CODE >174:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-585 text28 CODE >175:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-58A text28 CODE >176:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-57F text27 CODE >166:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-57F text27 CODE >167:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-584 text27 CODE >168:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-579 text26 CODE >170:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-579 text26 CODE >171:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-57E text26 CODE >172:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4AB text25 CODE >66:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4AB text25 CODE >71:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4AE text25 CODE >74:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4B0 text25 CODE >77:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4B2 text25 CODE >80:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4B4 text25 CODE >83:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4B5 text25 CODE >86:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4BD text25 CODE >87:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4C5 text25 CODE >88:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4CC text25 CODE >90:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-4CE text25 CODE >92:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-573 text24 CODE >71:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-573 text24 CODE >72:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-578 text24 CODE >73:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-52A text23 CODE >132:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-52A text23 CODE >137:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-52B text23 CODE >138:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-52D text23 CODE >140:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-534 text23 CODE >141:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-535 text23 CODE >143:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
-5A2 text22 CODE >58:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa1.c
-5A2 text22 CODE >61:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa1.c
-5A5 text22 CODE >62:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa1.c
-59E text21 CODE >58:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa2.c
-59E text21 CODE >61:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa2.c
-5A1 text21 CODE >62:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa2.c
-565 text20 CODE >65:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-565 text20 CODE >68:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-568 text20 CODE >70:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-569 text20 CODE >72:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-56A text20 CODE >74:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-56C text20 CODE >75:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-398 text19 CODE >55:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-398 text19 CODE >60:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-39A text19 CODE >61:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-39B text19 CODE >62:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-39C text19 CODE >67:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-39F text19 CODE >68:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3A1 text19 CODE >69:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3A3 text19 CODE >74:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3A5 text19 CODE >75:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3A6 text19 CODE >76:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3A7 text19 CODE >81:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3A9 text19 CODE >82:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3AA text19 CODE >83:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3AB text19 CODE >84:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3AD text19 CODE >89:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3AF text19 CODE >90:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3B0 text19 CODE >91:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3B1 text19 CODE >96:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3B4 text19 CODE >97:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3B6 text19 CODE >98:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3B8 text19 CODE >103:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3BB text19 CODE >104:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3BD text19 CODE >105:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3BF text19 CODE >113:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3C0 text19 CODE >116:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3C3 text19 CODE >117:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3C5 text19 CODE >118:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-3C8 text19 CODE >119:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
-54B text18 CODE >63:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
-54B text18 CODE >68:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
-550 text18 CODE >71:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
-552 text18 CODE >74:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
-553 text18 CODE >77:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
-554 text18 CODE >78:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
-55D text17 CODE >62:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr2.c
-55D text17 CODE >67:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr2.c
-560 text17 CODE >70:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr2.c
-561 text17 CODE >73:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr2.c
-562 text17 CODE >76:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr2.c
-564 text17 CODE >77:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr2.c
-59A text16 CODE >77:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-59A text16 CODE >80:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-59D text16 CODE >81:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4CF text15 CODE >50:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4CF text15 CODE >53:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4D2 text15 CODE >54:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4D5 text15 CODE >55:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4D8 text15 CODE >56:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4DB text15 CODE >57:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4DE text15 CODE >58:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4E1 text15 CODE >59:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4E4 text15 CODE >60:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4E7 text15 CODE >61:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4EA text15 CODE >62:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-4EC text15 CODE >63:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
-1B2 text14 CODE >5:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1B2 text14 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1B4 text14 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1B6 text14 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1C1 text14 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1C3 text14 CODE >17:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1C3 text14 CODE >18:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1C5 text14 CODE >19:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1D0 text14 CODE >20:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1D4 text14 CODE >22:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1DC text14 CODE >23:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1E2 text14 CODE >24:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1E4 text14 CODE >25:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1E6 text14 CODE >26:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1ED text14 CODE >27:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1F1 text14 CODE >25:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1F2 text14 CODE >30:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-1F9 text14 CODE >31:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-209 text14 CODE >32:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-211 text14 CODE >33:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-212 text14 CODE >35:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-219 text14 CODE >36:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-21D text14 CODE >38:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-220 text14 CODE >39:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-22B text14 CODE >40:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-233 text14 CODE >41:/opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
-428 text13 CODE >74:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-428 text13 CODE >76:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-42B text13 CODE >77:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-42E text13 CODE >78:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-430 text13 CODE >79:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-433 text13 CODE >80:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-434 text13 CODE >81:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-435 text13 CODE >82:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-436 text13 CODE >83:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-437 text13 CODE >84:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-438 text13 CODE >85:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-43A text13 CODE >86:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-43C text13 CODE >87:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-43D text13 CODE >92:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-455 text13 CODE >93:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2EA text12 CODE >99:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2EA text12 CODE >102:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2ED text12 CODE >103:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2F1 text12 CODE >104:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2F2 text12 CODE >108:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2F4 text12 CODE >109:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2F7 text12 CODE >110:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2FA text12 CODE >111:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2FC text12 CODE >112:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2FE text12 CODE >113:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2FF text12 CODE >114:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-304 text12 CODE >115:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-306 text12 CODE >119:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-308 text12 CODE >120:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-30B text12 CODE >121:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-30E text12 CODE >122:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-310 text12 CODE >123:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-312 text12 CODE >124:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-313 text12 CODE >125:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-318 text12 CODE >126:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-31A text12 CODE >132:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-31C text12 CODE >133:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-31F text12 CODE >134:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-324 text12 CODE >135:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-326 text12 CODE >136:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-328 text12 CODE >137:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-32D text12 CODE >138:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4ED text11 CODE >140:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4EE text11 CODE >147:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4F2 text11 CODE >148:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4F4 text11 CODE >149:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4F5 text11 CODE >150:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4FA text11 CODE >152:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4FE text11 CODE >154:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-501 text11 CODE >156:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-505 text11 CODE >157:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3F9 text10 CODE >161:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3F9 text10 CODE >162:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-406 text10 CODE >163:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-413 text10 CODE >164:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-41A text10 CODE >165:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-427 text10 CODE >166:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-363 text9 CODE >5:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-363 text9 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-366 text9 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-36A text9 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-36C text9 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-36E text9 CODE >17:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-373 text9 CODE >18:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-377 text9 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-378 text9 CODE >21:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-37D text9 CODE >22:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-385 text9 CODE >23:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-389 text9 CODE >24:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-38A text9 CODE >26:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-38F text9 CODE >27:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-393 text9 CODE >29:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-397 text9 CODE >30:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
-456 text8 CODE >5:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-456 text8 CODE >12:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-45B text8 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-45D text8 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-45F text8 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-464 text8 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-468 text8 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-469 text8 CODE >19:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-471 text8 CODE >20:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-475 text8 CODE >21:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-47A text8 CODE >22:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-47E text8 CODE >24:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-482 text8 CODE >25:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
-555 text7 CODE >132:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-556 text7 CODE >134:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-556 text7 CODE >136:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-559 text7 CODE >138:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-55C text7 CODE >139:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-591 text6 CODE >146:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-592 text6 CODE >148:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-595 text6 CODE >149:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
-FF text5 CODE >477:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-FF text5 CODE >550:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-104 text5 CODE >553:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-117 text5 CODE >555:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-11B text5 CODE >558:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-11F text5 CODE >559:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-120 text5 CODE >565:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-121 text5 CODE >661:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-138 text5 CODE >1285:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-143 text5 CODE >1287:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-145 text5 CODE >1288:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-149 text5 CODE >1289:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-14E text5 CODE >1331:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-150 text5 CODE >1332:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-167 text5 CODE >1331:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-16F text5 CODE >1464:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-173 text5 CODE >1465:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-177 text5 CODE >1498:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-17C text5 CODE >1500:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-184 text5 CODE >1515:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-1AC text5 CODE >1550:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-1B0 text5 CODE >1500:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-1B1 text5 CODE >1567:/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
-483 text4 CODE >190:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-483 text4 CODE >191:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-486 text4 CODE >192:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-48F text4 CODE >193:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-49C text4 CODE >194:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4A3 text4 CODE >195:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4AA text4 CODE >196:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-299 text3 CODE >178:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-299 text3 CODE >180:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2A0 text3 CODE >181:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2AD text3 CODE >182:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2B4 text3 CODE >183:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2C1 text3 CODE >184:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2C8 text3 CODE >185:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2D5 text3 CODE >186:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2DC text3 CODE >187:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-2E9 text3 CODE >188:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-30 text2 CODE >225:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-32 text2 CODE >226:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-38 text2 CODE >228:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-39 text2 CODE >230:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3F text2 CODE >231:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-43 text2 CODE >232:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-47 text2 CODE >233:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4C text2 CODE >234:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-4D text2 CODE >236:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-51 text2 CODE >237:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-54 text2 CODE >241:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-63 text2 CODE >242:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-64 text2 CODE >243:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-68 text2 CODE >247:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-6C text2 CODE >251:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-6F text2 CODE >252:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-73 text2 CODE >253:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-78 text2 CODE >254:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-86 text2 CODE >255:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-87 text2 CODE >257:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-8C text2 CODE >271:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-8F text2 CODE >272:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-90 text2 CODE >274:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-91 text2 CODE >275:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-95 text2 CODE >276:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-99 text2 CODE >277:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-9D text2 CODE >278:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-9E text2 CODE >280:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-9F text2 CODE >281:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-A3 text2 CODE >282:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-A4 text2 CODE >283:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-AB text2 CODE >284:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-AD text2 CODE >285:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-AE text2 CODE >287:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-AF text2 CODE >288:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-B0 text2 CODE >228:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-DE text2 CODE >307:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-EB text2 CODE >308:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-F8 text2 CODE >309:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-FE text2 CODE >310:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-32E text1 CODE >168:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-32E text1 CODE >169:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-331 text1 CODE >170:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-33B text1 CODE >171:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-342 text1 CODE >172:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-349 text1 CODE >173:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-350 text1 CODE >169:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-360 text1 CODE >175:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-362 text1 CODE >176:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3C9 maintext CODE >316:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3C9 maintext CODE >319:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3CC maintext CODE >320:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3CF maintext CODE >321:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3D2 maintext CODE >322:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3D5 maintext CODE >323:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3D8 maintext CODE >324:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3D9 maintext CODE >325:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3DA maintext CODE >326:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3DD maintext CODE >337:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3DD maintext CODE >339:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3EC maintext CODE >341:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3EF maintext CODE >349:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3F3 maintext CODE >367:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-3F7 maintext CODE >370:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
-56D clrtext CODE >5965:/tmp/xcXkdhoHk.s
-56D clrtext CODE >5966:/tmp/xcXkdhoHk.s
-56E clrtext CODE >5967:/tmp/xcXkdhoHk.s
-56E clrtext CODE >5968:/tmp/xcXkdhoHk.s
-56F clrtext CODE >5969:/tmp/xcXkdhoHk.s
-570 clrtext CODE >5970:/tmp/xcXkdhoHk.s
-571 clrtext CODE >5971:/tmp/xcXkdhoHk.s
-572 clrtext CODE >5972:/tmp/xcXkdhoHk.s
+$dist/default/production/MouseBrains2.X.production.obj
+1C cinit CODE >5931:/tmp/xcxWAw9hl
+1C cinit CODE >5934:/tmp/xcxWAw9hl
+1C cinit CODE >6038:/tmp/xcxWAw9hl
+1D cinit CODE >6039:/tmp/xcxWAw9hl
+1E cinit CODE >6040:/tmp/xcxWAw9hl
+1F cinit CODE >6041:/tmp/xcxWAw9hl
+20 cinit CODE >6042:/tmp/xcxWAw9hl
+21 cinit CODE >6043:/tmp/xcxWAw9hl
+22 cinit CODE >6044:/tmp/xcxWAw9hl
+23 cinit CODE >6045:/tmp/xcxWAw9hl
+24 cinit CODE >6046:/tmp/xcxWAw9hl
+25 cinit CODE >6047:/tmp/xcxWAw9hl
+28 cinit CODE >6051:/tmp/xcxWAw9hl
+29 cinit CODE >6052:/tmp/xcxWAw9hl
+2A cinit CODE >6053:/tmp/xcxWAw9hl
+2B cinit CODE >6054:/tmp/xcxWAw9hl
+2C cinit CODE >6055:/tmp/xcxWAw9hl
+2D cinit CODE >6056:/tmp/xcxWAw9hl
+2E cinit CODE >6057:/tmp/xcxWAw9hl
+2F cinit CODE >6058:/tmp/xcxWAw9hl
+30 cinit CODE >6059:/tmp/xcxWAw9hl
+31 cinit CODE >6060:/tmp/xcxWAw9hl
+34 cinit CODE >6077:/tmp/xcxWAw9hl
+35 cinit CODE >6078:/tmp/xcxWAw9hl
+36 cinit CODE >6079:/tmp/xcxWAw9hl
+37 cinit CODE >6080:/tmp/xcxWAw9hl
+38 cinit CODE >6081:/tmp/xcxWAw9hl
+39 cinit CODE >6085:/tmp/xcxWAw9hl
+3A cinit CODE >6086:/tmp/xcxWAw9hl
+3B cinit CODE >6087:/tmp/xcxWAw9hl
+3C cinit CODE >6088:/tmp/xcxWAw9hl
+3D cinit CODE >6089:/tmp/xcxWAw9hl
+3E cinit CODE >6090:/tmp/xcxWAw9hl
+41 cinit CODE >6094:/tmp/xcxWAw9hl
+42 cinit CODE >6095:/tmp/xcxWAw9hl
+43 cinit CODE >6096:/tmp/xcxWAw9hl
+44 cinit CODE >6097:/tmp/xcxWAw9hl
+45 cinit CODE >6098:/tmp/xcxWAw9hl
+46 cinit CODE >6099:/tmp/xcxWAw9hl
+48 cinit CODE >6105:/tmp/xcxWAw9hl
+48 cinit CODE >6107:/tmp/xcxWAw9hl
+49 cinit CODE >6108:/tmp/xcxWAw9hl
+4A cinit CODE >6109:/tmp/xcxWAw9hl
+4 intentry CODE >52:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
+9 intentry CODE >55:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
+C intentry CODE >57:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
+F intentry CODE >58:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
+10 intentry CODE >59:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
+13 intentry CODE >61:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
+15 intentry CODE >67:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
+286 text37 CODE >75:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+286 text37 CODE >77:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+28B text37 CODE >78:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+28C text37 CODE >81:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+28D text37 CODE >82:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+28E text37 CODE >84:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+28F text37 CODE >86:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+290 text37 CODE >89:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+298 text37 CODE >90:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+299 text37 CODE >91:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+29B text37 CODE >92:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2A0 text37 CODE >94:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2A1 text37 CODE >97:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2A9 text37 CODE >98:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2B1 text37 CODE >99:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2BA text37 CODE >100:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2BC text37 CODE >102:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2C4 text37 CODE >103:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2CD text37 CODE >104:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2D1 text37 CODE >110:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2D5 text37 CODE >113:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2D9 text37 CODE >114:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2DD text37 CODE >115:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2DE text37 CODE >126:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2DF text37 CODE >127:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2E0 text37 CODE >86:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2EB text37 CODE >127:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2EB text37 CODE >129:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+2EC text37 CODE >130:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+690 text36 CODE >62:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+690 text36 CODE >65:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+695 text36 CODE >67:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+6FC text35 CODE >54:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+6FC text35 CODE >56:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+6FD text35 CODE >59:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+6FF text35 CODE >60:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+700 text34 CODE >121:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+700 text34 CODE >123:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+6E1 text32 CODE >58:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/dac.c
+6E1 text32 CODE >61:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/dac.c
+6E4 text32 CODE >63:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/dac.c
+6E6 text32 CODE >64:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/dac.c
+6DB text31 CODE >174:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6DB text31 CODE >175:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6E0 text31 CODE >176:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6D5 text30 CODE >166:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6D5 text30 CODE >167:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6DA text30 CODE >168:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6CF text29 CODE >170:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6CF text29 CODE >171:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6D4 text29 CODE >172:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5B1 text28 CODE >66:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5B1 text28 CODE >71:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5B4 text28 CODE >74:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5B6 text28 CODE >77:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5B8 text28 CODE >80:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5BA text28 CODE >83:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5BB text28 CODE >86:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5C3 text28 CODE >87:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5CB text28 CODE >88:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5D2 text28 CODE >90:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+5D4 text28 CODE >92:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6C9 text27 CODE >71:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+6C9 text27 CODE >72:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+6CE text27 CODE >73:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+684 text26 CODE >132:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+684 text26 CODE >137:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+685 text26 CODE >138:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+687 text26 CODE >140:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+68E text26 CODE >141:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+68F text26 CODE >143:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+6F8 text25 CODE >58:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa1.c
+6F8 text25 CODE >61:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa1.c
+6FB text25 CODE >62:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa1.c
+6F4 text24 CODE >58:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa2.c
+6F4 text24 CODE >61:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa2.c
+6F7 text24 CODE >62:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa2.c
+6B5 text23 CODE >65:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+6B5 text23 CODE >68:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+6B8 text23 CODE >70:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+6B9 text23 CODE >72:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+6BA text23 CODE >74:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+6BC text23 CODE >75:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+46F text22 CODE >55:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+46F text22 CODE >60:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+471 text22 CODE >61:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+472 text22 CODE >62:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+473 text22 CODE >67:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+476 text22 CODE >68:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+478 text22 CODE >69:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+47A text22 CODE >74:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+47D text22 CODE >75:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+47F text22 CODE >76:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+480 text22 CODE >81:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+482 text22 CODE >82:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+483 text22 CODE >83:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+484 text22 CODE >84:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+486 text22 CODE >89:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+488 text22 CODE >90:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+489 text22 CODE >91:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+48A text22 CODE >96:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+48D text22 CODE >97:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+48F text22 CODE >98:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+491 text22 CODE >103:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+494 text22 CODE >104:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+496 text22 CODE >105:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+498 text22 CODE >113:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+499 text22 CODE >116:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+49C text22 CODE >117:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+49E text22 CODE >118:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+4A1 text22 CODE >119:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+69B text21 CODE >63:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr0.c
+69B text21 CODE >68:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr0.c
+6A0 text21 CODE >71:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr0.c
+6A2 text21 CODE >74:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr0.c
+6A3 text21 CODE >77:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr0.c
+6A4 text21 CODE >78:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr0.c
+6AD text20 CODE >62:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr2.c
+6AD text20 CODE >67:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr2.c
+6B0 text20 CODE >70:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr2.c
+6B1 text20 CODE >73:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr2.c
+6B2 text20 CODE >76:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr2.c
+6B4 text20 CODE >77:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr2.c
+6F0 text19 CODE >77:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+6F0 text19 CODE >80:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+6F3 text19 CODE >81:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+5F7 text18 CODE >50:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+5F7 text18 CODE >53:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+5FA text18 CODE >54:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+5FD text18 CODE >55:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+600 text18 CODE >56:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+603 text18 CODE >57:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+606 text18 CODE >58:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+609 text18 CODE >59:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+60C text18 CODE >60:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+60F text18 CODE >61:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+612 text18 CODE >62:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+614 text18 CODE >63:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+42B text17 CODE >116:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+42B text17 CODE >119:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+42E text17 CODE >120:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+432 text17 CODE >121:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+433 text17 CODE >125:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+435 text17 CODE >126:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+438 text17 CODE >127:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+43B text17 CODE >128:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+43D text17 CODE >129:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+43F text17 CODE >130:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+440 text17 CODE >131:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+445 text17 CODE >132:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+447 text17 CODE >136:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+449 text17 CODE >137:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+44C text17 CODE >138:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+44F text17 CODE >139:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+451 text17 CODE >140:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+453 text17 CODE >141:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+454 text17 CODE >142:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+459 text17 CODE >143:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+45B text17 CODE >149:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+45D text17 CODE >150:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+460 text17 CODE >151:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+465 text17 CODE >152:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+467 text17 CODE >153:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+469 text17 CODE >154:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+46E text17 CODE >155:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+632 text16 CODE >157:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+633 text16 CODE >164:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+637 text16 CODE >165:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+639 text16 CODE >166:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+63A text16 CODE >167:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+63F text16 CODE >168:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+63F text16 CODE >169:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+645 text16 CODE >171:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+648 text16 CODE >173:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+64C text16 CODE >174:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+532 text15 CODE >178:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+532 text15 CODE >179:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+537 text15 CODE >180:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+53D text15 CODE >181:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+54A text15 CODE >182:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+551 text15 CODE >183:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+55E text15 CODE >184:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+204 text14 CODE >6:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+204 text14 CODE >14:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+206 text14 CODE >15:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+208 text14 CODE >16:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+213 text14 CODE >17:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+215 text14 CODE >18:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+215 text14 CODE >19:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+217 text14 CODE >20:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+222 text14 CODE >21:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+226 text14 CODE >23:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+22E text14 CODE >24:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+234 text14 CODE >25:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+236 text14 CODE >26:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+238 text14 CODE >27:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+23F text14 CODE >28:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+243 text14 CODE >26:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+244 text14 CODE >31:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+24B text14 CODE >32:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+25B text14 CODE >33:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+263 text14 CODE >34:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+264 text14 CODE >36:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+26B text14 CODE >37:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+26F text14 CODE >39:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+272 text14 CODE >40:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+27D text14 CODE >41:/Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+504 text13 CODE >91:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+504 text13 CODE >93:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+507 text13 CODE >94:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+50A text13 CODE >95:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+50C text13 CODE >96:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+50F text13 CODE >97:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+510 text13 CODE >98:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+511 text13 CODE >99:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+512 text13 CODE >100:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+513 text13 CODE >101:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+514 text13 CODE >102:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+516 text13 CODE >103:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+518 text13 CODE >104:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+519 text13 CODE >109:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+6A5 text12 CODE >132:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6A6 text12 CODE >134:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6A6 text12 CODE >136:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6A9 text12 CODE >138:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6AC text12 CODE >139:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6E7 text11 CODE >146:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6E8 text11 CODE >148:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+6EB text11 CODE >149:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+615 text10 CODE >464:/Applications/microchip/xc8/v1.45/sources/common/doprnt.c
+615 text10 CODE >533:/Applications/microchip/xc8/v1.45/sources/common/doprnt.c
+61A text10 CODE >536:/Applications/microchip/xc8/v1.45/sources/common/doprnt.c
+62D text10 CODE >541:/Applications/microchip/xc8/v1.45/sources/common/doprnt.c
+631 text10 CODE >536:/Applications/microchip/xc8/v1.45/sources/common/doprnt.c
+589 text9 CODE >217:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+589 text9 CODE >218:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+58C text9 CODE >219:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+595 text9 CODE >220:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+5A2 text9 CODE >221:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+5A9 text9 CODE >222:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+5B0 text9 CODE >223:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+55F text8 CODE >209:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+55F text8 CODE >210:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+564 text8 CODE >211:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+56D text8 CODE >212:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+57A text8 CODE >213:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+581 text8 CODE >214:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+588 text8 CODE >215:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+392 text7 CODE >197:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+392 text7 CODE >199:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+399 text7 CODE >200:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3A6 text7 CODE >201:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3AD text7 CODE >202:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3BA text7 CODE >203:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3C1 text7 CODE >204:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3CE text7 CODE >205:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3D5 text7 CODE >206:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3E2 text7 CODE >207:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+340 text6 CODE >6:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+340 text6 CODE >14:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+342 text6 CODE >15:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+344 text6 CODE >16:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+349 text6 CODE >17:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+34B text6 CODE >19:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+34D text6 CODE >20:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+352 text6 CODE >21:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+356 text6 CODE >23:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+358 text6 CODE >24:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+35C text6 CODE >25:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+35E text6 CODE >26:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+360 text6 CODE >27:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+365 text6 CODE >28:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+369 text6 CODE >26:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+36A text6 CODE >31:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+36F text6 CODE >32:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+377 text6 CODE >33:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+37B text6 CODE >34:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+37C text6 CODE >36:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+381 text6 CODE >37:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+385 text6 CODE >39:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+388 text6 CODE >40:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+38D text6 CODE >41:/Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+2ED text5 CODE >6:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+2ED text5 CODE >14:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+2F6 text5 CODE >15:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+2FC text5 CODE >16:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+2FE text5 CODE >17:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+300 text5 CODE >18:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+307 text5 CODE >19:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+30B text5 CODE >17:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+30C text5 CODE >22:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+313 text5 CODE >23:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+323 text5 CODE >24:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+32B text5 CODE >25:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+32C text5 CODE >27:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+333 text5 CODE >28:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+337 text5 CODE >30:/Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+4D4 text4 CODE >15:/Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+4D4 text4 CODE >119:/Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+4DD text4 CODE >121:/Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+4DF text4 CODE >122:/Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+4E7 text4 CODE >123:/Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+4EE text4 CODE >124:/Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+4F5 text4 CODE >125:/Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+4FB text4 CODE >128:/Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+161 text3 CODE >235:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+161 text3 CODE >237:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+1A8 text3 CODE >238:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+1EB text3 CODE >239:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+1FB text3 CODE >240:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+200 text3 CODE >241:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+203 text3 CODE >242:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4C text2 CODE >257:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4D text2 CODE >258:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+54 text2 CODE >260:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+55 text2 CODE >262:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+59 text2 CODE >263:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+5D text2 CODE >264:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+6F text2 CODE >266:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+76 text2 CODE >268:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+8A text2 CODE >270:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+8F text2 CODE >271:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+93 text2 CODE >272:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+A5 text2 CODE >274:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+AC text2 CODE >276:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+AC text2 CODE >277:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+B0 text2 CODE >278:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+B3 text2 CODE >280:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+B8 text2 CODE >281:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+BB text2 CODE >283:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+BC text2 CODE >285:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+C0 text2 CODE >286:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+C4 text2 CODE >287:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+C6 text2 CODE >289:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+C8 text2 CODE >291:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+DB text2 CODE >293:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+E0 text2 CODE >294:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+E4 text2 CODE >295:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+E6 text2 CODE >297:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+E8 text2 CODE >300:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+EB text2 CODE >301:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+EE text2 CODE >303:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+F3 text2 CODE >304:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+F6 text2 CODE >306:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+F7 text2 CODE >308:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+FA text2 CODE >309:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+FB text2 CODE >311:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+FE text2 CODE >312:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+FF text2 CODE >314:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+101 text2 CODE >315:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+105 text2 CODE >316:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+106 text2 CODE >317:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+10D text2 CODE >318:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+10F text2 CODE >319:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+110 text2 CODE >321:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+112 text2 CODE >340:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+113 text2 CODE >260:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+140 text2 CODE >341:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+14D text2 CODE >342:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+15A text2 CODE >343:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+160 text2 CODE >344:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3E3 text1 CODE >186:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3E3 text1 CODE >187:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3E5 text1 CODE >188:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3F2 text1 CODE >189:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+3FF text1 CODE >190:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+408 text1 CODE >191:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+40F text1 CODE >192:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+418 text1 CODE >188:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+428 text1 CODE >194:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+42A text1 CODE >195:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4A2 maintext CODE >350:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4A2 maintext CODE >353:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4A5 maintext CODE >354:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4A8 maintext CODE >355:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4AB maintext CODE >356:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4AE maintext CODE >357:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4B1 maintext CODE >358:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4B2 maintext CODE >359:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4B3 maintext CODE >360:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4B6 maintext CODE >371:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4B6 maintext CODE >373:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4C5 maintext CODE >375:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4C8 maintext CODE >383:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4CD maintext CODE >401:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4D1 maintext CODE >404:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+4D3 maintext CODE >371:/Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+6C3 clrtext CODE >6066:/tmp/xcxWAw9hl
+6C3 clrtext CODE >6067:/tmp/xcxWAw9hl
+6C4 clrtext CODE >6068:/tmp/xcxWAw9hl
+6C4 clrtext CODE >6069:/tmp/xcxWAw9hl
+6C5 clrtext CODE >6070:/tmp/xcxWAw9hl
+6C6 clrtext CODE >6071:/tmp/xcxWAw9hl
+6C7 clrtext CODE >6072:/tmp/xcxWAw9hl
+6C8 clrtext CODE >6073:/tmp/xcxWAw9hl
+6BD inittext CODE >6027:/tmp/xcxWAw9hl
+6BD inittext CODE >6028:/tmp/xcxWAw9hl
+6BE inittext CODE >6029:/tmp/xcxWAw9hl
+6BE inittext CODE >6030:/tmp/xcxWAw9hl
+6BF inittext CODE >6031:/tmp/xcxWAw9hl
+6C0 inittext CODE >6032:/tmp/xcxWAw9hl
+6C1 inittext CODE >6033:/tmp/xcxWAw9hl
+6C2 inittext CODE >6034:/tmp/xcxWAw9hl
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -558,157 +615,171 @@ FE text2 CODE >310:/home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-___latbits 1 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-___lwmod@counter 7B 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.o
-__Hspace_0 5AB 0 ABS 0 - -
-__Hspace_1 C1 0 ABS 0 - -
+___latbits 1 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___awdiv@counter 24 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
+__Hspace_0 8009 0 ABS 0 - -
+__Hspace_1 E3 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-__Hspace_4 10010 0 ABS 0 - -
-__end_of_selectSomething 5D4 0 CODE 0 text3 dist/default/production/MouseBrains2.X.production.o
-_PWM3DCH 618 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_PWM4DCH 61B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+__end_of_selectSomething 7C6 0 CODE 0 text7 dist/default/production/MouseBrains2.X.production.obj
+_PWM3DCH 618 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_PWM4DCH 61B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_INT_CallBack A6C 0 CODE 0 text33 dist/default/production/MouseBrains2.X.production.o
-__end_of_OPA1_Initialize B4C 0 CODE 0 text22 dist/default/production/MouseBrains2.X.production.o
-__size_of_EXT_INT_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_battery_voltage 850 0 CODE 0 text13 dist/default/production/MouseBrains2.X.production.o
-__end_of_PIN_MANAGER_IOC B56 0 CODE 0 text31 dist/default/production/MouseBrains2.X.production.o
-__end_of_WDT_Initialize B3C 0 CODE 0 text16 dist/default/production/MouseBrains2.X.production.o
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_INT_CallBack D20 0 CODE 0 text36 dist/default/production/MouseBrains2.X.production.obj
+__end_of_OPA1_Initialize DF8 0 CODE 0 text25 dist/default/production/MouseBrains2.X.production.obj
+__size_of_EXT_INT_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_battery_voltage A08 0 CODE 0 text13 dist/default/production/MouseBrains2.X.production.obj
+__end_of_PIN_MANAGER_IOC E02 0 CODE 0 text34 dist/default/production/MouseBrains2.X.production.obj
+__end_of_WDT_Initialize DE8 0 CODE 0 text19 dist/default/production/MouseBrains2.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
-_LATA 10C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_LATB 10D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_LATC 10E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_TMR0 15 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_TMR2 1A 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_WPUA 20C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_WPUB 20D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_WPUC 20E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXiJONAH.o
-_duty 44 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.o
-_flag 46 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.o
-_main 792 0 CODE 0 maintext dist/default/production/MouseBrains2.X.production.o
-btemp 7E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-start 28 0 CODE 0 init /tmp/xcXiJONAH.o
-_EUSART_Write AAA 0 CODE 0 text7 dist/default/production/MouseBrains2.X.production.o
-__size_of___aldiv 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_main 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of___lwdiv 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of___lwmod 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+_LATA 10C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_LATB 10D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_LATC 10E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_TMR0 15 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_TMR2 1A 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_WPUA 20C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_WPUB 20D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_WPUC 20E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___sp 0 0 STACK 2 stack /tmp/xchFzt66F.obj
+_duty 52 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+_flag 53 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+_main 944 0 CODE 0 maintext dist/default/production/MouseBrains2.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+start 34 0 CODE 0 init /tmp/xchFzt66F.obj
+_EUSART_Write D4A 0 CODE 0 text12 dist/default/production/MouseBrains2.X.production.obj
+__size_of___aldiv 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of___awdiv 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of___lldiv 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__end_of_EUSART_SetFramingErrorHandler B0A 0 CODE 0 text27 dist/default/production/MouseBrains2.X.production.o
-__end_of_EUSART_SetOverrunErrorHandler AFE 0 CODE 0 text26 dist/default/production/MouseBrains2.X.production.o
-process_remote_command@code 3D 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_OPTION_REGbits 95 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_DAC1CON0 118 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_DAC1CON1 119 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_EUSART_Initialize 99E 0 CODE 0 text25 dist/default/production/MouseBrains2.X.production.o
+__end_of_EUSART_SetFramingErrorHandler DB6 0 CODE 0 text30 dist/default/production/MouseBrains2.X.production.obj
+__end_of_EUSART_SetOverrunErrorHandler DAA 0 CODE 0 text29 dist/default/production/MouseBrains2.X.production.obj
+?___lmul 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__CFG_CLKOUTEN$ON 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+process_remote_command@code 75 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.obj
+_OPTION_REGbits 95 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_DAC1CON0 118 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_DAC1CON1 119 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
+__end_of_EUSART_Initialize BAA 0 CODE 0 text28 dist/default/production/MouseBrains2.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
-printf@c 38 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-printf@f 2B 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_TMR2_Initialize ABA 0 CODE 0 text17 dist/default/production/MouseBrains2.X.production.o
-__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-intlevel0 0 0 ENTRY 0 functab /tmp/xcXiJONAH.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcXiJONAH.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcXiJONAH.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcXiJONAH.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcXiJONAH.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcXiJONAH.o
-_selectSomething 532 0 CODE 0 text3 dist/default/production/MouseBrains2.X.production.o
-__size_of_INT_CallBack 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+printf@c 26 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+printf@f 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+_TMR2_Initialize D5A 0 CODE 0 text20 dist/default/production/MouseBrains2.X.production.obj
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+intlevel0 0 0 ENTRY 0 functab /tmp/xchFzt66F.obj
+intlevel1 0 0 ENTRY 0 functab /tmp/xchFzt66F.obj
+intlevel2 0 0 ENTRY 0 functab /tmp/xchFzt66F.obj
+intlevel3 0 0 ENTRY 0 functab /tmp/xchFzt66F.obj
+intlevel4 0 0 ENTRY 0 functab /tmp/xchFzt66F.obj
+intlevel5 0 0 ENTRY 0 functab /tmp/xchFzt66F.obj
+_selectSomething 724 0 CODE 0 text7 dist/default/production/MouseBrains2.X.production.obj
+__size_of_INT_CallBack 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-___aldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-wtemp0 7E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+___aldiv@divisor 28 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+wtemp0 7E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Hfunctab 0 0 ENTRY 0 functab -
-_RC1STAbits 19D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_EUSART_DefaultFramingErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_EUSART_DefaultOverrunErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_OPA1_Initialize B44 0 CODE 0 text22 dist/default/production/MouseBrains2.X.production.o
-_PIN_MANAGER_IOC B54 0 CODE 0 text31 dist/default/production/MouseBrains2.X.production.o
-__size_of_EUSART_Write 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-___aldiv@sign 29 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
+_RC1STAbits 19D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_EUSART_DefaultFramingErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_EUSART_DefaultOverrunErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_OPA1_Initialize DF0 0 CODE 0 text25 dist/default/production/MouseBrains2.X.production.obj
+_PIN_MANAGER_IOC E00 0 CODE 0 text34 dist/default/production/MouseBrains2.X.production.obj
+__size_of_EUSART_Write 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___aldiv@sign 31 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+___awdiv@sign 25 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
-printf@flag 34 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-printf@prec 35 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_ADCON0 9D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_ADCON1 9E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_ANSELA 18C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_ANSELB 18D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_ANSELC 18E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_INT_CallBack A82 0 CODE 0 text33 dist/default/production/MouseBrains2.X.production.o
-_BORCON 116 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_lowBattery 7F2 0 CODE 0 text10 dist/default/production/MouseBrains2.X.production.o
-_CCPR1L 291 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_FVRCONbits 117 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_INTERRUPT_InterruptManager 28 0 CODE 0 intentry dist/default/production/MouseBrains2.X.production.o
-__size_of_initLED 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_EUSART_Write ABA 0 CODE 0 text7 dist/default/production/MouseBrains2.X.production.o
-__size_of_battery_voltage 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_OPA2_Initialize B44 0 CODE 0 text21 dist/default/production/MouseBrains2.X.production.o
+setCurrent@DACValue 45 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+_ADCON0 9D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_ADCON1 9E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_ANSELA 18C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_ANSELB 18D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_ANSELC 18E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___awdiv@dividend 22 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__end_of_INT_CallBack D36 0 CODE 0 text36 dist/default/production/MouseBrains2.X.production.obj
+_BORCON 116 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_selectCurrent B12 0 CODE 0 text9 dist/default/production/MouseBrains2.X.production.obj
+_lowBattery A64 0 CODE 0 text15 dist/default/production/MouseBrains2.X.production.obj
+_CCPR1L 291 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_FVRCONbits 117 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_INTERRUPT_InterruptManager 34 0 CODE 0 intentry dist/default/production/MouseBrains2.X.production.obj
+__size_of_initLED 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of___lmul A08 0 CODE 0 text4 dist/default/production/MouseBrains2.X.production.obj
+__end_of_EUSART_Write D5A 0 CODE 0 text12 dist/default/production/MouseBrains2.X.production.obj
+__size_of_battery_voltage 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_OPA2_Initialize DF0 0 CODE 0 text24 dist/default/production/MouseBrains2.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
-_FVRCON 117 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-?_printf 2B 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
+_FVRCON 117 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+?_printf 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
 __LnvBANK0 0 0 ABS 0 nvBANK0 -
-__size_of_INT_SetInterruptHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-___lwmod@divisor 27 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-__end_of___aldiv 468 0 CODE 0 text14 dist/default/production/MouseBrains2.X.production.o
-__end_of___lwdiv 730 0 CODE 0 text9 dist/default/production/MouseBrains2.X.production.o
-__end_of___lwmod 906 0 CODE 0 text8 dist/default/production/MouseBrains2.X.production.o
-_INLVLA 38C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_INLVLB 38D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_INLVLC 38E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_INTPPS E10 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_startUp 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_OPTION_REG 95 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-___stackhi 21EF 0 ABS 0 - /tmp/xcXiJONAH.o
-___stacklo 2071 0 ABS 0 - /tmp/xcXiJONAH.o
-_dpowers A82 0 STRCODE 0 stringtext1 dist/default/production/MouseBrains2.X.production.o
-_process_remote_command 60 0 CODE 0 text2 dist/default/production/MouseBrains2.X.production.o
-setLEDColor@red 7A 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.o
-_EUSART_Initialize 956 0 CODE 0 text25 dist/default/production/MouseBrains2.X.production.o
-___lwdiv@quotient 25 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-__size_of_INT_ISR 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_putch 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-INT_DefaultInterruptHandler@time 78 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.o
-__size_of_TMR2_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-___lwmod@dividend 29 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_PIN_MANAGER_Initialize 730 0 CODE 0 text19 dist/default/production/MouseBrains2.X.production.o
-_LED_green 48 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.o
-start_initialization 2C 0 CODE 0 cinit dist/default/production/MouseBrains2.X.production.o
-_ODCONA 28C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_ODCONB 28D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_ODCONC 28E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_CCPTMRSbits 29E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_selectSomething 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_EUSART_SetErrorHandler B0A 0 CODE 0 text28 dist/default/production/MouseBrains2.X.production.o
-_setLEDColor 9DA 0 CODE 0 text11 dist/default/production/MouseBrains2.X.production.o
-_OSCCON 99 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-___aldiv@quotient 2A 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-EUSART_SetOverrunErrorHandler@interruptHandler 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-__end_of_lowBattery 850 0 CODE 0 text10 dist/default/production/MouseBrains2.X.production.o
-setLEDColor@blue 21 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_RA5PPS E95 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_RB7PPS E9F 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_RC1REG 199 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_RC1STA 19D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_OPA1_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_RC4PPS EA4 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_RC5PPS EA5 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_EUSART_SetFramingErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_PIN_MANAGER_IOC 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_EUSART_SetOverrunErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_OPA2_Initialize B3C 0 CODE 0 text21 dist/default/production/MouseBrains2.X.production.o
-setLEDColor@green 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-__end_of_SYSTEM_Initialize 9DA 0 CODE 0 text15 dist/default/production/MouseBrains2.X.production.o
-_DAC_Initialize B16 0 CODE 0 text29 dist/default/production/MouseBrains2.X.production.o
-clear_ram0 ADA 0 CODE 0 clrtext dist/default/production/MouseBrains2.X.production.o
-__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_TX1REG 19A 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_TX1STA 19E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_printf 364 0 CODE 0 text5 dist/default/production/MouseBrains2.X.production.o
-_WDTCON 97 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_initLED 65C 0 CODE 0 text12 dist/default/production/MouseBrains2.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcXiJONAH.o
+_maxCurrentIndex 6A 0 BANK0 1 dataBANK0 dist/default/production/MouseBrains2.X.production.obj
+__size_of_INT_SetInterruptHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___awdiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+setCurrent@microamps 39 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__end_of___aldiv 50C 0 CODE 0 text14 dist/default/production/MouseBrains2.X.production.obj
+__end_of___awdiv 724 0 CODE 0 text6 dist/default/production/MouseBrains2.X.production.obj
+__end_of___lldiv 680 0 CODE 0 text5 dist/default/production/MouseBrains2.X.production.obj
+_INLVLA 38C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_INLVLB 38D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_INLVLC 38E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_INTPPS E10 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_startUp 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_OPTION_REG 95 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_process_remote_command 98 0 CODE 0 text2 dist/default/production/MouseBrains2.X.production.obj
+setLEDColor@red 74 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.obj
+_EUSART_Initialize B62 0 CODE 0 text28 dist/default/production/MouseBrains2.X.production.obj
+__size_of_INT_ISR 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_putch 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+INT_DefaultInterruptHandler@time 71 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.obj
+__size_of_TMR2_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___lldiv@counter 38 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+_PIN_MANAGER_Initialize 8DE 0 CODE 0 text22 dist/default/production/MouseBrains2.X.production.obj
+_LED_green 55 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+start_initialization 38 0 CODE 0 cinit dist/default/production/MouseBrains2.X.production.obj
+_ODCONA 28C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_ODCONB 28D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_ODCONC 28E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_CCPTMRSbits 29E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_selectSomething 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_EUSART_SetErrorHandler DB6 0 CODE 0 text31 dist/default/production/MouseBrains2.X.production.obj
+_setLEDColor C64 0 CODE 0 text16 dist/default/production/MouseBrains2.X.production.obj
+_OSCCON 99 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___aldiv@quotient 32 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+___lldiv@dividend 30 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+EUSART_SetOverrunErrorHandler@interruptHandler 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__end_of_lowBattery ABE 0 CODE 0 text15 dist/default/production/MouseBrains2.X.production.obj
+setLEDColor@blue 21 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+_RA5PPS E95 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_RB7PPS E9F 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_RC1REG 199 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_RC1STA 19D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_OPA1_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_RC4PPS EA4 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_RC5PPS EA5 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_EUSART_SetFramingErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_PIN_MANAGER_IOC 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_EUSART_SetOverrunErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_OPA2_Initialize DE8 0 CODE 0 text24 dist/default/production/MouseBrains2.X.production.obj
+_maxFrequencyIndex 68 0 BANK0 1 dataBANK0 dist/default/production/MouseBrains2.X.production.obj
+setLEDColor@green 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__end_of_SYSTEM_Initialize C2A 0 CODE 0 text18 dist/default/production/MouseBrains2.X.production.obj
+_DAC_Initialize DC2 0 CODE 0 text32 dist/default/production/MouseBrains2.X.production.obj
+clear_ram0 D86 0 CODE 0 clrtext dist/default/production/MouseBrains2.X.production.obj
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+_TX1REG 19A 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_TX1STA 19E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_printf C64 0 CODE 0 text10 dist/default/production/MouseBrains2.X.production.obj
+_WDTCON 97 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_initLED 8DE 0 CODE 0 text17 dist/default/production/MouseBrains2.X.production.obj
+___int_sp 0 0 STACK 2 stack /tmp/xchFzt66F.obj
+__size_of_selectCurrent 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -719,9 +790,10 @@ __Hbank6 0 0 ABS 0 bank6 -
 __Hbank7 0 0 BANK7 1 bank7 -
 __Hbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
-__Hcinit 60 0 CODE 0 cinit -
-_INT_DefaultInterruptHandler 468 0 CODE 0 text34 dist/default/production/MouseBrains2.X.production.o
-__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+__Hcinit 98 0 CODE 0 cinit -
+_INT_DefaultInterruptHandler 50C 0 CODE 0 text37 dist/default/production/MouseBrains2.X.production.obj
+__Hidloc 0 0 IDLOC 0 idloc -
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
 __Hsfr12 0 0 ABS 0 sfr12 -
@@ -745,7 +817,6 @@ __Hsfr29 0 0 ABS 0 sfr29 -
 __Hsfr30 0 0 ABS 0 sfr30 -
 __Hsfr31 0 0 ABS 0 sfr31 -
 __Hstack 0 0 STACK 2 stack -
-___lwdiv@counter 24 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
 __Hbank10 0 0 BANK10 1 bank10 -
 __Hbank11 0 0 BANK11 1 bank11 -
 __Hbank12 0 0 BANK12 1 bank12 -
@@ -770,9 +841,10 @@ __Hbank30 0 0 BANK30 1 bank30 -
 __Hbank31 0 0 BANK31 1 bank31 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-_BAUD1CON 19F 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+_BAUD1CON 19F 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Hcommon 0 0 ABS 0 common -
-__Hconfig 10012 0 CONFIG 4 config -
+__Hconfig 10012 0 CONFIG 0 config -
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -783,8 +855,9 @@ __Lbank6 0 0 ABS 0 bank6 -
 __Lbank7 0 0 BANK7 1 bank7 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__Lcinit 2C 0 CODE 0 cinit -
-EUSART_SetErrorHandler@interruptHandler 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
+__Lcinit 38 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+EUSART_SetErrorHandler@interruptHandler 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
 __Lsfr12 0 0 ABS 0 sfr12 -
@@ -808,11 +881,13 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-__end_of_startUp 6C6 0 CODE 0 text1 dist/default/production/MouseBrains2.X.production.o
-_INTCONbits B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+init_ram D7A 0 CODE 0 inittext dist/default/production/MouseBrains2.X.production.obj
+__end_of_startUp 856 0 CODE 0 text1 dist/default/production/MouseBrains2.X.production.obj
+__Linittext 0 0 ABS 0 inittext -
+_INTCONbits B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 28 0 CODE 0 init -
+__Hinit 34 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -826,7 +901,7 @@ __Hsfr9 0 0 ABS 0 sfr9 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit 28 0 CODE 0 init -
+__Linit 34 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
@@ -838,73 +913,84 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 A82 0 STRCODE 0 stringtext1 dist/default/production/MouseBrains2.X.production.o
-__pstringtext2 A0C 0 STRCODE 0 stringtext2 dist/default/production/MouseBrains2.X.production.o
-__pstringtext3 A36 0 STRCODE 0 stringtext3 dist/default/production/MouseBrains2.X.production.o
-__pstringtext4 B2C 0 STRCODE 0 stringtext4 dist/default/production/MouseBrains2.X.production.o
-__pstringtext5 0 0 STRCODE 0 stringtext5 dist/default/production/MouseBrains2.X.production.o
-__pnvBANK0 4D 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.o
-__end_of_DAC_Initialize B22 0 CODE 0 text29 dist/default/production/MouseBrains2.X.production.o
-_PWM4CONbits 61C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+__pstringtext1 C9A 0 STRCODE 0 stringtext1 dist/default/production/MouseBrains2.X.production.obj
+__pstringtext2 CC4 0 STRCODE 0 stringtext2 dist/default/production/MouseBrains2.X.production.obj
+__pstringtext3 CEA 0 STRCODE 0 stringtext3 dist/default/production/MouseBrains2.X.production.obj
+__pstringtext4 0 0 STRCODE 0 stringtext4 dist/default/production/MouseBrains2.X.production.obj
+__pnvBANK0 60 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.obj
+__end_of_DAC_Initialize DCE 0 CODE 0 text32 dist/default/production/MouseBrains2.X.production.obj
+___lmul 9A8 0 CODE 0 text4 dist/default/production/MouseBrains2.X.production.obj
+_PWM4CONbits 61C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
-int$flags 7E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_INT_ISR B54 0 CODE 0 text32 dist/default/production/MouseBrains2.X.production.o
+int$flags 7E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_INT_ISR E00 0 CODE 0 text35 dist/default/production/MouseBrains2.X.production.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_WDT_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_PR2 1B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__S0 5AB 0 ABS 0 - -
-__S1 C1 0 ABS 0 - -
+_setCurrent 2C2 0 CODE 0 text3 dist/default/production/MouseBrains2.X.production.obj
+__size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_selectCurrent B62 0 CODE 0 text9 dist/default/production/MouseBrains2.X.production.obj
+__size_of_WDT_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_PR2 1B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__S0 8009 0 ABS 0 - -
+__S1 E3 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
-_SYSTEM_Initialize 99E 0 CODE 0 text15 dist/default/production/MouseBrains2.X.production.o
-__size_of_OPA2_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_PWM3CONbits 619 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+_frequencyIndex 4B 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+_SYSTEM_Initialize BEE 0 CODE 0 text18 dist/default/production/MouseBrains2.X.production.obj
+__size_of_OPA2_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_PWM3CONbits 619 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXiJONAH.o
-startUp@i 22 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-__end_of_selectFrequency 956 0 CODE 0 text4 dist/default/production/MouseBrains2.X.production.o
+___lldiv@divisor 2C 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/xchFzt66F.obj
+startUp@i 24 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__pdataBANK0 68 0 BANK0 1 dataBANK0 dist/default/production/MouseBrains2.X.production.obj
+__pdataBANK1 A0 0 BANK1 1 dataBANK1 dist/default/production/MouseBrains2.X.production.obj
+__end_of_selectFrequency B12 0 CODE 0 text8 dist/default/production/MouseBrains2.X.production.obj
+__size_of___lmul 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
-__end_of_process_remote_command 1FE 0 CODE 0 text2 dist/default/production/MouseBrains2.X.production.o
+__end_of_process_remote_command 2C2 0 CODE 0 text2 dist/default/production/MouseBrains2.X.production.obj
+__CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lstringtext2 0 0 ABS 0 stringtext2 -
 __Lstringtext3 0 0 ABS 0 stringtext3 -
 __Lstringtext4 0 0 ABS 0 stringtext4 -
-__Lstringtext5 0 0 ABS 0 stringtext5 -
-_INT_InterruptHandler 4D 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.o
-_INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/default/production/MouseBrains2.X.production.o
-__end_of_EXT_INT_Initialize A6C 0 CODE 0 text23 dist/default/production/MouseBrains2.X.production.o
-EUSART_SetFramingErrorHandler@interruptHandler 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-__ptext10 7F2 0 CODE 0 text10 dist/default/production/MouseBrains2.X.production.o
-__ptext11 9DA 0 CODE 0 text11 dist/default/production/MouseBrains2.X.production.o
-__ptext12 5D4 0 CODE 0 text12 dist/default/production/MouseBrains2.X.production.o
-__ptext13 850 0 CODE 0 text13 dist/default/production/MouseBrains2.X.production.o
-__ptext14 364 0 CODE 0 text14 dist/default/production/MouseBrains2.X.production.o
-__ptext15 99E 0 CODE 0 text15 dist/default/production/MouseBrains2.X.production.o
-__ptext16 B34 0 CODE 0 text16 dist/default/production/MouseBrains2.X.production.o
-__ptext17 ABA 0 CODE 0 text17 dist/default/production/MouseBrains2.X.production.o
-__ptext18 A96 0 CODE 0 text18 dist/default/production/MouseBrains2.X.production.o
-__ptext19 730 0 CODE 0 text19 dist/default/production/MouseBrains2.X.production.o
-__ptext20 ACA 0 CODE 0 text20 dist/default/production/MouseBrains2.X.production.o
-__ptext21 B3C 0 CODE 0 text21 dist/default/production/MouseBrains2.X.production.o
-__ptext22 B44 0 CODE 0 text22 dist/default/production/MouseBrains2.X.production.o
-__ptext23 A54 0 CODE 0 text23 dist/default/production/MouseBrains2.X.production.o
-__ptext24 AE6 0 CODE 0 text24 dist/default/production/MouseBrains2.X.production.o
-__ptext25 956 0 CODE 0 text25 dist/default/production/MouseBrains2.X.production.o
-__ptext26 AF2 0 CODE 0 text26 dist/default/production/MouseBrains2.X.production.o
-__ptext27 AFE 0 CODE 0 text27 dist/default/production/MouseBrains2.X.production.o
-__ptext28 B0A 0 CODE 0 text28 dist/default/production/MouseBrains2.X.production.o
-__ptext29 B16 0 CODE 0 text29 dist/default/production/MouseBrains2.X.production.o
-__ptext31 B54 0 CODE 0 text31 dist/default/production/MouseBrains2.X.production.o
-__ptext32 B4C 0 CODE 0 text32 dist/default/production/MouseBrains2.X.production.o
-__ptext33 A6C 0 CODE 0 text33 dist/default/production/MouseBrains2.X.production.o
-__ptext34 468 0 CODE 0 text34 dist/default/production/MouseBrains2.X.production.o
-__end_of_PIN_MANAGER_Initialize 792 0 CODE 0 text19 dist/default/production/MouseBrains2.X.production.o
-___aldiv 364 0 CODE 0 text14 dist/default/production/MouseBrains2.X.production.o
-__end_of_TMR0_Initialize AAA 0 CODE 0 text18 dist/default/production/MouseBrains2.X.production.o
-___lwdiv 6C6 0 CODE 0 text9 dist/default/production/MouseBrains2.X.production.o
-___lwmod 8AC 0 CODE 0 text8 dist/default/production/MouseBrains2.X.production.o
+_INT_InterruptHandler 60 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.obj
+_INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/default/production/MouseBrains2.X.production.obj
+__end_of_EXT_INT_Initialize D20 0 CODE 0 text26 dist/default/production/MouseBrains2.X.production.obj
+EUSART_SetFramingErrorHandler@interruptHandler 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__ptext10 C2A 0 CODE 0 text10 dist/default/production/MouseBrains2.X.production.obj
+__ptext11 DCE 0 CODE 0 text11 dist/default/production/MouseBrains2.X.production.obj
+__ptext12 D4A 0 CODE 0 text12 dist/default/production/MouseBrains2.X.production.obj
+__ptext13 A08 0 CODE 0 text13 dist/default/production/MouseBrains2.X.production.obj
+__ptext14 408 0 CODE 0 text14 dist/default/production/MouseBrains2.X.production.obj
+__ptext15 A64 0 CODE 0 text15 dist/default/production/MouseBrains2.X.production.obj
+__ptext16 C64 0 CODE 0 text16 dist/default/production/MouseBrains2.X.production.obj
+__ptext17 856 0 CODE 0 text17 dist/default/production/MouseBrains2.X.production.obj
+__ptext18 BEE 0 CODE 0 text18 dist/default/production/MouseBrains2.X.production.obj
+__ptext19 DE0 0 CODE 0 text19 dist/default/production/MouseBrains2.X.production.obj
+__ptext20 D5A 0 CODE 0 text20 dist/default/production/MouseBrains2.X.production.obj
+__ptext21 D36 0 CODE 0 text21 dist/default/production/MouseBrains2.X.production.obj
+__ptext22 8DE 0 CODE 0 text22 dist/default/production/MouseBrains2.X.production.obj
+__ptext23 D6A 0 CODE 0 text23 dist/default/production/MouseBrains2.X.production.obj
+__ptext24 DE8 0 CODE 0 text24 dist/default/production/MouseBrains2.X.production.obj
+__ptext25 DF0 0 CODE 0 text25 dist/default/production/MouseBrains2.X.production.obj
+__ptext26 D08 0 CODE 0 text26 dist/default/production/MouseBrains2.X.production.obj
+__ptext27 D92 0 CODE 0 text27 dist/default/production/MouseBrains2.X.production.obj
+__ptext28 B62 0 CODE 0 text28 dist/default/production/MouseBrains2.X.production.obj
+__ptext29 D9E 0 CODE 0 text29 dist/default/production/MouseBrains2.X.production.obj
+__ptext30 DAA 0 CODE 0 text30 dist/default/production/MouseBrains2.X.production.obj
+__ptext31 DB6 0 CODE 0 text31 dist/default/production/MouseBrains2.X.production.obj
+__ptext32 DC2 0 CODE 0 text32 dist/default/production/MouseBrains2.X.production.obj
+__ptext34 E00 0 CODE 0 text34 dist/default/production/MouseBrains2.X.production.obj
+__ptext35 DF8 0 CODE 0 text35 dist/default/production/MouseBrains2.X.production.obj
+__ptext36 D20 0 CODE 0 text36 dist/default/production/MouseBrains2.X.production.obj
+__ptext37 50C 0 CODE 0 text37 dist/default/production/MouseBrains2.X.production.obj
+__end_of_setCurrent 408 0 CODE 0 text3 dist/default/production/MouseBrains2.X.production.obj
+__end_of_PIN_MANAGER_Initialize 944 0 CODE 0 text22 dist/default/production/MouseBrains2.X.production.obj
+___aldiv 408 0 CODE 0 text14 dist/default/production/MouseBrains2.X.production.obj
+___awdiv 680 0 CODE 0 text6 dist/default/production/MouseBrains2.X.production.obj
+__end_of_TMR0_Initialize D4A 0 CODE 0 text21 dist/default/production/MouseBrains2.X.production.obj
+___lldiv 5DA 0 CODE 0 text5 dist/default/production/MouseBrains2.X.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -927,133 +1013,155 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 792 0 CODE 0 maintext dist/default/production/MouseBrains2.X.production.o
+__pmaintext 944 0 CODE 0 maintext dist/default/production/MouseBrains2.X.production.obj
 __Lbigram 0 0 ABS 0 bigram -
-__end_of_EUSART_SetErrorHandler B16 0 CODE 0 text28 dist/default/production/MouseBrains2.X.production.o
+__CFG_BORV$LO 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___lmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__end_of_EUSART_SetErrorHandler DC2 0 CODE 0 text31 dist/default/production/MouseBrains2.X.production.obj
 __Lcommon 0 0 ABS 0 common -
-__Lconfig 0 0 CONFIG 4 config -
-_printf 1FE 0 CODE 0 text5 dist/default/production/MouseBrains2.X.production.o
-__size_of_lowBattery 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_LED_red 49 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.o
-_OPA1CON 511 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_OPA2CON 515 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-___lwdiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_PWM4DCLbits 61A 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_EUSART_FramingErrorHandler 53 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.o
-_EUSART_OverrunErrorHandler 51 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.o
-_EXT_INT_Initialize A54 0 CODE 0 text23 dist/default/production/MouseBrains2.X.production.o
-_OSCSTAT 9A 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_OSCTUNE 98 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_ADCON0bits 9D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_selectFrequency 906 0 CODE 0 text4 dist/default/production/MouseBrains2.X.production.o
-_EUSART_ErrorHandler 4F 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.o
+__Lconfig 1000E 0 CONFIG 0 config -
+_printf C2A 0 CODE 0 text10 dist/default/production/MouseBrains2.X.production.obj
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__Hinittext 0 0 ABS 0 inittext -
+__size_of_lowBattery 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_LED_red 56 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+_OPA1CON 511 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_OPA2CON 515 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_PWM4DCLbits 61A 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_EUSART_FramingErrorHandler 66 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.obj
+_EUSART_OverrunErrorHandler 64 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.obj
+stackhi 21EF 0 ABS 0 - /tmp/xchFzt66F.obj
+stacklo 2093 0 ABS 0 - /tmp/xchFzt66F.obj
+_EXT_INT_Initialize D08 0 CODE 0 text26 dist/default/production/MouseBrains2.X.production.obj
+_OSCSTAT 9A 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_OSCTUNE 98 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_ADCON0bits 9D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_selectFrequency ABE 0 CODE 0 text8 dist/default/production/MouseBrains2.X.production.obj
+__CFG_ZCDDIS$ON 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_EUSART_ErrorHandler 62 0 BANK0 1 nvBANK0 dist/default/production/MouseBrains2.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production/MouseBrains2.X.production.o
-_LED_blue 47 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.o
+__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/default/production/MouseBrains2.X.production.obj
+_LED_blue 54 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-_PIR1bits 11 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__Lend_init 28 0 CODE 0 end_init -
-_EUSART_DefaultErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+_PIR1bits 11 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__Lend_init 34 0 CODE 0 end_init -
+_EUSART_DefaultErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__CFG_LVP$ON 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__end_of_setLEDColor A0C 0 CODE 0 text11 dist/default/production/MouseBrains2.X.production.o
-printf@ap 33 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_EUSART_SetFramingErrorHandler AFE 0 CODE 0 text27 dist/default/production/MouseBrains2.X.production.o
-_EUSART_SetOverrunErrorHandler AF2 0 CODE 0 text26 dist/default/production/MouseBrains2.X.production.o
-end_of_initialization 58 0 CODE 0 cinit dist/default/production/MouseBrains2.X.production.o
-_TMR0_Initialize A96 0 CODE 0 text18 dist/default/production/MouseBrains2.X.production.o
-__Hintentry 28 0 CODE 0 intentry -
-__size_of_printf 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_TX1STAbits 19E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_PWM3DCLbits 617 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+__end_of_setLEDColor C9A 0 CODE 0 text16 dist/default/production/MouseBrains2.X.production.obj
+printf@ap 25 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+_EUSART_SetFramingErrorHandler DAA 0 CODE 0 text30 dist/default/production/MouseBrains2.X.production.obj
+_EUSART_SetOverrunErrorHandler D9E 0 CODE 0 text29 dist/default/production/MouseBrains2.X.production.obj
+end_of_initialization 90 0 CODE 0 cinit dist/default/production/MouseBrains2.X.production.obj
+_TMR0_Initialize D36 0 CODE 0 text21 dist/default/production/MouseBrains2.X.production.obj
+__Hintentry 34 0 CODE 0 intentry -
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_printf 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_TX1STAbits 19E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_PWM3DCLbits 617 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
-?___aldiv 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-___lwdiv@dividend 22 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-?___lwdiv 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-?___lwmod 27 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
+___awdiv@quotient 26 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+?___aldiv 28 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+?___awdiv 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+?___lldiv 2C 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
 __Hreset_vec 4 0 CODE 0 reset_vec -
-_INT_SetInterruptHandler AE6 0 CODE 0 text24 dist/default/production/MouseBrains2.X.production.o
+_INT_SetInterruptHandler D92 0 CODE 0 text27 dist/default/production/MouseBrains2.X.production.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
-_initLED 5D4 0 CODE 0 text12 dist/default/production/MouseBrains2.X.production.o
-__end_of_INT_SetInterruptHandler AF2 0 CODE 0 text24 dist/default/production/MouseBrains2.X.production.o
-__ptext1 65C 0 CODE 0 text1 dist/default/production/MouseBrains2.X.production.o
-__ptext2 60 0 CODE 0 text2 dist/default/production/MouseBrains2.X.production.o
-__ptext3 532 0 CODE 0 text3 dist/default/production/MouseBrains2.X.production.o
-__ptext4 906 0 CODE 0 text4 dist/default/production/MouseBrains2.X.production.o
-__ptext5 1FE 0 CODE 0 text5 dist/default/production/MouseBrains2.X.production.o
-__ptext6 B22 0 CODE 0 text6 dist/default/production/MouseBrains2.X.production.o
-__ptext7 AAA 0 CODE 0 text7 dist/default/production/MouseBrains2.X.production.o
-__ptext8 8AC 0 CODE 0 text8 dist/default/production/MouseBrains2.X.production.o
-__ptext9 6C6 0 CODE 0 text9 dist/default/production/MouseBrains2.X.production.o
-___aldiv@dividend 24 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_ir_code 71 0 COMMON 1 bssCOMMON dist/default/production/MouseBrains2.X.production.o
+_initLED 856 0 CODE 0 text17 dist/default/production/MouseBrains2.X.production.obj
+__end_of_INT_SetInterruptHandler D9E 0 CODE 0 text27 dist/default/production/MouseBrains2.X.production.obj
+__ptext1 7C6 0 CODE 0 text1 dist/default/production/MouseBrains2.X.production.obj
+__ptext2 98 0 CODE 0 text2 dist/default/production/MouseBrains2.X.production.obj
+__ptext3 2C2 0 CODE 0 text3 dist/default/production/MouseBrains2.X.production.obj
+__ptext4 9A8 0 CODE 0 text4 dist/default/production/MouseBrains2.X.production.obj
+__ptext5 5DA 0 CODE 0 text5 dist/default/production/MouseBrains2.X.production.obj
+__ptext6 680 0 CODE 0 text6 dist/default/production/MouseBrains2.X.production.obj
+__ptext7 724 0 CODE 0 text7 dist/default/production/MouseBrains2.X.production.obj
+__ptext8 ABE 0 CODE 0 text8 dist/default/production/MouseBrains2.X.production.obj
+__ptext9 B12 0 CODE 0 text9 dist/default/production/MouseBrains2.X.production.obj
+___aldiv@dividend 2C 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+_ir_code 58 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+_currentIndex 4D 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
+_currentValue A0 0 BANK1 1 dataBANK1 dist/default/production/MouseBrains2.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
 __Hstringtext2 0 0 ABS 0 stringtext2 -
 __Hstringtext3 0 0 ABS 0 stringtext3 -
 __Hstringtext4 0 0 ABS 0 stringtext4 -
-__Hstringtext5 0 0 ABS 0 stringtext5 -
-_startUp 65C 0 CODE 0 text1 dist/default/production/MouseBrains2.X.production.o
-_SLRCONA 30C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_SLRCONB 30D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_SLRCONC 30E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-EUSART_Write@txData 79 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.o
-__end_of__initialization 58 0 CODE 0 cinit dist/default/production/MouseBrains2.X.production.o
-_INT_ISR B4C 0 CODE 0 text32 dist/default/production/MouseBrains2.X.production.o
+_startUp 7C6 0 CODE 0 text1 dist/default/production/MouseBrains2.X.production.obj
+__CFG_LPBOR$OFF 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_SLRCONA 30C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_SLRCONB 30D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_SLRCONC 30E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_interfaceState 51 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+EUSART_Write@txData 73 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.obj
+__end_of__initialization 90 0 CODE 0 cinit dist/default/production/MouseBrains2.X.production.obj
+_INT_ISR DF8 0 CODE 0 text35 dist/default/production/MouseBrains2.X.production.obj
 __Lfunctab 0 0 ENTRY 0 functab -
-_timer0ReloadVal 70 0 COMMON 1 bssCOMMON dist/default/production/MouseBrains2.X.production.o
-_SP1BRGH 19C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_SP1BRGL 19B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+_timer0ReloadVal 7A 0 COMMON 1 bssCOMMON dist/default/production/MouseBrains2.X.production.obj
+__pidataBANK0 DD8 0 CODE 0 idataBANK0 dist/default/production/MouseBrains2.X.production.obj
+__pidataBANK1 BAA 0 CODE 0 idataBANK1 dist/default/production/MouseBrains2.X.production.obj
+_SP1BRGH 19C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_SP1BRGL 19B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext -
-INT_SetInterruptHandler@InterruptHandler 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-__size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_selectFrequency 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__pcstackCOMMON 77 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.o
-__Hend_init 2C 0 CODE 0 end_init -
-___aldiv@counter 28 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-__size_of_process_remote_command 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_INT_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-putch@txData 7A 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.o
-__size_of_DAC_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_main 7F2 0 CODE 0 maintext dist/default/production/MouseBrains2.X.production.o
-?_battery_voltage 2E 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-printf@val 36 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.o
-_ADRES 9B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_dpowers A96 0 STRCODE 0 stringtext1 dist/default/production/MouseBrains2.X.production.o
-_RXPPS E24 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_T2CON 1C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_TRISA 8C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_TRISB 8D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_TRISC 8E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_putch B2C 0 CODE 0 text6 dist/default/production/MouseBrains2.X.production.o
-__size_of_TMR0_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
+__CFG_PLLEN$OFF 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___lmul@product 28 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+INT_SetInterruptHandler@InterruptHandler 20 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___lmul@multiplicand 24 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__size_of_selectFrequency 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+___lldiv@quotient 34 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.obj
+__Hend_init 38 0 CODE 0 end_init -
+___aldiv@counter 30 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__size_of_process_remote_command 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_INT_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+putch@txData 74 0 COMMON 1 cstackCOMMON dist/default/production/MouseBrains2.X.production.obj
+__size_of_DAC_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_main 9A8 0 CODE 0 maintext dist/default/production/MouseBrains2.X.production.obj
+?_battery_voltage 36 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+_ADRES 9B 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_RXPPS E24 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_T2CON 1C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_TRISA 8C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_TRISB 8D 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_TRISC 8E 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_putch DD8 0 CODE 0 text11 dist/default/production/MouseBrains2.X.production.obj
+__size_of_TMR0_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__end_of_battery_voltage 8AC 0 CODE 0 text13 dist/default/production/MouseBrains2.X.production.o
-_putch B22 0 CODE 0 text6 dist/default/production/MouseBrains2.X.production.o
-_stats A0 0 BANK1 1 bssBANK1 dist/default/production/MouseBrains2.X.production.o
-__size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_eusartRxLastError 4A 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.o
-_WDT_Initialize B34 0 CODE 0 text16 dist/default/production/MouseBrains2.X.production.o
-__pintentry 8 0 CODE 0 intentry dist/default/production/MouseBrains2.X.production.o
-__size_of_EUSART_SetErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__end_of_OSCILLATOR_Initialize ADA 0 CODE 0 text20 dist/default/production/MouseBrains2.X.production.o
-_Vdac_mv 4B 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.o
-__initialization 2C 0 CODE 0 cinit dist/default/production/MouseBrains2.X.production.o
-__pbssBANK0 3F 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.o
-__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production/MouseBrains2.X.production.o
-__end_of_INT_DefaultInterruptHandler 532 0 CODE 0 text34 dist/default/production/MouseBrains2.X.production.o
-_T2CONbits 1C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_CCP1CONbits 293 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-__size_of_setLEDColor 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.o
-_OSCILLATOR_Initialize ACA 0 CODE 0 text20 dist/default/production/MouseBrains2.X.production.o
-__end_of_TMR2_Initialize ACA 0 CODE 0 text17 dist/default/production/MouseBrains2.X.production.o
+__size_of_setCurrent 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_battery_voltage A64 0 CODE 0 text13 dist/default/production/MouseBrains2.X.production.obj
+_putch DCE 0 CODE 0 text11 dist/default/production/MouseBrains2.X.production.obj
+_stats C2 0 BANK1 1 bssBANK1 dist/default/production/MouseBrains2.X.production.obj
+__size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_eusartRxLastError 57 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+_WDT_Initialize DE0 0 CODE 0 text19 dist/default/production/MouseBrains2.X.production.obj
+__pintentry 8 0 CODE 0 intentry dist/default/production/MouseBrains2.X.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+__size_of_EUSART_SetErrorHandler 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__end_of_OSCILLATOR_Initialize D7A 0 CODE 0 text23 dist/default/production/MouseBrains2.X.production.obj
+__CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_Vdac_mv 5E 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+__initialization 38 0 CODE 0 cinit dist/default/production/MouseBrains2.X.production.obj
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__pbssBANK0 4B 0 BANK0 1 bssBANK0 dist/default/production/MouseBrains2.X.production.obj
+__pbssBANK1 C2 0 BANK1 1 bssBANK1 dist/default/production/MouseBrains2.X.production.obj
+setCurrent@Vdd_mv 3B 0 BANK0 1 cstackBANK0 dist/default/production/MouseBrains2.X.production.obj
+__end_of_INT_DefaultInterruptHandler 5DA 0 CODE 0 text37 dist/default/production/MouseBrains2.X.production.obj
+_T2CONbits 1C 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_CCP1CONbits 293 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+__size_of_setLEDColor 0 0 ABS 0 - dist/default/production/MouseBrains2.X.production.obj
+_OSCILLATOR_Initialize D6A 0 CODE 0 text23 dist/default/production/MouseBrains2.X.production.obj
+__end_of_TMR2_Initialize D6A 0 CODE 0 text20 dist/default/production/MouseBrains2.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1079,22 +1187,11 @@ __end_of_TMR2_Initialize ACA 0 CODE 0 text17 dist/default/production/MouseBrains
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text16 0 59A B34 11 2
-text18 0 54B A96 4B 2
-text23 0 52A A54 17 2
-cstackBANK0 1 20 20 35 1
-stringtext1 0 541 A82 A 2
-stringtext2 0 506 A0C 24 2
-stringtext4 0 596 B2C 4 2
-intentry 0 4 8 502 2
+text26 0 684 D08 7D 2
+cstackCOMMON 1 70 70 B 1
+cstackBANK0 1 20 20 4C 1
+stringtext1 0 64D C9A 37 2
+intentry 0 4 8 649 2
 reset_vec 0 0 0 2 2
-bssBANK1 1 A0 A0 21 1
-bssCOMMON 1 70 70 C 1
-# %NOTES Section
-# This section contains data of all the note-psects.  The beginning of the section
-# is indicated by %NOTES. The first line indicates the name and decimal
-# byte-length of the first note-psect, e.g.
-#   $codecov_info_hdr 16
-# Each line that follows contains the byte-data of the psect in hexadecimal as a
-# space-separated list. These lines are limited to 16 bytes of data.
-%NOTES
+dataBANK1 1 A0 A0 43 1
+config 0 8007 1000E 2 2

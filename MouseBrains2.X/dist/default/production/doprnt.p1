@@ -1,12 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"10 /opt/microchip/xc8/v2.20/pic/include/c90/stdarg.h
+"10 /Applications/microchip/xc8/v1.45/include/stdarg.h
 [v ___va_start `(*v ~T0 @X0 0 ef ]
 [p i ___va_start ]
-"16 /opt/microchip/xc8/v2.20/pic/include/c90/conio.h
+"16 /Applications/microchip/xc8/v1.45/include/conio.h
 [v _putch `(v ~T0 @X0 0 ef1`uc ]
-"13 /opt/microchip/xc8/v2.20/pic/include/c90/stdarg.h
-[v ___va_arg `(*v ~T0 @X0 0 ev`*v ]
-[p i ___va_arg ]
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -67,40 +64,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 28: unsigned long quot;
 [; ;stdlib.h: 29: unsigned long rem;
 [; ;stdlib.h: 30: } uldiv_t;
-[; ;stdlib.h: 65: extern double atof(const char *);
-[; ;stdlib.h: 66: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 67: extern int atoi(const char *);
-[; ;stdlib.h: 68: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 69: extern long atol(const char *);
-[; ;stdlib.h: 73: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 75: extern int rand(void);
-[; ;stdlib.h: 76: extern void srand(unsigned int);
-[; ;stdlib.h: 77: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 78: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 79: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 80: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 81: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 85: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 86: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 87: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 88: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 93: extern void * malloc(size_t);
-[; ;stdlib.h: 94: extern void free(void *);
-[; ;stdlib.h: 95: extern void * realloc(void *, size_t);
+[; ;stdlib.h: 53: extern double atof(const char *);
+[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 55: extern int atoi(const char *);
+[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 57: extern long atol(const char *);
+[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 60: extern int rand(void);
+[; ;stdlib.h: 61: extern void srand(unsigned int);
+[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 75: extern void * malloc(size_t);
+[; ;stdlib.h: 76: extern void free(void *);
+[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
-[; ;stdlib.h: 104: extern int atexit(void (*)(void));
-[; ;stdlib.h: 105: extern char * getenv(const char *);
-[; ;stdlib.h: 106: extern char ** environ;
-[; ;stdlib.h: 107: extern int system(char *);
-[; ;stdlib.h: 108: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 109: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 110: extern int abs(int);
-[; ;stdlib.h: 111: extern long labs(long);
-[; ;stdlib.h: 113: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 114: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 119: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 120: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 122: extern char * ftoa(float f, int * status);
+[; ;stdlib.h: 86: extern int atexit(void (*)(void));
+[; ;stdlib.h: 87: extern char * getenv(const char *);
+[; ;stdlib.h: 88: extern char ** environ;
+[; ;stdlib.h: 89: extern int system(char *);
+[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 92: extern int abs(int);
+[; ;stdlib.h: 93: extern long labs(long);
+[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
 [; ;string.h: 16: extern void * memset(void *, int, size_t);
@@ -128,6 +125,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 58: extern char * strichr(const char *, int);
 [; ;string.h: 59: extern char * strrchr(const char *, int);
 [; ;string.h: 60: extern char * strrichr(const char *, int);
+[; ;sys.h: 22: extern int execl(char *, char *, ...);
+[; ;sys.h: 23: extern int execv(char *, char **);
+[; ;sys.h: 24: extern int execve(char *, char **, char **);
+[; ;sys.h: 25: extern int execle(char *, char *, ...);
+[; ;sys.h: 26: extern int execvp(char *, char **);
+[; ;sys.h: 27: extern int execlp(char *, char *, ...);
+[; ;sys.h: 28: extern int getpid(void);
+[; ;sys.h: 29: extern char * mktemp(char *);
+[; ;sys.h: 43: extern int spawnl(char *, char *, ...);
+[; ;sys.h: 44: extern int spawnv(char *, char **);
+[; ;sys.h: 45: extern int spawnle(char *, char *, ...);
+[; ;sys.h: 46: extern int spawnve(char *, char **, char **);
+[; ;sys.h: 47: extern int spawnlp(char *, char *, ...);
+[; ;sys.h: 48: extern int spawnvp(char *, char **);
+[; ;sys.h: 50: extern int chdir(char *);
+[; ;sys.h: 51: extern int chdrv(char *);
+[; ;sys.h: 52: extern int mkdir(char *);
+[; ;sys.h: 53: extern int rmdir(char *);
+[; ;sys.h: 54: extern char * getcwd(char *);
+[; ;sys.h: 55: extern void persist_validate(void);
+[; ;sys.h: 56: extern int persist_check(int);
+[; ;sys.h: 57: extern char * getdrv(void);
+[; ;sys.h: 58: extern char ** _getargs(char *, char *);
+[; ;sys.h: 59: extern int _argc_;
+[; ;sys.h: 70: extern void * sbrk(size_t);
+[; ;sys.h: 71: extern void brk(void *);
+[; ;sys.h: 77: extern int _pnum(unsigned long, signed char, signed char, unsigned char, unsigned char, struct __prbuf *, unsigned char);
+[; ;sys.h: 78: extern int _fnum(double, short, short, short, struct __prbuf *, short);
 [; ;math.h: 30: extern double fabs(double);
 [; ;math.h: 31: extern double floor(double);
 [; ;math.h: 32: extern double ceil(double);
@@ -154,224 +179,88 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 53: extern double fmod(double, double);
 [; ;math.h: 54: extern double trunc(double);
 [; ;math.h: 55: extern double round(double);
-"12 /opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
+"13 /Applications/microchip/xc8/v1.45/sources/common/doprnt.c
 [p n 350 ]
-"358
-[v _dpowers `Cui ~T0 @X0 -> 0 `x s ]
-[i _dpowers
-:U ..
--> -> 1 `i `ui
--> -> 10 `i `ui
--> -> 100 `i `ui
--> -> 1000 `i `ui
--> -> 10000 `i `ui
-..
-]
-[; ;doprnt.c: 358: const static unsigned int dpowers[] = {1, 10, 100, 1000, 10000,
-[; ;doprnt.c: 363: };
-"477
+"464
 [v _printf `(i ~T0 @X0 1 ev`*Cuc ]
-"478
+"465
 {
-[; ;doprnt.c: 463: int
-[; ;doprnt.c: 477: printf(const char * f, ...)
-[; ;doprnt.c: 478: {
+[; ;doprnt.c: 455: int
+[; ;doprnt.c: 464: printf(const char * f, ...)
+[; ;doprnt.c: 465: {
 [e :U _printf ]
-"477
+"464
 [v _f `*Cuc ~T0 @X0 1 r0 ]
-"478
+"465
 [f ]
-"479
+"466
 [v _ap `*v ~T0 @X0 -> -> 1 `i `ux a ]
-"512
-[v _c `uc ~T0 @X0 1 a ]
-"521
+"499
+[v _c `c ~T0 @X0 1 a ]
+"506
 [v _prec `c ~T0 @X0 1 a ]
-"525
+"508
 [v _flag `uc ~T0 @X0 1 a ]
-"540
+"523
 [u S6 `ul 1 `d 1 ]
 [n S6 . vd integ ]
-"543
+"526
 [v _tmpval `S6 ~T0 @X0 1 a ]
-"545
+"528
 [v _val `ui ~T0 @X0 1 a ]
-"546
+"529
 [v _len `ui ~T0 @X0 1 a ]
-"547
+"530
 [v _cp `*Cuc ~T0 @X0 1 a ]
-[; ;doprnt.c: 479: va_list ap;
-[; ;doprnt.c: 512: char c;
-[; ;doprnt.c: 521: signed char prec;
-[; ;doprnt.c: 525: unsigned char flag;
-[; ;doprnt.c: 540: union {
-[; ;doprnt.c: 541: unsigned long vd;
-[; ;doprnt.c: 542: double integ;
-[; ;doprnt.c: 543: } tmpval;
-[; ;doprnt.c: 545: unsigned int val;
-[; ;doprnt.c: 546: unsigned len;
-[; ;doprnt.c: 547: const char * cp;
-[; ;doprnt.c: 550: *ap = __va_start();
-"550
+[; ;doprnt.c: 466: va_list ap;
+[; ;doprnt.c: 499: signed char c;
+[; ;doprnt.c: 506: signed char prec;
+[; ;doprnt.c: 508: unsigned char flag;
+[; ;doprnt.c: 523: union {
+[; ;doprnt.c: 524: unsigned long vd;
+[; ;doprnt.c: 525: double integ;
+[; ;doprnt.c: 526: } tmpval;
+[; ;doprnt.c: 528: unsigned int val;
+[; ;doprnt.c: 529: unsigned len;
+[; ;doprnt.c: 530: const char * cp;
+[; ;doprnt.c: 533: *ap = __va_start();
+"533
 [e = *U &U _ap ( ___va_start ..  ]
-[; ;doprnt.c: 553: while((c = *f++)) {
-"553
+[; ;doprnt.c: 536: while(c = *f++) {
+"536
 [e $U 8  ]
 [e :U 9 ]
 {
-[; ;doprnt.c: 555: if(c != '%')
-"555
-[e $ ! != -> _c `ui -> 37 `ui 11  ]
-[; ;doprnt.c: 557: {
-"557
+[; ;doprnt.c: 540: {
+"540
 {
-[; ;doprnt.c: 558: (putch(c) );
-"558
-[e ( _putch (1 _c ]
-[; ;doprnt.c: 559: continue;
-"559
+[; ;doprnt.c: 541: (putch(c) );
+"541
+[e ( _putch (1 -> _c `uc ]
+[; ;doprnt.c: 542: continue;
+"542
 [e $U 8  ]
-"560
+"543
 }
-[e :U 11 ]
-[; ;doprnt.c: 560: }
-[; ;doprnt.c: 565: flag = 0;
-"565
-[e = _flag -> -> 0 `i `uc ]
-[; ;doprnt.c: 661: switch(c = *f++) {
-"661
-[e $U 13  ]
+[; ;doprnt.c: 543: }
+[; ;doprnt.c: 1422: {
+"1422
 {
-[; ;doprnt.c: 663: case 0:
-"663
-[e :U 14 ]
-[; ;doprnt.c: 664: goto alldone;
-"664
-[e $U 15  ]
-[; ;doprnt.c: 723: case 'd':
-"723
-[e :U 16 ]
-"724
-[e :U 17 ]
-[; ;doprnt.c: 724: case 'i':
-[; ;doprnt.c: 725: break;
-"725
-[e $U 12  ]
-[; ;doprnt.c: 828: default:
-"828
-[e :U 18 ]
-[; ;doprnt.c: 839: continue;
-"839
-[e $U 8  ]
-"848
+"1469
 }
-[; ;doprnt.c: 848: }
-[e $U 12  ]
-"661
-[e :U 13 ]
-[e [\ = _c *U ++ _f * -> -> 1 `i `x -> -> # *U _f `i `x , $ -> -> 0 `i `uc 14
- , $ -> -> 100 `ui `uc 16
- , $ -> -> 105 `ui `uc 17
- 18 ]
-"848
-[e :U 12 ]
-[; ;doprnt.c: 1279: {
-"1279
-{
-[; ;doprnt.c: 1285: val = (unsigned int)(*(int *)__va_arg((*(int **)ap), (int)0));
-"1285
-[e = _val -> *U -> ( ___va_arg , (. -> *U -> &U _ap `**i `*v -> 0 `i `*i `ui ]
-[; ;doprnt.c: 1287: if((int)val < 0) {
-"1287
-[e $ ! < -> _val `i -> 0 `i 19  ]
-{
-[; ;doprnt.c: 1288: flag |= 0x03;
-"1288
-[e =| _flag -> -> 3 `i `uc ]
-[; ;doprnt.c: 1289: val = -val;
-"1289
-[e = _val -U _val ]
-"1290
-}
-[e :U 19 ]
-"1292
-}
-[; ;doprnt.c: 1290: }
-[; ;doprnt.c: 1292: }
-[; ;doprnt.c: 1331: for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
-"1331
-{
-[e = _c -> -> 1 `i `uc ]
-[e $ != -> _c `ui / -> # _dpowers `ui -> # *U + &U _dpowers * -> -> -> 0 `i `ui `ux -> -> # *U &U _dpowers `ui `ux `ui 20  ]
-[e $U 21  ]
-"1332
-[e :U 20 ]
-[; ;doprnt.c: 1332: if(val < dpowers[c])
-[e $ ! < _val *U + &U _dpowers * -> _c `ux -> -> # *U &U _dpowers `ui `ux 23  ]
-[; ;doprnt.c: 1333: break;
-"1333
-[e $U 21  ]
-[e :U 23 ]
-"1331
-[e ++ _c -> -> 1 `i `uc ]
-[e $ != -> _c `ui / -> # _dpowers `ui -> # *U + &U _dpowers * -> -> -> 0 `i `ui `ux -> -> # *U &U _dpowers `ui `ux `ui 20  ]
-[e :U 21 ]
-"1448
-}
-[; ;doprnt.c: 1448: {
-{
-[; ;doprnt.c: 1464: if(flag & 0x03)
-"1464
-[e $ ! != & -> _flag `i -> 3 `i -> 0 `i 24  ]
-[; ;doprnt.c: 1465: (putch('-') );
-"1465
-[e ( _putch (1 -> -> 45 `ui `uc ]
-[e :U 24 ]
-"1495
-}
-[; ;doprnt.c: 1495: }
-[; ;doprnt.c: 1498: prec = c;
-"1498
-[e = _prec -> _c `c ]
-[; ;doprnt.c: 1500: while(prec--) {
-"1500
-[e $U 25  ]
-[e :U 26 ]
-{
-[; ;doprnt.c: 1504: {
-"1504
-{
-[; ;doprnt.c: 1515: c = (val / dpowers[(unsigned char)prec]) % 10 + '0';
-"1515
-[e = _c -> + % / _val *U + &U _dpowers * -> -> _prec `uc `ux -> -> # *U &U _dpowers `ui `ux -> -> 10 `i `ui -> 48 `ui `uc ]
-"1549
-}
-[; ;doprnt.c: 1549: }
-[; ;doprnt.c: 1550: (putch(c) );
-"1550
-[e ( _putch (1 _c ]
-"1551
-}
-[e :U 25 ]
-"1500
-[e $ != -> -- _prec -> -> 1 `i `c `i -> -> -> 0 `i `c `i 26  ]
-[e :U 27 ]
-"1559
+"1533
 }
 [e :U 8 ]
-"553
-[e $ != -> = _c *U ++ _f * -> -> 1 `i `x -> -> # *U _f `i `x `i -> -> -> 0 `i `uc `i 9  ]
+"536
+[e $ != -> = _c -> *U ++ _f * -> -> 1 `i `x -> -> # *U _f `i `x `c `i -> -> -> 0 `i `c `i 9  ]
 [e :U 10 ]
-[; ;doprnt.c: 1551: }
-[; ;doprnt.c: 1559: }
-[; ;doprnt.c: 1561: alldone:
-"1561
-[e :U 15 ]
-[; ;doprnt.c: 1566: return 0;
-"1566
+[; ;doprnt.c: 1469: }
+[; ;doprnt.c: 1533: }
+[; ;doprnt.c: 1540: return 0;
+"1540
 [e ) -> 0 `i ]
 [e $UE 7  ]
-[; ;doprnt.c: 1567: }
-"1567
+[; ;doprnt.c: 1541: }
+"1541
 [e :UE 7 ]
 }

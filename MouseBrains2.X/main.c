@@ -68,6 +68,23 @@ uint8_t frequency;
 uint8_t duty;
 uint8_t current;
 
+int currentValue[] = {0,30,50,70,90,110,130,160,190,220,250};
+int frequencyValue[] = {0,50,100,120,130,140};
+int maxCurrentIndex = sizeof(currentValue)/sizeof(currentValue[0]);
+int maxFrequencyIndex = sizeof(frequencyValue)/sizeof(frequencyValue[0]);
+int currentIndex = 0; // what's in storage??
+int frequencyIndex = 0;
+
+typedef enum 
+{
+    STATE_RUNNING = 0, 
+    STATE_CURRENT = 1,
+    STATE_FREQUENCY = 2,
+    STATE_LOWBATTERY = 3
+}state_t;
+
+state_t interfaceState;
+
 // measure Vdd using FVR/ADC
 // assumes 4 MHz clock; ADC uses FOSC/8
 // returns battery voltage in integer mV
@@ -159,15 +176,17 @@ void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
 //
 //
 void lowBattery(){ // blink red until battery is replaced
-  setLEDColor(0, 255, 255);
+ interfaceState = STATE_LOWBATTERY;
+  setLEDColor(255, 0, 0);
   __delay_ms(250);
   setLEDColor(0, 0, 0);
   __delay_ms(500);
 }
 
 void startUp(){ // blink green a few times
+ interfaceState = STATE_RUNNING;
    for (int i = 0; i < 5; i++){
-   setLEDColor(255, 0, 255);
+   setLEDColor(0, 180, 230);
   __delay_ms(100);
   setLEDColor(0, 0, 0);
   __delay_ms(100);
@@ -188,11 +207,19 @@ void selectSomething(){ // not clear if current or frequency are selected
 }
 
 void selectFrequency(){
-    flag = 1;
+    interfaceState = STATE_FREQUENCY;
     setLEDColor(255, 0, 255);
     __delay_ms(1000);
     setLEDColor(0, 0, 0);
     printf("\n Frequency selected");
+}
+
+void selectCurrent(){
+    interfaceState = STATE_CURRENT;
+    setLEDColor(0, 0, 255);
+    __delay_ms(1000);
+    setLEDColor(0, 0, 0);
+    printf("\n current selected");
 }
 
 // **********************************END INFORMATION CODES
@@ -205,11 +232,13 @@ void selectFrequency(){
     __delay_ms(duty); // how to get value for duty here??
 }*/
 
-void setCurrent(microamps, Vdd_mv)
+void setCurrent(int microamps, int Vdd_mv)
 {
-Vdac_mv = Vdd_mv -
-    ((uint32_t)(CURRENT_SOURCE_RESISTANCE_OHMS) * microamps + 500) / 1000;
-DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+    Vdac_mv = Vdd_mv - ((uint32_t)(CURRENT_SOURCE_RESISTANCE_OHMS) * microamps + 500) / 1000;
+    int DACValue = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+    if(DACValue > 255){DACValue = 255;}
+    if(DACValue < 0){DACValue = 0;}
+    DAC1CON1 = DACValue;
 }
 
 /// todo: do something with the commands
@@ -222,59 +251,64 @@ DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
      //(225, 155, 0) = pink
      //(225, 65, 0); = purple
      //(0, 0, 0); = dim 
+
+//int currentValue[] = {0,30,50,70,90,110,130,160,190,220,250};
+//int frequencyValue[] = {0,50,100,120,130,140};
 void process_remote_command(NEC_IR_code_t* code){
   setLEDColor(0, 0, 0);
   
   switch(code->command){
   case 0xa0: // up arrow
-      setLEDColor(0, 0, 0);
-      if (flag == 1){
-        if (duty >= 0 && duty <=150){
-        duty = duty + 30;
-        }
-        else {
-        duty = 150;
-        selectSomething();
-        }
-       //setFrequency(duty);
-       //if frequency is zero or 150 (limits), blink turquoise?
-       printf("%d\n", (duty));
+      if(STATE_CURRENT == interfaceState){
+          currentIndex++;
+          if (currentIndex > maxCurrentIndex - 1)
+          {
+              currentIndex = maxCurrentIndex - 1;
+          }
+       setCurrent(currentValue[currentIndex],battery_voltage());   
       }
-      else if (flag == 2){
-       //call DAC function;  
+      if(STATE_FREQUENCY == interfaceState){
+          frequencyIndex++;
+          if (frequencyIndex > maxFrequencyIndex - 1)
+          {
+              frequencyIndex = maxFrequencyIndex - 1;
+          }
       }
-      else{
-       selectSomething();   
+      if(STATE_RUNNING == interfaceState){
+          selectSomething();
+      }
+      if(STATE_LOWBATTERY == interfaceState){
+          selectSomething();
       }
     break;
   case 0xb0: // down arrow
-      if (flag == 1){
-          if (duty >= 0 && duty <=150){
-          duty = duty - 30;
-          printf("%d\n", (duty));
+      if(STATE_CURRENT == interfaceState){
+          currentIndex--;
+          if (currentIndex < 0)
+          {
+              currentIndex = 0;
           }
-          else{
-          duty = 150;
+       setCurrent(currentValue[currentIndex],battery_voltage()); 
+      }
+      if(STATE_FREQUENCY == interfaceState){
+          frequencyIndex--;
+          if (frequencyIndex < 0)
+          {
+              frequencyIndex = 0;
+          }
+      }
+      if(STATE_RUNNING == interfaceState){
           selectSomething();
-          }
-       }            
-       //setFrequency(duty);
-       //
-      else if (flag == 2){
-       //call DAC function;  
       }
-      else{
-       selectSomething();   
+      if(STATE_LOWBATTERY == interfaceState){
+          selectSomething();
       }
-    break;    
-  case 0x50: // right arrow, selects frequency (green)
+    break;
+  case 0x50: // right arrow, selects frequency (red)
     selectFrequency();
     break;
-  case 0x10: // left arrow, selects current (yellow)
-    LED_red = 0;
-    LED_green = 130;
-    LED_blue = 255;
-    flag = 2;
+  case 0x10: // left arrow, selects current (blue)
+    selectCurrent();
     break;
   case 0x08: // 1, resets current or frequency select (red)
     LED_red = 0;

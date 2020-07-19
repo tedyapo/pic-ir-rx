@@ -139,9 +139,6 @@ void DAC_Initialize(void);
 */
 void DAC_SetOutput(uint8_t inputData);
 
-
-
-
 /**
   @Summary
     Read input data fed to DAC.

@@ -57,8 +57,8 @@
 
 void OPA1_Initialize(void)
 {
-    // OPA1SP High_GBWP_mode; OPA1EN enabled; OPA1PCH DAC; OPA1UG OPA_Output; 
-    OPA1CON = 0xD2;
+    // OPA1SP High_GBWP_mode; OPA1EN enabled; OPA1PCH DAC; OPA1UG OPAIN-_pin; 
+    OPA1CON = 0xC2;
 }
 /**
  End of File

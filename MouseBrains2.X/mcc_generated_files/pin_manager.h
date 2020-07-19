@@ -97,6 +97,18 @@
 #define RA2_SetAnalogMode()         do { ANSELAbits.ANSA2 = 1; } while(0)
 #define RA2_SetDigitalMode()        do { ANSELAbits.ANSA2 = 0; } while(0)
 
+// get/set RB4 procedures
+#define RB4_SetHigh()            do { LATBbits.LATB4 = 1; } while(0)
+#define RB4_SetLow()             do { LATBbits.LATB4 = 0; } while(0)
+#define RB4_Toggle()             do { LATBbits.LATB4 = ~LATBbits.LATB4; } while(0)
+#define RB4_GetValue()              PORTBbits.RB4
+#define RB4_SetDigitalInput()    do { TRISBbits.TRISB4 = 1; } while(0)
+#define RB4_SetDigitalOutput()   do { TRISBbits.TRISB4 = 0; } while(0)
+#define RB4_SetPullup()             do { WPUBbits.WPUB4 = 1; } while(0)
+#define RB4_ResetPullup()           do { WPUBbits.WPUB4 = 0; } while(0)
+#define RB4_SetAnalogMode()         do { ANSELBbits.ANSB4 = 1; } while(0)
+#define RB4_SetDigitalMode()        do { ANSELBbits.ANSB4 = 0; } while(0)
+
 // get/set RB5 procedures
 #define RB5_SetHigh()            do { LATBbits.LATB5 = 1; } while(0)
 #define RB5_SetLow()             do { LATBbits.LATB5 = 0; } while(0)
@@ -142,6 +154,18 @@
 #define RC3_ResetPullup()           do { WPUCbits.WPUC3 = 0; } while(0)
 #define RC3_SetAnalogMode()         do { ANSELCbits.ANSC3 = 1; } while(0)
 #define RC3_SetDigitalMode()        do { ANSELCbits.ANSC3 = 0; } while(0)
+
+// get/set RC6 procedures
+#define RC6_SetHigh()            do { LATCbits.LATC6 = 1; } while(0)
+#define RC6_SetLow()             do { LATCbits.LATC6 = 0; } while(0)
+#define RC6_Toggle()             do { LATCbits.LATC6 = ~LATCbits.LATC6; } while(0)
+#define RC6_GetValue()              PORTCbits.RC6
+#define RC6_SetDigitalInput()    do { TRISCbits.TRISC6 = 1; } while(0)
+#define RC6_SetDigitalOutput()   do { TRISCbits.TRISC6 = 0; } while(0)
+#define RC6_SetPullup()             do { WPUCbits.WPUC6 = 1; } while(0)
+#define RC6_ResetPullup()           do { WPUCbits.WPUC6 = 0; } while(0)
+#define RC6_SetAnalogMode()         do { ANSELCbits.ANSC6 = 1; } while(0)
+#define RC6_SetDigitalMode()        do { ANSELCbits.ANSC6 = 0; } while(0)
 
 /**
    @Param

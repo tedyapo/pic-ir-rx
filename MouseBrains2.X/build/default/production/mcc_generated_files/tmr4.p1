@@ -42,6 +42,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _frequencyValue `i ~T0 @X0 -> 0 `x e ]
 "142
 [v _frequencyIndex `i ~T0 @X0 0 e ]
+"2687 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
+[v _DAC1CON1 `Vuc ~T0 @X0 0 e@281 ]
+"149 mcc_generated_files/tmr4.c
+[v _dac_value `uc ~T0 @X0 0 e ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -5174,47 +5178,57 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 1 `i `uc
 ]
 [; ;tmr4.c: 146: uint8_t currentIsOn = 1;
-"148
+[; ;tmr4.c: 149: extern uint8_t dac_value;
+"151
 [v _TMR4_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr4.c: 148: void TMR4_DefaultInterruptHandler(void){
+[; ;tmr4.c: 151: void TMR4_DefaultInterruptHandler(void){
 [e :U _TMR4_DefaultInterruptHandler ]
 [f ]
-[; ;tmr4.c: 154: if (currentIsOn){
-"154
+[; ;tmr4.c: 157: if (currentIsOn){
+"157
 [e $ ! != -> _currentIsOn `i -> -> -> 0 `i `uc `i 626  ]
 {
-[; ;tmr4.c: 155: currentIsOn = 0;
-"155
+[; ;tmr4.c: 158: currentIsOn = 0;
+"158
 [e = _currentIsOn -> -> 0 `i `uc ]
-[; ;tmr4.c: 156: if (0 == frequencyValue[frequencyIndex]){
-"156
+[; ;tmr4.c: 159: if (0 == frequencyValue[frequencyIndex]){
+"159
 [e $ ! == -> 0 `i *U + &U _frequencyValue * -> -> _frequencyIndex `ui `ux -> -> # *U &U _frequencyValue `ui `ux 627  ]
 {
-"159
+[; ;tmr4.c: 162: DAC1CON1 = dac_value;
+"162
+[e = _DAC1CON1 _dac_value ]
+"163
 }
-[; ;tmr4.c: 159: } else {
+[; ;tmr4.c: 163: } else {
 [e $U 628  ]
 [e :U 627 ]
 {
-"161
+[; ;tmr4.c: 165: DAC1CON1 = 255;
+"165
+[e = _DAC1CON1 -> -> 255 `i `uc ]
+"166
 }
 [e :U 628 ]
-"162
+"167
 }
-[; ;tmr4.c: 161: }
-[; ;tmr4.c: 162: } else {
+[; ;tmr4.c: 166: }
+[; ;tmr4.c: 167: } else {
 [e $U 629  ]
 [e :U 626 ]
 {
-[; ;tmr4.c: 163: currentIsOn = 1;
-"163
+[; ;tmr4.c: 168: currentIsOn = 1;
+"168
 [e = _currentIsOn -> -> 1 `i `uc ]
-"165
+[; ;tmr4.c: 170: DAC1CON1 = dac_value;
+"170
+[e = _DAC1CON1 _dac_value ]
+"171
 }
 [e :U 629 ]
-[; ;tmr4.c: 165: }
-[; ;tmr4.c: 166: }
-"166
+[; ;tmr4.c: 171: }
+[; ;tmr4.c: 172: }
+"172
 [e :UE 625 ]
 }

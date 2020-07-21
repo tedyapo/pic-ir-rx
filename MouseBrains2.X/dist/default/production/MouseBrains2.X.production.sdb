@@ -16,7 +16,7 @@ STATE_CURRENT 1
 STATE_FREQUENCY 2
 STATE_LOWBATTERY 3
 ]
-"285
+"288
 [e E4403 . `uc
 STATE_RESET 0
 STATE_RECEIVING 1
@@ -52,13 +52,13 @@ STATE_DONE 2
 [v _selectFrequency selectFrequency `(v  1 e 1 0 ]
 "217
 [v _selectCurrent selectCurrent `(v  1 e 1 0 ]
-"235
+"237
 [v _setCurrent setCurrent `(v  1 e 1 0 ]
-"246
+"249
 [v _setFrequency setFrequency `(v  1 e 1 0 ]
-"285
+"288
 [v _process_remote_command process_remote_command `(v  1 e 1 0 ]
-"380
+"383
 [v _main main `(v  1 e 1 0 ]
 "58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/dac.c
 [v _DAC_Initialize DAC_Initialize `(v  1 e 1 0 ]
@@ -124,7 +124,7 @@ STATE_DONE 2
 [v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
 "132
 [v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
-"148
+"151
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
 [s S131 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
@@ -242,12 +242,12 @@ STATE_DONE 2
 [v _ADRES ADRES `VEus  1 e 2 @155 ]
 "1830
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S709 . 1 `uc 1 ADON 1 0 :1:0 
+[s S799 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "1855
-[s S713 . 1 `uc 1 . 1 0 :1:0 
+[s S803 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -255,11 +255,11 @@ STATE_DONE 2
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S721 . 1 `uc 1 . 1 0 :1:0 
+[s S811 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S724 . 1 `S709 1 . 1 0 `S713 1 . 1 0 `S721 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES724  1 e 1 @157 ]
+[u S814 . 1 `S799 1 . 1 0 `S803 1 . 1 0 `S811 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES814  1 e 1 @157 ]
 "1910
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2030
@@ -272,7 +272,7 @@ STATE_DONE 2
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2501
 [v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
-[s S677 . 1 `uc 1 ADFVR 1 0 :2:0 
+[s S767 . 1 `uc 1 ADFVR 1 0 :2:0 
 `uc 1 CDAFVR 1 0 :2:2 
 `uc 1 TSRNG 1 0 :1:4 
 `uc 1 TSEN 1 0 :1:5 
@@ -280,13 +280,13 @@ STATE_DONE 2
 `uc 1 FVREN 1 0 :1:7 
 ]
 "2522
-[s S684 . 1 `uc 1 ADFVR0 1 0 :1:0 
+[s S774 . 1 `uc 1 ADFVR0 1 0 :1:0 
 `uc 1 ADFVR1 1 0 :1:1 
 `uc 1 CDAFVR0 1 0 :1:2 
 `uc 1 CDAFVR1 1 0 :1:3 
 ]
-[u S689 . 1 `S677 1 . 1 0 `S684 1 . 1 0 ]
-[v _FVRCONbits FVRCONbits `VES689  1 e 1 @279 ]
+[u S779 . 1 `S767 1 . 1 0 `S774 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES779  1 e 1 @279 ]
 "2577
 [v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @280 ]
 "2687
@@ -297,8 +297,6 @@ STATE_DONE 2
 [v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
 "2931
 [v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
-"3152
-[v _RC1REG RC1REG `VEuc  1 e 1 @409 ]
 "3206
 [v _TX1REG TX1REG `VEuc  1 e 1 @410 ]
 "3267
@@ -307,32 +305,8 @@ STATE_DONE 2
 [v _SP1BRGH SP1BRGH `VEuc  1 e 1 @412 ]
 "3391
 [v _RC1STA RC1STA `VEuc  1 e 1 @413 ]
-[s S374 . 1 `uc 1 RX9D 1 0 :1:0 
-`uc 1 OERR 1 0 :1:1 
-`uc 1 FERR 1 0 :1:2 
-`uc 1 ADDEN 1 0 :1:3 
-`uc 1 CREN 1 0 :1:4 
-`uc 1 SREN 1 0 :1:5 
-`uc 1 RX9 1 0 :1:6 
-`uc 1 SPEN 1 0 :1:7 
-]
-"3417
-[u S383 . 1 `S374 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES383  1 e 1 @413 ]
 "3571
 [v _TX1STA TX1STA `VEuc  1 e 1 @414 ]
-[s S353 . 1 `uc 1 TX9D 1 0 :1:0 
-`uc 1 TRMT 1 0 :1:1 
-`uc 1 BRGH 1 0 :1:2 
-`uc 1 SENDB 1 0 :1:3 
-`uc 1 SYNC 1 0 :1:4 
-`uc 1 TXEN 1 0 :1:5 
-`uc 1 TX9 1 0 :1:6 
-`uc 1 CSRC 1 0 :1:7 
-]
-"3597
-[u S362 . 1 `S353 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES362  1 e 1 @414 ]
 "3751
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @415 ]
 "3997
@@ -349,30 +323,30 @@ STATE_DONE 2
 [v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
 "5699
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
-[s S867 . 1 `uc 1 CCP1M 1 0 :4:0 
+[s S957 . 1 `uc 1 CCP1M 1 0 :4:0 
 `uc 1 DC1B 1 0 :2:4 
 ]
 "5768
-[s S870 . 1 `uc 1 CCP1M0 1 0 :1:0 
+[s S960 . 1 `uc 1 CCP1M0 1 0 :1:0 
 `uc 1 CCP1M1 1 0 :1:1 
 `uc 1 CCP1M2 1 0 :1:2 
 `uc 1 CCP1M3 1 0 :1:3 
 `uc 1 DC1B0 1 0 :1:4 
 `uc 1 DC1B1 1 0 :1:5 
 ]
-[s S877 . 1 `uc 1 . 1 0 :4:0 
+[s S967 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CCP1Y 1 0 :1:4 
 `uc 1 CCP1X 1 0 :1:5 
 ]
-[u S881 . 1 `S867 1 . 1 0 `S870 1 . 1 0 `S877 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES881  1 e 1 @659 ]
-[s S764 . 1 `uc 1 C1TSEL 1 0 :2:0 
+[u S971 . 1 `S957 1 . 1 0 `S960 1 . 1 0 `S967 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES971  1 e 1 @659 ]
+[s S854 . 1 `uc 1 C1TSEL 1 0 :2:0 
 `uc 1 C2TSEL 1 0 :2:2 
 `uc 1 P3TSEL 1 0 :2:4 
 `uc 1 P4TSEL 1 0 :2:6 
 ]
 "6121
-[s S769 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+[s S859 . 1 `uc 1 C1TSEL0 1 0 :1:0 
 `uc 1 C1TSEL1 1 0 :1:1 
 `uc 1 C2TSEL0 1 0 :1:2 
 `uc 1 C2TSEL1 1 0 :1:3 
@@ -381,8 +355,8 @@ STATE_DONE 2
 `uc 1 P4TSEL0 1 0 :1:6 
 `uc 1 P4TSEL1 1 0 :1:7 
 ]
-[u S778 . 1 `S764 1 . 1 0 `S769 1 . 1 0 ]
-[v _CCPTMRSbits CCPTMRSbits `VES778  1 e 1 @670 ]
+[u S868 . 1 `S854 1 . 1 0 `S859 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES868  1 e 1 @670 ]
 "6186
 [v _SLRCONA SLRCONA `VEuc  1 e 1 @780 ]
 "6231
@@ -401,67 +375,52 @@ STATE_DONE 2
 [v _PR4 PR4 `VEuc  1 e 1 @1046 ]
 "6976
 [v _T4CON T4CON `VEuc  1 e 1 @1047 ]
-[s S1107 . 1 `uc 1 T4CKPS 1 0 :2:0 
-`uc 1 TMR4ON 1 0 :1:2 
-`uc 1 T4OUTPS 1 0 :4:3 
-]
-"6997
-[s S1111 . 1 `uc 1 T4CKPS0 1 0 :1:0 
-`uc 1 T4CKPS1 1 0 :1:1 
-`uc 1 . 1 0 :1:2 
-`uc 1 T4OUTPS0 1 0 :1:3 
-`uc 1 T4OUTPS1 1 0 :1:4 
-`uc 1 T4OUTPS2 1 0 :1:5 
-`uc 1 T4OUTPS3 1 0 :1:6 
-]
-[u S1119 . 1 `S1107 1 . 1 0 `S1111 1 . 1 0 ]
-[v _T4CONbits T4CONbits `VES1119  1 e 1 @1047 ]
 "7158
 [v _OPA1CON OPA1CON `VEuc  1 e 1 @1297 ]
 "7212
 [v _OPA2CON OPA2CON `VEuc  1 e 1 @1301 ]
-[s S797 . 1 `uc 1 . 1 0 :6:0 
+[s S887 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM3DCL 1 0 :2:6 
 ]
 "7282
-[s S800 . 1 `uc 1 . 1 0 :6:0 
+[s S890 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM3DCL0 1 0 :1:6 
 `uc 1 PWM3DCL1 1 0 :1:7 
 ]
-[u S804 . 1 `S797 1 . 1 0 `S800 1 . 1 0 ]
-[v _PWM3DCLbits PWM3DCLbits `VES804  1 e 1 @1559 ]
+[u S894 . 1 `S887 1 . 1 0 `S890 1 . 1 0 ]
+[v _PWM3DCLbits PWM3DCLbits `VES894  1 e 1 @1559 ]
 "7302
 [v _PWM3DCH PWM3DCH `VEuc  1 e 1 @1560 ]
-[s S815 . 1 `uc 1 . 1 0 :4:0 
+[s S905 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 PWM3POL 1 0 :1:4 
 `uc 1 PWM3OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PWM3EN 1 0 :1:7 
 ]
 "7391
-[u S821 . 1 `S815 1 . 1 0 ]
-[v _PWM3CONbits PWM3CONbits `VES821  1 e 1 @1561 ]
-[s S833 . 1 `uc 1 . 1 0 :6:0 
+[u S911 . 1 `S905 1 . 1 0 ]
+[v _PWM3CONbits PWM3CONbits `VES911  1 e 1 @1561 ]
+[s S923 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM4DCL 1 0 :2:6 
 ]
 "7454
-[s S836 . 1 `uc 1 . 1 0 :6:0 
+[s S926 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM4DCL0 1 0 :1:6 
 `uc 1 PWM4DCL1 1 0 :1:7 
 ]
-[u S840 . 1 `S833 1 . 1 0 `S836 1 . 1 0 ]
-[v _PWM4DCLbits PWM4DCLbits `VES840  1 e 1 @1562 ]
+[u S930 . 1 `S923 1 . 1 0 `S926 1 . 1 0 ]
+[v _PWM4DCLbits PWM4DCLbits `VES930  1 e 1 @1562 ]
 "7474
 [v _PWM4DCH PWM4DCH `VEuc  1 e 1 @1563 ]
-[s S851 . 1 `uc 1 . 1 0 :4:0 
+[s S941 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 PWM4POL 1 0 :1:4 
 `uc 1 PWM4OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PWM4EN 1 0 :1:7 
 ]
 "7563
-[u S857 . 1 `S851 1 . 1 0 ]
-[v _PWM4CONbits PWM4CONbits `VES857  1 e 1 @1564 ]
+[u S947 . 1 `S941 1 . 1 0 ]
+[v _PWM4CONbits PWM4CONbits `VES947  1 e 1 @1564 ]
 "8490
 [v _INTPPS INTPPS `VEuc  1 e 1 @3600 ]
 "8690
@@ -498,6 +457,8 @@ STATE_DONE 2
 [v _frequencyIndex frequencyIndex `i  1 e 2 0 ]
 "86
 [v _interfaceState interfaceState `E4444  1 e 1 0 ]
+"235
+[v _dac_value dac_value `uc  1 e 1 0 ]
 [s S279 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
@@ -530,10 +491,10 @@ STATE_DONE 2
 [v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
 "146
 [v _currentIsOn currentIsOn `uc  1 e 1 0 ]
-"380 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
+"383 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"439
+"442
 } 0
 "186
 [v _startUp startUp `(v  1 e 1 0 ]
@@ -542,7 +503,7 @@ STATE_DONE 2
 [v startUp@i i `i  1 a 2 4 ]
 "195
 } 0
-"285
+"288
 [v _process_remote_command process_remote_command `(v  1 e 1 0 ]
 {
 [s S461 . 2 `uc 1 address_b 1 0 `uc 1 address 1 1 ]
@@ -554,26 +515,26 @@ STATE_DONE 2
 [v process_remote_command@code code `*.1S476  1 a 1 wreg ]
 [v process_remote_command@code code `*.1S476  1 a 1 wreg ]
 [v process_remote_command@code code `*.1S476  1 a 1 44 ]
-"374
+"377
 } 0
-"246
+"249
 [v _setFrequency setFrequency `(v  1 e 1 0 ]
 {
-"262
+"265
 [v setFrequency@pr4_val pr4_val `i  1 a 2 28 ]
-"246
+"249
 [v setFrequency@frequency_hz frequency_hz `ui  1 p 2 26 ]
-"270
+"273
 } 0
-"235
+"237
 [v _setCurrent setCurrent `(v  1 e 1 0 ]
 {
-"238
+"240
 [v setCurrent@DACValue DACValue `i  1 a 2 40 ]
-"236
+"238
 [v setCurrent@microamps microamps `i  1 p 2 28 ]
 [v setCurrent@Vdd_mv Vdd_mv `i  1 p 2 30 ]
-"242
+"245
 } 0
 "15 /opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -798,10 +759,10 @@ STATE_DONE 2
 {
 "129
 } 0
-"148
+"151
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"166
+"172
 } 0
 "108 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]

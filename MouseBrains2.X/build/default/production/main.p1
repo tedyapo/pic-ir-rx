@@ -140,7 +140,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _DAC1CON1 `Vuc ~T0 @X0 0 e@281 ]
 "6956
 [v _PR4 `Vuc ~T0 @X0 0 e@1046 ]
-"285 main.c
+"288 main.c
 [c E4403 0 1 2 .. ]
 [n E4403 . STATE_RESET STATE_RECEIVING STATE_DONE  ]
 "19 IR_receiver.h
@@ -5705,366 +5705,375 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 643 ]
 }
 "235
+[v _dac_value `uc ~T0 @X0 1 e ]
+[i _dac_value
+-> -> 0 `i `uc
+]
+[; ;main.c: 235: uint8_t dac_value = 0;
+"237
 [v _setCurrent `(v ~T0 @X0 1 ef2`i`i ]
-"236
+"238
 {
-[; ;main.c: 235: void setCurrent(int microamps, int Vdd_mv)
-[; ;main.c: 236: {
+[; ;main.c: 237: void setCurrent(int microamps, int Vdd_mv)
+[; ;main.c: 238: {
 [e :U _setCurrent ]
 [v _microamps `i ~T0 @X0 1 r1 ]
 [v _Vdd_mv `i ~T0 @X0 1 r2 ]
 [f ]
-[; ;main.c: 237: Vdac_mv = Vdd_mv - ((uint32_t)(4700) * microamps + 500) / 1000;
-"237
-[e = _Vdac_mv -> - -> -> _Vdd_mv `l `ul / + * -> -> 4700 `i `ul -> -> _microamps `l `ul -> -> -> 500 `i `l `ul -> -> -> 1000 `i `l `ul `ui ]
-"238
-[v _DACValue `i ~T0 @X0 1 a ]
-[; ;main.c: 238: int DACValue = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
-[e = _DACValue -> / + * -> 256 `l -> _Vdac_mv `l -> / _Vdd_mv -> 2 `i `l -> _Vdd_mv `l `i ]
-[; ;main.c: 239: if(DACValue > 255){DACValue = 255;}
+[; ;main.c: 239: Vdac_mv = Vdd_mv - ((uint32_t)(4700) * microamps + 500) / 1000;
 "239
+[e = _Vdac_mv -> - -> -> _Vdd_mv `l `ul / + * -> -> 4700 `i `ul -> -> _microamps `l `ul -> -> -> 500 `i `l `ul -> -> -> 1000 `i `l `ul `ui ]
+"240
+[v _DACValue `i ~T0 @X0 1 a ]
+[; ;main.c: 240: int DACValue = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+[e = _DACValue -> / + * -> 256 `l -> _Vdac_mv `l -> / _Vdd_mv -> 2 `i `l -> _Vdd_mv `l `i ]
+[; ;main.c: 241: if(DACValue > 255){DACValue = 255;}
+"241
 [e $ ! > _DACValue -> 255 `i 645  ]
 {
 [e = _DACValue -> 255 `i ]
 }
 [e :U 645 ]
-[; ;main.c: 240: if(DACValue < 0){DACValue = 0;}
-"240
+[; ;main.c: 242: if(DACValue < 0){DACValue = 0;}
+"242
 [e $ ! < _DACValue -> 0 `i 646  ]
 {
 [e = _DACValue -> 0 `i ]
 }
 [e :U 646 ]
-[; ;main.c: 241: DAC1CON1 = DACValue;
-"241
+[; ;main.c: 243: dac_value = DACValue;
+"243
+[e = _dac_value -> _DACValue `uc ]
+[; ;main.c: 244: DAC1CON1 = DACValue;
+"244
 [e = _DAC1CON1 -> _DACValue `uc ]
-[; ;main.c: 242: }
-"242
+[; ;main.c: 245: }
+"245
 [e :UE 644 ]
 }
-"246
+"249
 [v _setFrequency `(v ~T0 @X0 1 ef1`ui ]
-"247
+"250
 {
-[; ;main.c: 246: void setFrequency(uint16_t frequency_hz)
-[; ;main.c: 247: {
+[; ;main.c: 249: void setFrequency(uint16_t frequency_hz)
+[; ;main.c: 250: {
 [e :U _setFrequency ]
-"246
+"249
 [v _frequency_hz `ui ~T0 @X0 1 r1 ]
-"247
+"250
 [f ]
-"262
+"265
 [v _pr4_val `i ~T0 @X0 1 a ]
-[; ;main.c: 262: int16_t pr4_val = 1000000L / (96L * frequency_hz);
+[; ;main.c: 265: int16_t pr4_val = 1000000L / (96L * frequency_hz);
 [e = _pr4_val -> / -> 1000000 `l * -> 96 `l -> _frequency_hz `l `i ]
-[; ;main.c: 263: if (pr4_val > 255){
-"263
+[; ;main.c: 266: if (pr4_val > 255){
+"266
 [e $ ! > _pr4_val -> 255 `i 648  ]
 {
-[; ;main.c: 264: pr4_val = 255;
-"264
-[e = _pr4_val -> 255 `i ]
-"265
-}
-[e :U 648 ]
-[; ;main.c: 265: }
-[; ;main.c: 266: if (pr4_val < 130){
-"266
-[e $ ! < _pr4_val -> 130 `i 649  ]
-{
-[; ;main.c: 267: pr4_val = 130;
+[; ;main.c: 267: pr4_val = 255;
 "267
-[e = _pr4_val -> 130 `i ]
+[e = _pr4_val -> 255 `i ]
 "268
 }
-[e :U 649 ]
+[e :U 648 ]
 [; ;main.c: 268: }
-[; ;main.c: 269: PR4 = pr4_val;
+[; ;main.c: 269: if (pr4_val < 68){
 "269
-[e = _PR4 -> _pr4_val `uc ]
-[; ;main.c: 270: }
+[e $ ! < _pr4_val -> 68 `i 649  ]
+{
+[; ;main.c: 270: pr4_val = 68;
 "270
+[e = _pr4_val -> 68 `i ]
+"271
+}
+[e :U 649 ]
+[; ;main.c: 271: }
+[; ;main.c: 272: PR4 = pr4_val;
+"272
+[e = _PR4 -> _pr4_val `uc ]
+[; ;main.c: 273: }
+"273
 [e :UE 647 ]
 }
-"285
+"288
 [v _process_remote_command `(v ~T0 @X0 1 ef1`*S619 ]
 {
-[; ;main.c: 285: void process_remote_command(NEC_IR_code_t* code){
+[; ;main.c: 288: void process_remote_command(NEC_IR_code_t* code){
 [e :U _process_remote_command ]
 [v _code `*S619 ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 286: setLEDColor(0, 0, 0);
-"286
+[; ;main.c: 289: setLEDColor(0, 0, 0);
+"289
 [e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 288: switch(code->command){
-"288
+[; ;main.c: 291: switch(code->command){
+"291
 [e $U 652  ]
 {
-[; ;main.c: 289: case 0xa0:
-"289
+[; ;main.c: 292: case 0xa0:
+"292
 [e :U 653 ]
-[; ;main.c: 290: if(STATE_CURRENT == interfaceState){
-"290
+[; ;main.c: 293: if(STATE_CURRENT == interfaceState){
+"293
 [e $ ! == -> . `E4444 1 `i -> _interfaceState `i 654  ]
 {
-[; ;main.c: 291: currentIndex++;
-"291
-[e ++ _currentIndex -> 1 `i ]
-[; ;main.c: 292: if (currentIndex > maxCurrentIndex - 1)
-"292
-[e $ ! > _currentIndex - _maxCurrentIndex -> 1 `i 655  ]
-[; ;main.c: 293: {
-"293
-{
-[; ;main.c: 294: currentIndex = maxCurrentIndex - 1;
+[; ;main.c: 294: currentIndex++;
 "294
-[e = _currentIndex - _maxCurrentIndex -> 1 `i ]
+[e ++ _currentIndex -> 1 `i ]
+[; ;main.c: 295: if (currentIndex > maxCurrentIndex - 1)
 "295
+[e $ ! > _currentIndex - _maxCurrentIndex -> 1 `i 655  ]
+[; ;main.c: 296: {
+"296
+{
+[; ;main.c: 297: currentIndex = maxCurrentIndex - 1;
+"297
+[e = _currentIndex - _maxCurrentIndex -> 1 `i ]
+"298
 }
 [e :U 655 ]
-[; ;main.c: 295: }
-[; ;main.c: 296: setCurrent(currentValue[currentIndex],battery_voltage());
-"296
+[; ;main.c: 298: }
+[; ;main.c: 299: setCurrent(currentValue[currentIndex],battery_voltage());
+"299
 [e ( _setCurrent (2 , *U + &U _currentValue * -> -> _currentIndex `ui `ux -> -> # *U &U _currentValue `ui `ux -> ( _battery_voltage ..  `i ]
-"297
+"300
 }
 [e :U 654 ]
-[; ;main.c: 297: }
-[; ;main.c: 298: if(STATE_FREQUENCY == interfaceState){
-"298
+[; ;main.c: 300: }
+[; ;main.c: 301: if(STATE_FREQUENCY == interfaceState){
+"301
 [e $ ! == -> . `E4444 2 `i -> _interfaceState `i 656  ]
 {
-[; ;main.c: 299: frequencyIndex++;
-"299
-[e ++ _frequencyIndex -> 1 `i ]
-[; ;main.c: 300: if (frequencyIndex > maxFrequencyIndex - 1)
-"300
-[e $ ! > _frequencyIndex - _maxFrequencyIndex -> 1 `i 657  ]
-[; ;main.c: 301: {
-"301
-{
-[; ;main.c: 302: frequencyIndex = maxFrequencyIndex - 1;
+[; ;main.c: 302: frequencyIndex++;
 "302
-[e = _frequencyIndex - _maxFrequencyIndex -> 1 `i ]
+[e ++ _frequencyIndex -> 1 `i ]
+[; ;main.c: 303: if (frequencyIndex > maxFrequencyIndex - 1)
 "303
+[e $ ! > _frequencyIndex - _maxFrequencyIndex -> 1 `i 657  ]
+[; ;main.c: 304: {
+"304
+{
+[; ;main.c: 305: frequencyIndex = maxFrequencyIndex - 1;
+"305
+[e = _frequencyIndex - _maxFrequencyIndex -> 1 `i ]
+"306
 }
 [e :U 657 ]
-[; ;main.c: 303: }
-[; ;main.c: 304: setFrequency(frequencyValue[frequencyIndex]);
-"304
-[e ( _setFrequency (1 -> *U + &U _frequencyValue * -> -> _frequencyIndex `ui `ux -> -> # *U &U _frequencyValue `ui `ux `ui ]
-"305
-}
-[e :U 656 ]
-[; ;main.c: 305: }
-[; ;main.c: 306: if(STATE_RUNNING == interfaceState){
-"306
-[e $ ! == -> . `E4444 0 `i -> _interfaceState `i 658  ]
-{
-[; ;main.c: 307: selectSomething();
+[; ;main.c: 306: }
+[; ;main.c: 307: setFrequency(frequencyValue[frequencyIndex]);
 "307
-[e ( _selectSomething ..  ]
+[e ( _setFrequency (1 -> *U + &U _frequencyValue * -> -> _frequencyIndex `ui `ux -> -> # *U &U _frequencyValue `ui `ux `ui ]
 "308
 }
-[e :U 658 ]
+[e :U 656 ]
 [; ;main.c: 308: }
-[; ;main.c: 309: if(STATE_LOWBATTERY == interfaceState){
+[; ;main.c: 309: if(STATE_RUNNING == interfaceState){
 "309
-[e $ ! == -> . `E4444 3 `i -> _interfaceState `i 659  ]
+[e $ ! == -> . `E4444 0 `i -> _interfaceState `i 658  ]
 {
 [; ;main.c: 310: selectSomething();
 "310
 [e ( _selectSomething ..  ]
 "311
 }
-[e :U 659 ]
+[e :U 658 ]
 [; ;main.c: 311: }
-[; ;main.c: 312: break;
+[; ;main.c: 312: if(STATE_LOWBATTERY == interfaceState){
 "312
-[e $U 651  ]
-[; ;main.c: 313: case 0xb0:
+[e $ ! == -> . `E4444 3 `i -> _interfaceState `i 659  ]
+{
+[; ;main.c: 313: selectSomething();
 "313
-[e :U 660 ]
-[; ;main.c: 314: if(STATE_CURRENT == interfaceState){
+[e ( _selectSomething ..  ]
 "314
+}
+[e :U 659 ]
+[; ;main.c: 314: }
+[; ;main.c: 315: break;
+"315
+[e $U 651  ]
+[; ;main.c: 316: case 0xb0:
+"316
+[e :U 660 ]
+[; ;main.c: 317: if(STATE_CURRENT == interfaceState){
+"317
 [e $ ! == -> . `E4444 1 `i -> _interfaceState `i 661  ]
 {
-[; ;main.c: 315: currentIndex--;
-"315
-[e -- _currentIndex -> 1 `i ]
-[; ;main.c: 316: if (currentIndex < 0)
-"316
-[e $ ! < _currentIndex -> 0 `i 662  ]
-[; ;main.c: 317: {
-"317
-{
-[; ;main.c: 318: currentIndex = 0;
+[; ;main.c: 318: currentIndex--;
 "318
-[e = _currentIndex -> 0 `i ]
+[e -- _currentIndex -> 1 `i ]
+[; ;main.c: 319: if (currentIndex < 0)
 "319
+[e $ ! < _currentIndex -> 0 `i 662  ]
+[; ;main.c: 320: {
+"320
+{
+[; ;main.c: 321: currentIndex = 0;
+"321
+[e = _currentIndex -> 0 `i ]
+"322
 }
 [e :U 662 ]
-[; ;main.c: 319: }
-[; ;main.c: 320: setCurrent(currentValue[currentIndex],battery_voltage());
-"320
+[; ;main.c: 322: }
+[; ;main.c: 323: setCurrent(currentValue[currentIndex],battery_voltage());
+"323
 [e ( _setCurrent (2 , *U + &U _currentValue * -> -> _currentIndex `ui `ux -> -> # *U &U _currentValue `ui `ux -> ( _battery_voltage ..  `i ]
-"321
+"324
 }
 [e :U 661 ]
-[; ;main.c: 321: }
-[; ;main.c: 322: if(STATE_FREQUENCY == interfaceState){
-"322
+[; ;main.c: 324: }
+[; ;main.c: 325: if(STATE_FREQUENCY == interfaceState){
+"325
 [e $ ! == -> . `E4444 2 `i -> _interfaceState `i 663  ]
 {
-[; ;main.c: 323: frequencyIndex--;
-"323
-[e -- _frequencyIndex -> 1 `i ]
-[; ;main.c: 324: if (frequencyIndex < 0)
-"324
-[e $ ! < _frequencyIndex -> 0 `i 664  ]
-[; ;main.c: 325: {
-"325
-{
-[; ;main.c: 326: frequencyIndex = 0;
+[; ;main.c: 326: frequencyIndex--;
 "326
-[e = _frequencyIndex -> 0 `i ]
+[e -- _frequencyIndex -> 1 `i ]
+[; ;main.c: 327: if (frequencyIndex < 0)
 "327
+[e $ ! < _frequencyIndex -> 0 `i 664  ]
+[; ;main.c: 328: {
+"328
+{
+[; ;main.c: 329: frequencyIndex = 0;
+"329
+[e = _frequencyIndex -> 0 `i ]
+"330
 }
 [e :U 664 ]
-[; ;main.c: 327: }
-[; ;main.c: 328: setFrequency(frequencyValue[frequencyIndex]);
-"328
-[e ( _setFrequency (1 -> *U + &U _frequencyValue * -> -> _frequencyIndex `ui `ux -> -> # *U &U _frequencyValue `ui `ux `ui ]
-"329
-}
-[e :U 663 ]
-[; ;main.c: 329: }
-[; ;main.c: 330: if(STATE_RUNNING == interfaceState){
-"330
-[e $ ! == -> . `E4444 0 `i -> _interfaceState `i 665  ]
-{
-[; ;main.c: 331: selectSomething();
+[; ;main.c: 330: }
+[; ;main.c: 331: setFrequency(frequencyValue[frequencyIndex]);
 "331
-[e ( _selectSomething ..  ]
+[e ( _setFrequency (1 -> *U + &U _frequencyValue * -> -> _frequencyIndex `ui `ux -> -> # *U &U _frequencyValue `ui `ux `ui ]
 "332
 }
-[e :U 665 ]
+[e :U 663 ]
 [; ;main.c: 332: }
-[; ;main.c: 333: if(STATE_LOWBATTERY == interfaceState){
+[; ;main.c: 333: if(STATE_RUNNING == interfaceState){
 "333
-[e $ ! == -> . `E4444 3 `i -> _interfaceState `i 666  ]
+[e $ ! == -> . `E4444 0 `i -> _interfaceState `i 665  ]
 {
 [; ;main.c: 334: selectSomething();
 "334
 [e ( _selectSomething ..  ]
 "335
 }
-[e :U 666 ]
+[e :U 665 ]
 [; ;main.c: 335: }
-[; ;main.c: 336: break;
+[; ;main.c: 336: if(STATE_LOWBATTERY == interfaceState){
 "336
-[e $U 651  ]
-[; ;main.c: 337: case 0x50:
+[e $ ! == -> . `E4444 3 `i -> _interfaceState `i 666  ]
+{
+[; ;main.c: 337: selectSomething();
 "337
-[e :U 667 ]
-[; ;main.c: 338: selectFrequency();
+[e ( _selectSomething ..  ]
 "338
-[e ( _selectFrequency ..  ]
+}
+[e :U 666 ]
+[; ;main.c: 338: }
 [; ;main.c: 339: break;
 "339
 [e $U 651  ]
-[; ;main.c: 340: case 0x10:
+[; ;main.c: 340: case 0x50:
 "340
-[e :U 668 ]
-[; ;main.c: 341: selectCurrent();
+[e :U 667 ]
+[; ;main.c: 341: selectFrequency();
 "341
-[e ( _selectCurrent ..  ]
+[e ( _selectFrequency ..  ]
 [; ;main.c: 342: break;
 "342
 [e $U 651  ]
-[; ;main.c: 343: case 0x08:
+[; ;main.c: 343: case 0x10:
 "343
-[e :U 669 ]
-[; ;main.c: 344: LED_red = 0;
+[e :U 668 ]
+[; ;main.c: 344: selectCurrent();
 "344
-[e = _LED_red -> -> 0 `i `uc ]
-[; ;main.c: 345: LED_green = 255;
+[e ( _selectCurrent ..  ]
+[; ;main.c: 345: break;
 "345
-[e = _LED_green -> -> 255 `i `uc ]
-[; ;main.c: 346: LED_blue = 0;
-"346
-[e = _LED_blue -> -> 0 `i `uc ]
-[; ;main.c: 347: printf("\n reset select");
-"347
-[e ( _printf :s 3C ]
-[; ;main.c: 348: flag = 0;
-"348
-[e = _flag -> -> 0 `i `uc ]
-[; ;main.c: 349: break;
-"349
 [e $U 651  ]
-[; ;main.c: 350: case 0x88:
+[; ;main.c: 346: case 0x08:
+"346
+[e :U 669 ]
+[; ;main.c: 347: LED_red = 0;
+"347
+[e = _LED_red -> -> 0 `i `uc ]
+[; ;main.c: 348: LED_green = 255;
+"348
+[e = _LED_green -> -> 255 `i `uc ]
+[; ;main.c: 349: LED_blue = 0;
+"349
+[e = _LED_blue -> -> 0 `i `uc ]
+[; ;main.c: 350: printf("\n reset select");
 "350
-[e :U 670 ]
-[; ;main.c: 351: duty = 0;
+[e ( _printf :s 3C ]
+[; ;main.c: 351: flag = 0;
 "351
-[e = _duty -> -> 0 `i `uc ]
+[e = _flag -> -> 0 `i `uc ]
 [; ;main.c: 352: break;
 "352
 [e $U 651  ]
-[; ;main.c: 353: case 0x48:
+[; ;main.c: 353: case 0x88:
 "353
-[e :U 671 ]
-[; ;main.c: 354: break;
+[e :U 670 ]
+[; ;main.c: 354: duty = 0;
 "354
-[e $U 651  ]
-[; ;main.c: 355: case 0x28:
+[e = _duty -> -> 0 `i `uc ]
+[; ;main.c: 355: break;
 "355
-[e :U 672 ]
-[; ;main.c: 356: break;
+[e $U 651  ]
+[; ;main.c: 356: case 0x48:
 "356
-[e $U 651  ]
-[; ;main.c: 357: case 0xa8:
+[e :U 671 ]
+[; ;main.c: 357: break;
 "357
-[e :U 673 ]
-[; ;main.c: 358: break;
+[e $U 651  ]
+[; ;main.c: 358: case 0x28:
 "358
-[e $U 651  ]
-[; ;main.c: 359: case 0x68:
+[e :U 672 ]
+[; ;main.c: 359: break;
 "359
-[e :U 674 ]
-[; ;main.c: 360: break;
+[e $U 651  ]
+[; ;main.c: 360: case 0xa8:
 "360
-[e $U 651  ]
-[; ;main.c: 361: case 0x18:
+[e :U 673 ]
+[; ;main.c: 361: break;
 "361
-[e :U 675 ]
-[; ;main.c: 362: break;
+[e $U 651  ]
+[; ;main.c: 362: case 0x68:
 "362
-[e $U 651  ]
-[; ;main.c: 363: case 0x98:
+[e :U 674 ]
+[; ;main.c: 363: break;
 "363
-[e :U 676 ]
-[; ;main.c: 364: break;
-"364
 [e $U 651  ]
-[; ;main.c: 365: case 0x58:
+[; ;main.c: 364: case 0x18:
+"364
+[e :U 675 ]
+[; ;main.c: 365: break;
 "365
-[e :U 677 ]
+[e $U 651  ]
+[; ;main.c: 366: case 0x98:
+"366
+[e :U 676 ]
 [; ;main.c: 367: break;
 "367
 [e $U 651  ]
-[; ;main.c: 368: default:
+[; ;main.c: 368: case 0x58:
 "368
-[e :U 678 ]
-[; ;main.c: 369: break;
-"369
-[e $U 651  ]
+[e :U 677 ]
+[; ;main.c: 370: break;
 "370
-}
-[; ;main.c: 370: }
 [e $U 651  ]
-"288
+[; ;main.c: 371: default:
+"371
+[e :U 678 ]
+[; ;main.c: 372: break;
+"372
+[e $U 651  ]
+"373
+}
+[; ;main.c: 373: }
+[e $U 651  ]
+"291
 [e :U 652 ]
 [e [\ . . . *U _code 2 1 1 , $ -> -> 160 `i `uc 653
  , $ -> -> 176 `i `uc 660
@@ -6080,97 +6089,97 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 152 `i `uc 676
  , $ -> -> 88 `i `uc 677
  678 ]
-"370
-[e :U 651 ]
-[; ;main.c: 371: setLEDColor(LED_red, LED_green, LED_blue);
-"371
-[e ( _setLEDColor (3 , , _LED_red _LED_green _LED_blue ]
-[; ;main.c: 372: _delay((unsigned long)((1000)*(4000000/4000.0)));
-"372
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 373: setLEDColor(0, 0, 0);
 "373
-[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 374: }
+[e :U 651 ]
+[; ;main.c: 374: setLEDColor(LED_red, LED_green, LED_blue);
 "374
+[e ( _setLEDColor (3 , , _LED_red _LED_green _LED_blue ]
+[; ;main.c: 375: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"375
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 376: setLEDColor(0, 0, 0);
+"376
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 377: }
+"377
 [e :UE 650 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"380
+"383
 [v _main `(v ~T0 @X0 1 ef ]
-"381
+"384
 {
-[; ;main.c: 380: void main(void)
-[; ;main.c: 381: {
+[; ;main.c: 383: void main(void)
+[; ;main.c: 384: {
 [e :U _main ]
 [f ]
-[; ;main.c: 383: SYSTEM_Initialize();
-"383
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 384: DAC_Initialize();
-"384
-[e ( _DAC_Initialize ..  ]
-[; ;main.c: 385: OPA1_Initialize();
-"385
-[e ( _OPA1_Initialize ..  ]
-[; ;main.c: 386: OPA2_Initialize();
+[; ;main.c: 386: SYSTEM_Initialize();
 "386
-[e ( _OPA2_Initialize ..  ]
-[; ;main.c: 387: initLED();
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 387: DAC_Initialize();
 "387
-[e ( _initLED ..  ]
-[; ;main.c: 388: (INTCONbits.GIE = 1);
+[e ( _DAC_Initialize ..  ]
+[; ;main.c: 388: OPA1_Initialize();
 "388
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 389: (INTCONbits.PEIE = 1);
+[e ( _OPA1_Initialize ..  ]
+[; ;main.c: 389: OPA2_Initialize();
 "389
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 390: startUp();
+[e ( _OPA2_Initialize ..  ]
+[; ;main.c: 390: initLED();
 "390
+[e ( _initLED ..  ]
+[; ;main.c: 391: (INTCONbits.GIE = 1);
+"391
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 392: (INTCONbits.PEIE = 1);
+"392
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 393: startUp();
+"393
 [e ( _startUp ..  ]
-[; ;main.c: 401: while(1){
-"401
+[; ;main.c: 404: while(1){
+"404
 [e :U 681 ]
 {
-[; ;main.c: 403: if ((int)battery_voltage() < 2500)
-"403
+[; ;main.c: 406: if ((int)battery_voltage() < 2500)
+"406
 [e $ ! < -> ( _battery_voltage ..  `i -> 2500 `i 683  ]
-[; ;main.c: 404: {
-"404
-{
-[; ;main.c: 405: lowBattery();
-"405
-[e ( _lowBattery ..  ]
+[; ;main.c: 407: {
 "407
+{
+[; ;main.c: 408: lowBattery();
+"408
+[e ( _lowBattery ..  ]
+"410
 }
 [e :U 683 ]
-[; ;main.c: 407: }
-[; ;main.c: 413: if (STATE_DONE == ir_code.state){
-"413
+[; ;main.c: 410: }
+[; ;main.c: 416: if (STATE_DONE == ir_code.state){
+"416
 [e $ ! == -> . `E4403 2 `i -> . _ir_code 1 `i 684  ]
 {
-[; ;main.c: 431: process_remote_command(&ir_code);
-"431
-[e ( _process_remote_command (1 &U _ir_code ]
-[; ;main.c: 434: ir_code.state = STATE_RESET;
+[; ;main.c: 434: process_remote_command(&ir_code);
 "434
+[e ( _process_remote_command (1 &U _ir_code ]
+[; ;main.c: 437: ir_code.state = STATE_RESET;
+"437
 [e = . _ir_code 1 . `E4403 0 ]
-"435
+"438
 }
 [e :U 684 ]
-"436
+"439
 }
 [e :U 680 ]
-"401
+"404
 [e $U 681  ]
 [e :U 682 ]
-[; ;main.c: 435: }
-[; ;main.c: 436: }
-[; ;main.c: 438: return;
-"438
-[e $UE 679  ]
+[; ;main.c: 438: }
 [; ;main.c: 439: }
-"439
+[; ;main.c: 441: return;
+"441
+[e $UE 679  ]
+[; ;main.c: 442: }
+"442
 [e :UE 679 ]
 }
 [p f _printf 8388608 ]

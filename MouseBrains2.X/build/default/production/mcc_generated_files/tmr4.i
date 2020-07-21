@@ -7668,20 +7668,26 @@ extern int frequencyIndex;
 
 uint8_t currentIsOn = 1;
 
+
+extern uint8_t dac_value;
+
 void TMR4_DefaultInterruptHandler(void){
 
-# 154
+# 157
 if (currentIsOn){
 currentIsOn = 0;
 if (0 == frequencyValue[frequencyIndex]){
 
 
+DAC1CON1 = dac_value;
 } else {
 
+DAC1CON1 = 255;
 }
 } else {
 currentIsOn = 1;
 
+DAC1CON1 = dac_value;
 }
 }
 

@@ -8003,12 +8003,15 @@ printf("\n current selected");
 }
 
 # 235
+uint8_t dac_value = 0;
+
 void setCurrent(int microamps, int Vdd_mv)
 {
 Vdac_mv = Vdd_mv - ((uint32_t)(4700) * microamps + 500) / 1000;
 int DACValue = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
 if(DACValue > 255){DACValue = 255;}
 if(DACValue < 0){DACValue = 0;}
+dac_value = DACValue;
 DAC1CON1 = DACValue;
 }
 
@@ -8017,18 +8020,18 @@ DAC1CON1 = DACValue;
 void setFrequency(uint16_t frequency_hz)
 {
 
-# 262
+# 265
 int16_t pr4_val = 1000000L / (96L * frequency_hz);
 if (pr4_val > 255){
 pr4_val = 255;
 }
-if (pr4_val < 130){
-pr4_val = 130;
+if (pr4_val < 68){
+pr4_val = 68;
 }
 PR4 = pr4_val;
 }
 
-# 285
+# 288
 void process_remote_command(NEC_IR_code_t* code){
 setLEDColor(0, 0, 0);
 
@@ -8120,7 +8123,7 @@ _delay((unsigned long)((1000)*(4000000/4000.0)));
 setLEDColor(0, 0, 0);
 }
 
-# 380
+# 383
 void main(void)
 {
 
@@ -8133,7 +8136,7 @@ initLED();
 (INTCONbits.PEIE = 1);
 startUp();
 
-# 401
+# 404
 while(1){
 
 if ((int)battery_voltage() < 2500)
@@ -8142,10 +8145,10 @@ lowBattery();
 
 }
 
-# 413
+# 416
 if (STATE_DONE == ir_code.state){
 
-# 431
+# 434
 process_remote_command(&ir_code);
 
 

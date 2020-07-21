@@ -4951,7 +4951,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 294: typedef uint16_t uintptr_t;
 [; ;dac.h: 93: void DAC_Initialize(void);
 [; ;dac.h: 140: void DAC_SetOutput(uint8_t inputData);
-[; ;dac.h: 177: uint8_t DAC_GetOutput(void);
+[; ;dac.h: 174: uint8_t DAC_GetOutput(void);
 "58 mcc_generated_files/dac.c
 [v _DAC_Initialize `(v ~T0 @X0 1 ef ]
 "59

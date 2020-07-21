@@ -7461,10 +7461,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 156 "mcc_generated_files/pin_manager.h"
+# 180 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 168
+# 192
 void PIN_MANAGER_IOC(void);
 
 # 13 "/opt/microchip/xc8/v2.20/pic/include/c90/stdint.h"
@@ -7576,6 +7576,39 @@ extern void cputs(const char *);
 # 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
 typedef unsigned char bool;
 
+# 103 "mcc_generated_files/tmr4.h"
+void TMR4_Initialize(void);
+
+# 132
+void TMR4_StartTimer(void);
+
+# 164
+void TMR4_StopTimer(void);
+
+# 199
+uint8_t TMR4_ReadTimer(void);
+
+# 238
+void TMR4_WriteTimer(uint8_t timerVal);
+
+# 290
+void TMR4_LoadPeriodRegister(uint8_t periodVal);
+
+# 308
+void TMR4_ISR(void);
+
+# 326
+void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
+
+# 344
+extern void (*TMR4_InterruptHandler)(void);
+
+# 362
+void TMR4_DefaultInterruptHandler(void);
+
+# 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
+typedef unsigned char bool;
+
 # 103 "mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
 
@@ -7612,8 +7645,17 @@ void TMR0_WriteTimer(uint8_t timerVal);
 # 204
 void TMR0_Reload(void);
 
-# 242
-bool TMR0_HasOverflowOccured(void);
+# 219
+void TMR0_ISR(void);
+
+# 238
+void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+
+# 256
+extern void (*TMR0_InterruptHandler)(void);
+
+# 274
+void TMR0_DefaultInterruptHandler(void);
 
 # 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
 typedef unsigned char bool;
@@ -7654,7 +7696,7 @@ void DAC_Initialize(void);
 # 140
 void DAC_SetOutput(uint8_t inputData);
 
-# 177
+# 174
 uint8_t DAC_GetOutput(void);
 
 # 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
@@ -7747,26 +7789,41 @@ void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 398
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 
-# 77 "mcc_generated_files/mcc.h"
+# 78 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 90
+# 91
 void OSCILLATOR_Initialize(void);
 
-# 102
+# 103
 void WDT_Initialize(void);
 
 # 52 "mcc_generated_files/interrupt_manager.c"
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
 
-if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
+if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+{
+TMR0_ISR();
+}
+else if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
 {
 INT_ISR();
 }
 else if(INTCONbits.IOCIE == 1 && INTCONbits.IOCIF == 1)
 {
 PIN_MANAGER_IOC();
+}
+else if(INTCONbits.PEIE == 1)
+{
+if(PIE2bits.TMR4IE == 1 && PIR2bits.TMR4IF == 1)
+{
+TMR4_ISR();
+}
+else
+{
+
+}
 }
 else
 {

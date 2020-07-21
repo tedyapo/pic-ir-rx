@@ -1,14 +1,16 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"156 mcc_generated_files/pin_manager.h
+"180 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"90 mcc_generated_files/mcc.h
+"91 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"102
+"103
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/dac.h
 [v _DAC_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/opa1.h
 [v _OPA1_Initialize `(v ~T0 @X0 0 ef ]
+"103 mcc_generated_files/tmr4.h
+[v _TMR4_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/opa2.h
 [v _OPA2_Initialize `(v ~T0 @X0 0 ef ]
 "103 mcc_generated_files/tmr2.h
@@ -4946,8 +4948,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 137: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 138: extern __bank0 __bit __powerdown;
 [; ;pic.h: 139: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 156: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 168: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 180: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 192: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef __int24 int24_t;
@@ -4987,6 +4989,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;conio.h: 23: extern char * cgets(char *);
 [; ;conio.h: 24: extern void cputs(const char *);
 [; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;tmr4.h: 103: void TMR4_Initialize(void);
+[; ;tmr4.h: 132: void TMR4_StartTimer(void);
+[; ;tmr4.h: 164: void TMR4_StopTimer(void);
+[; ;tmr4.h: 199: uint8_t TMR4_ReadTimer(void);
+[; ;tmr4.h: 238: void TMR4_WriteTimer(uint8_t timerVal);
+[; ;tmr4.h: 290: void TMR4_LoadPeriodRegister(uint8_t periodVal);
+[; ;tmr4.h: 308: void TMR4_ISR(void);
+[; ;tmr4.h: 326: void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
+[; ;tmr4.h: 344: extern void (*TMR4_InterruptHandler)(void);
+[; ;tmr4.h: 362: void TMR4_DefaultInterruptHandler(void);
+[; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;tmr2.h: 103: void TMR2_Initialize(void);
 [; ;tmr2.h: 132: void TMR2_StartTimer(void);
 [; ;tmr2.h: 164: void TMR2_StopTimer(void);
@@ -4999,7 +5012,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr0.h: 129: uint8_t TMR0_ReadTimer(void);
 [; ;tmr0.h: 168: void TMR0_WriteTimer(uint8_t timerVal);
 [; ;tmr0.h: 204: void TMR0_Reload(void);
-[; ;tmr0.h: 242: bool TMR0_HasOverflowOccured(void);
+[; ;tmr0.h: 219: void TMR0_ISR(void);
+[; ;tmr0.h: 238: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+[; ;tmr0.h: 256: extern void (*TMR0_InterruptHandler)(void);
+[; ;tmr0.h: 274: void TMR0_DefaultInterruptHandler(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;opa1.h: 93: void OPA1_Initialize(void);
 [; ;ext_int.h: 250: void EXT_INT_Initialize(void);
@@ -5013,7 +5029,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;dac.h: 93: void DAC_Initialize(void);
 [; ;dac.h: 140: void DAC_SetOutput(uint8_t inputData);
-[; ;dac.h: 177: uint8_t DAC_GetOutput(void);
+[; ;dac.h: 174: uint8_t DAC_GetOutput(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
@@ -5055,9 +5071,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 362: void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 380: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 398: void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-[; ;mcc.h: 77: void SYSTEM_Initialize(void);
-[; ;mcc.h: 90: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 102: void WDT_Initialize(void);
+[; ;mcc.h: 78: void SYSTEM_Initialize(void);
+[; ;mcc.h: 91: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 103: void WDT_Initialize(void);
 "50 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "51
@@ -5081,61 +5097,64 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 57: OPA1_Initialize();
 "57
 [e ( _OPA1_Initialize ..  ]
-[; ;mcc.c: 58: OPA2_Initialize();
+[; ;mcc.c: 58: TMR4_Initialize();
 "58
-[e ( _OPA2_Initialize ..  ]
-[; ;mcc.c: 59: TMR2_Initialize();
+[e ( _TMR4_Initialize ..  ]
+[; ;mcc.c: 59: OPA2_Initialize();
 "59
-[e ( _TMR2_Initialize ..  ]
-[; ;mcc.c: 60: EXT_INT_Initialize();
+[e ( _OPA2_Initialize ..  ]
+[; ;mcc.c: 60: TMR2_Initialize();
 "60
-[e ( _EXT_INT_Initialize ..  ]
-[; ;mcc.c: 61: TMR0_Initialize();
+[e ( _TMR2_Initialize ..  ]
+[; ;mcc.c: 61: EXT_INT_Initialize();
 "61
-[e ( _TMR0_Initialize ..  ]
-[; ;mcc.c: 62: EUSART_Initialize();
+[e ( _EXT_INT_Initialize ..  ]
+[; ;mcc.c: 62: TMR0_Initialize();
 "62
-[e ( _EUSART_Initialize ..  ]
-[; ;mcc.c: 63: }
+[e ( _TMR0_Initialize ..  ]
+[; ;mcc.c: 63: EUSART_Initialize();
 "63
+[e ( _EUSART_Initialize ..  ]
+[; ;mcc.c: 64: }
+"64
 [e :UE 619 ]
 }
-"65
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "66
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"67
 {
-[; ;mcc.c: 65: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 66: {
+[; ;mcc.c: 66: void OSCILLATOR_Initialize(void)
+[; ;mcc.c: 67: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 68: OSCCON = 0x6A;
-"68
+[; ;mcc.c: 69: OSCCON = 0x6A;
+"69
 [e = _OSCCON -> -> 106 `i `uc ]
-[; ;mcc.c: 70: OSCSTAT = 0x00;
-"70
+[; ;mcc.c: 71: OSCSTAT = 0x00;
+"71
 [e = _OSCSTAT -> -> 0 `i `uc ]
-[; ;mcc.c: 72: OSCTUNE = 0x00;
-"72
+[; ;mcc.c: 73: OSCTUNE = 0x00;
+"73
 [e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 74: BORCON = 0x00;
-"74
-[e = _BORCON -> -> 0 `i `uc ]
-[; ;mcc.c: 75: }
+[; ;mcc.c: 75: BORCON = 0x00;
 "75
+[e = _BORCON -> -> 0 `i `uc ]
+[; ;mcc.c: 76: }
+"76
 [e :UE 620 ]
 }
-"77
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
 "78
+[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
+"79
 {
-[; ;mcc.c: 77: void WDT_Initialize(void)
-[; ;mcc.c: 78: {
+[; ;mcc.c: 78: void WDT_Initialize(void)
+[; ;mcc.c: 79: {
 [e :U _WDT_Initialize ]
 [f ]
-[; ;mcc.c: 80: WDTCON = 0x16;
-"80
-[e = _WDTCON -> -> 22 `i `uc ]
-[; ;mcc.c: 81: }
+[; ;mcc.c: 81: WDTCON = 0x16;
 "81
+[e = _WDTCON -> -> 22 `i `uc ]
+[; ;mcc.c: 82: }
+"82
 [e :UE 621 ]
 }

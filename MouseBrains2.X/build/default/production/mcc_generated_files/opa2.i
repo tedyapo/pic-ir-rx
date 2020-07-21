@@ -7557,6 +7557,6 @@ void OPA2_Initialize(void);
 void OPA2_Initialize(void)
 {
 
-OPA2CON = 0xD2;
+OPA2CON = 0xC2;
 }
 

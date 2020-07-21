@@ -4956,9 +4956,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;opa2.c: 59: {
 [e :U _OPA2_Initialize ]
 [f ]
-[; ;opa2.c: 61: OPA2CON = 0xD2;
+[; ;opa2.c: 61: OPA2CON = 0xC2;
 "61
-[e = _OPA2CON -> -> 210 `i `uc ]
+[e = _OPA2CON -> -> 194 `i `uc ]
 [; ;opa2.c: 62: }
 "62
 [e :UE 616 ]

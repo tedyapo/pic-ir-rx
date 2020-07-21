@@ -153,13 +153,13 @@ void TMR4_DefaultInterruptHandler(void){
     currentIsOn = 0;
     if (0 == frequencyValue[frequencyIndex]){
       // for DC current output, don't ever toggle to zero
-      setCurrent(currentValue[currentIndex], battery_voltage());      
+      setCurrent(currentValue[currentIndex], 3000);      
     } else {
-      setCurrent(0, battery_voltage());
+      setCurrent(0, 3000);
     }
   } else {
     currentIsOn = 1;
-    setCurrent(currentValue[currentIndex], battery_voltage());      
+    setCurrent(currentValue[currentIndex], 3000);      
   }
 }
 

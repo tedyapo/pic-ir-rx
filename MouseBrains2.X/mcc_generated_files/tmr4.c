@@ -128,6 +128,7 @@ void TMR4_ISR(void)
     }
 }
 
+
 void TMR4_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR4_InterruptHandler = InterruptHandler;
 }
@@ -147,21 +148,23 @@ uint8_t currentIsOn = 1;
 void TMR4_DefaultInterruptHandler(void){
   // add your TMR4 interrupt custom code
   // or set custom function using TMR4_SetInterruptHandler()
+
   
   // toggle current output state to create square wave
   if (currentIsOn){
     currentIsOn = 0;
     if (0 == frequencyValue[frequencyIndex]){
       // for DC current output, don't ever toggle to zero
-      setCurrent(currentValue[currentIndex], battery_voltage());      
+      //setCurrent(currentValue[currentIndex], battery_voltage());      
     } else {
-      setCurrent(0, battery_voltage());
+      //setCurrent(0, battery_voltage());
     }
   } else {
     currentIsOn = 1;
-    setCurrent(currentValue[currentIndex], battery_voltage());      
+    //setCurrent(currentValue[currentIndex], battery_voltage());      
   }
 }
+
 
 /**
   End of File

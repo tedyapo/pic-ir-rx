@@ -7651,6 +7651,7 @@ TMR4_InterruptHandler();
 }
 }
 
+
 void TMR4_SetInterruptHandler(void (* InterruptHandler)(void)){
 TMR4_InterruptHandler = InterruptHandler;
 }
@@ -7669,20 +7670,18 @@ uint8_t currentIsOn = 1;
 
 void TMR4_DefaultInterruptHandler(void){
 
-
-
-
+# 154
 if (currentIsOn){
 currentIsOn = 0;
 if (0 == frequencyValue[frequencyIndex]){
 
-setCurrent(currentValue[currentIndex], battery_voltage());
+
 } else {
-setCurrent(0, battery_voltage());
+
 }
 } else {
 currentIsOn = 1;
-setCurrent(currentValue[currentIndex], battery_voltage());
+
 }
 }
 

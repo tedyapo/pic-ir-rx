@@ -378,20 +378,7 @@ void process_remote_command(NEC_IR_code_t* code){
 Main application
  */
 void main(void)
-{
-        initLED();
-        while(1){
-     setLEDColor(255, 0, 0);
-  __delay_ms(1000);
-  setLEDColor(0, 0, 0);
-     setLEDColor(255, 0, 0);
-  __delay_ms(1000);
-  setLEDColor(0, 0, 0);
-     setLEDColor(255, 0, 0);
-  __delay_ms(1000);
-  setLEDColor(0, 0, 0);
-        }
-        
+{        
     // initialize the device
      SYSTEM_Initialize();         
      DAC_Initialize();

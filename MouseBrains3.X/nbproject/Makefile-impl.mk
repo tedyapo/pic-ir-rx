@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=MouseBrains2.X
+PROJECTNAME=MouseBrains3.X
 
 # Active Configuration
 DEFAULTCONF=default

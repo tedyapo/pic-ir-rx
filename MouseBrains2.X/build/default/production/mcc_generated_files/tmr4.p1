@@ -38,18 +38,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S330 . . . ]
 "6997
 [v _T4CONbits `VS330 ~T0 @X0 0 e@1047 ]
-"140 mcc_generated_files/tmr4.c
+"141 mcc_generated_files/tmr4.c
 [v _frequencyValue `i ~T0 @X0 -> 0 `x e ]
-"141
+"142
 [v _frequencyIndex `i ~T0 @X0 0 e ]
-"137
-[v _setCurrent `(v ~T0 @X0 0 ef2`i`i ]
-"138
-[v _currentValue `i ~T0 @X0 -> 0 `x e ]
-"139
-[v _currentIndex `i ~T0 @X0 0 e ]
-"136
-[v _battery_voltage `(ui ~T0 @X0 0 ef ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -5155,83 +5147,74 @@ Version 3.2 HI-TECH Software Intermediate Code
 "129
 [e :UE 622 ]
 }
-"131
+"132
 [v _TMR4_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F4229 ]
 {
-[; ;tmr4.c: 131: void TMR4_SetInterruptHandler(void (* InterruptHandler)(void)){
+[; ;tmr4.c: 132: void TMR4_SetInterruptHandler(void (* InterruptHandler)(void)){
 [e :U _TMR4_SetInterruptHandler ]
 [v F4248 `(v ~T0 @X0 0 tf ]
 [v _InterruptHandler `*F4248 ~T0 @X0 1 r1 ]
 [f ]
-[; ;tmr4.c: 132: TMR4_InterruptHandler = InterruptHandler;
-"132
-[e = _TMR4_InterruptHandler _InterruptHandler ]
-[; ;tmr4.c: 133: }
+[; ;tmr4.c: 133: TMR4_InterruptHandler = InterruptHandler;
 "133
+[e = _TMR4_InterruptHandler _InterruptHandler ]
+[; ;tmr4.c: 134: }
+"134
 [e :UE 624 ]
 }
-[; ;tmr4.c: 136: uint16_t battery_voltage();
-[; ;tmr4.c: 137: void setCurrent(int microamps, int Vdd_mv);
-[; ;tmr4.c: 138: extern int currentValue[];
-[; ;tmr4.c: 139: extern int currentIndex;
-[; ;tmr4.c: 140: extern int frequencyValue[];
-[; ;tmr4.c: 141: extern int frequencyIndex;
-"145
+[; ;tmr4.c: 137: uint16_t battery_voltage();
+[; ;tmr4.c: 138: void setCurrent(int microamps, int Vdd_mv);
+[; ;tmr4.c: 139: extern int currentValue[];
+[; ;tmr4.c: 140: extern int currentIndex;
+[; ;tmr4.c: 141: extern int frequencyValue[];
+[; ;tmr4.c: 142: extern int frequencyIndex;
+"146
 [v _currentIsOn `uc ~T0 @X0 1 e ]
 [i _currentIsOn
 -> -> 1 `i `uc
 ]
-[; ;tmr4.c: 145: uint8_t currentIsOn = 1;
-"147
+[; ;tmr4.c: 146: uint8_t currentIsOn = 1;
+"148
 [v _TMR4_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr4.c: 147: void TMR4_DefaultInterruptHandler(void){
+[; ;tmr4.c: 148: void TMR4_DefaultInterruptHandler(void){
 [e :U _TMR4_DefaultInterruptHandler ]
 [f ]
-[; ;tmr4.c: 152: if (currentIsOn){
-"152
+[; ;tmr4.c: 154: if (currentIsOn){
+"154
 [e $ ! != -> _currentIsOn `i -> -> -> 0 `i `uc `i 626  ]
 {
-[; ;tmr4.c: 153: currentIsOn = 0;
-"153
+[; ;tmr4.c: 155: currentIsOn = 0;
+"155
 [e = _currentIsOn -> -> 0 `i `uc ]
-[; ;tmr4.c: 154: if (0 == frequencyValue[frequencyIndex]){
-"154
+[; ;tmr4.c: 156: if (0 == frequencyValue[frequencyIndex]){
+"156
 [e $ ! == -> 0 `i *U + &U _frequencyValue * -> -> _frequencyIndex `ui `ux -> -> # *U &U _frequencyValue `ui `ux 627  ]
 {
-[; ;tmr4.c: 156: setCurrent(currentValue[currentIndex], battery_voltage());
-"156
-[e ( _setCurrent (2 , *U + &U _currentValue * -> -> _currentIndex `ui `ux -> -> # *U &U _currentValue `ui `ux -> ( _battery_voltage ..  `i ]
-"157
+"159
 }
-[; ;tmr4.c: 157: } else {
+[; ;tmr4.c: 159: } else {
 [e $U 628  ]
 [e :U 627 ]
 {
-[; ;tmr4.c: 158: setCurrent(0, battery_voltage());
-"158
-[e ( _setCurrent (2 , -> 0 `i -> ( _battery_voltage ..  `i ]
-"159
+"161
 }
 [e :U 628 ]
-"160
+"162
 }
-[; ;tmr4.c: 159: }
-[; ;tmr4.c: 160: } else {
+[; ;tmr4.c: 161: }
+[; ;tmr4.c: 162: } else {
 [e $U 629  ]
 [e :U 626 ]
 {
-[; ;tmr4.c: 161: currentIsOn = 1;
-"161
-[e = _currentIsOn -> -> 1 `i `uc ]
-[; ;tmr4.c: 162: setCurrent(currentValue[currentIndex], battery_voltage());
-"162
-[e ( _setCurrent (2 , *U + &U _currentValue * -> -> _currentIndex `ui `ux -> -> # *U &U _currentValue `ui `ux -> ( _battery_voltage ..  `i ]
+[; ;tmr4.c: 163: currentIsOn = 1;
 "163
+[e = _currentIsOn -> -> 1 `i `uc ]
+"165
 }
 [e :U 629 ]
-[; ;tmr4.c: 163: }
-[; ;tmr4.c: 164: }
-"164
+[; ;tmr4.c: 165: }
+[; ;tmr4.c: 166: }
+"166
 [e :UE 625 ]
 }

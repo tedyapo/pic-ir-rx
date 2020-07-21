@@ -229,12 +229,6 @@ extern double round(double);
 # 12 "/opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c"
 #pragma warning disable 350
 
-# 358
-const static unsigned int dpowers[] = {1, 10, 100, 1000, 10000,
-
-# 363
-};
-
 # 463
 int
 
@@ -269,84 +263,20 @@ const char * cp;
 
 while((c = *f++)) {
 
-if(c != '%')
-
+# 557
 {
 (putch(c) );
 continue;
 }
-
-# 565
-flag = 0;
-
-# 661
-switch(c = *f++) {
-
-case 0:
-goto alldone;
-
-# 723
-case 'd':
-case 'i':
-break;
-
-# 828
-default:
-
-# 839
-continue;
-
-# 848
-}
-
-# 1279
-{
-
-# 1285
-val = (unsigned int)(*(int *)__va_arg((*(int **)ap), (int)0));
-
-if((int)val < 0) {
-flag |= 0x03;
-val = -val;
-}
-
-}
-
-# 1331
-for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
-if(val < dpowers[c])
-break;
 
 # 1448
 {
 
-# 1464
-if(flag & 0x03)
-(putch('-') );
-
 # 1495
-}
-
-
-prec = c;
-
-while(prec--) {
-
-# 1504
-{
-
-# 1515
-c = (val / dpowers[(unsigned char)prec]) % 10 + '0';
-
-# 1549
-}
-(putch(c) );
 }
 
 # 1559
 }
-
-alldone:
 
 # 1566
 return 0;

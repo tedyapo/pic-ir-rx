@@ -55,6 +55,7 @@ void SYSTEM_Initialize(void)
     WDT_Initialize();
     DAC_Initialize();
     OPA1_Initialize();
+    TMR4_Initialize();
     OPA2_Initialize();
     TMR2_Initialize();
     EXT_INT_Initialize();

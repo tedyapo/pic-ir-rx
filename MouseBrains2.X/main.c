@@ -241,6 +241,34 @@ void setCurrent(int microamps, int Vdd_mv)
     DAC1CON1 = DACValue;
 }
 
+// set the TMR4 period register which controls the interrupt-driven
+//   frequency generation
+void setFrequency(uint16_t frequency_hz)
+{
+  // note: Fosc = 4 MHz
+  //       Fcyc = Focs/4 = 1 MHz
+  //       TMR4 prescale = 16
+  //       TMR4 postscale = 3
+  //       TMR4 period = (PR4 * 16 * 3)/1e6
+  //       current output period = (PR4 * 16 * 3 * 2)/1e6
+  //         --> because we toggle output on TMR4 interrupts
+  //       1/f = PR4 * 96/1e6
+  //       PR4 = 1e6 / (96 * f)
+  //
+  // these prescale, postscale values yield a frequency range of;
+  // PR4 = 255 --> freq = 40.8 Hz
+  // PR4 = 1 --> freq = 10.4 kHz
+  //
+  int16_t pr4_val = 1000000L / (96L * frequency_hz);
+  if (pr4_val > 255){
+    pr4_val = 255;
+  }
+  if (pr4_val < 130){
+    pr4_val = 130;
+  }
+  PR4 = pr4_val;
+}
+
 /// todo: do something with the commands
      //(255, 0, 0); = blue
      //(255, 0, 255); = green
@@ -273,6 +301,7 @@ void process_remote_command(NEC_IR_code_t* code){
           {
               frequencyIndex = maxFrequencyIndex - 1;
           }
+          setFrequency(frequencyValue[frequencyIndex]); 
       }
       if(STATE_RUNNING == interfaceState){
           selectSomething();
@@ -296,6 +325,7 @@ void process_remote_command(NEC_IR_code_t* code){
           {
               frequencyIndex = 0;
           }
+          setFrequency(frequencyValue[frequencyIndex]); 
       }
       if(STATE_RUNNING == interfaceState){
           selectSomething();

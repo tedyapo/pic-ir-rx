@@ -7556,7 +7556,7 @@ void DAC_Initialize(void);
 # 140
 void DAC_SetOutput(uint8_t inputData);
 
-# 177
+# 174
 uint8_t DAC_GetOutput(void);
 
 # 58 "mcc_generated_files/dac.c"

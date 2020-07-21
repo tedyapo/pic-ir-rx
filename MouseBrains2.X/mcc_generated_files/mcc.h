@@ -53,6 +53,7 @@
 #include <stdbool.h>
 #include <conio.h>
 #include "interrupt_manager.h"
+#include "tmr4.h"
 #include "tmr2.h"
 #include "tmr0.h"
 #include "opa1.h"

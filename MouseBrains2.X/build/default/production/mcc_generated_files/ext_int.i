@@ -7689,7 +7689,10 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void)){
 INT_InterruptHandler = InterruptHandler;
 }
 
+
 void INT_DefaultInterruptHandler(void){
+
+
 
 uint8_t time = TMR0;
 TMR0 = 0;

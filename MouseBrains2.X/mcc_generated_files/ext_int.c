@@ -72,7 +72,10 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void)){
     INT_InterruptHandler = InterruptHandler;
 }
 
+
 void INT_DefaultInterruptHandler(void){
+
+
   // time: elapsed since last negative edge, i.e. negative + positive periods
   uint8_t time = TMR0;
   TMR0 = 0;
@@ -111,9 +114,9 @@ void INT_DefaultInterruptHandler(void){
       // full word received; check for valid code
       // note 8 or 16 bit extended address allowed
       if (ir_code.command == ((~ir_code.command_b) & 0xff)){ 
-        ir_code.state = STATE_DONE;
+	ir_code.state = STATE_DONE;
       } else {
-        ir_code.state = STATE_RESET;
+	ir_code.state = STATE_RESET;
       }
     }
     break;

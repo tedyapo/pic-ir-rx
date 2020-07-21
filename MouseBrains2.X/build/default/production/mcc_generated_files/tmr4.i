@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/tmr4.c"
 
 # 18 "/opt/microchip/xc8/v2.20/pic/include/xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -7461,12 +7461,6 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 180 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 192
-void PIN_MANAGER_IOC(void);
-
 # 13 "/opt/microchip/xc8/v2.20/pic/include/c90/stdint.h"
 typedef signed char int8_t;
 
@@ -7556,26 +7550,6 @@ typedef uint16_t uintptr_t;
 # 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
 typedef unsigned char bool;
 
-# 29 "/opt/microchip/xc8/v2.20/pic/include/c90/errno.h"
-extern int errno;
-
-# 12 "/opt/microchip/xc8/v2.20/pic/include/c90/conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
-typedef unsigned char bool;
-
 # 103 "mcc_generated_files/tmr4.h"
 void TMR4_Initialize(void);
 
@@ -7606,544 +7580,109 @@ extern void (*TMR4_InterruptHandler)(void);
 # 362
 void TMR4_DefaultInterruptHandler(void);
 
-# 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
-typedef unsigned char bool;
+# 58 "mcc_generated_files/tmr4.c"
+void (*TMR4_InterruptHandler)(void);
 
-# 103 "mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-
-# 132
-void TMR2_StartTimer(void);
-
-# 164
-void TMR2_StopTimer(void);
-
-# 199
-uint8_t TMR2_ReadTimer(void);
-
-# 238
-void TMR2_WriteTimer(uint8_t timerVal);
-
-# 290
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-
-# 325
-bool TMR2_HasOverflowOccured(void);
-
-# 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
-typedef unsigned char bool;
-
-# 98 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-
-# 129
-uint8_t TMR0_ReadTimer(void);
-
-# 168
-void TMR0_WriteTimer(uint8_t timerVal);
-
-# 204
-void TMR0_Reload(void);
-
-# 242
-bool TMR0_HasOverflowOccured(void);
-
-# 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
-typedef unsigned char bool;
-
-# 93 "mcc_generated_files/opa1.h"
-void OPA1_Initialize(void);
-
-# 250 "mcc_generated_files/ext_int.h"
-void EXT_INT_Initialize(void);
-
-# 272
-void INT_ISR(void);
-
-# 296
-void INT_CallBack(void);
-
-# 319
-void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 343
-extern void (*INT_InterruptHandler)(void);
-
-# 367
-void INT_DefaultInterruptHandler(void);
-
-# 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
-typedef unsigned char bool;
-
-# 93 "mcc_generated_files/opa2.h"
-void OPA2_Initialize(void);
-
-# 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
-typedef unsigned char bool;
-
-# 93 "mcc_generated_files/dac.h"
-void DAC_Initialize(void);
-
-# 140
-void DAC_SetOutput(uint8_t inputData);
-
-# 174
-uint8_t DAC_GetOutput(void);
-
-# 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
-typedef unsigned char bool;
-
-# 4 "/opt/microchip/xc8/v2.20/pic/include/__size_t.h"
-typedef unsigned size_t;
-
-# 7 "/opt/microchip/xc8/v2.20/pic/include/c90/stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "/opt/microchip/xc8/v2.20/pic/include/c90/stdio.h"
-struct __prbuf
+# 64
+void TMR4_Initialize(void)
 {
-char * ptr;
-void (* func)(char);
-};
-
-# 88
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
 
 
 
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+PR4 = 0x04;
 
 
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 76 "mcc_generated_files/eusart.h"
-typedef union {
-struct {
-unsigned perr : 1;
-unsigned ferr : 1;
-unsigned oerr : 1;
-unsigned reserved : 5;
-};
-uint8_t status;
-}eusart_status_t;
-
-# 111
-void EUSART_Initialize(void);
-
-# 159
-bool EUSART_is_tx_ready(void);
-
-# 207
-bool EUSART_is_rx_ready(void);
-
-# 254
-bool EUSART_is_tx_done(void);
-
-# 302
-eusart_status_t EUSART_get_last_status(void);
-
-# 322
-uint8_t EUSART_Read(void);
-
-# 342
-void EUSART_Write(uint8_t txData);
-
-# 362
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-
-# 380
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-
-# 398
-void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-
-# 78 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-
-# 91
-void OSCILLATOR_Initialize(void);
-
-# 103
-void WDT_Initialize(void);
-
-# 7 "mousehat-dac.c"
-uint16_t microamps;
-uint16_t Vdd_mv;
-
-# 2 "IR_receiver.h"
-typedef enum {STATE_RESET = 0,
-STATE_RECEIVING,
-STATE_DONE}
-rx_state_t;
+TMR4 = 0x00;
 
 
-typedef struct {
-uint8_t n_bits;
-rx_state_t state;
-union {
-uint32_t code;
-struct {
+PIR2bits.TMR4IF = 0;
 
 
-uint8_t command_b;
-uint8_t command;
-union {
-struct {
-uint8_t address_b;
-uint8_t address;
-};
-struct {
-uint16_t extended_address;
-};
-};
-};
-};
-} NEC_IR_code_t;
-
-extern NEC_IR_code_t ir_code;
+PIE2bits.TMR4IE = 1;
 
 
-extern uint8_t stats[33];
-
-# 52 "main.c"
-uint8_t stats[33];
-
-uint8_t LED_red;
-uint8_t LED_green;
-uint8_t LED_blue;
+TMR4_SetInterruptHandler(TMR4_DefaultInterruptHandler);
 
 
-uint8_t flag;
-
-
-uint16_t microamps;
-uint16_t Vdd_mv;
-uint16_t Vdac_mv;
-
-
-uint8_t frequency;
-uint8_t duty;
-uint8_t current;
-
-int currentValue[] = {0,30,50,70,90,110,130,160,190,220,250};
-int frequencyValue[] = {0,50,100,120,130,140};
-int maxCurrentIndex = sizeof(currentValue)/sizeof(currentValue[0]);
-int maxFrequencyIndex = sizeof(frequencyValue)/sizeof(frequencyValue[0]);
-int currentIndex = 0;
-int frequencyIndex = 0;
-
-typedef enum
-{
-STATE_RUNNING = 0,
-STATE_CURRENT = 1,
-STATE_FREQUENCY = 2,
-STATE_LOWBATTERY = 3
-}state_t;
-
-state_t interfaceState;
-
-
-
-
-uint16_t battery_voltage()
-{
-FVRCON = 0b10000001;
-ADCON0 = 0b01111101;
-ADCON1 = 0b10010000;
-while(!FVRCONbits.FVRRDY){ }
-__nop();
-__nop();
-__nop();
-__nop();
-__nop();
-ADCON0bits.GO_nDONE = 1;
-while(ADCON0bits.GO_nDONE){ }
-ADCON0bits.ADON = 0;
-
-
-
-
-return 1047552L / ADRES;
+T4CON = 0x16;
 }
 
-# 116
-void initLED()
+void TMR4_StartTimer(void)
 {
 
-PR2 = 255;
-T2CONbits.T2CKPS = 0b10;
-T2CONbits.TMR2ON = 1;
-
-
-
-TRISC |= 0b00010000;
-RC4PPS = 0b01110;
-CCPTMRSbits.P3TSEL = 0b00;
-PWM3DCH = 0;
-PWM3DCLbits.PWM3DCL = 0;
-PWM3CONbits.PWM3POL = 1;
-TRISC &= 0b11101111;
-PWM3CONbits.PWM3EN = 1;
-
-
-
-TRISA |= 0b00100000;
-RA5PPS = 0b01111;
-CCPTMRSbits.P4TSEL = 0b00;
-PWM4DCH = 0;
-PWM4DCLbits.PWM4DCL = 0;
-PWM4CONbits.PWM4POL = 1;
-TRISA &= 0b11011111;
-PWM4CONbits.PWM4EN = 1;
-
-# 149
-TRISC |= 0b00100000;
-RC5PPS = 0b01100;
-CCP1CONbits.CCP1M = 0b1100;
-CCPR1L = 255;
-CCP1CONbits.DC1B = 0x3;
-TRISC &= 0b11011111;
+T4CONbits.TMR4ON = 1;
 }
 
-void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
+void TMR4_StopTimer(void)
 {
 
-# 164
-if (0 == blue){
-TRISC |= 0b00100000;
+T4CONbits.TMR4ON = 0;
+}
+
+uint8_t TMR4_ReadTimer(void)
+{
+uint8_t readVal;
+
+readVal = TMR4;
+
+return readVal;
+}
+
+void TMR4_WriteTimer(uint8_t timerVal)
+{
+
+TMR4 = timerVal;
+}
+
+void TMR4_LoadPeriodRegister(uint8_t periodVal)
+{
+PR4 = periodVal;
+}
+
+void TMR4_ISR(void)
+{
+
+
+PIR2bits.TMR4IF = 0;
+
+if(TMR4_InterruptHandler)
+{
+TMR4_InterruptHandler();
+}
+}
+
+void TMR4_SetInterruptHandler(void (* InterruptHandler)(void)){
+TMR4_InterruptHandler = InterruptHandler;
+}
+
+
+uint16_t battery_voltage();
+void setCurrent(int microamps, int Vdd_mv);
+extern int currentValue[];
+extern int currentIndex;
+extern int frequencyValue[];
+extern int frequencyIndex;
+
+
+
+uint8_t currentIsOn = 1;
+
+void TMR4_DefaultInterruptHandler(void){
+
+
+
+
+if (currentIsOn){
+currentIsOn = 0;
+if (0 == frequencyValue[frequencyIndex]){
+
+setCurrent(currentValue[currentIndex], battery_voltage());
 } else {
-TRISC &= 0b11011111;
+setCurrent(0, battery_voltage());
 }
-CCPR1L = 255 - blue;
-
-PWM3DCH = red;
-
-PWM4DCH = green;
+} else {
+currentIsOn = 1;
+setCurrent(currentValue[currentIndex], battery_voltage());
 }
-
-
-
-void lowBattery(){
-interfaceState = STATE_LOWBATTERY;
-setLEDColor(255, 0, 0);
-_delay((unsigned long)((250)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-_delay((unsigned long)((500)*(4000000/4000.0)));
-}
-
-void startUp(){
-interfaceState = STATE_RUNNING;
-for (int i = 0; i < 5; i++){
-setLEDColor(0, 180, 230);
-_delay((unsigned long)((100)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-_delay((unsigned long)((100)*(4000000/4000.0)));
-}
-duty = 0;
-}
-
-void selectSomething(){
-
-setLEDColor(255, 0, 0);
-_delay((unsigned long)((500)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-_delay((unsigned long)((500)*(4000000/4000.0)));
-setLEDColor(255, 0, 0);
-_delay((unsigned long)((500)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-_delay((unsigned long)((500)*(4000000/4000.0)));
-}
-
-void selectFrequency(){
-interfaceState = STATE_FREQUENCY;
-setLEDColor(255, 0, 255);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-printf("\n Frequency selected");
-}
-
-void selectCurrent(){
-interfaceState = STATE_CURRENT;
-setLEDColor(0, 0, 255);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-printf("\n current selected");
-}
-
-# 235
-void setCurrent(int microamps, int Vdd_mv)
-{
-Vdac_mv = Vdd_mv - ((uint32_t)(4700) * microamps + 500) / 1000;
-int DACValue = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
-if(DACValue > 255){DACValue = 255;}
-if(DACValue < 0){DACValue = 0;}
-DAC1CON1 = DACValue;
-}
-
-
-
-void setFrequency(uint16_t frequency_hz)
-{
-
-# 262
-int16_t pr4_val = 1000000L / (96L * frequency_hz);
-if (pr4_val > 255){
-pr4_val = 255;
-}
-if (pr4_val < 0){
-pr4_val = 0;
-}
-PR4 = pr4_val;
-}
-
-# 285
-void process_remote_command(NEC_IR_code_t* code){
-setLEDColor(0, 0, 0);
-
-switch(code->command){
-case 0xa0:
-if(STATE_CURRENT == interfaceState){
-currentIndex++;
-if (currentIndex > maxCurrentIndex - 1)
-{
-currentIndex = maxCurrentIndex - 1;
-}
-setCurrent(currentValue[currentIndex],battery_voltage());
-}
-if(STATE_FREQUENCY == interfaceState){
-frequencyIndex++;
-if (frequencyIndex > maxFrequencyIndex - 1)
-{
-frequencyIndex = maxFrequencyIndex - 1;
-}
-setFrequency(frequencyValue[frequencyIndex]);
-}
-if(STATE_RUNNING == interfaceState){
-selectSomething();
-}
-if(STATE_LOWBATTERY == interfaceState){
-selectSomething();
-}
-break;
-case 0xb0:
-if(STATE_CURRENT == interfaceState){
-currentIndex--;
-if (currentIndex < 0)
-{
-currentIndex = 0;
-}
-setCurrent(currentValue[currentIndex],battery_voltage());
-}
-if(STATE_FREQUENCY == interfaceState){
-frequencyIndex--;
-if (frequencyIndex < 0)
-{
-frequencyIndex = 0;
-}
-setFrequency(frequencyValue[frequencyIndex]);
-}
-if(STATE_RUNNING == interfaceState){
-selectSomething();
-}
-if(STATE_LOWBATTERY == interfaceState){
-selectSomething();
-}
-break;
-case 0x50:
-selectFrequency();
-break;
-case 0x10:
-selectCurrent();
-break;
-case 0x08:
-LED_red = 0;
-LED_green = 255;
-LED_blue = 0;
-printf("\n reset select");
-flag = 0;
-break;
-case 0x88:
-duty = 0;
-break;
-case 0x48:
-break;
-case 0x28:
-break;
-case 0xa8:
-break;
-case 0x68:
-break;
-case 0x18:
-break;
-case 0x98:
-break;
-case 0x58:
-
-break;
-default:
-break;
-}
-setLEDColor(LED_red, LED_green, LED_blue);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-}
-
-# 380
-void main(void)
-{
-
-SYSTEM_Initialize();
-DAC_Initialize();
-OPA1_Initialize();
-OPA2_Initialize();
-initLED();
-(INTCONbits.GIE = 1);
-(INTCONbits.PEIE = 1);
-startUp();
-
-# 401
-while(1){
-
-if ((int)battery_voltage() < 2500)
-{
-lowBattery();
-
-}
-
-# 413
-if (STATE_DONE == ir_code.state){
-
-# 431
-process_remote_command(&ir_code);
-
-
-ir_code.state = STATE_RESET;
-}
-}
-
-return;
 }
 

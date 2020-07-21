@@ -5129,192 +5129,192 @@ Version 3.2 HI-TECH Software Intermediate Code
 "73
 [e :UE 626 ]
 }
-"75
+"76
 [v _INT_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
 {
-[; ;ext_int.c: 75: void INT_DefaultInterruptHandler(void){
+[; ;ext_int.c: 76: void INT_DefaultInterruptHandler(void){
 [e :U _INT_DefaultInterruptHandler ]
 [f ]
-"77
+"80
 [v _time `uc ~T0 @X0 1 a ]
-[; ;ext_int.c: 77: uint8_t time = TMR0;
+[; ;ext_int.c: 80: uint8_t time = TMR0;
 [e = _time _TMR0 ]
-[; ;ext_int.c: 78: TMR0 = 0;
-"78
-[e = _TMR0 -> -> 0 `i `uc ]
-[; ;ext_int.c: 81: if (INTCONbits.TMR0IF){
+[; ;ext_int.c: 81: TMR0 = 0;
 "81
+[e = _TMR0 -> -> 0 `i `uc ]
+[; ;ext_int.c: 84: if (INTCONbits.TMR0IF){
+"84
 [e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 628  ]
 {
-[; ;ext_int.c: 82: time = 0;
-"82
+[; ;ext_int.c: 85: time = 0;
+"85
 [e = _time -> -> 0 `i `uc ]
-"83
+"86
 }
 [e :U 628 ]
-[; ;ext_int.c: 83: }
-[; ;ext_int.c: 84: INTCONbits.TMR0IF = 0;
-"84
+[; ;ext_int.c: 86: }
+[; ;ext_int.c: 87: INTCONbits.TMR0IF = 0;
+"87
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;ext_int.c: 86: switch(ir_code.state){
-"86
+[; ;ext_int.c: 89: switch(ir_code.state){
+"89
 [e $U 630  ]
 {
-[; ;ext_int.c: 87: case STATE_RESET:
-"87
+[; ;ext_int.c: 90: case STATE_RESET:
+"90
 [e :U 631 ]
-[; ;ext_int.c: 89: if (time >= 180 && time <= 243){
-"89
+[; ;ext_int.c: 92: if (time >= 180 && time <= 243){
+"92
 [e $ ! && >= -> _time `i -> 180 `i <= -> _time `i -> 243 `i 632  ]
 {
-[; ;ext_int.c: 90: ir_code.n_bits = 0;
-"90
-[e = . _ir_code 0 -> -> 0 `i `uc ]
-[; ;ext_int.c: 91: ir_code.state = STATE_RECEIVING;
-"91
-[e = . _ir_code 1 . `E4289 1 ]
-[; ;ext_int.c: 92: stats[0] = time;
-"92
-[e = *U + &U _stats * -> -> -> 0 `i `ui `ux -> -> # *U &U _stats `ui `ux _time ]
+[; ;ext_int.c: 93: ir_code.n_bits = 0;
 "93
+[e = . _ir_code 0 -> -> 0 `i `uc ]
+[; ;ext_int.c: 94: ir_code.state = STATE_RECEIVING;
+"94
+[e = . _ir_code 1 . `E4289 1 ]
+[; ;ext_int.c: 95: stats[0] = time;
+"95
+[e = *U + &U _stats * -> -> -> 0 `i `ui `ux -> -> # *U &U _stats `ui `ux _time ]
+"96
 }
 [e :U 632 ]
-[; ;ext_int.c: 93: }
-[; ;ext_int.c: 94: break;
-"94
-[e $U 629  ]
-[; ;ext_int.c: 95: case STATE_RECEIVING:
-"95
-[e :U 633 ]
-[; ;ext_int.c: 97: ir_code.code <<= 1;
+[; ;ext_int.c: 96: }
+[; ;ext_int.c: 97: break;
 "97
-[e =<< . . _ir_code 2 0 -> 1 `i ]
-[; ;ext_int.c: 98: if (time >= 29 && time <= 41){
+[e $U 629  ]
+[; ;ext_int.c: 98: case STATE_RECEIVING:
 "98
+[e :U 633 ]
+[; ;ext_int.c: 100: ir_code.code <<= 1;
+"100
+[e =<< . . _ir_code 2 0 -> 1 `i ]
+[; ;ext_int.c: 101: if (time >= 29 && time <= 41){
+"101
 [e $ ! && >= -> _time `i -> 29 `i <= -> _time `i -> 41 `i 634  ]
 {
-[; ;ext_int.c: 99: stats[1+ir_code.n_bits] = time;
-"99
-[e = *U + &U _stats * -> -> + -> 1 `i -> . _ir_code 0 `i `ui `ux -> -> # *U &U _stats `ui `ux _time ]
-[; ;ext_int.c: 100: ir_code.code |= 1;
-"100
-[e =| . . _ir_code 2 0 -> -> -> 1 `i `l `ul ]
-[; ;ext_int.c: 101: ir_code.n_bits++;
-"101
-[e ++ . _ir_code 0 -> -> 1 `i `uc ]
+[; ;ext_int.c: 102: stats[1+ir_code.n_bits] = time;
 "102
-}
-[; ;ext_int.c: 102: } else if (time >= 14 && time <= 20){
-[e $U 635  ]
-[e :U 634 ]
-[e $ ! && >= -> _time `i -> 14 `i <= -> _time `i -> 20 `i 636  ]
-{
-[; ;ext_int.c: 103: stats[1+ir_code.n_bits] = time;
-"103
 [e = *U + &U _stats * -> -> + -> 1 `i -> . _ir_code 0 `i `ui `ux -> -> # *U &U _stats `ui `ux _time ]
+[; ;ext_int.c: 103: ir_code.code |= 1;
+"103
+[e =| . . _ir_code 2 0 -> -> -> 1 `i `l `ul ]
 [; ;ext_int.c: 104: ir_code.n_bits++;
 "104
 [e ++ . _ir_code 0 -> -> 1 `i `uc ]
 "105
 }
-[; ;ext_int.c: 105: } else {
+[; ;ext_int.c: 105: } else if (time >= 14 && time <= 20){
+[e $U 635  ]
+[e :U 634 ]
+[e $ ! && >= -> _time `i -> 14 `i <= -> _time `i -> 20 `i 636  ]
+{
+[; ;ext_int.c: 106: stats[1+ir_code.n_bits] = time;
+"106
+[e = *U + &U _stats * -> -> + -> 1 `i -> . _ir_code 0 `i `ui `ux -> -> # *U &U _stats `ui `ux _time ]
+[; ;ext_int.c: 107: ir_code.n_bits++;
+"107
+[e ++ . _ir_code 0 -> -> 1 `i `uc ]
+"108
+}
+[; ;ext_int.c: 108: } else {
 [e $U 637  ]
 [e :U 636 ]
 {
-[; ;ext_int.c: 107: ir_code.state = STATE_RESET;
-"107
+[; ;ext_int.c: 110: ir_code.state = STATE_RESET;
+"110
 [e = . _ir_code 1 . `E4289 0 ]
-[; ;ext_int.c: 108: break;
-"108
+[; ;ext_int.c: 111: break;
+"111
 [e $U 629  ]
-"109
+"112
 }
 [e :U 637 ]
 [e :U 635 ]
-[; ;ext_int.c: 109: }
-[; ;ext_int.c: 110: if (32 == ir_code.n_bits){
-"110
+[; ;ext_int.c: 112: }
+[; ;ext_int.c: 113: if (32 == ir_code.n_bits){
+"113
 [e $ ! == -> 32 `i -> . _ir_code 0 `i 638  ]
 {
-[; ;ext_int.c: 113: if (ir_code.command == ((~ir_code.command_b) & 0xff)){
-"113
+[; ;ext_int.c: 116: if (ir_code.command == ((~ir_code.command_b) & 0xff)){
+"116
 [e $ ! == -> . . . _ir_code 2 1 1 `i & ~ -> . . . _ir_code 2 1 0 `i -> 255 `i 639  ]
 {
-[; ;ext_int.c: 114: ir_code.state = STATE_DONE;
-"114
+[; ;ext_int.c: 117: ir_code.state = STATE_DONE;
+"117
 [e = . _ir_code 1 . `E4289 2 ]
-"115
+"118
 }
-[; ;ext_int.c: 115: } else {
+[; ;ext_int.c: 118: } else {
 [e $U 640  ]
 [e :U 639 ]
 {
-[; ;ext_int.c: 116: ir_code.state = STATE_RESET;
-"116
+[; ;ext_int.c: 119: ir_code.state = STATE_RESET;
+"119
 [e = . _ir_code 1 . `E4289 0 ]
-"117
+"120
 }
 [e :U 640 ]
-"118
+"121
 }
 [e :U 638 ]
-[; ;ext_int.c: 117: }
-[; ;ext_int.c: 118: }
-[; ;ext_int.c: 119: break;
-"119
+[; ;ext_int.c: 120: }
+[; ;ext_int.c: 121: }
+[; ;ext_int.c: 122: break;
+"122
 [e $U 629  ]
-[; ;ext_int.c: 120: case STATE_DONE:
-"120
-[e :U 641 ]
-[; ;ext_int.c: 123: break;
+[; ;ext_int.c: 123: case STATE_DONE:
 "123
-[e $U 629  ]
-[; ;ext_int.c: 124: default:
-"124
-[e :U 642 ]
-[; ;ext_int.c: 126: ir_code.state = STATE_RESET;
+[e :U 641 ]
+[; ;ext_int.c: 126: break;
 "126
-[e = . _ir_code 1 . `E4289 0 ]
-"127
-}
-[; ;ext_int.c: 127: }
 [e $U 629  ]
-"86
+[; ;ext_int.c: 127: default:
+"127
+[e :U 642 ]
+[; ;ext_int.c: 129: ir_code.state = STATE_RESET;
+"129
+[e = . _ir_code 1 . `E4289 0 ]
+"130
+}
+[; ;ext_int.c: 130: }
+[e $U 629  ]
+"89
 [e :U 630 ]
 [e [\ . _ir_code 1 , $ . `E4289 0 631
  , $ . `E4289 1 633
  , $ . `E4289 2 641
  642 ]
-"127
-[e :U 629 ]
-[; ;ext_int.c: 129: INTCONbits.INTF = 0;
-"129
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;ext_int.c: 130: }
 "130
+[e :U 629 ]
+[; ;ext_int.c: 132: INTCONbits.INTF = 0;
+"132
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;ext_int.c: 133: }
+"133
 [e :UE 627 ]
 }
-"132
+"135
 [v _EXT_INT_Initialize `(v ~T0 @X0 1 ef ]
-"133
+"136
 {
-[; ;ext_int.c: 132: void EXT_INT_Initialize(void)
-[; ;ext_int.c: 133: {
+[; ;ext_int.c: 135: void EXT_INT_Initialize(void)
+[; ;ext_int.c: 136: {
 [e :U _EXT_INT_Initialize ]
 [f ]
-[; ;ext_int.c: 137: (INTCONbits.INTF = 0);
-"137
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;ext_int.c: 138: (OPTION_REGbits.INTEDG = 0);
-"138
-[e = . . _OPTION_REGbits 0 4 -> -> 0 `i `uc ]
-[; ;ext_int.c: 140: INT_SetInterruptHandler(INT_DefaultInterruptHandler);
+[; ;ext_int.c: 140: (INTCONbits.INTF = 0);
 "140
-[e ( _INT_SetInterruptHandler (1 &U _INT_DefaultInterruptHandler ]
-[; ;ext_int.c: 141: (INTCONbits.INTE = 1);
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;ext_int.c: 141: (OPTION_REGbits.INTEDG = 0);
 "141
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;ext_int.c: 143: }
+[e = . . _OPTION_REGbits 0 4 -> -> 0 `i `uc ]
+[; ;ext_int.c: 143: INT_SetInterruptHandler(INT_DefaultInterruptHandler);
 "143
+[e ( _INT_SetInterruptHandler (1 &U _INT_DefaultInterruptHandler ]
+[; ;ext_int.c: 144: (INTCONbits.INTE = 1);
+"144
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+[; ;ext_int.c: 146: }
+"146
 [e :UE 643 ]
 }

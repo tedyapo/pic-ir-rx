@@ -1,29 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T10 __interrupt  ]
-"357 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
-[s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
-"367
-[s S27 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S27 . . T0IF . T0IE ]
-"356
-[u S25 `S26 1 `S27 1 ]
-[n S25 . . . ]
-"374
-[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"272 mcc_generated_files/ext_int.h
-[v _INT_ISR `(v ~T0 @X0 0 ef ]
-"192 mcc_generated_files/pin_manager.h
-[v _PIN_MANAGER_IOC `(v ~T0 @X0 0 ef ]
-"1296 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
-[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S70 . CCP2IE TMR4IE TMR6IE BCL1IE . C1IE C2IE OSFIE ]
-"1295
-[u S69 `S70 1 ]
-[n S69 . . ]
-"1307
-[v _PIE2bits `VS69 ~T0 @X0 0 e@146 ]
+[v F4232 `(v ~T0 @X0 0 tf ]
+"6956 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
+[v _PR4 `Vuc ~T0 @X0 0 e@1046 ]
+"6936
+[v _TMR4 `Vuc ~T0 @X0 0 e@1045 ]
 "657
 [s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S38 . CCP2IF TMR4IF TMR6IF BCL1IF . C1IF C2IF OSFIF ]
@@ -32,8 +12,44 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S37 . . ]
 "668
 [v _PIR2bits `VS37 ~T0 @X0 0 e@18 ]
-"308 mcc_generated_files/tmr4.h
-[v _TMR4_ISR `(v ~T0 @X0 0 ef ]
+"1296
+[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S70 . CCP2IE TMR4IE TMR6IE BCL1IE . C1IE C2IE OSFIE ]
+"1295
+[u S69 `S70 1 ]
+[n S69 . . ]
+"1307
+[v _PIE2bits `VS69 ~T0 @X0 0 e@146 ]
+[v F4229 `(v ~T0 @X0 0 tf ]
+"326 mcc_generated_files/tmr4.h
+[v _TMR4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F4229 ]
+"362
+[v _TMR4_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
+"6976 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
+[v _T4CON `Vuc ~T0 @X0 0 e@1047 ]
+"6982
+[s S331 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S331 . T4CKPS TMR4ON T4OUTPS ]
+"6987
+[s S332 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S332 . T4CKPS0 T4CKPS1 . T4OUTPS0 T4OUTPS1 T4OUTPS2 T4OUTPS3 ]
+"6981
+[u S330 `S331 1 `S332 1 ]
+[n S330 . . . ]
+"6997
+[v _T4CONbits `VS330 ~T0 @X0 0 e@1047 ]
+"140 mcc_generated_files/tmr4.c
+[v _frequencyValue `i ~T0 @X0 -> 0 `x e ]
+"141
+[v _frequencyIndex `i ~T0 @X0 0 e ]
+"137
+[v _setCurrent `(v ~T0 @X0 0 ef2`i`i ]
+"138
+[v _currentValue `i ~T0 @X0 -> 0 `x e ]
+"139
+[v _currentIndex `i ~T0 @X0 0 e ]
+"136
+[v _battery_voltage `(ui ~T0 @X0 0 ef ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4951,8 +4967,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 137: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 138: extern __bank0 __bit __powerdown;
 [; ;pic.h: 139: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 180: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 192: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef __int24 int24_t;
@@ -4982,16 +4996,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 289: typedef int16_t intptr_t;
 [; ;stdint.h: 294: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;tmr4.h: 103: void TMR4_Initialize(void);
 [; ;tmr4.h: 132: void TMR4_StartTimer(void);
 [; ;tmr4.h: 164: void TMR4_StopTimer(void);
@@ -5002,161 +5006,232 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr4.h: 326: void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
 [; ;tmr4.h: 344: extern void (*TMR4_InterruptHandler)(void);
 [; ;tmr4.h: 362: void TMR4_DefaultInterruptHandler(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;tmr2.h: 103: void TMR2_Initialize(void);
-[; ;tmr2.h: 132: void TMR2_StartTimer(void);
-[; ;tmr2.h: 164: void TMR2_StopTimer(void);
-[; ;tmr2.h: 199: uint8_t TMR2_ReadTimer(void);
-[; ;tmr2.h: 238: void TMR2_WriteTimer(uint8_t timerVal);
-[; ;tmr2.h: 290: void TMR2_LoadPeriodRegister(uint8_t periodVal);
-[; ;tmr2.h: 325: bool TMR2_HasOverflowOccured(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;tmr0.h: 98: void TMR0_Initialize(void);
-[; ;tmr0.h: 129: uint8_t TMR0_ReadTimer(void);
-[; ;tmr0.h: 168: void TMR0_WriteTimer(uint8_t timerVal);
-[; ;tmr0.h: 204: void TMR0_Reload(void);
-[; ;tmr0.h: 242: bool TMR0_HasOverflowOccured(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;opa1.h: 93: void OPA1_Initialize(void);
-[; ;ext_int.h: 250: void EXT_INT_Initialize(void);
-[; ;ext_int.h: 272: void INT_ISR(void);
-[; ;ext_int.h: 296: void INT_CallBack(void);
-[; ;ext_int.h: 319: void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;ext_int.h: 343: extern void (*INT_InterruptHandler)(void);
-[; ;ext_int.h: 367: void INT_DefaultInterruptHandler(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;opa2.h: 93: void OPA2_Initialize(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;dac.h: 93: void DAC_Initialize(void);
-[; ;dac.h: 140: void DAC_SetOutput(uint8_t inputData);
-[; ;dac.h: 174: uint8_t DAC_GetOutput(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;eusart.h: 76: typedef union {
-[; ;eusart.h: 77: struct {
-[; ;eusart.h: 78: unsigned perr : 1;
-[; ;eusart.h: 79: unsigned ferr : 1;
-[; ;eusart.h: 80: unsigned oerr : 1;
-[; ;eusart.h: 81: unsigned reserved : 5;
-[; ;eusart.h: 82: };
-[; ;eusart.h: 83: uint8_t status;
-[; ;eusart.h: 84: }eusart_status_t;
-[; ;eusart.h: 111: void EUSART_Initialize(void);
-[; ;eusart.h: 159: bool EUSART_is_tx_ready(void);
-[; ;eusart.h: 207: bool EUSART_is_rx_ready(void);
-[; ;eusart.h: 254: bool EUSART_is_tx_done(void);
-[; ;eusart.h: 302: eusart_status_t EUSART_get_last_status(void);
-[; ;eusart.h: 322: uint8_t EUSART_Read(void);
-[; ;eusart.h: 342: void EUSART_Write(uint8_t txData);
-[; ;eusart.h: 362: void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-[; ;eusart.h: 380: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-[; ;eusart.h: 398: void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-[; ;mcc.h: 78: void SYSTEM_Initialize(void);
-[; ;mcc.h: 91: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 103: void WDT_Initialize(void);
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"52 mcc_generated_files/interrupt_manager.c
-[v _INTERRUPT_InterruptManager `(v ~T10 @X0 1 ef ]
-"53
-{
-[; ;interrupt_manager.c: 52: void __interrupt() INTERRUPT_InterruptManager (void)
-[; ;interrupt_manager.c: 53: {
-[e :U _INTERRUPT_InterruptManager ]
-[f ]
-[; ;interrupt_manager.c: 55: if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
-"55
-[e $ ! && == -> . . _INTCONbits 0 4 `i -> 1 `i == -> . . _INTCONbits 0 1 `i -> 1 `i 620  ]
-[; ;interrupt_manager.c: 56: {
-"56
-{
-[; ;interrupt_manager.c: 57: INT_ISR();
-"57
-[e ( _INT_ISR ..  ]
-"58
-}
-[; ;interrupt_manager.c: 58: }
-[e $U 621  ]
-"59
-[e :U 620 ]
-[; ;interrupt_manager.c: 59: else if(INTCONbits.IOCIE == 1 && INTCONbits.IOCIF == 1)
-[e $ ! && == -> . . _INTCONbits 0 3 `i -> 1 `i == -> . . _INTCONbits 0 0 `i -> 1 `i 622  ]
-[; ;interrupt_manager.c: 60: {
-"60
-{
-[; ;interrupt_manager.c: 61: PIN_MANAGER_IOC();
-"61
-[e ( _PIN_MANAGER_IOC ..  ]
-"62
-}
-[; ;interrupt_manager.c: 62: }
-[e $U 623  ]
-"63
-[e :U 622 ]
-[; ;interrupt_manager.c: 63: else if(INTCONbits.PEIE == 1)
-[e $ ! == -> . . _INTCONbits 0 6 `i -> 1 `i 624  ]
-[; ;interrupt_manager.c: 64: {
+"58 mcc_generated_files/tmr4.c
+[v _TMR4_InterruptHandler `*F4232 ~T0 @X0 1 e ]
+[; ;tmr4.c: 58: void (*TMR4_InterruptHandler)(void);
 "64
-{
-[; ;interrupt_manager.c: 65: if(PIE2bits.TMR4IE == 1 && PIR2bits.TMR4IF == 1)
+[v _TMR4_Initialize `(v ~T0 @X0 1 ef ]
 "65
-[e $ ! && == -> . . _PIE2bits 0 1 `i -> 1 `i == -> . . _PIR2bits 0 1 `i -> 1 `i 625  ]
-[; ;interrupt_manager.c: 66: {
-"66
 {
-[; ;interrupt_manager.c: 67: TMR4_ISR();
-"67
-[e ( _TMR4_ISR ..  ]
-"68
-}
-[; ;interrupt_manager.c: 68: }
-[e $U 626  ]
+[; ;tmr4.c: 64: void TMR4_Initialize(void)
+[; ;tmr4.c: 65: {
+[e :U _TMR4_Initialize ]
+[f ]
+[; ;tmr4.c: 69: PR4 = 0x04;
 "69
-[e :U 625 ]
-[; ;interrupt_manager.c: 69: else
-[; ;interrupt_manager.c: 70: {
-"70
-{
+[e = _PR4 -> -> 4 `i `uc ]
+[; ;tmr4.c: 72: TMR4 = 0x00;
 "72
-}
-[e :U 626 ]
-"73
-}
-[; ;interrupt_manager.c: 72: }
-[; ;interrupt_manager.c: 73: }
-[e $U 627  ]
-"74
-[e :U 624 ]
-[; ;interrupt_manager.c: 74: else
-[; ;interrupt_manager.c: 75: {
+[e = _TMR4 -> -> 0 `i `uc ]
+[; ;tmr4.c: 75: PIR2bits.TMR4IF = 0;
 "75
-{
-"77
-}
-[e :U 627 ]
-[e :U 623 ]
-[e :U 621 ]
-[; ;interrupt_manager.c: 77: }
-[; ;interrupt_manager.c: 78: }
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
+[; ;tmr4.c: 78: PIE2bits.TMR4IE = 1;
 "78
+[e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
+[; ;tmr4.c: 81: TMR4_SetInterruptHandler(TMR4_DefaultInterruptHandler);
+"81
+[e ( _TMR4_SetInterruptHandler (1 &U _TMR4_DefaultInterruptHandler ]
+[; ;tmr4.c: 84: T4CON = 0x16;
+"84
+[e = _T4CON -> -> 22 `i `uc ]
+[; ;tmr4.c: 85: }
+"85
+[e :UE 616 ]
+}
+"87
+[v _TMR4_StartTimer `(v ~T0 @X0 1 ef ]
+"88
+{
+[; ;tmr4.c: 87: void TMR4_StartTimer(void)
+[; ;tmr4.c: 88: {
+[e :U _TMR4_StartTimer ]
+[f ]
+[; ;tmr4.c: 90: T4CONbits.TMR4ON = 1;
+"90
+[e = . . _T4CONbits 0 1 -> -> 1 `i `uc ]
+[; ;tmr4.c: 91: }
+"91
+[e :UE 617 ]
+}
+"93
+[v _TMR4_StopTimer `(v ~T0 @X0 1 ef ]
+"94
+{
+[; ;tmr4.c: 93: void TMR4_StopTimer(void)
+[; ;tmr4.c: 94: {
+[e :U _TMR4_StopTimer ]
+[f ]
+[; ;tmr4.c: 96: T4CONbits.TMR4ON = 0;
+"96
+[e = . . _T4CONbits 0 1 -> -> 0 `i `uc ]
+[; ;tmr4.c: 97: }
+"97
+[e :UE 618 ]
+}
+"99
+[v _TMR4_ReadTimer `(uc ~T0 @X0 1 ef ]
+"100
+{
+[; ;tmr4.c: 99: uint8_t TMR4_ReadTimer(void)
+[; ;tmr4.c: 100: {
+[e :U _TMR4_ReadTimer ]
+[f ]
+"101
+[v _readVal `uc ~T0 @X0 1 a ]
+[; ;tmr4.c: 101: uint8_t readVal;
+[; ;tmr4.c: 103: readVal = TMR4;
+"103
+[e = _readVal _TMR4 ]
+[; ;tmr4.c: 105: return readVal;
+"105
+[e ) _readVal ]
+[e $UE 619  ]
+[; ;tmr4.c: 106: }
+"106
 [e :UE 619 ]
+}
+"108
+[v _TMR4_WriteTimer `(v ~T0 @X0 1 ef1`uc ]
+"109
+{
+[; ;tmr4.c: 108: void TMR4_WriteTimer(uint8_t timerVal)
+[; ;tmr4.c: 109: {
+[e :U _TMR4_WriteTimer ]
+"108
+[v _timerVal `uc ~T0 @X0 1 r1 ]
+"109
+[f ]
+[; ;tmr4.c: 111: TMR4 = timerVal;
+"111
+[e = _TMR4 _timerVal ]
+[; ;tmr4.c: 112: }
+"112
+[e :UE 620 ]
+}
+"114
+[v _TMR4_LoadPeriodRegister `(v ~T0 @X0 1 ef1`uc ]
+"115
+{
+[; ;tmr4.c: 114: void TMR4_LoadPeriodRegister(uint8_t periodVal)
+[; ;tmr4.c: 115: {
+[e :U _TMR4_LoadPeriodRegister ]
+"114
+[v _periodVal `uc ~T0 @X0 1 r1 ]
+"115
+[f ]
+[; ;tmr4.c: 116: PR4 = periodVal;
+"116
+[e = _PR4 _periodVal ]
+[; ;tmr4.c: 117: }
+"117
+[e :UE 621 ]
+}
+"119
+[v _TMR4_ISR `(v ~T0 @X0 1 ef ]
+"120
+{
+[; ;tmr4.c: 119: void TMR4_ISR(void)
+[; ;tmr4.c: 120: {
+[e :U _TMR4_ISR ]
+[f ]
+[; ;tmr4.c: 123: PIR2bits.TMR4IF = 0;
+"123
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
+[; ;tmr4.c: 125: if(TMR4_InterruptHandler)
+"125
+[e $ ! != _TMR4_InterruptHandler -> -> 0 `i `*F4232 623  ]
+[; ;tmr4.c: 126: {
+"126
+{
+[; ;tmr4.c: 127: TMR4_InterruptHandler();
+"127
+[e ( *U _TMR4_InterruptHandler ..  ]
+"128
+}
+[e :U 623 ]
+[; ;tmr4.c: 128: }
+[; ;tmr4.c: 129: }
+"129
+[e :UE 622 ]
+}
+"131
+[v _TMR4_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F4229 ]
+{
+[; ;tmr4.c: 131: void TMR4_SetInterruptHandler(void (* InterruptHandler)(void)){
+[e :U _TMR4_SetInterruptHandler ]
+[v F4248 `(v ~T0 @X0 0 tf ]
+[v _InterruptHandler `*F4248 ~T0 @X0 1 r1 ]
+[f ]
+[; ;tmr4.c: 132: TMR4_InterruptHandler = InterruptHandler;
+"132
+[e = _TMR4_InterruptHandler _InterruptHandler ]
+[; ;tmr4.c: 133: }
+"133
+[e :UE 624 ]
+}
+[; ;tmr4.c: 136: uint16_t battery_voltage();
+[; ;tmr4.c: 137: void setCurrent(int microamps, int Vdd_mv);
+[; ;tmr4.c: 138: extern int currentValue[];
+[; ;tmr4.c: 139: extern int currentIndex;
+[; ;tmr4.c: 140: extern int frequencyValue[];
+[; ;tmr4.c: 141: extern int frequencyIndex;
+"145
+[v _currentIsOn `uc ~T0 @X0 1 e ]
+[i _currentIsOn
+-> -> 1 `i `uc
+]
+[; ;tmr4.c: 145: uint8_t currentIsOn = 1;
+"147
+[v _TMR4_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+{
+[; ;tmr4.c: 147: void TMR4_DefaultInterruptHandler(void){
+[e :U _TMR4_DefaultInterruptHandler ]
+[f ]
+[; ;tmr4.c: 152: if (currentIsOn){
+"152
+[e $ ! != -> _currentIsOn `i -> -> -> 0 `i `uc `i 626  ]
+{
+[; ;tmr4.c: 153: currentIsOn = 0;
+"153
+[e = _currentIsOn -> -> 0 `i `uc ]
+[; ;tmr4.c: 154: if (0 == frequencyValue[frequencyIndex]){
+"154
+[e $ ! == -> 0 `i *U + &U _frequencyValue * -> -> _frequencyIndex `ui `ux -> -> # *U &U _frequencyValue `ui `ux 627  ]
+{
+[; ;tmr4.c: 156: setCurrent(currentValue[currentIndex], battery_voltage());
+"156
+[e ( _setCurrent (2 , *U + &U _currentValue * -> -> _currentIndex `ui `ux -> -> # *U &U _currentValue `ui `ux -> ( _battery_voltage ..  `i ]
+"157
+}
+[; ;tmr4.c: 157: } else {
+[e $U 628  ]
+[e :U 627 ]
+{
+[; ;tmr4.c: 158: setCurrent(0, battery_voltage());
+"158
+[e ( _setCurrent (2 , -> 0 `i -> ( _battery_voltage ..  `i ]
+"159
+}
+[e :U 628 ]
+"160
+}
+[; ;tmr4.c: 159: }
+[; ;tmr4.c: 160: } else {
+[e $U 629  ]
+[e :U 626 ]
+{
+[; ;tmr4.c: 161: currentIsOn = 1;
+"161
+[e = _currentIsOn -> -> 1 `i `uc ]
+[; ;tmr4.c: 162: setCurrent(currentValue[currentIndex], battery_voltage());
+"162
+[e ( _setCurrent (2 , *U + &U _currentValue * -> -> _currentIndex `ui `ux -> -> # *U &U _currentValue `ui `ux -> ( _battery_voltage ..  `i ]
+"163
+}
+[e :U 629 ]
+[; ;tmr4.c: 163: }
+[; ;tmr4.c: 164: }
+"164
+[e :UE 625 ]
 }

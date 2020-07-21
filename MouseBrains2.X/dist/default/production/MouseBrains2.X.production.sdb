@@ -1,43 +1,48 @@
-[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[p GLOBOPT AUTOSTATIC PIC14 PIC14E ]
 [d version 1.1 ]
 [d edition pro ]
 [d chip 16LF1708 ]
 [d frameptr 6 ]
-"50 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
-[e E5176 . `uc
+"50 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
+[e E4289 . `uc
 STATE_RESET 0
 STATE_RECEIVING 1
 STATE_DONE 2
 ]
-"86 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
-[e E5299 . `uc
+"86 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
+[e E4435 . `uc
 STATE_RUNNING 0
 STATE_CURRENT 1
 STATE_FREQUENCY 2
 STATE_LOWBATTERY 3
 ]
-"257
-[e E5258 . `uc
+"285
+[e E4394 . `uc
 STATE_RESET 0
 STATE_RECEIVING 1
 STATE_DONE 2
 ]
-"6 /Applications/microchip/xc8/v1.45/sources/common/aldiv.c
-[v ___aldiv __aldiv `(l  1 e 4 0 ]
-"6 /Applications/microchip/xc8/v1.45/sources/common/awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-"464 /Applications/microchip/xc8/v1.45/sources/common/doprnt.c
-[v _printf printf `(i  1 e 2 0 ]
-"62 /Applications/microchip/xc8/v1.45/sources/common/float.c
-[v ___ftpack __ftpack `(f  1 e 3 0 ]
-"86 /Applications/microchip/xc8/v1.45/sources/common/ftadd.c
-[v ___ftadd __ftadd `(f  1 e 3 0 ]
-"6 /Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
-"15 /Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+[v i1___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+[v i1___aldiv __aldiv `(l  1 e 4 0 ]
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+[v i1___awdiv __awdiv `(i  1 e 2 0 ]
+"477 /opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+"62 /opt/microchip/xc8/v2.20/pic/sources/c90/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v2.20/pic/sources/c90/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"15 /opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"91 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+[v i1___lmul __lmul `(ul  1 e 4 0 ]
+"91 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _battery_voltage battery_voltage `(ui  1 e 2 0 ]
+[v i1_battery_voltage battery_voltage `(ui  1 e 2 0 ]
 "116
 [v _initLED initLED `(v  1 e 1 0 ]
 "157
@@ -54,13 +59,16 @@ STATE_DONE 2
 [v _selectCurrent selectCurrent `(v  1 e 1 0 ]
 "235
 [v _setCurrent setCurrent `(v  1 e 1 0 ]
-"257
+[v i1_setCurrent setCurrent `(v  1 e 1 0 ]
+"246
+[v _setFrequency setFrequency `(v  1 e 1 0 ]
+"285
 [v _process_remote_command process_remote_command `(v  1 e 1 0 ]
-"350
+"380
 [v _main main `(v  1 e 1 0 ]
-"58 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/dac.c
+"58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/dac.c
 [v _DAC_Initialize DAC_Initialize `(v  1 e 1 0 ]
-"66 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+"66 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 "113
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
@@ -80,37 +88,45 @@ STATE_DONE 2
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
 "174
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
-"54 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+"54 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
 [v _INT_ISR INT_ISR `(v  1 e 1 0 ]
 "62
 [v _INT_CallBack INT_CallBack `(v  1 e 1 0 ]
 "71
 [v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
-"75
+"76
 [v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
-"132
+"135
 [v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
-"52 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
+"52 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"50 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+"50 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"65
+"66
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"77
+"78
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"58 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa1.c
+"58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa1.c
 [v _OPA1_Initialize OPA1_Initialize `(v  1 e 1 0 ]
-"58 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa2.c
+"58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa2.c
 [v _OPA2_Initialize OPA2_Initialize `(v  1 e 1 0 ]
-"55 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+"55 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "121
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
-"63 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr0.c
+"63 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
-"62 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr2.c
+"62 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
-[s S124 . 1 `uc 1 IOCIF 1 0 :1:0 
+"64 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+"119
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+"131
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+"147
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+[s S131 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -119,15 +135,15 @@ STATE_DONE 2
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"372 /Applications/microchip/xc8/v1.45/include/pic16lf1708.h
-[s S133 . 1 `uc 1 . 1 0 :2:0 
+"374 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
+[s S140 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S138 . 1 `S124 1 . 1 0 `S133 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES138  1 e 1 @11 ]
-[s S252 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S145 . 1 `S131 1 . 1 0 `S140 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES145  1 e 1 @11 ]
+[s S321 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -136,26 +152,38 @@ STATE_DONE 2
 `uc 1 ADIF 1 0 :1:6 
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
-"599
-[s S261 . 1 `uc 1 . 1 0 :2:0 
+"601
+[s S330 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 CCPIF 1 0 :1:2 
 ]
-[u S264 . 1 `S252 1 . 1 0 `S261 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES264  1 e 1 @17 ]
-"751
+[u S333 . 1 `S321 1 . 1 0 `S330 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES333  1 e 1 @17 ]
+[s S228 . 1 `uc 1 CCP2IF 1 0 :1:0 
+`uc 1 TMR4IF 1 0 :1:1 
+`uc 1 TMR6IF 1 0 :1:2 
+`uc 1 BCL1IF 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 C1IF 1 0 :1:5 
+`uc 1 C2IF 1 0 :1:6 
+`uc 1 OSFIF 1 0 :1:7 
+]
+"668
+[u S237 . 1 `S228 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES237  1 e 1 @18 ]
+"753
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
-"960
+"962
 [v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
-"980
+"982
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
-"1000
+"1002
 [v _T2CON T2CON `VEuc  1 e 1 @28 ]
-[s S507 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S576 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
-"1021
-[s S511 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+"1023
+[s S580 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -163,51 +191,63 @@ STATE_DONE 2
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S519 . 1 `S507 1 . 1 0 `S511 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES519  1 e 1 @28 ]
-"1071
+[u S588 . 1 `S576 1 . 1 0 `S580 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES588  1 e 1 @28 ]
+"1073
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
-"1116
+"1118
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
-"1155
+"1157
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
-"1390
+[s S207 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 TMR4IE 1 0 :1:1 
+`uc 1 TMR6IE 1 0 :1:2 
+`uc 1 BCL1IE 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 C1IE 1 0 :1:5 
+`uc 1 C2IE 1 0 :1:6 
+`uc 1 OSFIE 1 0 :1:7 
+]
+"1307
+[u S216 . 1 `S207 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES216  1 e 1 @146 ]
+"1392
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
-[s S83 . 1 `uc 1 PS 1 0 :3:0 
+[s S90 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 TMR0SE 1 0 :1:4 
 `uc 1 TMR0CS 1 0 :1:5 
 `uc 1 INTEDG 1 0 :1:6 
 `uc 1 nWPUEN 1 0 :1:7 
 ]
-"1413
-[s S90 . 1 `uc 1 PS0 1 0 :1:0 
+"1415
+[s S97 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S97 . 1 `S83 1 . 1 0 `S90 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES97  1 e 1 @149 ]
-"1530
+[u S104 . 1 `S90 1 . 1 0 `S97 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES104  1 e 1 @149 ]
+"1532
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
-"1589
+"1591
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
-"1647
+"1649
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
-"1719
+"1721
 [v _OSCSTAT OSCSTAT `VEuc  1 e 1 @154 ]
-"1781
+"1783
 [v _ADRES ADRES `VEus  1 e 2 @155 ]
-"1828
+"1830
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S619 . 1 `uc 1 ADON 1 0 :1:0 
+[s S688 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
-"1853
-[s S623 . 1 `uc 1 . 1 0 :1:0 
+"1855
+[s S692 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -215,59 +255,59 @@ STATE_DONE 2
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S631 . 1 `uc 1 . 1 0 :1:0 
+[s S700 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S634 . 1 `S619 1 . 1 0 `S623 1 . 1 0 `S631 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES634  1 e 1 @157 ]
-"1908
+[u S703 . 1 `S688 1 . 1 0 `S692 1 . 1 0 `S700 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES703  1 e 1 @157 ]
+"1910
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
-"2028
+"2030
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-"2073
+"2075
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-"2112
+"2114
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-"2466
+"2468
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
-"2499
+"2501
 [v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
-[s S587 . 1 `uc 1 ADFVR 1 0 :2:0 
+[s S656 . 1 `uc 1 ADFVR 1 0 :2:0 
 `uc 1 CDAFVR 1 0 :2:2 
 `uc 1 TSRNG 1 0 :1:4 
 `uc 1 TSEN 1 0 :1:5 
 `uc 1 FVRRDY 1 0 :1:6 
 `uc 1 FVREN 1 0 :1:7 
 ]
-"2520
-[s S594 . 1 `uc 1 ADFVR0 1 0 :1:0 
+"2522
+[s S663 . 1 `uc 1 ADFVR0 1 0 :1:0 
 `uc 1 ADFVR1 1 0 :1:1 
 `uc 1 CDAFVR0 1 0 :1:2 
 `uc 1 CDAFVR1 1 0 :1:3 
 ]
-[u S599 . 1 `S587 1 . 1 0 `S594 1 . 1 0 ]
-[v _FVRCONbits FVRCONbits `VES599  1 e 1 @279 ]
-"2575
+[u S668 . 1 `S656 1 . 1 0 `S663 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES668  1 e 1 @279 ]
+"2577
 [v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @280 ]
-"2685
+"2687
 [v _DAC1CON1 DAC1CON1 `VEuc  1 e 1 @281 ]
-"2851
+"2853
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
-"2896
+"2892
 [v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
-"2935
+"2931
 [v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
-"3156
+"3152
 [v _RC1REG RC1REG `VEuc  1 e 1 @409 ]
-"3210
+"3206
 [v _TX1REG TX1REG `VEuc  1 e 1 @410 ]
-"3271
+"3267
 [v _SP1BRGL SP1BRGL `VEuc  1 e 1 @411 ]
-"3341
+"3337
 [v _SP1BRGH SP1BRGH `VEuc  1 e 1 @412 ]
-"3395
+"3391
 [v _RC1STA RC1STA `VEuc  1 e 1 @413 ]
-[s S301 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S370 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -276,12 +316,12 @@ STATE_DONE 2
 `uc 1 RX9 1 0 :1:6 
 `uc 1 SPEN 1 0 :1:7 
 ]
-"3421
-[u S310 . 1 `S301 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES310  1 e 1 @413 ]
-"3575
+"3417
+[u S379 . 1 `S370 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES379  1 e 1 @413 ]
+"3571
 [v _TX1STA TX1STA `VEuc  1 e 1 @414 ]
-[s S280 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S349 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -290,49 +330,49 @@ STATE_DONE 2
 `uc 1 TX9 1 0 :1:6 
 `uc 1 CSRC 1 0 :1:7 
 ]
-"3601
-[u S289 . 1 `S280 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES289  1 e 1 @414 ]
-"3755
+"3597
+[u S358 . 1 `S349 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES358  1 e 1 @414 ]
+"3751
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @415 ]
-"4001
+"3997
 [v _WPUA WPUA `VEuc  1 e 1 @524 ]
-"4051
+"4047
 [v _WPUB WPUB `VEuc  1 e 1 @525 ]
-"4090
+"4086
 [v _WPUC WPUC `VEuc  1 e 1 @526 ]
-"5550
+"5546
 [v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
-"5595
+"5591
 [v _ODCONB ODCONB `VEuc  1 e 1 @653 ]
-"5634
+"5630
 [v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
-"5703
+"5699
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
-[s S777 . 1 `uc 1 CCP1M 1 0 :4:0 
+[s S846 . 1 `uc 1 CCP1M 1 0 :4:0 
 `uc 1 DC1B 1 0 :2:4 
 ]
-"5772
-[s S780 . 1 `uc 1 CCP1M0 1 0 :1:0 
+"5768
+[s S849 . 1 `uc 1 CCP1M0 1 0 :1:0 
 `uc 1 CCP1M1 1 0 :1:1 
 `uc 1 CCP1M2 1 0 :1:2 
 `uc 1 CCP1M3 1 0 :1:3 
 `uc 1 DC1B0 1 0 :1:4 
 `uc 1 DC1B1 1 0 :1:5 
 ]
-[s S787 . 1 `uc 1 . 1 0 :4:0 
+[s S856 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CCP1Y 1 0 :1:4 
 `uc 1 CCP1X 1 0 :1:5 
 ]
-[u S791 . 1 `S777 1 . 1 0 `S780 1 . 1 0 `S787 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES791  1 e 1 @659 ]
-[s S674 . 1 `uc 1 C1TSEL 1 0 :2:0 
+[u S860 . 1 `S846 1 . 1 0 `S849 1 . 1 0 `S856 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES860  1 e 1 @659 ]
+[s S743 . 1 `uc 1 C1TSEL 1 0 :2:0 
 `uc 1 C2TSEL 1 0 :2:2 
 `uc 1 P3TSEL 1 0 :2:4 
 `uc 1 P4TSEL 1 0 :2:6 
 ]
-"6125
-[s S679 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+"6121
+[s S748 . 1 `uc 1 C1TSEL0 1 0 :1:0 
 `uc 1 C1TSEL1 1 0 :1:1 
 `uc 1 C2TSEL0 1 0 :1:2 
 `uc 1 C2TSEL1 1 0 :1:3 
@@ -341,79 +381,100 @@ STATE_DONE 2
 `uc 1 P4TSEL0 1 0 :1:6 
 `uc 1 P4TSEL1 1 0 :1:7 
 ]
-[u S688 . 1 `S674 1 . 1 0 `S679 1 . 1 0 ]
-[v _CCPTMRSbits CCPTMRSbits `VES688  1 e 1 @670 ]
-"6190
+[u S757 . 1 `S743 1 . 1 0 `S748 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES757  1 e 1 @670 ]
+"6186
 [v _SLRCONA SLRCONA `VEuc  1 e 1 @780 ]
-"6235
+"6231
 [v _SLRCONB SLRCONB `VEuc  1 e 1 @781 ]
-"6274
+"6270
 [v _SLRCONC SLRCONC `VEuc  1 e 1 @782 ]
-"6336
+"6332
 [v _INLVLA INLVLA `VEuc  1 e 1 @908 ]
-"6386
+"6382
 [v _INLVLB INLVLB `VEuc  1 e 1 @909 ]
-"6425
+"6421
 [v _INLVLC INLVLC `VEuc  1 e 1 @910 ]
-"7162
+"6936
+[v _TMR4 TMR4 `VEuc  1 e 1 @1045 ]
+"6956
+[v _PR4 PR4 `VEuc  1 e 1 @1046 ]
+"6976
+[v _T4CON T4CON `VEuc  1 e 1 @1047 ]
+[s S1086 . 1 `uc 1 T4CKPS 1 0 :2:0 
+`uc 1 TMR4ON 1 0 :1:2 
+`uc 1 T4OUTPS 1 0 :4:3 
+]
+"6997
+[s S1090 . 1 `uc 1 T4CKPS0 1 0 :1:0 
+`uc 1 T4CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T4OUTPS0 1 0 :1:3 
+`uc 1 T4OUTPS1 1 0 :1:4 
+`uc 1 T4OUTPS2 1 0 :1:5 
+`uc 1 T4OUTPS3 1 0 :1:6 
+]
+[u S1098 . 1 `S1086 1 . 1 0 `S1090 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES1098  1 e 1 @1047 ]
+"7158
 [v _OPA1CON OPA1CON `VEuc  1 e 1 @1297 ]
-"7216
+"7212
 [v _OPA2CON OPA2CON `VEuc  1 e 1 @1301 ]
-[s S707 . 1 `uc 1 . 1 0 :6:0 
+[s S776 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM3DCL 1 0 :2:6 
 ]
-"7286
-[s S710 . 1 `uc 1 . 1 0 :6:0 
+"7282
+[s S779 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM3DCL0 1 0 :1:6 
 `uc 1 PWM3DCL1 1 0 :1:7 
 ]
-[u S714 . 1 `S707 1 . 1 0 `S710 1 . 1 0 ]
-[v _PWM3DCLbits PWM3DCLbits `VES714  1 e 1 @1559 ]
-"7306
+[u S783 . 1 `S776 1 . 1 0 `S779 1 . 1 0 ]
+[v _PWM3DCLbits PWM3DCLbits `VES783  1 e 1 @1559 ]
+"7302
 [v _PWM3DCH PWM3DCH `VEuc  1 e 1 @1560 ]
-[s S725 . 1 `uc 1 . 1 0 :4:0 
+[s S794 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 PWM3POL 1 0 :1:4 
 `uc 1 PWM3OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PWM3EN 1 0 :1:7 
 ]
-"7395
-[u S731 . 1 `S725 1 . 1 0 ]
-[v _PWM3CONbits PWM3CONbits `VES731  1 e 1 @1561 ]
-[s S743 . 1 `uc 1 . 1 0 :6:0 
+"7391
+[u S800 . 1 `S794 1 . 1 0 ]
+[v _PWM3CONbits PWM3CONbits `VES800  1 e 1 @1561 ]
+[s S812 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM4DCL 1 0 :2:6 
 ]
-"7458
-[s S746 . 1 `uc 1 . 1 0 :6:0 
+"7454
+[s S815 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM4DCL0 1 0 :1:6 
 `uc 1 PWM4DCL1 1 0 :1:7 
 ]
-[u S750 . 1 `S743 1 . 1 0 `S746 1 . 1 0 ]
-[v _PWM4DCLbits PWM4DCLbits `VES750  1 e 1 @1562 ]
-"7478
+[u S819 . 1 `S812 1 . 1 0 `S815 1 . 1 0 ]
+[v _PWM4DCLbits PWM4DCLbits `VES819  1 e 1 @1562 ]
+"7474
 [v _PWM4DCH PWM4DCH `VEuc  1 e 1 @1563 ]
-[s S761 . 1 `uc 1 . 1 0 :4:0 
+[s S830 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 PWM4POL 1 0 :1:4 
 `uc 1 PWM4OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PWM4EN 1 0 :1:7 
 ]
-"7567
-[u S767 . 1 `S761 1 . 1 0 ]
-[v _PWM4CONbits PWM4CONbits `VES767  1 e 1 @1564 ]
-"8494
+"7563
+[u S836 . 1 `S830 1 . 1 0 ]
+[v _PWM4CONbits PWM4CONbits `VES836  1 e 1 @1564 ]
+"8490
 [v _INTPPS INTPPS `VEuc  1 e 1 @3600 ]
-"8694
+"8690
 [v _RXPPS RXPPS `VEuc  1 e 1 @3620 ]
-"8894
+"8890
 [v _RA5PPS RA5PPS `VEuc  1 e 1 @3733 ]
-"8974
+"8970
 [v _RB7PPS RB7PPS `VEuc  1 e 1 @3743 ]
-"9074
+"9070
 [v _RC4PPS RC4PPS `VEuc  1 e 1 @3748 ]
-"9094
+"9090
 [v _RC5PPS RC5PPS `VEuc  1 e 1 @3749 ]
-"52 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+"52 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _stats stats `[33]uc  1 e 33 0 ]
 "54
 [v _LED_red LED_red `uc  1 e 1 0 ]
@@ -429,79 +490,90 @@ STATE_DONE 2
 [v _duty duty `uc  1 e 1 0 ]
 "71
 [v _currentValue currentValue `[11]i  1 e 22 0 ]
-"73
-[v _maxCurrentIndex maxCurrentIndex `i  1 e 2 0 ]
-"74
-[v _maxFrequencyIndex maxFrequencyIndex `i  1 e 2 0 ]
+"72
+[v _frequencyValue frequencyValue `[6]i  1 e 12 0 ]
 "75
 [v _currentIndex currentIndex `i  1 e 2 0 ]
 "76
 [v _frequencyIndex frequencyIndex `i  1 e 2 0 ]
 "86
-[v _interfaceState interfaceState `E5299  1 e 1 0 ]
-[s S206 . 1 `uc 1 perr 1 0 :1:0 
+[v _interfaceState interfaceState `E4435  1 e 1 0 ]
+[s S275 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
-"52 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
-[u S211 . 1 `S206 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusartRxLastError eusartRxLastError `VES211  1 e 1 0 ]
+"52 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
+[u S280 . 1 `S275 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES280  1 e 1 0 ]
 "58
 [v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "59
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "60
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
-[s S388 . 2 `uc 1 address_b 1 0 `uc 1 address 1 1 ]
-"50 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
-[s S391 . 2 `ui 1 extended_address 2 0 ]
-[u S393 . 2 `S388 1 . 2 0 `S391 1 . 2 0 ]
-[s S396 . 4 `uc 1 command_b 1 0 `uc 1 command 1 1 `S393 1 . 2 2 ]
-[u S400 . 4 `ul 1 code 4 0 `S396 1 . 4 0 ]
-[s S403 . 6 `uc 1 n_bits 1 0 `E5176 1 state 1 1 `S400 1 . 4 2 ]
-[v _ir_code ir_code `S403  1 e 6 0 ]
+[s S457 . 2 `uc 1 address_b 1 0 `uc 1 address 1 1 ]
+"50 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
+[s S460 . 2 `ui 1 extended_address 2 0 ]
+[u S462 . 2 `S457 1 . 2 0 `S460 1 . 2 0 ]
+[s S465 . 4 `uc 1 command_b 1 0 `uc 1 command 1 1 `S462 1 . 2 2 ]
+[u S469 . 4 `ul 1 code 4 0 `S465 1 . 4 0 ]
+[s S472 . 6 `uc 1 n_bits 1 0 `E4289 1 state 1 1 `S469 1 . 4 2 ]
+[v _ir_code ir_code `S472  1 e 6 0 ]
 "52
 [v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
-"58 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr0.c
+"58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
-"350 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+"58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr4.c
+[v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
+"145
+[v _currentIsOn currentIsOn `uc  1 e 1 0 ]
+"380 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"409
+"439
 } 0
 "186
 [v _startUp startUp `(v  1 e 1 0 ]
 {
 "188
-[v startUp@i i `i  1 a 2 4 ]
+[v startUp@i i `i  1 a 2 6 ]
 "195
 } 0
-"257
+"285
 [v _process_remote_command process_remote_command `(v  1 e 1 0 ]
 {
-[s S388 . 2 `uc 1 address_b 1 0 `uc 1 address 1 1 ]
-[s S391 . 2 `ui 1 extended_address 2 0 ]
-[u S393 . 2 `S388 1 . 2 0 `S391 1 . 2 0 ]
-[s S396 . 4 `uc 1 command_b 1 0 `uc 1 command 1 1 `S393 1 . 2 2 ]
-[u S400 . 4 `ul 1 code 4 0 `S396 1 . 4 0 ]
-[s S403 . 6 `uc 1 n_bits 1 0 `E5176 1 state 1 1 `S400 1 . 4 2 ]
-[v process_remote_command@code code `*.4S403  1 a 1 wreg ]
-[v process_remote_command@code code `*.4S403  1 a 1 wreg ]
-[v process_remote_command@code code `*.4S403  1 a 1 5 ]
-"344
+[s S457 . 2 `uc 1 address_b 1 0 `uc 1 address 1 1 ]
+[s S460 . 2 `ui 1 extended_address 2 0 ]
+[u S462 . 2 `S457 1 . 2 0 `S460 1 . 2 0 ]
+[s S465 . 4 `uc 1 command_b 1 0 `uc 1 command 1 1 `S462 1 . 2 2 ]
+[u S469 . 4 `ul 1 code 4 0 `S465 1 . 4 0 ]
+[s S472 . 6 `uc 1 n_bits 1 0 `E4289 1 state 1 1 `S469 1 . 4 2 ]
+[v process_remote_command@code code `*.4S472  1 a 1 wreg ]
+[v process_remote_command@code code `*.4S472  1 a 1 wreg ]
+[v process_remote_command@code code `*.4S472  1 a 1 45 ]
+"374
+} 0
+"246
+[v _setFrequency setFrequency `(v  1 e 1 0 ]
+{
+"262
+[v setFrequency@pr4_val pr4_val `i  1 a 2 30 ]
+"246
+[v setFrequency@frequency_hz frequency_hz `ui  1 p 2 27 ]
+"270
 } 0
 "235
 [v _setCurrent setCurrent `(v  1 e 1 0 ]
 {
 "238
-[v setCurrent@DACValue DACValue `i  1 a 2 37 ]
+[v setCurrent@DACValue DACValue `i  1 a 2 41 ]
 "236
-[v setCurrent@microamps microamps `i  1 p 2 25 ]
-[v setCurrent@Vdd_mv Vdd_mv `i  1 p 2 27 ]
+[v setCurrent@microamps microamps `i  1 p 2 29 ]
+[v setCurrent@Vdd_mv Vdd_mv `i  1 p 2 31 ]
 "242
 } 0
-"15 /Applications/microchip/xc8/v1.45/sources/common/Umul32.c
+"15 /opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 {
 "17
@@ -511,32 +583,32 @@ STATE_DONE 2
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
 } 0
-"6 /Applications/microchip/xc8/v1.45/sources/common/lldiv.c
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 21 ]
 "11
-[v ___lldiv@quotient quotient `ul  1 a 4 20 ]
-"12
-[v ___lldiv@counter counter `uc  1 a 1 24 ]
-"6
+[v ___lldiv@counter counter `uc  1 a 1 25 ]
+"5
 [v ___lldiv@divisor divisor `ul  1 p 4 12 ]
 [v ___lldiv@dividend dividend `ul  1 p 4 16 ]
-"31
+"30
 } 0
-"6 /Applications/microchip/xc8/v1.45/sources/common/awdiv.c
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
 "11
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"12
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"6
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
 [v ___awdiv@divisor divisor `i  1 p 2 0 ]
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
-"42
+"41
 } 0
-"197 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+"197 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _selectSomething selectSomething `(v  1 e 1 0 ]
 {
 "207
@@ -551,24 +623,24 @@ STATE_DONE 2
 {
 "223
 } 0
-"464 /Applications/microchip/xc8/v1.45/sources/common/doprnt.c
+"477 /opt/microchip/xc8/v2.20/pic/sources/c90/common/doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
 {
-"499
-[v printf@c c `c  1 a 1 6 ]
-"466
-[v printf@ap ap `[1]*.4v  1 a 1 5 ]
-"464
-[v printf@f f `*.25DCuc  1 p 2 0 ]
-"1541
+"512
+[v printf@c c `uc  1 a 1 8 ]
+"479
+[v printf@ap ap `[1]*.4v  1 a 1 7 ]
+"477
+[v printf@f f `*.25DCuc  1 p 2 2 ]
+"1567
 } 0
-"146 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+"146 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@txData txData `uc  1 a 1 wreg ]
 [v putch@txData txData `uc  1 a 1 wreg ]
 "148
-[v putch@txData txData `uc  1 a 1 4 ]
+[v putch@txData txData `uc  1 a 1 1 ]
 "149
 } 0
 "132
@@ -576,28 +648,28 @@ STATE_DONE 2
 {
 [v EUSART_Write@txData txData `uc  1 a 1 wreg ]
 [v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 3 ]
+[v EUSART_Write@txData txData `uc  1 a 1 0 ]
 "139
 } 0
-"91 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+"91 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _battery_voltage battery_voltage `(ui  1 e 2 0 ]
 {
 "110
 } 0
-"6 /Applications/microchip/xc8/v1.45/sources/common/aldiv.c
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 {
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 23 ]
 "11
-[v ___aldiv@quotient quotient `l  1 a 4 18 ]
-"12
-[v ___aldiv@sign sign `uc  1 a 1 17 ]
-[v ___aldiv@counter counter `uc  1 a 1 16 ]
-"6
-[v ___aldiv@divisor divisor `l  1 p 4 8 ]
-[v ___aldiv@dividend dividend `l  1 p 4 12 ]
-"42
+[v ___aldiv@sign sign `uc  1 a 1 22 ]
+[v ___aldiv@counter counter `uc  1 a 1 21 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 12 ]
+[v ___aldiv@dividend dividend `l  1 p 4 16 ]
+"41
 } 0
-"178 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/main.c
+"178 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _lowBattery lowBattery `(v  1 e 1 0 ]
 {
 "184
@@ -610,7 +682,7 @@ STATE_DONE 2
 [v setLEDColor@green green `uc  1 p 1 0 ]
 [v setLEDColor@blue blue `uc  1 p 1 1 ]
 "164
-[v setLEDColor@red red `uc  1 a 1 4 ]
+[v setLEDColor@red red `uc  1 a 1 3 ]
 "174
 } 0
 "116
@@ -618,50 +690,61 @@ STATE_DONE 2
 {
 "155
 } 0
-"50 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+"50 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"63
+"64
 } 0
-"77
+"78
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 {
-"81
+"82
 } 0
-"62 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr2.c
+"64 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"131
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"133
+} 0
+"62 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "77
 } 0
-"63 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/tmr0.c
+"63 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"55 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+"55 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "119
 } 0
-"65 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/mcc.c
+"66 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"75
+"76
 } 0
-"58 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa2.c
+"58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa2.c
 [v _OPA2_Initialize OPA2_Initialize `(v  1 e 1 0 ]
 {
 "62
 } 0
-"58 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/opa1.c
+"58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/opa1.c
 [v _OPA1_Initialize OPA1_Initialize `(v  1 e 1 0 ]
 {
 "62
 } 0
-"132 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+"135 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
 [v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
 {
-"143
+"146
 } 0
 "71
 [v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
@@ -669,7 +752,7 @@ STATE_DONE 2
 [v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "73
 } 0
-"66 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/eusart.c
+"66 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 {
 "92
@@ -692,22 +775,95 @@ STATE_DONE 2
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "176
 } 0
-"58 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/dac.c
+"58 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/dac.c
 [v _DAC_Initialize DAC_Initialize `(v  1 e 1 0 ]
 {
 "64
 } 0
-"52 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
+"52 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"67
+"78
 } 0
-"121 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/pin_manager.c
+"119 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/tmr4.c
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+{
+"129
+} 0
+"147
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"164
+} 0
+"235 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
+[v i1_setCurrent setCurrent `(v  1 e 1 0 ]
+{
+"238
+[v i1setCurrent@DACValue DACValue `i  1 a 2 28 ]
+"236
+[v i1setCurrent@microamps microamps `i  1 p 2 16 ]
+[v i1setCurrent@Vdd_mv Vdd_mv `i  1 p 2 18 ]
+"242
+} 0
+"15 /opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul32.c
+[v i1___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v i1___lmul@product product `ul  1 a 4 8 ]
+"15
+[v i1___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v i1___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/__lldiv.c
+[v i1___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v i1___lldiv@quotient quotient `ul  1 a 4 8 ]
+"11
+[v i1___lldiv@counter counter `uc  1 a 1 12 ]
+"5
+[v i1___lldiv@divisor divisor `ul  1 p 4 0 ]
+[v i1___lldiv@dividend dividend `ul  1 p 4 4 ]
+"30
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+[v i1___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v i1___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v i1___awdiv@sign sign `uc  1 a 1 6 ]
+[v i1___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v i1___awdiv@divisor divisor `i  1 p 2 0 ]
+[v i1___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"91 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
+[v i1_battery_voltage battery_voltage `(ui  1 e 2 0 ]
+{
+"110
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/aldiv.c
+[v i1___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v i1___aldiv@quotient quotient `l  1 a 4 10 ]
+"11
+[v i1___aldiv@sign sign `uc  1 a 1 9 ]
+[v i1___aldiv@counter counter `uc  1 a 1 8 ]
+"5
+[v i1___aldiv@divisor divisor `l  1 p 4 0 ]
+[v i1___aldiv@dividend dividend `l  1 p 4 4 ]
+"41
+} 0
+"121 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
 {
 "123
 } 0
-"54 /Users/sophikravitz/MPLABXProjects/pic-ir-rx-master/MouseBrains2.X/mcc_generated_files/ext_int.c
+"54 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/mcc_generated_files/ext_int.c
 [v _INT_ISR INT_ISR `(v  1 e 1 0 ]
 {
 "60
@@ -717,10 +873,10 @@ STATE_DONE 2
 {
 "69
 } 0
-"75
+"76
 [v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"77
+"80
 [v INT_DefaultInterruptHandler@time time `uc  1 a 1 1 ]
-"130
+"133
 } 0

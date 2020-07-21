@@ -58,6 +58,7 @@
 #include "tmr0.h"
 #include "opa1.h"
 #include "ext_int.h"
+#include "memory.h"
 #include "opa2.h"
 #include "dac.h"
 #include "eusart.h"

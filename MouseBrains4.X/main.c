@@ -67,7 +67,7 @@ int currentValue[] = {0,30,50,70,90,110,130,160,190,220,250};
 int frequencyValue[] = {0,50,100,120,130,140};
 int maxCurrentIndex = sizeof(currentValue)/sizeof(currentValue[0]);
 int maxFrequencyIndex = sizeof(frequencyValue)/sizeof(frequencyValue[0]);
-int currentIndex = 0; // what's in storage??
+int currentIndex = 0;
 int frequencyIndex = 0;
 uint8_t dc_frequency_flag = 1;
 
@@ -80,6 +80,37 @@ typedef enum
 } state_t;
 
 state_t interfaceState;
+
+// note: items should be uint16_t; only 14 lowest bits are stored
+typedef struct
+{
+  uint16_t currentIndex;
+  uint16_t frequencyIndex;
+  uint16_t dc_frequency_flag;
+  uint16_t padding[29];
+} persistent_state;
+
+// reserve one flash block at end of program memory for persistent state
+const persistent_state HEF_persistent_state __at(0xfdf) = {0, 0, 1};
+
+// load variables from HEF
+void readPersistentState()
+{
+  currentIndex = FLASH_ReadWord((uint16_t)&(HEF_persistent_state.currentIndex));
+  frequencyIndex = FLASH_ReadWord((uint16_t)&(HEF_persistent_state.frequencyIndex));
+  dc_frequency_flag = FLASH_ReadWord((uint16_t)&(HEF_persistent_state.dc_frequency_flag));
+}
+
+// store variables to HEF
+void writePersistentState()
+{
+  persistent_state buf;
+  buf.currentIndex = (uint16_t)currentIndex;
+  buf.frequencyIndex = (uint16_t)frequencyIndex;
+  buf.dc_frequency_flag = (uint16_t)dc_frequency_flag;
+  FLASH_EraseBlock((uint16_t)&HEF_persistent_state);
+  FLASH_WriteBlock((uint16_t)&HEF_persistent_state, (uint16_t*) &buf);
+}
 
 // measure Vdd using FVR/ADC
 // assumes 4 MHz clock; ADC uses FOSC/8
@@ -328,6 +359,7 @@ void process_remote_command(NEC_IR_code_t* code){
         selectIncrease();
       }
       setCurrent(currentValue[currentIndex],battery_voltage());   
+      writePersistentState();
     }
     if(STATE_FREQUENCY == interfaceState){
       frequencyIndex++;
@@ -339,6 +371,7 @@ void process_remote_command(NEC_IR_code_t* code){
         selectIncrease();
       }
       setFrequency(frequencyValue[frequencyIndex]); 
+      writePersistentState();
     }
     if(STATE_RUNNING == interfaceState){
       selectSomething();
@@ -358,6 +391,7 @@ void process_remote_command(NEC_IR_code_t* code){
         selectDecrease();
       }
       setCurrent(currentValue[currentIndex],battery_voltage()); 
+      writePersistentState();
     }
     if(STATE_FREQUENCY == interfaceState){
       frequencyIndex--;
@@ -369,7 +403,7 @@ void process_remote_command(NEC_IR_code_t* code){
         selectDecrease();
       }
       setFrequency(frequencyValue[frequencyIndex]); 
-      selectDecrease();
+      writePersistentState();
     }
     if(STATE_RUNNING == interfaceState){
       selectSomething();
@@ -427,7 +461,6 @@ void process_remote_command(NEC_IR_code_t* code){
 */
 void main(void)
 {
-  // initialize the device
   SYSTEM_Initialize();         
   DAC_Initialize();
   OPA1_Initialize();
@@ -436,6 +469,11 @@ void main(void)
   INTERRUPT_GlobalInterruptEnable();
   INTERRUPT_PeripheralInterruptEnable();
   startUp();
+
+  // initialize the device
+  readPersistentState();
+  setCurrent(currentValue[currentIndex],battery_voltage()); 
+  setFrequency(frequencyValue[frequencyIndex]);
 
   //(255, 0, 0); = blue
   //(255, 0, 255); = green

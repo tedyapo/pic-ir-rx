@@ -8114,6 +8114,19 @@ setLEDColor(0, 0, 0);
 # 380
 void main(void)
 {
+initLED();
+while(1){
+setLEDColor(255, 0, 0);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+setLEDColor(255, 0, 0);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+setLEDColor(255, 0, 0);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+}
+
 
 SYSTEM_Initialize();
 DAC_Initialize();
@@ -8124,7 +8137,17 @@ initLED();
 (INTCONbits.PEIE = 1);
 startUp();
 
-# 401
+setLEDColor(255, 0, 0);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+setLEDColor(255, 0, 0);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+setLEDColor(255, 0, 0);
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+setLEDColor(0, 0, 0);
+
+# 424
 while(1){
 
 if ((int)battery_voltage() < 2500)
@@ -8133,10 +8156,10 @@ lowBattery();
 
 }
 
-# 413
+# 436
 if (STATE_DONE == ir_code.state){
 
-# 431
+# 454
 process_remote_command(&ir_code);
 
 

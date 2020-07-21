@@ -6101,73 +6101,141 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 381: {
 [e :U _main ]
 [f ]
-[; ;main.c: 383: SYSTEM_Initialize();
-"383
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 384: DAC_Initialize();
-"384
-[e ( _DAC_Initialize ..  ]
-[; ;main.c: 385: OPA1_Initialize();
-"385
-[e ( _OPA1_Initialize ..  ]
-[; ;main.c: 386: OPA2_Initialize();
-"386
-[e ( _OPA2_Initialize ..  ]
-[; ;main.c: 387: initLED();
-"387
+[; ;main.c: 382: initLED();
+"382
 [e ( _initLED ..  ]
-[; ;main.c: 388: (INTCONbits.GIE = 1);
-"388
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 389: (INTCONbits.PEIE = 1);
-"389
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 390: startUp();
-"390
-[e ( _startUp ..  ]
-[; ;main.c: 401: while(1){
-"401
+[; ;main.c: 383: while(1){
+"383
 [e :U 681 ]
 {
-[; ;main.c: 403: if ((int)battery_voltage() < 2500)
-"403
-[e $ ! < -> ( _battery_voltage ..  `i -> 2500 `i 683  ]
-[; ;main.c: 404: {
-"404
-{
-[; ;main.c: 405: lowBattery();
-"405
-[e ( _lowBattery ..  ]
-"407
-}
-[e :U 683 ]
-[; ;main.c: 407: }
-[; ;main.c: 413: if (STATE_DONE == ir_code.state){
-"413
-[e $ ! == -> . `E4394 2 `i -> . _ir_code 1 `i 684  ]
-{
-[; ;main.c: 431: process_remote_command(&ir_code);
-"431
-[e ( _process_remote_command (1 &U _ir_code ]
-[; ;main.c: 434: ir_code.state = STATE_RESET;
-"434
-[e = . _ir_code 1 . `E4394 0 ]
-"435
-}
-[e :U 684 ]
-"436
+[; ;main.c: 384: setLEDColor(255, 0, 0);
+"384
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 385: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"385
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 386: setLEDColor(0, 0, 0);
+"386
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 387: setLEDColor(255, 0, 0);
+"387
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 388: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"388
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 389: setLEDColor(0, 0, 0);
+"389
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 390: setLEDColor(255, 0, 0);
+"390
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 391: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"391
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 392: setLEDColor(0, 0, 0);
+"392
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"393
 }
 [e :U 680 ]
-"401
+"383
 [e $U 681  ]
 [e :U 682 ]
-[; ;main.c: 435: }
-[; ;main.c: 436: }
-[; ;main.c: 438: return;
-"438
+[; ;main.c: 393: }
+[; ;main.c: 396: SYSTEM_Initialize();
+"396
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 397: DAC_Initialize();
+"397
+[e ( _DAC_Initialize ..  ]
+[; ;main.c: 398: OPA1_Initialize();
+"398
+[e ( _OPA1_Initialize ..  ]
+[; ;main.c: 399: OPA2_Initialize();
+"399
+[e ( _OPA2_Initialize ..  ]
+[; ;main.c: 400: initLED();
+"400
+[e ( _initLED ..  ]
+[; ;main.c: 401: (INTCONbits.GIE = 1);
+"401
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 402: (INTCONbits.PEIE = 1);
+"402
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 403: startUp();
+"403
+[e ( _startUp ..  ]
+[; ;main.c: 405: setLEDColor(255, 0, 0);
+"405
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 406: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"406
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 407: setLEDColor(0, 0, 0);
+"407
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 408: setLEDColor(255, 0, 0);
+"408
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 409: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"409
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 410: setLEDColor(0, 0, 0);
+"410
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 411: setLEDColor(255, 0, 0);
+"411
+[e ( _setLEDColor (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 412: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"412
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 413: setLEDColor(0, 0, 0);
+"413
+[e ( _setLEDColor (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 424: while(1){
+"424
+[e :U 684 ]
+{
+[; ;main.c: 426: if ((int)battery_voltage() < 2500)
+"426
+[e $ ! < -> ( _battery_voltage ..  `i -> 2500 `i 686  ]
+[; ;main.c: 427: {
+"427
+{
+[; ;main.c: 428: lowBattery();
+"428
+[e ( _lowBattery ..  ]
+"430
+}
+[e :U 686 ]
+[; ;main.c: 430: }
+[; ;main.c: 436: if (STATE_DONE == ir_code.state){
+"436
+[e $ ! == -> . `E4394 2 `i -> . _ir_code 1 `i 687  ]
+{
+[; ;main.c: 454: process_remote_command(&ir_code);
+"454
+[e ( _process_remote_command (1 &U _ir_code ]
+[; ;main.c: 457: ir_code.state = STATE_RESET;
+"457
+[e = . _ir_code 1 . `E4394 0 ]
+"458
+}
+[e :U 687 ]
+"459
+}
+[e :U 683 ]
+"424
+[e $U 684  ]
+[e :U 685 ]
+[; ;main.c: 458: }
+[; ;main.c: 459: }
+[; ;main.c: 461: return;
+"461
 [e $UE 679  ]
-[; ;main.c: 439: }
-"439
+[; ;main.c: 462: }
+"462
 [e :UE 679 ]
 }
 [p f _printf 8388608 ]

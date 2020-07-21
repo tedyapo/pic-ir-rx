@@ -242,12 +242,12 @@ STATE_DONE 2
 [v _ADRES ADRES `VEus  1 e 2 @155 ]
 "1830
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S688 . 1 `uc 1 ADON 1 0 :1:0 
+[s S788 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "1855
-[s S692 . 1 `uc 1 . 1 0 :1:0 
+[s S792 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -255,11 +255,11 @@ STATE_DONE 2
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S700 . 1 `uc 1 . 1 0 :1:0 
+[s S800 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S703 . 1 `S688 1 . 1 0 `S692 1 . 1 0 `S700 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES703  1 e 1 @157 ]
+[u S803 . 1 `S788 1 . 1 0 `S792 1 . 1 0 `S800 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES803  1 e 1 @157 ]
 "1910
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2030
@@ -272,7 +272,7 @@ STATE_DONE 2
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2501
 [v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
-[s S656 . 1 `uc 1 ADFVR 1 0 :2:0 
+[s S756 . 1 `uc 1 ADFVR 1 0 :2:0 
 `uc 1 CDAFVR 1 0 :2:2 
 `uc 1 TSRNG 1 0 :1:4 
 `uc 1 TSEN 1 0 :1:5 
@@ -280,13 +280,13 @@ STATE_DONE 2
 `uc 1 FVREN 1 0 :1:7 
 ]
 "2522
-[s S663 . 1 `uc 1 ADFVR0 1 0 :1:0 
+[s S763 . 1 `uc 1 ADFVR0 1 0 :1:0 
 `uc 1 ADFVR1 1 0 :1:1 
 `uc 1 CDAFVR0 1 0 :1:2 
 `uc 1 CDAFVR1 1 0 :1:3 
 ]
-[u S668 . 1 `S656 1 . 1 0 `S663 1 . 1 0 ]
-[v _FVRCONbits FVRCONbits `VES668  1 e 1 @279 ]
+[u S768 . 1 `S756 1 . 1 0 `S763 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES768  1 e 1 @279 ]
 "2577
 [v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @280 ]
 "2687
@@ -349,30 +349,30 @@ STATE_DONE 2
 [v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
 "5699
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
-[s S846 . 1 `uc 1 CCP1M 1 0 :4:0 
+[s S946 . 1 `uc 1 CCP1M 1 0 :4:0 
 `uc 1 DC1B 1 0 :2:4 
 ]
 "5768
-[s S849 . 1 `uc 1 CCP1M0 1 0 :1:0 
+[s S949 . 1 `uc 1 CCP1M0 1 0 :1:0 
 `uc 1 CCP1M1 1 0 :1:1 
 `uc 1 CCP1M2 1 0 :1:2 
 `uc 1 CCP1M3 1 0 :1:3 
 `uc 1 DC1B0 1 0 :1:4 
 `uc 1 DC1B1 1 0 :1:5 
 ]
-[s S856 . 1 `uc 1 . 1 0 :4:0 
+[s S956 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CCP1Y 1 0 :1:4 
 `uc 1 CCP1X 1 0 :1:5 
 ]
-[u S860 . 1 `S846 1 . 1 0 `S849 1 . 1 0 `S856 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES860  1 e 1 @659 ]
-[s S743 . 1 `uc 1 C1TSEL 1 0 :2:0 
+[u S960 . 1 `S946 1 . 1 0 `S949 1 . 1 0 `S956 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES960  1 e 1 @659 ]
+[s S843 . 1 `uc 1 C1TSEL 1 0 :2:0 
 `uc 1 C2TSEL 1 0 :2:2 
 `uc 1 P3TSEL 1 0 :2:4 
 `uc 1 P4TSEL 1 0 :2:6 
 ]
 "6121
-[s S748 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+[s S848 . 1 `uc 1 C1TSEL0 1 0 :1:0 
 `uc 1 C1TSEL1 1 0 :1:1 
 `uc 1 C2TSEL0 1 0 :1:2 
 `uc 1 C2TSEL1 1 0 :1:3 
@@ -381,8 +381,8 @@ STATE_DONE 2
 `uc 1 P4TSEL0 1 0 :1:6 
 `uc 1 P4TSEL1 1 0 :1:7 
 ]
-[u S757 . 1 `S743 1 . 1 0 `S748 1 . 1 0 ]
-[v _CCPTMRSbits CCPTMRSbits `VES757  1 e 1 @670 ]
+[u S857 . 1 `S843 1 . 1 0 `S848 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES857  1 e 1 @670 ]
 "6186
 [v _SLRCONA SLRCONA `VEuc  1 e 1 @780 ]
 "6231
@@ -401,12 +401,12 @@ STATE_DONE 2
 [v _PR4 PR4 `VEuc  1 e 1 @1046 ]
 "6976
 [v _T4CON T4CON `VEuc  1 e 1 @1047 ]
-[s S1086 . 1 `uc 1 T4CKPS 1 0 :2:0 
+[s S686 . 1 `uc 1 T4CKPS 1 0 :2:0 
 `uc 1 TMR4ON 1 0 :1:2 
 `uc 1 T4OUTPS 1 0 :4:3 
 ]
 "6997
-[s S1090 . 1 `uc 1 T4CKPS0 1 0 :1:0 
+[s S690 . 1 `uc 1 T4CKPS0 1 0 :1:0 
 `uc 1 T4CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T4OUTPS0 1 0 :1:3 
@@ -414,54 +414,54 @@ STATE_DONE 2
 `uc 1 T4OUTPS2 1 0 :1:5 
 `uc 1 T4OUTPS3 1 0 :1:6 
 ]
-[u S1098 . 1 `S1086 1 . 1 0 `S1090 1 . 1 0 ]
-[v _T4CONbits T4CONbits `VES1098  1 e 1 @1047 ]
+[u S698 . 1 `S686 1 . 1 0 `S690 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES698  1 e 1 @1047 ]
 "7158
 [v _OPA1CON OPA1CON `VEuc  1 e 1 @1297 ]
 "7212
 [v _OPA2CON OPA2CON `VEuc  1 e 1 @1301 ]
-[s S776 . 1 `uc 1 . 1 0 :6:0 
+[s S876 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM3DCL 1 0 :2:6 
 ]
 "7282
-[s S779 . 1 `uc 1 . 1 0 :6:0 
+[s S879 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM3DCL0 1 0 :1:6 
 `uc 1 PWM3DCL1 1 0 :1:7 
 ]
-[u S783 . 1 `S776 1 . 1 0 `S779 1 . 1 0 ]
-[v _PWM3DCLbits PWM3DCLbits `VES783  1 e 1 @1559 ]
+[u S883 . 1 `S876 1 . 1 0 `S879 1 . 1 0 ]
+[v _PWM3DCLbits PWM3DCLbits `VES883  1 e 1 @1559 ]
 "7302
 [v _PWM3DCH PWM3DCH `VEuc  1 e 1 @1560 ]
-[s S794 . 1 `uc 1 . 1 0 :4:0 
+[s S894 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 PWM3POL 1 0 :1:4 
 `uc 1 PWM3OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PWM3EN 1 0 :1:7 
 ]
 "7391
-[u S800 . 1 `S794 1 . 1 0 ]
-[v _PWM3CONbits PWM3CONbits `VES800  1 e 1 @1561 ]
-[s S812 . 1 `uc 1 . 1 0 :6:0 
+[u S900 . 1 `S894 1 . 1 0 ]
+[v _PWM3CONbits PWM3CONbits `VES900  1 e 1 @1561 ]
+[s S912 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM4DCL 1 0 :2:6 
 ]
 "7454
-[s S815 . 1 `uc 1 . 1 0 :6:0 
+[s S915 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PWM4DCL0 1 0 :1:6 
 `uc 1 PWM4DCL1 1 0 :1:7 
 ]
-[u S819 . 1 `S812 1 . 1 0 `S815 1 . 1 0 ]
-[v _PWM4DCLbits PWM4DCLbits `VES819  1 e 1 @1562 ]
+[u S919 . 1 `S912 1 . 1 0 `S915 1 . 1 0 ]
+[v _PWM4DCLbits PWM4DCLbits `VES919  1 e 1 @1562 ]
 "7474
 [v _PWM4DCH PWM4DCH `VEuc  1 e 1 @1563 ]
-[s S830 . 1 `uc 1 . 1 0 :4:0 
+[s S930 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 PWM4POL 1 0 :1:4 
 `uc 1 PWM4OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PWM4EN 1 0 :1:7 
 ]
 "7563
-[u S836 . 1 `S830 1 . 1 0 ]
-[v _PWM4CONbits PWM4CONbits `VES836  1 e 1 @1564 ]
+[u S936 . 1 `S930 1 . 1 0 ]
+[v _PWM4CONbits PWM4CONbits `VES936  1 e 1 @1564 ]
 "8490
 [v _INTPPS INTPPS `VEuc  1 e 1 @3600 ]
 "8690
@@ -531,7 +531,7 @@ STATE_DONE 2
 "380 /home/tyapo/checkout/pic-ir-rx/MouseBrains2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"439
+"462
 } 0
 "186
 [v _startUp startUp `(v  1 e 1 0 ]
@@ -551,7 +551,7 @@ STATE_DONE 2
 [s S472 . 6 `uc 1 n_bits 1 0 `E4289 1 state 1 1 `S469 1 . 4 2 ]
 [v process_remote_command@code code `*.4S472  1 a 1 wreg ]
 [v process_remote_command@code code `*.4S472  1 a 1 wreg ]
-[v process_remote_command@code code `*.4S472  1 a 1 45 ]
+[v process_remote_command@code code `*.4S472  1 a 1 10 ]
 "374
 } 0
 "246
@@ -567,7 +567,7 @@ STATE_DONE 2
 [v _setCurrent setCurrent `(v  1 e 1 0 ]
 {
 "238
-[v setCurrent@DACValue DACValue `i  1 a 2 41 ]
+[v setCurrent@DACValue DACValue `i  1 a 2 33 ]
 "236
 [v setCurrent@microamps microamps `i  1 p 2 29 ]
 [v setCurrent@Vdd_mv Vdd_mv `i  1 p 2 31 ]

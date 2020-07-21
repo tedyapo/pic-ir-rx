@@ -7461,10 +7461,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 180 "mcc_generated_files/pin_manager.h"
+# 156 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 192
+# 168
 void PIN_MANAGER_IOC(void);
 
 # 13 "/opt/microchip/xc8/v2.20/pic/include/c90/stdint.h"
@@ -7576,39 +7576,6 @@ extern void cputs(const char *);
 # 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
 typedef unsigned char bool;
 
-# 103 "mcc_generated_files/tmr4.h"
-void TMR4_Initialize(void);
-
-# 132
-void TMR4_StartTimer(void);
-
-# 164
-void TMR4_StopTimer(void);
-
-# 199
-uint8_t TMR4_ReadTimer(void);
-
-# 238
-void TMR4_WriteTimer(uint8_t timerVal);
-
-# 290
-void TMR4_LoadPeriodRegister(uint8_t periodVal);
-
-# 308
-void TMR4_ISR(void);
-
-# 326
-void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 344
-extern void (*TMR4_InterruptHandler)(void);
-
-# 362
-void TMR4_DefaultInterruptHandler(void);
-
-# 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
-typedef unsigned char bool;
-
 # 103 "mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
 
@@ -7687,7 +7654,7 @@ void DAC_Initialize(void);
 # 140
 void DAC_SetOutput(uint8_t inputData);
 
-# 174
+# 177
 uint8_t DAC_GetOutput(void);
 
 # 15 "/opt/microchip/xc8/v2.20/pic/include/c90/stdbool.h"
@@ -7780,13 +7747,13 @@ void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 398
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 
-# 78 "mcc_generated_files/mcc.h"
+# 77 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 91
+# 90
 void OSCILLATOR_Initialize(void);
 
-# 103
+# 102
 void WDT_Initialize(void);
 
 # 7 "mousehat-dac.c"
@@ -7848,23 +7815,6 @@ uint8_t frequency;
 uint8_t duty;
 uint8_t current;
 
-int currentValue[] = {0,30,50,70,90,110,130,160,190,220,250};
-int frequencyValue[] = {0,50,100,120,130,140};
-int maxCurrentIndex = sizeof(currentValue)/sizeof(currentValue[0]);
-int maxFrequencyIndex = sizeof(frequencyValue)/sizeof(frequencyValue[0]);
-int currentIndex = 0;
-int frequencyIndex = 0;
-
-typedef enum
-{
-STATE_RUNNING = 0,
-STATE_CURRENT = 1,
-STATE_FREQUENCY = 2,
-STATE_LOWBATTERY = 3
-}state_t;
-
-state_t interfaceState;
-
 
 
 
@@ -7889,7 +7839,7 @@ ADCON0bits.ADON = 0;
 return 1047552L / ADRES;
 }
 
-# 116
+# 99
 void initLED()
 {
 
@@ -7919,7 +7869,7 @@ PWM4CONbits.PWM4POL = 1;
 TRISA &= 0b11011111;
 PWM4CONbits.PWM4EN = 1;
 
-# 149
+# 132
 TRISC |= 0b00100000;
 RC5PPS = 0b01100;
 CCP1CONbits.CCP1M = 0b1100;
@@ -7931,7 +7881,7 @@ TRISC &= 0b11011111;
 void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
 {
 
-# 164
+# 147
 if (0 == blue){
 TRISC |= 0b00100000;
 } else {
@@ -7947,17 +7897,15 @@ PWM4DCH = green;
 
 
 void lowBattery(){
-interfaceState = STATE_LOWBATTERY;
-setLEDColor(255, 0, 0);
+setLEDColor(0, 255, 255);
 _delay((unsigned long)((250)*(4000000/4000.0)));
 setLEDColor(0, 0, 0);
 _delay((unsigned long)((500)*(4000000/4000.0)));
 }
 
 void startUp(){
-interfaceState = STATE_RUNNING;
 for (int i = 0; i < 5; i++){
-setLEDColor(0, 180, 230);
+setLEDColor(255, 0, 255);
 _delay((unsigned long)((100)*(4000000/4000.0)));
 setLEDColor(0, 0, 0);
 _delay((unsigned long)((100)*(4000000/4000.0)));
@@ -7978,97 +7926,64 @@ _delay((unsigned long)((500)*(4000000/4000.0)));
 }
 
 void selectFrequency(){
-interfaceState = STATE_FREQUENCY;
+flag = 1;
 setLEDColor(255, 0, 255);
 _delay((unsigned long)((1000)*(4000000/4000.0)));
 setLEDColor(0, 0, 0);
 printf("\n Frequency selected");
 }
 
-void selectCurrent(){
-interfaceState = STATE_CURRENT;
-setLEDColor(0, 0, 255);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-printf("\n current selected");
-}
-
-# 235
-void setCurrent(int microamps, int Vdd_mv)
+# 208
+void setCurrent(microamps, Vdd_mv)
 {
-Vdac_mv = Vdd_mv - ((uint32_t)(4700) * microamps + 500) / 1000;
-int DACValue = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
-if(DACValue > 255){DACValue = 255;}
-if(DACValue < 0){DACValue = 0;}
-DAC1CON1 = DACValue;
+Vdac_mv = Vdd_mv -
+((uint32_t)(4700) * microamps + 500) / 1000;
+DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
 }
 
-
-
-void setFrequency(uint16_t frequency_hz)
-{
-
-# 262
-int16_t pr4_val = 1000000L / (96L * frequency_hz);
-if (pr4_val > 255){
-pr4_val = 255;
-}
-if (pr4_val < 0){
-pr4_val = 0;
-}
-PR4 = pr4_val;
-}
-
-# 285
+# 225
 void process_remote_command(NEC_IR_code_t* code){
 setLEDColor(0, 0, 0);
 
 switch(code->command){
 case 0xa0:
-if(STATE_CURRENT == interfaceState){
-currentIndex++;
-if (currentIndex > maxCurrentIndex - 1)
-{
-currentIndex = maxCurrentIndex - 1;
+setLEDColor(0, 0, 0);
+if (flag == 1){
+if (duty >= 0 && duty <=150){
+duty = duty + 30;
 }
-setCurrent(currentValue[currentIndex],battery_voltage());
-}
-if(STATE_FREQUENCY == interfaceState){
-frequencyIndex++;
-if (frequencyIndex > maxFrequencyIndex - 1)
-{
-frequencyIndex = maxFrequencyIndex - 1;
-}
-setFrequency(frequencyValue[frequencyIndex]);
-}
-if(STATE_RUNNING == interfaceState){
+else {
+duty = 150;
 selectSomething();
 }
-if(STATE_LOWBATTERY == interfaceState){
+
+
+printf("%d\n", (duty));
+}
+else if (flag == 2){
+
+}
+else{
 selectSomething();
 }
 break;
 case 0xb0:
-if(STATE_CURRENT == interfaceState){
-currentIndex--;
-if (currentIndex < 0)
-{
-currentIndex = 0;
+if (flag == 1){
+if (duty >= 0 && duty <=150){
+duty = duty - 30;
+printf("%d\n", (duty));
 }
-setCurrent(currentValue[currentIndex],battery_voltage());
-}
-if(STATE_FREQUENCY == interfaceState){
-frequencyIndex--;
-if (frequencyIndex < 0)
-{
-frequencyIndex = 0;
-}
-setFrequency(frequencyValue[frequencyIndex]);
-}
-if(STATE_RUNNING == interfaceState){
+else{
+duty = 150;
 selectSomething();
 }
-if(STATE_LOWBATTERY == interfaceState){
+}
+
+
+else if (flag == 2){
+
+}
+else{
 selectSomething();
 }
 break;
@@ -8076,7 +7991,10 @@ case 0x50:
 selectFrequency();
 break;
 case 0x10:
-selectCurrent();
+LED_red = 0;
+LED_green = 130;
+LED_blue = 255;
+flag = 2;
 break;
 case 0x08:
 LED_red = 0;
@@ -8111,22 +8029,9 @@ _delay((unsigned long)((1000)*(4000000/4000.0)));
 setLEDColor(0, 0, 0);
 }
 
-# 380
+# 316
 void main(void)
 {
-initLED();
-while(1){
-setLEDColor(255, 0, 0);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-setLEDColor(255, 0, 0);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-setLEDColor(255, 0, 0);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-}
-
 
 SYSTEM_Initialize();
 DAC_Initialize();
@@ -8137,17 +8042,7 @@ initLED();
 (INTCONbits.PEIE = 1);
 startUp();
 
-setLEDColor(255, 0, 0);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-setLEDColor(255, 0, 0);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-setLEDColor(255, 0, 0);
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-setLEDColor(0, 0, 0);
-
-# 424
+# 337
 while(1){
 
 if ((int)battery_voltage() < 2500)
@@ -8156,10 +8051,10 @@ lowBattery();
 
 }
 
-# 436
+# 349
 if (STATE_DONE == ir_code.state){
 
-# 454
+# 367
 process_remote_command(&ir_code);
 
 

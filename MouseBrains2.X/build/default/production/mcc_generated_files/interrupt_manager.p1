@@ -14,26 +14,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
 "272 mcc_generated_files/ext_int.h
 [v _INT_ISR `(v ~T0 @X0 0 ef ]
-"192 mcc_generated_files/pin_manager.h
+"168 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 0 ef ]
-"1296 /opt/microchip/xc8/v2.20/pic/include/proc/pic16lf1708.h
-[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S70 . CCP2IE TMR4IE TMR6IE BCL1IE . C1IE C2IE OSFIE ]
-"1295
-[u S69 `S70 1 ]
-[n S69 . . ]
-"1307
-[v _PIE2bits `VS69 ~T0 @X0 0 e@146 ]
-"657
-[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S38 . CCP2IF TMR4IF TMR6IF BCL1IF . C1IF C2IF OSFIF ]
-"656
-[u S37 `S38 1 ]
-[n S37 . . ]
-"668
-[v _PIR2bits `VS37 ~T0 @X0 0 e@18 ]
-"308 mcc_generated_files/tmr4.h
-[v _TMR4_ISR `(v ~T0 @X0 0 ef ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4951,8 +4933,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 137: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 138: extern __bank0 __bit __powerdown;
 [; ;pic.h: 139: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 180: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 192: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 156: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 168: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef __int24 int24_t;
@@ -4992,17 +4974,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;conio.h: 23: extern char * cgets(char *);
 [; ;conio.h: 24: extern void cputs(const char *);
 [; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;tmr4.h: 103: void TMR4_Initialize(void);
-[; ;tmr4.h: 132: void TMR4_StartTimer(void);
-[; ;tmr4.h: 164: void TMR4_StopTimer(void);
-[; ;tmr4.h: 199: uint8_t TMR4_ReadTimer(void);
-[; ;tmr4.h: 238: void TMR4_WriteTimer(uint8_t timerVal);
-[; ;tmr4.h: 290: void TMR4_LoadPeriodRegister(uint8_t periodVal);
-[; ;tmr4.h: 308: void TMR4_ISR(void);
-[; ;tmr4.h: 326: void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;tmr4.h: 344: extern void (*TMR4_InterruptHandler)(void);
-[; ;tmr4.h: 362: void TMR4_DefaultInterruptHandler(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;tmr2.h: 103: void TMR2_Initialize(void);
 [; ;tmr2.h: 132: void TMR2_StartTimer(void);
 [; ;tmr2.h: 164: void TMR2_StopTimer(void);
@@ -5029,7 +5000,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;dac.h: 93: void DAC_Initialize(void);
 [; ;dac.h: 140: void DAC_SetOutput(uint8_t inputData);
-[; ;dac.h: 174: uint8_t DAC_GetOutput(void);
+[; ;dac.h: 177: uint8_t DAC_GetOutput(void);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
@@ -5071,9 +5042,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 362: void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 380: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 398: void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-[; ;mcc.h: 78: void SYSTEM_Initialize(void);
-[; ;mcc.h: 91: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 103: void WDT_Initialize(void);
+[; ;mcc.h: 77: void SYSTEM_Initialize(void);
+[; ;mcc.h: 90: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 102: void WDT_Initialize(void);
 [v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
 "52 mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager `(v ~T10 @X0 1 ef ]
@@ -5112,51 +5083,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 623  ]
 "63
 [e :U 622 ]
-[; ;interrupt_manager.c: 63: else if(INTCONbits.PEIE == 1)
-[e $ ! == -> . . _INTCONbits 0 6 `i -> 1 `i 624  ]
+[; ;interrupt_manager.c: 63: else
 [; ;interrupt_manager.c: 64: {
 "64
 {
-[; ;interrupt_manager.c: 65: if(PIE2bits.TMR4IE == 1 && PIR2bits.TMR4IF == 1)
-"65
-[e $ ! && == -> . . _PIE2bits 0 1 `i -> 1 `i == -> . . _PIR2bits 0 1 `i -> 1 `i 625  ]
-[; ;interrupt_manager.c: 66: {
 "66
-{
-[; ;interrupt_manager.c: 67: TMR4_ISR();
-"67
-[e ( _TMR4_ISR ..  ]
-"68
 }
-[; ;interrupt_manager.c: 68: }
-[e $U 626  ]
-"69
-[e :U 625 ]
-[; ;interrupt_manager.c: 69: else
-[; ;interrupt_manager.c: 70: {
-"70
-{
-"72
-}
-[e :U 626 ]
-"73
-}
-[; ;interrupt_manager.c: 72: }
-[; ;interrupt_manager.c: 73: }
-[e $U 627  ]
-"74
-[e :U 624 ]
-[; ;interrupt_manager.c: 74: else
-[; ;interrupt_manager.c: 75: {
-"75
-{
-"77
-}
-[e :U 627 ]
 [e :U 623 ]
 [e :U 621 ]
-[; ;interrupt_manager.c: 77: }
-[; ;interrupt_manager.c: 78: }
-"78
+[; ;interrupt_manager.c: 66: }
+[; ;interrupt_manager.c: 67: }
+"67
 [e :UE 619 ]
 }

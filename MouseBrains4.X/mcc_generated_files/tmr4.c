@@ -133,20 +133,13 @@ void TMR4_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR4_InterruptHandler = InterruptHandler;
 }
 
-// declarations of functions from main
-uint16_t battery_voltage();
-void setCurrent(int microamps, int Vdd_mv);
-extern int currentValue[];
-extern int currentIndex;
-extern int frequencyValue[];
-extern int frequencyIndex;
-
-
 // state variable for toggling current square wave
 uint8_t currentIsOn = 1;
 
-//!!!
+// this is the DAC value for when the current is on; defined in main.c
 extern uint8_t dac_value;
+
+extern uint8_t dc_frequency_flag;
 
 void TMR4_DefaultInterruptHandler(void){
   // add your TMR4 interrupt custom code
@@ -156,17 +149,15 @@ void TMR4_DefaultInterruptHandler(void){
   // toggle current output state to create square wave
   if (currentIsOn){
     currentIsOn = 0;
-    if (0 == frequencyValue[frequencyIndex]){
+    if (dc_frequency_flag){
       // for DC current output, don't ever toggle to zero
-      //setCurrent(currentValue[currentIndex], 3000);
-        DAC1CON1 = dac_value;
+      DAC1CON1 = dac_value;
     } else {
-      //setCurrent(0, 3000);
-        DAC1CON1 = 255;
+      // note: setting DAC1CON1 to 255 results in zero current output
+      DAC1CON1 = 255;
     }
   } else {
     currentIsOn = 1;
-    //setCurrent(currentValue[currentIndex], 3000);
     DAC1CON1 = dac_value;
   }
 }

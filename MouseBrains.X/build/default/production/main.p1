@@ -150,6 +150,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S619 . n_bits state . ]
 "195 /opt/microchip/xc8/v2.00/pic/include/c90/stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"2687 /opt/microchip/xc8/v2.00/pic/include/pic16lf1708.h
+[v _DAC1CON1 `Vuc ~T0 @X0 0 e@281 ]
 [p mainexit ]
 "77 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
@@ -5588,123 +5590,151 @@ Version 3.2 HI-TECH Software Intermediate Code
 "179
 [e :UE 634 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"185
-[v _main `(v ~T0 @X0 1 ef ]
-"186
+"190
+[v _setCurrent `(v ~T0 @X0 1 ef2`ui`ui ]
+"191
 {
-[; ;main.c: 185: void main(void)
-[; ;main.c: 186: {
+[; ;main.c: 190: void setCurrent(uint16_t microamps, uint16_t Vdd_mv)
+[; ;main.c: 191: {
+[e :U _setCurrent ]
+"190
+[v _microamps `ui ~T0 @X0 1 r1 ]
+[v _Vdd_mv `ui ~T0 @X0 1 r2 ]
+"191
+[f ]
+"192
+[v _Vdac_mv `ui ~T0 @X0 1 a ]
+[; ;main.c: 192: uint16_t Vdac_mv = Vdd_mv -
+[; ;main.c: 193: ((uint32_t)(4700) * microamps + 500) / 1000;
+"193
+[e = _Vdac_mv -> - -> _Vdd_mv `ul / + * -> -> 4700 `i `ul -> _microamps `ul -> -> -> 500 `i `l `ul -> -> -> 1000 `i `l `ul `ui ]
+[; ;main.c: 194: DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+"194
+[e = _DAC1CON1 -> / + * -> 256 `l -> _Vdac_mv `l -> / _Vdd_mv -> -> 2 `i `ui `l -> _Vdd_mv `l `uc ]
+[; ;main.c: 195: }
+"195
+[e :UE 651 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"200
+[v _main `(v ~T0 @X0 1 ef ]
+"201
+{
+[; ;main.c: 200: void main(void)
+[; ;main.c: 201: {
 [e :U _main ]
 [f ]
-[; ;main.c: 188: SYSTEM_Initialize();
-"188
+[; ;main.c: 203: SYSTEM_Initialize();
+"203
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 189: DAC_Initialize();
-"189
+[; ;main.c: 204: DAC_Initialize();
+"204
 [e ( _DAC_Initialize ..  ]
-[; ;main.c: 190: OPA1_Initialize();
-"190
+[; ;main.c: 205: OPA1_Initialize();
+"205
 [e ( _OPA1_Initialize ..  ]
-[; ;main.c: 191: OPA2_Initialize();
-"191
+[; ;main.c: 206: OPA2_Initialize();
+"206
 [e ( _OPA2_Initialize ..  ]
-[; ;main.c: 195: (INTCONbits.GIE = 1);
-"195
+[; ;main.c: 209: setCurrent(300, 3000);
+"209
+[e ( _setCurrent (2 , -> -> 300 `i `ui -> -> 3000 `i `ui ]
+[; ;main.c: 212: (INTCONbits.GIE = 1);
+"212
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 198: (INTCONbits.PEIE = 1);
-"198
+[; ;main.c: 215: (INTCONbits.PEIE = 1);
+"215
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 200: while(1){
-"200
-[e :U 653 ]
+[; ;main.c: 217: while(1){
+"217
+[e :U 654 ]
 {
-[; ;main.c: 201: do { LATAbits.LATA5 = 1; } while(0);
-"201
-[e :U 657 ]
+[; ;main.c: 218: do { LATAbits.LATA5 = 1; } while(0);
+"218
+[e :U 658 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 656 ]
-[; ;main.c: 202: do { LATCbits.LATC5 = 1; } while(0);
-"202
-[e :U 660 ]
+[e :U 657 ]
+[; ;main.c: 219: do { LATCbits.LATC5 = 1; } while(0);
+"219
+[e :U 661 ]
 {
 [e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 659 ]
-[; ;main.c: 203: do { LATCbits.LATC4 = 1; } while(0);
-"203
-[e :U 663 ]
+[e :U 660 ]
+[; ;main.c: 220: do { LATCbits.LATC4 = 1; } while(0);
+"220
+[e :U 664 ]
 {
 [e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
 }
-[e :U 662 ]
-[; ;main.c: 205: if ((int)battery_voltage() < 2500)
-"205
-[e $ ! < -> ( _battery_voltage ..  `i -> 2500 `i 664  ]
-[; ;main.c: 206: {
-"206
+[e :U 663 ]
+[; ;main.c: 222: if ((int)battery_voltage() < 2500)
+"222
+[e $ ! < -> ( _battery_voltage ..  `i -> 2500 `i 665  ]
+[; ;main.c: 223: {
+"223
 {
-[; ;main.c: 207: do { LATCbits.LATC5 = 0; } while(0);
-"207
-[e :U 667 ]
+[; ;main.c: 224: do { LATCbits.LATC5 = 0; } while(0);
+"224
+[e :U 668 ]
 {
 [e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 666 ]
-[; ;main.c: 208: printf("%d\n", (int)battery_voltage());
-"208
+[e :U 667 ]
+[; ;main.c: 225: printf("%d\n", (int)battery_voltage());
+"225
 [e ( _printf , (. :s 2C -> ( _battery_voltage ..  `i ]
-"209
+"226
 }
-[e :U 664 ]
-[; ;main.c: 209: }
-[; ;main.c: 216: if (STATE_DONE == ir_code.state){
-"216
-[e $ ! == -> . `E4371 2 `i -> . _ir_code 1 `i 668  ]
+[e :U 665 ]
+[; ;main.c: 226: }
+[; ;main.c: 233: if (STATE_DONE == ir_code.state){
+"233
+[e $ ! == -> . `E4371 2 `i -> . _ir_code 1 `i 669  ]
 {
-[; ;main.c: 218: printf("\r\ncode:         0x%08lx\r\n", (unsigned long)ir_code.code);
-"218
+[; ;main.c: 235: printf("\r\ncode:         0x%08lx\r\n", (unsigned long)ir_code.code);
+"235
 [e ( _printf , (. :s 3C . . _ir_code 2 0 ]
-[; ;main.c: 219: printf("command:          0x%02x\r\n", ir_code.command);
-"219
+[; ;main.c: 236: printf("command:          0x%02x\r\n", ir_code.command);
+"236
 [e ( _printf , (. :s 4C -> . . . _ir_code 2 1 1 `i ]
-[; ;main.c: 220: printf("command_b:        0x%02x\r\n", ir_code.command_b);
-"220
-[e ( _printf , (. :s 5C -> . . . _ir_code 2 1 0 `i ]
-[; ;main.c: 221: printf("address:          0x%02x\r\n", ir_code.address);
-"221
-[e ( _printf , (. :s 6C -> . . . . . _ir_code 2 1 2 0 1 `i ]
-[; ;main.c: 222: printf("address_b:        0x%02x\r\n", ir_code.address_b);
-"222
-[e ( _printf , (. :s 7C -> . . . . . _ir_code 2 1 2 0 0 `i ]
-[; ;main.c: 223: printf("extended address: 0x%04x\r\n", (unsigned int)ir_code.extended_address);
-"223
-[e ( _printf , (. :s 8C . . . . . _ir_code 2 1 2 1 0 ]
-[; ;main.c: 234: process_remote_command(&ir_code);
-"234
-[e ( _process_remote_command (1 &U _ir_code ]
-[; ;main.c: 237: ir_code.state = STATE_RESET;
+[; ;main.c: 237: printf("command_b:        0x%02x\r\n", ir_code.command_b);
 "237
-[e = . _ir_code 1 . `E4371 0 ]
+[e ( _printf , (. :s 5C -> . . . _ir_code 2 1 0 `i ]
+[; ;main.c: 238: printf("address:          0x%02x\r\n", ir_code.address);
 "238
-}
-[e :U 668 ]
+[e ( _printf , (. :s 6C -> . . . . . _ir_code 2 1 2 0 1 `i ]
+[; ;main.c: 239: printf("address_b:        0x%02x\r\n", ir_code.address_b);
 "239
+[e ( _printf , (. :s 7C -> . . . . . _ir_code 2 1 2 0 0 `i ]
+[; ;main.c: 240: printf("extended address: 0x%04x\r\n", (unsigned int)ir_code.extended_address);
+"240
+[e ( _printf , (. :s 8C . . . . . _ir_code 2 1 2 1 0 ]
+[; ;main.c: 251: process_remote_command(&ir_code);
+"251
+[e ( _process_remote_command (1 &U _ir_code ]
+[; ;main.c: 254: ir_code.state = STATE_RESET;
+"254
+[e = . _ir_code 1 . `E4371 0 ]
+"255
 }
-[e :U 652 ]
-"200
-[e $U 653  ]
-[e :U 654 ]
-[; ;main.c: 238: }
-[; ;main.c: 239: }
-[; ;main.c: 241: return;
-"241
-[e $UE 651  ]
-[; ;main.c: 242: }
-"242
-[e :UE 651 ]
+[e :U 669 ]
+"256
+}
+[e :U 653 ]
+"217
+[e $U 654  ]
+[e :U 655 ]
+[; ;main.c: 255: }
+[; ;main.c: 256: }
+[; ;main.c: 258: return;
+"258
+[e $UE 652  ]
+[; ;main.c: 259: }
+"259
+[e :UE 652 ]
 }
 [p f _printf 12615828 ]
 [a 1C 37 100 10 0 ]

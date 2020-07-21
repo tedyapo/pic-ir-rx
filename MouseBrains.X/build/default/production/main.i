@@ -7920,7 +7920,15 @@ break;
 setLEDColor(LED_red, LED_green, LED_blue);
 }
 
-# 185
+# 190
+void setCurrent(uint16_t microamps, uint16_t Vdd_mv)
+{
+uint16_t Vdac_mv = Vdd_mv -
+((uint32_t)(4700) * microamps + 500) / 1000;
+DAC1CON1 = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+}
+
+# 200
 void main(void)
 {
 
@@ -7929,6 +7937,8 @@ DAC_Initialize();
 OPA1_Initialize();
 OPA2_Initialize();
 
+
+setCurrent(300, 3000);
 
 
 (INTCONbits.GIE = 1);
@@ -7947,7 +7957,7 @@ do { LATCbits.LATC5 = 0; } while(0);
 printf("%d\n", (int)battery_voltage());
 }
 
-# 216
+# 233
 if (STATE_DONE == ir_code.state){
 
 printf("\r\ncode:         0x%08lx\r\n", (unsigned long)ir_code.code);
@@ -7957,7 +7967,7 @@ printf("address:          0x%02x\r\n", ir_code.address);
 printf("address_b:        0x%02x\r\n", ir_code.address_b);
 printf("extended address: 0x%04x\r\n", (unsigned int)ir_code.extended_address);
 
-# 234
+# 251
 process_remote_command(&ir_code);
 
 

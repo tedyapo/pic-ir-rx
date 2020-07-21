@@ -31,13 +31,17 @@ STATE_DONE 2
 [v ___llmod __llmod `(ul  1 e 4 0 ]
 "15 /opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 /opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
 "56 /home/tyapo/checkout/pic-ir-rx/MouseBrains.X/main.c
 [v _battery_voltage battery_voltage `(ui  1 e 2 0 ]
 "122
 [v _setLEDColor setLEDColor `(v  1 e 1 0 ]
 "140
 [v _process_remote_command process_remote_command `(v  1 e 1 0 ]
-"185
+"190
+[v _setCurrent setCurrent `(v  1 e 1 0 ]
+"200
 [v _main main `(v  1 e 1 0 ]
 "58 /home/tyapo/checkout/pic-ir-rx/MouseBrains.X/mcc_generated_files/dac.c
 [v _DAC_Initialize DAC_Initialize `(v  1 e 1 0 ]
@@ -205,7 +209,7 @@ STATE_DONE 2
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2030
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S859 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S860 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -213,13 +217,13 @@ STATE_DONE 2
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2045
-[u S866 . 1 `S859 1 . 1 0 ]
-[v _LATAbits LATAbits `VES866  1 e 1 @268 ]
+[u S867 . 1 `S860 1 . 1 0 ]
+[v _LATAbits LATAbits `VES867  1 e 1 @268 ]
 "2075
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2114
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S876 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S877 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -229,8 +233,8 @@ STATE_DONE 2
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2131
-[u S885 . 1 `S876 1 . 1 0 ]
-[v _LATCbits LATCbits `VES885  1 e 1 @270 ]
+[u S886 . 1 `S877 1 . 1 0 ]
+[v _LATCbits LATCbits `VES886  1 e 1 @270 ]
 "2468
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2501
@@ -454,12 +458,32 @@ STATE_DONE 2
 [v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
 "58 /home/tyapo/checkout/pic-ir-rx/MouseBrains.X/mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
-"185 /home/tyapo/checkout/pic-ir-rx/MouseBrains.X/main.c
+"200 /home/tyapo/checkout/pic-ir-rx/MouseBrains.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"242
+"259
 } 0
-"140
+"190
+[v _setCurrent setCurrent `(v  1 e 1 0 ]
+{
+"192
+[v setCurrent@Vdac_mv Vdac_mv `ui  1 a 2 3 ]
+"190
+[v setCurrent@microamps microamps `ui  1 p 2 25 ]
+[v setCurrent@Vdd_mv Vdd_mv `ui  1 p 2 27 ]
+"195
+} 0
+"15 /opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 8 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"140 /home/tyapo/checkout/pic-ir-rx/MouseBrains.X/main.c
 [v _process_remote_command process_remote_command `(v  1 e 1 0 ]
 {
 [s S391 . 2 `uc 1 address_b 1 0 `uc 1 address 1 1 ]
@@ -470,7 +494,7 @@ STATE_DONE 2
 [s S406 . 6 `uc 1 n_bits 1 0 `E4291 1 state 1 1 `S403 1 . 4 2 ]
 [v process_remote_command@code code `*.1S406  1 a 1 wreg ]
 [v process_remote_command@code code `*.1S406  1 a 1 wreg ]
-[v process_remote_command@code code `*.1S406  1 a 1 47 ]
+[v process_remote_command@code code `*.1S406  1 a 1 59 ]
 "179
 } 0
 "122
@@ -488,21 +512,21 @@ STATE_DONE 2
 [v _printf printf `(i  1 e 2 0 ]
 {
 "1519
-[v printf@idx idx `uc  1 a 1 33 ]
+[v printf@idx idx `uc  1 a 1 45 ]
 "540
-[v printf@val val `ul  1 a 4 37 ]
+[v printf@val val `ul  1 a 4 49 ]
 "509
-[v printf@width width `i  1 a 2 41 ]
+[v printf@width width `i  1 a 2 53 ]
 "512
-[v printf@prec prec `i  1 a 2 34 ]
+[v printf@prec prec `i  1 a 2 46 ]
 "507
-[v printf@c c `uc  1 a 1 44 ]
+[v printf@c c `uc  1 a 1 56 ]
 "520
-[v printf@flag flag `uc  1 a 1 43 ]
+[v printf@flag flag `uc  1 a 1 55 ]
 "474
-[v printf@ap ap `[1]*.4v  1 a 1 36 ]
+[v printf@ap ap `[1]*.4v  1 a 1 48 ]
 "472
-[v printf@f f `*.25DCuc  1 p 2 21 ]
+[v printf@f f `*.25DCuc  1 p 2 33 ]
 "1560
 } 0
 "146 /home/tyapo/checkout/pic-ir-rx/MouseBrains.X/mcc_generated_files/eusart.c
@@ -547,20 +571,20 @@ STATE_DONE 2
 "10
 [v ___llmod@counter counter `uc  1 a 1 4 ]
 "5
-[v ___llmod@divisor divisor `ul  1 p 4 13 ]
-[v ___llmod@dividend dividend `ul  1 p 4 17 ]
+[v ___llmod@divisor divisor `ul  1 p 4 25 ]
+[v ___llmod@dividend dividend `ul  1 p 4 29 ]
 "25
 } 0
 "5 /opt/microchip/xc8/v2.00/pic/sources/c90/common/__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "10
-[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
+[v ___lldiv@quotient quotient `ul  1 a 4 20 ]
 "11
-[v ___lldiv@counter counter `uc  1 a 1 12 ]
+[v ___lldiv@counter counter `uc  1 a 1 24 ]
 "5
-[v ___lldiv@divisor divisor `ul  1 p 4 0 ]
-[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 12 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 16 ]
 "30
 } 0
 "56 /home/tyapo/checkout/pic-ir-rx/MouseBrains.X/main.c

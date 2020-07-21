@@ -1,44 +1,44 @@
 /**
-  Generated Main Source File
+   Generated Main Source File
 
-  Company:
-    Microchip Technology Inc.
+   Company:
+   Microchip Technology Inc.
 
-  File Name:
-    main.c
+   File Name:
+   main.c
 
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+   Summary:
+   This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.80.0
-        Device            :  PIC16LF1708
-        Driver Version    :  2.00
+   Description:
+   This header file provides implementations for driver APIs for all modules selected in the GUI.
+   Generation Information :
+   Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.80.0
+   Device            :  PIC16LF1708
+   Driver Version    :  2.00
 */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
+  (c) 2018 Microchip Technology Inc. and its subsidiaries. 
     
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
+  Subject to your compliance with these terms, you may use Microchip software and any 
+  derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
+  license terms applicable to your use of third party software (including open source software) that 
+  may accompany Microchip software.
     
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
+  THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
+  EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
+  IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
+  FOR A PARTICULAR PURPOSE.
     
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+  IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
+  INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
+  WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
+  HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
+  THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
+  CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
+  OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
+  SOFTWARE.
 */
 //MouseBrains2
 #include "mcc_generated_files/mcc.h"
@@ -56,17 +56,12 @@ uint8_t LED_green;
 uint8_t LED_blue;
 
 // flag
-uint8_t flag;
-
-// DAC variables
-uint16_t microamps;
-uint16_t Vdd_mv;
-uint16_t Vdac_mv;
+//uint8_t flag;
 
 // freq/ current
-uint8_t frequency;
-uint8_t duty;
-uint8_t current;
+//uint8_t frequency;
+//uint8_t duty;
+//uint8_t current;
 
 int currentValue[] = {0,30,50,70,90,110,130,160,190,220,250};
 int frequencyValue[] = {0,50,100,120,130,140};
@@ -74,21 +69,22 @@ int maxCurrentIndex = sizeof(currentValue)/sizeof(currentValue[0]);
 int maxFrequencyIndex = sizeof(frequencyValue)/sizeof(frequencyValue[0]);
 int currentIndex = 0; // what's in storage??
 int frequencyIndex = 0;
+uint8_t dc_frequency_flag = 1;
 
 typedef enum 
 {
-    STATE_RUNNING = 0, 
-    STATE_CURRENT = 1,
-    STATE_FREQUENCY = 2,
-    STATE_LOWBATTERY = 3
-}state_t;
+  STATE_RUNNING = 0, 
+  STATE_CURRENT = 1,
+  STATE_FREQUENCY = 2,
+  STATE_LOWBATTERY = 3
+} state_t;
 
 state_t interfaceState;
 
 // measure Vdd using FVR/ADC
 // assumes 4 MHz clock; ADC uses FOSC/8
 // returns battery voltage in integer mV
-uint16_t battery_voltage()
+int16_t battery_voltage()
 {
   FVRCON = 0b10000001; // enable FVR at 1.024V
   ADCON0 = 0b01111101; // enable ADC and set FVR as input channel
@@ -166,7 +162,7 @@ void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
   } else {
     TRISC &= 0b11011111; // enable RC5 output  
   }
-  CCPR1L = 255 - blue;
+  CCPR1L = 255U - blue;
   // red on PWM3/RC4
   PWM3DCH = red;
   // green on PWM4/RA5
@@ -176,7 +172,7 @@ void setLEDColor(uint8_t red, uint8_t green, uint8_t blue)
 //
 //
 void lowBattery(){ // blink red until battery is replaced
- interfaceState = STATE_LOWBATTERY;
+  interfaceState = STATE_LOWBATTERY;
   setLEDColor(255, 0, 0);
   __delay_ms(250);
   setLEDColor(0, 0, 0);
@@ -184,18 +180,17 @@ void lowBattery(){ // blink red until battery is replaced
 }
 
 void startUp(){ // blink green a few times
- interfaceState = STATE_RUNNING;
-   for (int i = 0; i < 5; i++){
-   setLEDColor(0, 180, 230);
-  __delay_ms(100);
-  setLEDColor(0, 0, 0);
-  __delay_ms(100);
+  interfaceState = STATE_RUNNING;
+  for (int i = 0; i < 5; i++){
+    setLEDColor(0, 180, 230);
+    __delay_ms(100);
+    setLEDColor(0, 0, 0);
+    __delay_ms(100);
   }
-   duty = 0;
 }
 
 void selectSomething(){ // not clear if current or frequency are selected
-    // blinks blue a few times
+  // blinks blue a few times
   setLEDColor(255, 0, 0);
   __delay_ms(500);
   setLEDColor(0, 0, 0);
@@ -207,46 +202,68 @@ void selectSomething(){ // not clear if current or frequency are selected
 }
 
 void selectFrequency(){
-    interfaceState = STATE_FREQUENCY;
-    setLEDColor(255, 0, 255);
-    __delay_ms(1000);
-    setLEDColor(0, 0, 0);
-    printf("\n Frequency selected");
+  interfaceState = STATE_FREQUENCY;
+  setLEDColor(255, 0, 255);
+  __delay_ms(1000);
+  setLEDColor(0, 0, 0);
+  printf("\n Frequency selected");
 }
 
 void selectCurrent(){
-    interfaceState = STATE_CURRENT;
-    setLEDColor(0, 0, 255);
-    __delay_ms(1000);
-    setLEDColor(0, 0, 0);
-    printf("\n current selected");
+  interfaceState = STATE_CURRENT;
+  setLEDColor(0, 0, 255);
+  __delay_ms(1000);
+  setLEDColor(0, 0, 0);
+  printf("\n current selected");
+}
+
+
+void selectIncrease(){
+  setLEDColor(0, 255, 0);
+  __delay_ms(250);
+  setLEDColor(0, 0, 0);
+  printf("\n increase selected");
+}
+
+void selectDecrease(){
+  setLEDColor(255, 0, 0);
+  __delay_ms(250);
+  setLEDColor(0, 0, 0);
+  printf("\n decrease selected");
+}
+
+void selectResetValue(){
+  setLEDColor(192, 255, 0);
+  __delay_ms(500);
+  setLEDColor(0, 0, 0);
+  printf("\n reset value selected");
 }
 
 // **********************************END INFORMATION CODES
 
 
 /*void setFrequency(duty){
-    DAC1CON1;
-    __delay_ms(duty);
-    DAC1CON1;
-    __delay_ms(duty); // how to get value for duty here??
-}*/
+  DAC1CON1;
+  __delay_ms(duty);
+  DAC1CON1;
+  __delay_ms(duty); // how to get value for duty here??
+  }*/
 
+// DAC value to set when the current is on
 uint8_t dac_value = 0;
 
 void setCurrent(int microamps, int Vdd_mv)
 {
-    Vdac_mv = Vdd_mv - ((uint32_t)(CURRENT_SOURCE_RESISTANCE_OHMS) * microamps + 500) / 1000;
-    int DACValue = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
-    if(DACValue > 255){DACValue = 255;}
-    if(DACValue < 0){DACValue = 0;}
-    dac_value = DACValue;
-    DAC1CON1 = DACValue;
+  int Vdac_mv = Vdd_mv - ((int32_t)(CURRENT_SOURCE_RESISTANCE_OHMS) * microamps + 500) / 1000;
+  int DACValue = (256L * Vdac_mv + Vdd_mv/2) / Vdd_mv;
+  if(DACValue > 255){DACValue = 255;}
+  if(DACValue < 0){DACValue = 0;}
+  dac_value = (uint8_t)DACValue;
 }
 
 // set the TMR4 period register which controls the interrupt-driven
 //   frequency generation
-void setFrequency(uint16_t frequency_hz)
+void setFrequency(int16_t frequency_hz)
 {
   // note: Fosc = 4 MHz
   //       Fcyc = Focs/4 = 1 MHz
@@ -269,19 +286,30 @@ void setFrequency(uint16_t frequency_hz)
   if (pr4_val < 68){
     pr4_val = 68;
   }
-  PR4 = pr4_val;
+
+  // note: critical section here; turn off interrupts to make sure
+  //       these variables are always in sync for TMR4 ISR to prevent
+  //       frequency glitching
+  INTERRUPT_GlobalInterruptDisable();
+  PR4 = (uint8_t)pr4_val;
+  if (0 == frequency_hz){
+    dc_frequency_flag = 1;
+  } else {
+    dc_frequency_flag = 0;
+  }
+  INTERRUPT_GlobalInterruptEnable();
 }
 
 /// todo: do something with the commands
-     //(255, 0, 0); = blue
-     //(255, 0, 255); = green
-     //(200, 0, 30); = turq
-     //(0, 130, 255); = yellow
-     //(0, 255, 0); = red
-    //(0,100,255);? orange
-     //(225, 155, 0) = pink
-     //(225, 65, 0); = purple
-     //(0, 0, 0); = dim 
+//(255, 0, 0); = blue
+//(255, 0, 255); = green
+//(200, 0, 30); = turq
+//(0, 130, 255); = yellow
+//(0, 255, 0); = red
+//(0,100,255);? orange
+//(225, 155, 0) = pink
+//(225, 65, 0); = purple
+//(0, 0, 0); = dim 
 
 //int currentValue[] = {0,30,50,70,90,110,130,160,190,220,250};
 //int frequencyValue[] = {0,50,100,120,130,140};
@@ -290,52 +318,65 @@ void process_remote_command(NEC_IR_code_t* code){
   
   switch(code->command){
   case 0xa0: // up arrow
-      if(STATE_CURRENT == interfaceState){
-          currentIndex++;
-          if (currentIndex > maxCurrentIndex - 1)
-          {
-              currentIndex = maxCurrentIndex - 1;
-          }
-       setCurrent(currentValue[currentIndex],battery_voltage());   
+    if(STATE_CURRENT == interfaceState){
+      currentIndex++;
+      if (currentIndex > maxCurrentIndex - 1)
+      {
+        currentIndex = maxCurrentIndex - 1;
+        selectSomething();
+      } else {
+        selectIncrease();
       }
-      if(STATE_FREQUENCY == interfaceState){
-          frequencyIndex++;
-          if (frequencyIndex > maxFrequencyIndex - 1)
-          {
-              frequencyIndex = maxFrequencyIndex - 1;
-          }
-          setFrequency(frequencyValue[frequencyIndex]); 
+      setCurrent(currentValue[currentIndex],battery_voltage());   
+    }
+    if(STATE_FREQUENCY == interfaceState){
+      frequencyIndex++;
+      if (frequencyIndex > maxFrequencyIndex - 1)
+      {
+        frequencyIndex = maxFrequencyIndex - 1;
+        selectSomething();
+      } else {
+        selectIncrease();
       }
-      if(STATE_RUNNING == interfaceState){
-          selectSomething();
-      }
-      if(STATE_LOWBATTERY == interfaceState){
-          selectSomething();
-      }
+      setFrequency(frequencyValue[frequencyIndex]); 
+    }
+    if(STATE_RUNNING == interfaceState){
+      selectSomething();
+    }
+    if(STATE_LOWBATTERY == interfaceState){
+      selectSomething();
+    }
     break;
   case 0xb0: // down arrow
-      if(STATE_CURRENT == interfaceState){
-          currentIndex--;
-          if (currentIndex < 0)
-          {
-              currentIndex = 0;
-          }
-       setCurrent(currentValue[currentIndex],battery_voltage()); 
+    if(STATE_CURRENT == interfaceState){
+      currentIndex--;
+      if (currentIndex < 0)
+      {
+        currentIndex = 0;
+        selectSomething();
+      } else {
+        selectDecrease();
       }
-      if(STATE_FREQUENCY == interfaceState){
-          frequencyIndex--;
-          if (frequencyIndex < 0)
-          {
-              frequencyIndex = 0;
-          }
-          setFrequency(frequencyValue[frequencyIndex]); 
+      setCurrent(currentValue[currentIndex],battery_voltage()); 
+    }
+    if(STATE_FREQUENCY == interfaceState){
+      frequencyIndex--;
+      if (frequencyIndex < 0)
+      {
+        frequencyIndex = 0;
+        selectSomething();
+      } else {
+        selectDecrease();
       }
-      if(STATE_RUNNING == interfaceState){
-          selectSomething();
-      }
-      if(STATE_LOWBATTERY == interfaceState){
-          selectSomething();
-      }
+      setFrequency(frequencyValue[frequencyIndex]); 
+      selectDecrease();
+    }
+    if(STATE_RUNNING == interfaceState){
+      selectSomething();
+    }
+    if(STATE_LOWBATTERY == interfaceState){
+      selectSomething();
+    }
     break;
   case 0x50: // right arrow, selects frequency (red)
     selectFrequency();
@@ -348,12 +389,16 @@ void process_remote_command(NEC_IR_code_t* code){
     LED_green = 255;
     LED_blue = 0;
     printf("\n reset select");
-    flag = 0;
     break;
-  case 0x88: // 2, resets frequency to 0  
-    duty = 0;
+  case 0x88: // 2, resets frequency to 0
+    frequencyIndex = 0;
+    setFrequency(frequencyValue[frequencyIndex]); 
+    selectResetValue();
     break;
   case 0x48: // 3, resets current to 0
+    currentIndex = 0;
+    setCurrent(currentValue[currentIndex],battery_voltage()); 
+    selectResetValue();
     break;
   case 0x28: // 4
     break;
@@ -366,7 +411,7 @@ void process_remote_command(NEC_IR_code_t* code){
   case 0x98: // 8
     break;
   case 0x58: // 9, check battery voltage
-       // printf("%d\n", (int)battery_voltage())
+    // printf("%d\n", (int)battery_voltage())
     break;                        
   default:
     break;
@@ -378,40 +423,47 @@ void process_remote_command(NEC_IR_code_t* code){
 
 
 /*//
-Main application
- */
+  Main application
+*/
 void main(void)
 {
-    // initialize the device
-     SYSTEM_Initialize();         
-     DAC_Initialize();
-     OPA1_Initialize();
-     OPA2_Initialize();
-     initLED();
-     INTERRUPT_GlobalInterruptEnable();
-     INTERRUPT_PeripheralInterruptEnable();
-     startUp();
+  // initialize the device
+  SYSTEM_Initialize();         
+  DAC_Initialize();
+  OPA1_Initialize();
+  OPA2_Initialize();
+  initLED();
+  INTERRUPT_GlobalInterruptEnable();
+  INTERRUPT_PeripheralInterruptEnable();
+  startUp();
 
-     //(255, 0, 0); = blue
-     //(255, 0, 255); = green
-     //(200, 0, 30); = turq
-     //(0, 130, 255); = yellow
-     //(0, 255, 0); = red
-     //(225, 155, 0) = pink
-     //(225, 65, 0); = purple
-     //(0, 0, 0); = dim 
-     //setLEDColor(0, 0, 0);   
-    while(1){    
-     //printf("\n hello");
-    if ((int)battery_voltage() < 2500)
-     {
-        lowBattery();
-         //printf("%d\n", (int)battery_voltage());
-     }
+  //(255, 0, 0); = blue
+  //(255, 0, 255); = green
+  //(200, 0, 30); = turq
+  //(0, 130, 255); = yellow
+  //(0, 255, 0); = red
+  //(225, 155, 0) = pink
+  //(225, 65, 0); = purple
+  //(0, 0, 0); = dim 
+  //setLEDColor(0, 0, 0);   
+  while(1){    
+    //printf("\n hello");
+
+    int16_t batt_mv = battery_voltage();
+
+    if (batt_mv < 2500)
+    {
+      lowBattery();
+      //printf("%d\n", (int)battery_voltage());
+    }
+
+    // update the current as battery voltage changes
+    setCurrent(currentValue[currentIndex], batt_mv);
+
     /*DAC1CON1 = 0xFF;  
-    __delay_ms(1000);
-    DAC1CON1 = 0x90;
-    __delay_ms(1000);*/
+      __delay_ms(1000);
+      DAC1CON1 = 0x90;
+      __delay_ms(1000);*/
     
     if (STATE_DONE == ir_code.state){
       // a code was received, send it out the serial port

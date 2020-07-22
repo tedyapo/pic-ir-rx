@@ -89,18 +89,24 @@ void INT_DefaultInterruptHandler(void){
     if (time >= PREAMBLE_MIN_TICKS && time <= PREAMBLE_MAX_TICKS){
       ir_code.n_bits = 0;
       ir_code.state = STATE_RECEIVING;
+#ifdef COLLECT_IR_STATS
       stats[0] = time; // temporarily collect stats
+#endif // #ifdef COLLECT_IR_STATS
     }
     break;
   case STATE_RECEIVING:
     // shift the previous bits and check for valid new bit
     ir_code.code <<= 1;
     if (time >= ONE_MIN_TICKS && time <= ONE_MAX_TICKS){
+#ifdef COLLECT_IR_STATS
       stats[1+ir_code.n_bits] = time; // temporarily collect stats
+#endif // #ifdef COLLECT_IR_STATS
       ir_code.code |= 1;
       ir_code.n_bits++;
     } else if (time >= ZERO_MIN_TICKS && time <= ZERO_MAX_TICKS){
+#ifdef COLLECT_IR_STATS
       stats[1+ir_code.n_bits] = time; // temporarily collect stats
+#endif // #ifdef COLLECT_IR_STATS
       ir_code.n_bits++;      
     } else {
       // not a valid bit

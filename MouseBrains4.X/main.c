@@ -55,14 +55,6 @@ uint8_t LED_red;
 uint8_t LED_green;
 uint8_t LED_blue;
 
-// flag
-//uint8_t flag;
-
-// freq/ current
-//uint8_t frequency;
-//uint8_t duty;
-//uint8_t current;
-
 int currentValue[] = {0,30,50,70,90,110,130,160,190,220,250};
 int frequencyValue[] = {0,50,100,120,130,140};
 int maxCurrentIndex = sizeof(currentValue)/sizeof(currentValue[0]);
@@ -81,35 +73,50 @@ typedef enum
 
 state_t interfaceState;
 
-// note: items should be uint16_t; only 14 lowest bits are stored
+// NB: this structure must match the code in writePersistentState() below
 typedef struct
 {
-  uint16_t currentIndex;
-  uint16_t frequencyIndex;
-  uint16_t dc_frequency_flag;
-  uint16_t padding[29];
+  uint8_t currentIndex;
+  uint8_t frequencyIndex;
+  uint8_t dc_frequency_flag;
 } persistent_state;
 
+//
+// microchip article on using high-endurance flash HEF to store data
+//   https://microchipdeveloper.com/xc8:memory-and-flash-routines
+//
+
 // reserve one flash block at end of program memory for persistent state
-const persistent_state HEF_persistent_state __at(0xfdf) = {0, 0, 1};
+//   initialize the stored parameters for first startup
+const persistent_state HEF_persistent_state __at(0xfe0) = {5, 3, 0};
 
 // load variables from HEF
 void readPersistentState()
 {
-  currentIndex = FLASH_ReadWord((uint16_t)&(HEF_persistent_state.currentIndex));
-  frequencyIndex = FLASH_ReadWord((uint16_t)&(HEF_persistent_state.frequencyIndex));
-  dc_frequency_flag = FLASH_ReadWord((uint16_t)&(HEF_persistent_state.dc_frequency_flag));
+  currentIndex = HEF_persistent_state.currentIndex;
+  frequencyIndex = HEF_persistent_state.frequencyIndex;
+  dc_frequency_flag = HEF_persistent_state.dc_frequency_flag;
 }
+
+// format a byte of data as a RETLW instruction for storage in HEF
+#define RETLW(x) ((uint16_t)(0x3400 | x))
 
 // store variables to HEF
 void writePersistentState()
 {
-  persistent_state buf;
-  buf.currentIndex = (uint16_t)currentIndex;
-  buf.frequencyIndex = (uint16_t)frequencyIndex;
-  buf.dc_frequency_flag = (uint16_t)dc_frequency_flag;
-  FLASH_EraseBlock((uint16_t)&HEF_persistent_state);
-  FLASH_WriteBlock((uint16_t)&HEF_persistent_state, (uint16_t*) &buf);
+  // create a HEF-block size buffer and clear it
+  uint16_t buf[WRITE_FLASH_BLOCKSIZE];
+  for (uint8_t i=0; i<WRITE_FLASH_BLOCKSIZE; i++){
+    buf[0] = 0;
+  }
+
+  // variables stored in HEF are formatted as RETLW instructions
+  uint8_t idx = 0;
+  buf[idx++] = RETLW(currentIndex);
+  buf[idx++] = RETLW(frequencyIndex);
+  buf[idx++] = RETLW(dc_frequency_flag);
+
+  FLASH_WriteBlock((uint16_t)&HEF_persistent_state, buf);
 }
 
 // measure Vdd using FVR/ADC
@@ -248,17 +255,16 @@ void selectCurrent(){
   printf("\n current selected");
 }
 
-
 void selectIncrease(){
-  setLEDColor(0, 255, 0);
-  __delay_ms(250);
+  setLEDColor(255, 192, 192);
+  __delay_ms(100);
   setLEDColor(0, 0, 0);
   printf("\n increase selected");
 }
 
 void selectDecrease(){
-  setLEDColor(255, 0, 0);
-  __delay_ms(250);
+  setLEDColor(64, 127, 255);
+  __delay_ms(100);
   setLEDColor(0, 0, 0);
   printf("\n decrease selected");
 }
@@ -301,28 +307,28 @@ void setFrequency(int16_t frequency_hz)
   //       TMR4 prescale = 16
   //       TMR4 postscale = 3
   //       TMR4 period = (PR4 * 16 * 3)/1e6
-  //       current output period = (PR4 * 16 * 3 * 2)/1e6
+  //       output period = (PR4 * 16 * 3 * 2)/1e6
   //         --> because we toggle output on TMR4 interrupts
   //       1/f = PR4 * 96/1e6
   //       PR4 = 1e6 / (96 * f)
   //
-  // these prescale, postscale values yield a frequency range of;
+  // selected prescale, postscale values yield a frequency range of:
   // PR4 = 255 --> freq = 40.8 Hz
-  // PR4 = 1 --> freq = 10.4 kHz
+  // PR4 = 68 --> freq = 151 Hz
   //
-  int16_t pr4_val = 1000000L / (96L * frequency_hz);
-  if (pr4_val > 255){
-    pr4_val = 255;
+  int16_t PR4_val = 1000000L / (96L * frequency_hz);
+  if (PR4_val > 255){
+    PR4_val = 255;
   }
-  if (pr4_val < 68){
-    pr4_val = 68;
+  if (PR4_val < 68){
+    PR4_val = 68;
   }
 
   // note: critical section here; turn off interrupts to make sure
   //       these variables are always in sync for TMR4 ISR to prevent
   //       frequency glitching
   INTERRUPT_GlobalInterruptDisable();
-  PR4 = (uint8_t)pr4_val;
+  TMR4_LoadPeriodRegister((uint16_t)PR4_val);
   if (0 == frequency_hz){
     dc_frequency_flag = 1;
   } else {
@@ -358,7 +364,7 @@ void process_remote_command(NEC_IR_code_t* code){
       } else {
         selectIncrease();
       }
-      setCurrent(currentValue[currentIndex],battery_voltage());   
+      setCurrent(currentValue[currentIndex], battery_voltage());   
       writePersistentState();
     }
     if(STATE_FREQUENCY == interfaceState){
@@ -466,14 +472,17 @@ void main(void)
   OPA1_Initialize();
   OPA2_Initialize();
   initLED();
+  // initialize any saved current, frequency values
+  // note: this must happen before interrupts are enabled
+  //       to prevent frequency glitches on startup
+  readPersistentState();
+  setCurrent(currentValue[currentIndex],battery_voltage()); 
+  setFrequency(frequencyValue[frequencyIndex]);
   INTERRUPT_GlobalInterruptEnable();
   INTERRUPT_PeripheralInterruptEnable();
   startUp();
 
-  // initialize the device
-  readPersistentState();
-  setCurrent(currentValue[currentIndex],battery_voltage()); 
-  setFrequency(frequencyValue[frequencyIndex]);
+
 
   //(255, 0, 0); = blue
   //(255, 0, 255); = green
@@ -495,7 +504,8 @@ void main(void)
       //printf("%d\n", (int)battery_voltage());
     }
 
-    // update the current as battery voltage changes
+    // update the DAC value to maintain regulated current
+    //   as battery voltage changes
     setCurrent(currentValue[currentIndex], batt_mv);
 
     /*DAC1CON1 = 0xFF;  

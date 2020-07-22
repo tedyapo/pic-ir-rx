@@ -50,6 +50,7 @@
 
 #include <xc.h>
 #include "tmr4.h"
+#include "dac.h"
 
 /**
   Section: Global Variables Definitions
@@ -151,14 +152,14 @@ void TMR4_DefaultInterruptHandler(void){
     currentIsOn = 0;
     if (dc_frequency_flag){
       // for DC current output, don't ever toggle to zero
-      DAC1CON1 = dac_value;
+      DAC_SetOutput(dac_value);
     } else {
-      // note: setting DAC1CON1 to 255 results in zero current output
-      DAC1CON1 = 255;
+      // note: setting DAC output to 255 results in zero current output
+      DAC_SetOutput(255);
     }
   } else {
     currentIsOn = 1;
-    DAC1CON1 = dac_value;
+    DAC_SetOutput(dac_value);
   }
 }
 

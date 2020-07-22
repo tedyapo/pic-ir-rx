@@ -1,3 +1,10 @@
+#ifndef _IR_RECEIVER_H_INCLUDED
+#define _IR_RECEIVER_H_INCLUDED
+
+
+// define this to collect timing stats for IR receiver
+//#define COLLECT_IR_STATS
+
 // IR receiver states
 typedef enum {STATE_RESET = 0,        // waiting for preamble sequence
               STATE_RECEIVING,        // receiving bit stream
@@ -31,9 +38,10 @@ typedef struct {
 extern NEC_IR_code_t ir_code;
 
 // timing stats for analysis/tuning
+#ifdef COLLECT_IR_STATS
 extern uint8_t stats[33];
+#endif // #ifdef COLLECT_IR_STATS
 
-
-
+#endif // #ifndef _IR_RECEIVER_H_INCLUDED
 
 

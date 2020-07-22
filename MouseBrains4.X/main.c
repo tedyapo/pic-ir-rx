@@ -74,11 +74,14 @@ typedef enum
 state_t interfaceState;
 
 // NB: this structure must match the code in writePersistentState() below
+//     also must be padded to 64 bytes to ensure code is not placed in the
+//     data HEF block
 typedef struct
 {
   uint8_t currentIndex;
   uint8_t frequencyIndex;
   uint8_t dc_frequency_flag;
+  uint8_t padding[64-3];
 } persistent_state;
 
 //

@@ -102,7 +102,7 @@ void readPersistentState()
 }
 
 // format a byte of data as a RETLW instruction for storage in HEF
-#define RETLW(x) ((uint16_t)(0x3400 | x))
+#define RETLW(x) ((uint16_t)(0x3400 | (x & 0xff)))
 
 // store variables to HEF
 void writePersistentState()

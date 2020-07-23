@@ -48,8 +48,20 @@
 #include <stdio.h>
 #include "IR_receiver.h"
 
+// disable uncalled function warnings
+#pragma warning disable 520
+// disable signed to unsigned conversion warnings
+#pragma warning disable 373
+
+// used to check struct sizes, etc at compile time
+//  note: this causes a 740 "array dimensions must be larger than zero"
+//        if the assertion fails
+//  also note: this macro can only be used within a function
+#define STATIC_ASSERT(cond) {uint8_t a[1-2*(!(cond))];}
+
 // timing stats for analysis/tuning
 uint8_t stats[33];
+
 // LEDs
 uint8_t LED_red;
 uint8_t LED_green;
@@ -74,35 +86,41 @@ typedef enum
 state_t interfaceState;
 
 // NB: this structure must match the code in writePersistentState() below
-//     also must be padded to 64 bytes to ensure code is not placed in the
-//     data HEF block
+//     also must be padded to WRITE_FLASH_BLOCKSIZE bytes to ensure code
+//     is not placed in the data HEF block
 typedef struct
 {
   uint8_t currentIndex;
   uint8_t frequencyIndex;
   uint8_t dc_frequency_flag;
-  uint8_t padding[64-3];
+  uint8_t padding[WRITE_FLASH_BLOCKSIZE - 3];
 } persistent_state;
 
+
 //
-// microchip article on using high-endurance flash HEF to store data
+// see microchip article on using high-endurance flash HEF to store data
 //   https://microchipdeveloper.com/xc8:memory-and-flash-routines
 //
 
 // reserve one flash block at end of program memory for persistent state
 //   initialize the stored parameters for first startup
+// fixed address is last block of flash program memory
 const persistent_state HEF_persistent_state __at(0xfe0) = {5, 3, 0};
 
 // load variables from HEF
 void readPersistentState()
 {
+  // ensure persistent_state block is exactly one HEF block
+  STATIC_ASSERT(sizeof(persistent_state) == WRITE_FLASH_BLOCKSIZE);
+
   currentIndex = HEF_persistent_state.currentIndex;
   frequencyIndex = HEF_persistent_state.frequencyIndex;
   dc_frequency_flag = HEF_persistent_state.dc_frequency_flag;
 }
 
 // format a byte of data as a RETLW instruction for storage in HEF
-#define RETLW(x) ((uint16_t)(0x3400 | (x & 0xff)))
+#define RETLW_OPCODE 0x3400
+#define RETLW(x) ((uint16_t)(RETLW_OPCODE | (x & 0xff)))
 
 // store variables to HEF
 void writePersistentState()
@@ -399,7 +417,7 @@ void process_remote_command(NEC_IR_code_t* code){
       } else {
         selectDecrease();
       }
-      setCurrent(currentValue[currentIndex],battery_voltage()); 
+      setCurrent(currentValue[currentIndex], battery_voltage()); 
       writePersistentState();
     }
     if(STATE_FREQUENCY == interfaceState){
@@ -440,7 +458,7 @@ void process_remote_command(NEC_IR_code_t* code){
     break;
   case 0x48: // 3, resets current to 0
     currentIndex = 0;
-    setCurrent(currentValue[currentIndex],battery_voltage()); 
+    setCurrent(currentValue[currentIndex], battery_voltage()); 
     selectResetValue();
     break;
   case 0x28: // 4
@@ -475,12 +493,14 @@ void main(void)
   OPA1_Initialize();
   OPA2_Initialize();
   initLED();
+  
   // initialize any saved current, frequency values
   // note: this must happen before interrupts are enabled
   //       to prevent frequency glitches on startup
   readPersistentState();
-  setCurrent(currentValue[currentIndex],battery_voltage()); 
+  setCurrent(currentValue[currentIndex], battery_voltage()); 
   setFrequency(frequencyValue[frequencyIndex]);
+  
   INTERRUPT_GlobalInterruptEnable();
   INTERRUPT_PeripheralInterruptEnable();
   startUp();

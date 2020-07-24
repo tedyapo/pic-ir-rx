@@ -52,12 +52,14 @@
 #pragma warning disable 520
 // disable signed to unsigned conversion warnings
 #pragma warning disable 373
+// disable unused function defintion warnings
+#pragma warning disable 967
 
-// used to check struct sizes, etc at compile time
+#define _STATIC_ASSERT_H2(a, b) a ## b
+#define _STATIC_ASSERT_H1(c, l) static void _STATIC_ASSERT_H2(_STATIC_ASSERT_LINE_, l) (){int a[1-2*(!(c))];}
 //  note: this causes a 740 "array dimensions must be larger than zero"
-//        if the assertion fails
-//  also note: this macro can only be used within a function
-#define STATIC_ASSERT(cond) {uint8_t a[1-2*(!(cond))];}
+//        if the assertion fails; check line it was expanded from
+#define STATIC_ASSERT(cond) _STATIC_ASSERT_H1(cond, __LINE__ )
 
 // timing stats for analysis/tuning
 uint8_t stats[33];
@@ -94,8 +96,10 @@ typedef struct
   uint8_t frequencyIndex;
   uint8_t dc_frequency_flag;
   uint8_t padding[WRITE_FLASH_BLOCKSIZE - 3];
-} persistent_state;
+} persistent_state_t;
 
+// ensure persistent_state block is exactly one HEF block
+STATIC_ASSERT(sizeof(persistent_state_t) == WRITE_FLASH_BLOCKSIZE);
 
 //
 // see microchip article on using high-endurance flash HEF to store data
@@ -105,14 +109,11 @@ typedef struct
 // reserve one flash block at end of program memory for persistent state
 //   initialize the stored parameters for first startup
 // fixed address is last block of flash program memory
-const persistent_state HEF_persistent_state __at(0xfe0) = {5, 3, 0};
+const persistent_state_t HEF_persistent_state __at(0xfe0) = {5, 3, 0};
 
 // load variables from HEF
 void readPersistentState()
 {
-  // ensure persistent_state block is exactly one HEF block
-  STATIC_ASSERT(sizeof(persistent_state) == WRITE_FLASH_BLOCKSIZE);
-
   currentIndex = HEF_persistent_state.currentIndex;
   frequencyIndex = HEF_persistent_state.frequencyIndex;
   dc_frequency_flag = HEF_persistent_state.dc_frequency_flag;

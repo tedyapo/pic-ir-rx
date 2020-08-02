@@ -1,0 +1,892 @@
+[p GLOBOPT AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF1708 ]
+[d frameptr 6 ]
+"50 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+[e E4289 . `uc
+STATE_RESET 0
+STATE_RECEIVING 1
+STATE_DONE 2
+]
+"88 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+[e E4451 . `uc
+STATE_RUNNING 0
+STATE_CURRENT 1
+STATE_FREQUENCY 2
+STATE_LOWBATTERY 3
+]
+"366
+[e E4414 . `uc
+STATE_RESET 0
+STATE_RECEIVING 1
+STATE_DONE 2
+]
+"5 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"5 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"477 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+"62 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"15 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"115 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+[v _readPersistentState readPersistentState `(v  1 e 1 0 ]
+"127
+[v _writePersistentState writePersistentState `(v  1 e 1 0 ]
+"147
+[v _battery_voltage battery_voltage `(i  1 e 2 0 ]
+"172
+[v _initLED initLED `(v  1 e 1 0 ]
+"213
+[v _setLEDColor setLEDColor `(v  1 e 1 0 ]
+"234
+[v _lowBattery lowBattery `(v  1 e 1 0 ]
+"252
+[v _startUp startUp `(v  1 e 1 0 ]
+"262
+[v _selectSomething selectSomething `(v  1 e 1 0 ]
+"274
+[v _selectFrequency selectFrequency `(v  1 e 1 0 ]
+"282
+[v _selectCurrent selectCurrent `(v  1 e 1 0 ]
+"290
+[v _selectIncrease selectIncrease `(v  1 e 1 0 ]
+"297
+[v _selectDecrease selectDecrease `(v  1 e 1 0 ]
+"304
+[v _selectResetValue selectResetValue `(v  1 e 1 0 ]
+"316
+[v _setCurrent setCurrent `(v  1 e 1 0 ]
+"327
+[v _setFrequency setFrequency `(v  1 e 1 0 ]
+"366
+[v _process_remote_command process_remote_command `(v  1 e 1 0 ]
+"477
+[v _main main `(v  1 e 1 0 ]
+"58 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+[v _DAC_Initialize DAC_Initialize `(v  1 e 1 0 ]
+"66
+[v _DAC_SetOutput DAC_SetOutput `(v  1 e 1 0 ]
+"66 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"113
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"132
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"146
+[v _putch putch `(v  1 e 1 0 ]
+"153
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"155
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"163
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"166
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"170
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"174
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"54 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+[v _INT_ISR INT_ISR `(v  1 e 1 0 ]
+"62
+[v _INT_CallBack INT_CallBack `(v  1 e 1 0 ]
+"71
+[v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
+"75
+[v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
+"138
+[v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
+"52 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"50 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"66
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"78
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"58 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+[v _FLASH_ReadWord FLASH_ReadWord `(ui  1 e 2 0 ]
+"94
+[v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
+"148
+[v _FLASH_EraseBlock FLASH_EraseBlock `(v  1 e 1 0 ]
+"58 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa1.c
+[v _OPA1_Initialize OPA1_Initialize `(v  1 e 1 0 ]
+"58 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa2.c
+[v _OPA2_Initialize OPA2_Initialize `(v  1 e 1 0 ]
+"55 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"121
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+"64 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"108
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"125
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+"129
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"62 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"65 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+"115
+[v _TMR4_LoadPeriodRegister TMR4_LoadPeriodRegister `(v  1 e 1 0 ]
+"120
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+"133
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+"145
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+[s S131 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"374 /Applications/microchip/xc8/v2.10/pic/include/pic16lf1708.h
+[s S140 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S145 . 1 `S131 1 . 1 0 `S140 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES145  1 e 1 @11 ]
+[s S325 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"601
+[s S334 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CCPIF 1 0 :1:2 
+]
+[u S337 . 1 `S325 1 . 1 0 `S334 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES337  1 e 1 @17 ]
+[s S232 . 1 `uc 1 CCP2IF 1 0 :1:0 
+`uc 1 TMR4IF 1 0 :1:1 
+`uc 1 TMR6IF 1 0 :1:2 
+`uc 1 BCL1IF 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 C1IF 1 0 :1:5 
+`uc 1 C2IF 1 0 :1:6 
+`uc 1 OSFIF 1 0 :1:7 
+]
+"668
+[u S241 . 1 `S232 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES241  1 e 1 @18 ]
+"753
+[v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
+"962
+[v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
+"982
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+"1002
+[v _T2CON T2CON `VEuc  1 e 1 @28 ]
+[s S579 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"1023
+[s S583 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[u S591 . 1 `S579 1 . 1 0 `S583 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES591  1 e 1 @28 ]
+"1073
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1118
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1157
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S211 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 TMR4IE 1 0 :1:1 
+`uc 1 TMR6IE 1 0 :1:2 
+`uc 1 BCL1IE 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 C1IE 1 0 :1:5 
+`uc 1 C2IE 1 0 :1:6 
+`uc 1 OSFIE 1 0 :1:7 
+]
+"1307
+[u S220 . 1 `S211 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES220  1 e 1 @146 ]
+"1392
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
+[s S90 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1415
+[s S97 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S104 . 1 `S90 1 . 1 0 `S97 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES104  1 e 1 @149 ]
+"1532
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1591
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1649
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"1721
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @154 ]
+"1783
+[v _ADRES ADRES `VEus  1 e 2 @155 ]
+"1830
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+[s S885 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+"1855
+[s S889 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+[s S897 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[u S900 . 1 `S885 1 . 1 0 `S889 1 . 1 0 `S897 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES900  1 e 1 @157 ]
+"1910
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
+"2030
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2075
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2114
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2468
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2501
+[v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
+[s S856 . 1 `uc 1 ADFVR 1 0 :2:0 
+`uc 1 CDAFVR 1 0 :2:2 
+`uc 1 TSRNG 1 0 :1:4 
+`uc 1 TSEN 1 0 :1:5 
+`uc 1 FVRRDY 1 0 :1:6 
+`uc 1 FVREN 1 0 :1:7 
+]
+"2522
+[s S863 . 1 `uc 1 ADFVR0 1 0 :1:0 
+`uc 1 ADFVR1 1 0 :1:1 
+`uc 1 CDAFVR0 1 0 :1:2 
+`uc 1 CDAFVR1 1 0 :1:3 
+]
+[u S868 . 1 `S856 1 . 1 0 `S863 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES868  1 e 1 @279 ]
+"2577
+[v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @280 ]
+"2687
+[v _DAC1CON1 DAC1CON1 `VEuc  1 e 1 @281 ]
+"2853
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2892
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"2931
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"2989
+[v _PMADRL PMADRL `VEuc  1 e 1 @401 ]
+"3009
+[v _PMADRH PMADRH `VEuc  1 e 1 @402 ]
+"3036
+[v _PMDATL PMDATL `VEuc  1 e 1 @403 ]
+"3056
+[v _PMDATH PMDATH `VEuc  1 e 1 @404 ]
+[s S778 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 LWLO 1 0 :1:5 
+`uc 1 CFGS 1 0 :1:6 
+]
+"3092
+[u S786 . 1 `S778 1 . 1 0 ]
+[v _PMCON1bits PMCON1bits `VES786  1 e 1 @405 ]
+"3132
+[v _PMCON2 PMCON2 `VEuc  1 e 1 @406 ]
+"3206
+[v _TX1REG TX1REG `VEuc  1 e 1 @410 ]
+"3267
+[v _SP1BRGL SP1BRGL `VEuc  1 e 1 @411 ]
+"3337
+[v _SP1BRGH SP1BRGH `VEuc  1 e 1 @412 ]
+"3391
+[v _RC1STA RC1STA `VEuc  1 e 1 @413 ]
+"3571
+[v _TX1STA TX1STA `VEuc  1 e 1 @414 ]
+"3751
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @415 ]
+"3997
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"4047
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4086
+[v _WPUC WPUC `VEuc  1 e 1 @526 ]
+"5546
+[v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
+"5591
+[v _ODCONB ODCONB `VEuc  1 e 1 @653 ]
+"5630
+[v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
+"5699
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
+[s S1043 . 1 `uc 1 CCP1M 1 0 :4:0 
+`uc 1 DC1B 1 0 :2:4 
+]
+"5768
+[s S1046 . 1 `uc 1 CCP1M0 1 0 :1:0 
+`uc 1 CCP1M1 1 0 :1:1 
+`uc 1 CCP1M2 1 0 :1:2 
+`uc 1 CCP1M3 1 0 :1:3 
+`uc 1 DC1B0 1 0 :1:4 
+`uc 1 DC1B1 1 0 :1:5 
+]
+[s S1053 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CCP1Y 1 0 :1:4 
+`uc 1 CCP1X 1 0 :1:5 
+]
+[u S1057 . 1 `S1043 1 . 1 0 `S1046 1 . 1 0 `S1053 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES1057  1 e 1 @659 ]
+[s S940 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 P3TSEL 1 0 :2:4 
+`uc 1 P4TSEL 1 0 :2:6 
+]
+"6121
+[s S945 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 P3TSEL0 1 0 :1:4 
+`uc 1 P3TSEL1 1 0 :1:5 
+`uc 1 P4TSEL0 1 0 :1:6 
+`uc 1 P4TSEL1 1 0 :1:7 
+]
+[u S954 . 1 `S940 1 . 1 0 `S945 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES954  1 e 1 @670 ]
+"6186
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @780 ]
+"6231
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @781 ]
+"6270
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @782 ]
+"6332
+[v _INLVLA INLVLA `VEuc  1 e 1 @908 ]
+"6382
+[v _INLVLB INLVLB `VEuc  1 e 1 @909 ]
+"6421
+[v _INLVLC INLVLC `VEuc  1 e 1 @910 ]
+"6936
+[v _TMR4 TMR4 `VEuc  1 e 1 @1045 ]
+"6956
+[v _PR4 PR4 `VEuc  1 e 1 @1046 ]
+"6976
+[v _T4CON T4CON `VEuc  1 e 1 @1047 ]
+"7158
+[v _OPA1CON OPA1CON `VEuc  1 e 1 @1297 ]
+"7212
+[v _OPA2CON OPA2CON `VEuc  1 e 1 @1301 ]
+[s S973 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PWM3DCL 1 0 :2:6 
+]
+"7282
+[s S976 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PWM3DCL0 1 0 :1:6 
+`uc 1 PWM3DCL1 1 0 :1:7 
+]
+[u S980 . 1 `S973 1 . 1 0 `S976 1 . 1 0 ]
+[v _PWM3DCLbits PWM3DCLbits `VES980  1 e 1 @1559 ]
+"7302
+[v _PWM3DCH PWM3DCH `VEuc  1 e 1 @1560 ]
+[s S991 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 PWM3POL 1 0 :1:4 
+`uc 1 PWM3OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 PWM3EN 1 0 :1:7 
+]
+"7391
+[u S997 . 1 `S991 1 . 1 0 ]
+[v _PWM3CONbits PWM3CONbits `VES997  1 e 1 @1561 ]
+[s S1009 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PWM4DCL 1 0 :2:6 
+]
+"7454
+[s S1012 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PWM4DCL0 1 0 :1:6 
+`uc 1 PWM4DCL1 1 0 :1:7 
+]
+[u S1016 . 1 `S1009 1 . 1 0 `S1012 1 . 1 0 ]
+[v _PWM4DCLbits PWM4DCLbits `VES1016  1 e 1 @1562 ]
+"7474
+[v _PWM4DCH PWM4DCH `VEuc  1 e 1 @1563 ]
+[s S1027 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 PWM4POL 1 0 :1:4 
+`uc 1 PWM4OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 PWM4EN 1 0 :1:7 
+]
+"7563
+[u S1033 . 1 `S1027 1 . 1 0 ]
+[v _PWM4CONbits PWM4CONbits `VES1033  1 e 1 @1564 ]
+"8490
+[v _INTPPS INTPPS `VEuc  1 e 1 @3600 ]
+"8690
+[v _RXPPS RXPPS `VEuc  1 e 1 @3620 ]
+"8890
+[v _RA5PPS RA5PPS `VEuc  1 e 1 @3733 ]
+"8970
+[v _RB7PPS RB7PPS `VEuc  1 e 1 @3743 ]
+"9070
+[v _RC4PPS RC4PPS `VEuc  1 e 1 @3748 ]
+"9090
+[v _RC5PPS RC5PPS `VEuc  1 e 1 @3749 ]
+"72 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+[v _currentValue currentValue `[11]i  1 e 22 0 ]
+"73
+[v _frequencyValue frequencyValue `[6]i  1 e 12 0 ]
+"76
+[v _currentIndex currentIndex `i  1 e 2 0 ]
+"77
+[v _frequencyIndex frequencyIndex `i  1 e 2 0 ]
+"78
+[v _dc_frequency_flag dc_frequency_flag `uc  1 e 1 0 ]
+"88
+[v _interfaceState interfaceState `E4451  1 e 1 0 ]
+[s S847 . 32 `uc 1 currentIndex 1 0 `uc 1 frequencyIndex 1 1 `uc 1 dc_frequency_flag 1 2 `[29]uc 1 padding 29 3 ]
+"112
+[v _HEF_persistent_state HEF_persistent_state `DCS847  1 e 32 @4064 ]
+"314
+[v _dac_value dac_value `uc  1 e 1 0 ]
+[s S279 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"52 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+[u S284 . 1 `S279 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES284  1 e 1 0 ]
+"58
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"59
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"60
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+[s S461 . 2 `uc 1 address_b 1 0 `uc 1 address 1 1 ]
+"50 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+[s S464 . 2 `ui 1 extended_address 2 0 ]
+[u S466 . 2 `S461 1 . 2 0 `S464 1 . 2 0 ]
+[s S469 . 4 `uc 1 command_b 1 0 `uc 1 command 1 1 `S466 1 . 2 2 ]
+[u S473 . 4 `ul 1 code 4 0 `S469 1 . 4 0 ]
+[s S476 . 6 `uc 1 n_bits 1 0 `E4289 1 state 1 1 `S473 1 . 4 2 ]
+[v _ir_code ir_code `S476  1 e 6 0 ]
+"52
+[v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
+"58 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+[v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
+"59
+[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
+"59 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+[v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
+"138
+[v _currentIsOn currentIsOn `uc  1 e 1 0 ]
+"477 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"500
+[v main@batt_mv batt_mv `i  1 a 2 2 ]
+"543
+} 0
+"252
+[v _startUp startUp `(v  1 e 1 0 ]
+{
+"254
+[v startUp@i i `i  1 a 2 8 ]
+"260
+} 0
+"115
+[v _readPersistentState readPersistentState `(v  1 e 1 0 ]
+{
+"120
+} 0
+"366
+[v _process_remote_command process_remote_command `(v  1 e 1 0 ]
+{
+[s S461 . 2 `uc 1 address_b 1 0 `uc 1 address 1 1 ]
+[s S464 . 2 `ui 1 extended_address 2 0 ]
+[u S466 . 2 `S461 1 . 2 0 `S464 1 . 2 0 ]
+[s S469 . 4 `uc 1 command_b 1 0 `uc 1 command 1 1 `S466 1 . 2 2 ]
+[u S473 . 4 `ul 1 code 4 0 `S469 1 . 4 0 ]
+[s S476 . 6 `uc 1 n_bits 1 0 `E4289 1 state 1 1 `S473 1 . 4 2 ]
+[v process_remote_command@code code `*.4S476  1 a 1 wreg ]
+[v process_remote_command@code code `*.4S476  1 a 1 wreg ]
+[v process_remote_command@code code `*.4S476  1 a 1 0 ]
+"471
+} 0
+"127
+[v _writePersistentState writePersistentState `(v  1 e 1 0 ]
+{
+"131
+[v writePersistentState@i i `uc  1 a 1 75 ]
+"130
+[v writePersistentState@buf buf `[32]ui  1 a 64 11 ]
+"136
+[v writePersistentState@idx idx `uc  1 a 1 76 ]
+"142
+} 0
+"94 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+[v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
+{
+"96
+[v FLASH_WriteBlock@blockStartAddr blockStartAddr `ui  1 a 2 3 ]
+"98
+[v FLASH_WriteBlock@i i `uc  1 a 1 6 ]
+"97
+[v FLASH_WriteBlock@GIEBitValue GIEBitValue `uc  1 a 1 5 ]
+"94
+[v FLASH_WriteBlock@writeAddr writeAddr `ui  1 p 2 5 ]
+[v FLASH_WriteBlock@flashWordArray flashWordArray `*.4ui  1 p 1 7 ]
+"146
+} 0
+"148
+[v _FLASH_EraseBlock FLASH_EraseBlock `(v  1 e 1 0 ]
+{
+"150
+[v FLASH_EraseBlock@GIEBitValue GIEBitValue `uc  1 a 1 4 ]
+"148
+[v FLASH_EraseBlock@startAddr startAddr `ui  1 p 2 2 ]
+"173
+} 0
+"327 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+[v _setFrequency setFrequency `(v  1 e 1 0 ]
+{
+"343
+[v setFrequency@PR4_val PR4_val `i  1 a 2 22 ]
+"327
+[v setFrequency@frequency_hz frequency_hz `i  1 p 2 19 ]
+"362
+} 0
+"115 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+[v _TMR4_LoadPeriodRegister TMR4_LoadPeriodRegister `(v  1 e 1 0 ]
+{
+[v TMR4_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 wreg ]
+[v TMR4_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 wreg ]
+"117
+[v TMR4_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 2 ]
+"118
+} 0
+"316 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+[v _setCurrent setCurrent `(v  1 e 1 0 ]
+{
+"319
+[v setCurrent@DACValue DACValue `i  1 a 2 35 ]
+"318
+[v setCurrent@Vdac_mv Vdac_mv `i  1 a 2 33 ]
+"317
+[v setCurrent@microamps microamps `i  1 p 2 21 ]
+[v setCurrent@Vdd_mv Vdd_mv `i  1 p 2 23 ]
+"323
+} 0
+"15 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 0 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 2 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 6 ]
+"129
+} 0
+"5 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+[v ___awdiv@dividend dividend `i  1 p 2 4 ]
+"41
+} 0
+"262 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+[v _selectSomething selectSomething `(v  1 e 1 0 ]
+{
+"272
+} 0
+"304
+[v _selectResetValue selectResetValue `(v  1 e 1 0 ]
+{
+"309
+} 0
+"290
+[v _selectIncrease selectIncrease `(v  1 e 1 0 ]
+{
+"295
+} 0
+"274
+[v _selectFrequency selectFrequency `(v  1 e 1 0 ]
+{
+"280
+} 0
+"297
+[v _selectDecrease selectDecrease `(v  1 e 1 0 ]
+{
+"302
+} 0
+"282
+[v _selectCurrent selectCurrent `(v  1 e 1 0 ]
+{
+"288
+} 0
+"477 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"512
+[v printf@c c `uc  1 a 1 1 ]
+"479
+[v printf@ap ap `[1]*.1v  1 a 1 0 ]
+"477
+[v printf@f f `*.25DCuc  1 p 2 4 ]
+"1567
+} 0
+"146 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+"148
+[v putch@txData txData `uc  1 a 1 3 ]
+"149
+} 0
+"132
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 2 ]
+"139
+} 0
+"147 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+[v _battery_voltage battery_voltage `(i  1 e 2 0 ]
+{
+"166
+} 0
+"5 /Applications/microchip/xc8/v2.10/pic/sources/c90/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 15 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 14 ]
+[v ___aldiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 4 ]
+[v ___aldiv@dividend dividend `l  1 p 4 8 ]
+"41
+} 0
+"234 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+[v _lowBattery lowBattery `(v  1 e 1 0 ]
+{
+"240
+} 0
+"213
+[v _setLEDColor setLEDColor `(v  1 e 1 0 ]
+{
+[v setLEDColor@red red `uc  1 a 1 wreg ]
+[v setLEDColor@red red `uc  1 a 1 wreg ]
+[v setLEDColor@green green `uc  1 p 1 2 ]
+[v setLEDColor@blue blue `uc  1 p 1 3 ]
+"220
+[v setLEDColor@red red `uc  1 a 1 5 ]
+"230
+} 0
+"172
+[v _initLED initLED `(v  1 e 1 0 ]
+{
+"211
+} 0
+"50 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"64
+} 0
+"78
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"82
+} 0
+"65 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+{
+"86
+} 0
+"133
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
+"135
+} 0
+"62 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"64 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"125
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
+"127
+} 0
+"55 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"119
+} 0
+"66 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"76
+} 0
+"58 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa2.c
+[v _OPA2_Initialize OPA2_Initialize `(v  1 e 1 0 ]
+{
+"62
+} 0
+"58 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa1.c
+[v _OPA1_Initialize OPA1_Initialize `(v  1 e 1 0 ]
+{
+"62
+} 0
+"138 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+[v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
+{
+"149
+} 0
+"71
+[v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
+"73
+} 0
+"66 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"170
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
+"172
+} 0
+"166
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
+"168
+} 0
+"174
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
+"176
+} 0
+"58 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+[v _DAC_Initialize DAC_Initialize `(v  1 e 1 0 ]
+{
+"64
+} 0
+"52 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"82
+} 0
+"120 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+{
+"130
+} 0
+"145
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"164
+} 0
+"66 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+[v _DAC_SetOutput DAC_SetOutput `(v  1 e 1 0 ]
+{
+[v DAC_SetOutput@inputData inputData `uc  1 a 1 wreg ]
+[v DAC_SetOutput@inputData inputData `uc  1 a 1 wreg ]
+"68
+[v DAC_SetOutput@inputData inputData `uc  1 a 1 0 ]
+"69
+} 0
+"108 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"122
+} 0
+"129
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"132
+} 0
+"121 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"123
+} 0
+"54 /Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+[v _INT_ISR INT_ISR `(v  1 e 1 0 ]
+{
+"60
+} 0
+"62
+[v _INT_CallBack INT_CallBack `(v  1 e 1 0 ]
+{
+"69
+} 0
+"75
+[v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"77
+[v INT_DefaultInterruptHandler@time time `uc  1 a 1 1 ]
+"136
+} 0

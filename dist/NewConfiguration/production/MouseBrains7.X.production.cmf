@@ -1,0 +1,1557 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/NewConfiguration/production/MouseBrains7.X.production.o
+cinit CODE 0 40 40 26 2
+text1 CODE 0 6DC 6DC 3C 2
+text2 CODE 0 E6A E6A 20 2
+text3 CODE 0 66 66 16F 2
+text4 CODE 0 5A1 5A1 5C 2
+text5 CODE 0 403 403 6C 2
+text6 CODE 0 E4E E4E 1C 2
+text7 CODE 0 4DB 4DB 66 2
+text8 CODE 0 D6C D6C 5 2
+text9 CODE 0 1D5 1D5 A5 2
+text10 CODE 0 718 718 34 2
+text11 CODE 0 541 541 60 2
+text12 CODE 0 5FD 5FD 5B 2
+text13 CODE 0 F15 F15 26 2
+text14 CODE 0 EF0 EF0 25 2
+text15 CODE 0 F8A F8A 2A 2
+text16 CODE 0 ECE ECE 22 2
+text17 CODE 0 F62 F62 28 2
+text18 CODE 0 E12 E12 12 2
+text19 CODE 0 7B2 7B2 31 2
+text20 CODE 0 30A 30A 7E 2
+text21 CODE 0 69C 69C 40 2
+text22 CODE 0 D9B D9B 6 2
+text23 CODE 0 DBD DBD A 2
+text24 CODE 0 74C 74C 33 2
+text25 CODE 0 27A 27A 90 2
+text26 CODE 0 FB4 FB4 2C 2
+text27 CODE 0 E37 E37 17 2
+text28 CODE 0 658 658 44 2
+text29 CODE 0 EAC EAC 22 2
+text30 CODE 0 D5E D5E 4 2
+text31 CODE 0 E24 E24 13 2
+text32 CODE 0 D95 D95 6 2
+text33 CODE 0 DB5 DB5 8 2
+text34 CODE 0 E00 E00 12 2
+text35 CODE 0 D8F D8F 6 2
+text36 CODE 0 77F 77F 33 2
+text37 CODE 0 DAD DAD 8 2
+text38 CODE 0 D5A D5A 4 2
+text39 CODE 0 D56 D56 4 2
+text40 CODE 0 DC7 DC7 C 2
+text41 CODE 0 D89 D89 6 2
+text42 CODE 0 E8A E8A 22 2
+text43 CODE 0 D83 D83 6 2
+text44 CODE 0 D7D D7D 6 2
+text45 CODE 0 D77 D77 6 2
+text46 CODE 0 D71 D71 6 2
+text48 CODE 0 DE0 DE0 F 2
+text49 CODE 0 7E3 7E3 1D 2
+text50 CODE 0 D67 D67 5 2
+text51 CODE 0 DEF DEF 11 2
+text52 CODE 0 2 2 1 2
+text53 CODE 0 D55 D55 1 2
+text54 CODE 0 D62 D62 5 2
+text55 CODE 0 DD3 DD3 D 2
+text56 CODE 0 46F 46F 6C 2
+nvBANK1 BANK1 1 DE DE E 1
+nvBANK2 BANK2 1 161 161 2 1
+idataCOMMON CODE 0 3 3 1 2
+maintext CODE 0 388 388 7B 2
+cstackCOMMON COMMON 1 70 70 8 1
+cstackBANK0 BANK0 1 20 20 50 1
+cstackBANK1 BANK1 1 EC EC 4 1
+cstackBANK2 BANK2 1 163 163 2 1
+inittext CODE 0 DA7 DA7 6 2
+stringtext1 STRCODE 0 800 800 17 2
+stringtext2 STRCODE 0 817 817 15 2
+stringtext3 STRCODE 0 82C 82C 14 2
+stringtext4 STRCODE 0 840 840 14 2
+stringtext5 STRCODE 0 854 854 13 2
+intentry CODE 0 4 4 3A 2
+bssBANK1 BANK1 1 C7 C7 17 1
+bssBANK2 BANK2 1 120 120 41 1
+idataBANK1 CODE 0 F3B F3B 27 2
+dataBANK1 BANK1 1 A0 A0 27 1
+dataCOMMON COMMON 1 7A 7A 1 1
+_HEF_persistent_state_text STRCODE 0 FE0 FE0 20 2
+clrtext CODE 0 DA1 DA1 6 2
+bssCOMMON COMMON 1 78 78 2 1
+$/tmp/xcJoOv1PQ.o
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 3E 3E 2 2
+config CONFIG 0 8007 8007 2 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 165-16F 1
+RAM 1A0-1EF 1
+RAM 220-26F 1
+RAM 2A0-2EF 1
+RAM 320-32F 1
+BANK2 165-16F 1
+BANK3 1A0-1EF 1
+BANK4 220-26F 1
+BANK5 2A0-2EF 1
+BANK6 320-32F 1
+CONST 867-D54 2
+ENTRY 867-D54 2
+IDLOC 8000-8003 2
+SFR10 500-56F 1
+SFR11 580-5EF 1
+SFR12 600-66F 1
+SFR13 680-6EF 1
+SFR14 700-76F 1
+SFR15 780-7EF 1
+SFR16 800-86F 1
+SFR17 880-8EF 1
+SFR18 900-96F 1
+SFR19 980-9EF 1
+SFR20 A00-A6F 1
+SFR21 A80-AEF 1
+SFR22 B00-B6F 1
+SFR23 B80-BEF 1
+SFR24 C00-C6F 1
+SFR25 C80-CEF 1
+SFR26 D00-D6F 1
+SFR27 D80-DEF 1
+SFR28 E00-E6F 1
+SFR29 E80-EEF 1
+SFR30 F00-F6F 1
+SFR31 F80-FEF 1
+STACK 20E5-21EF 1
+CODE 867-D54 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-19F 1
+SFR4 200-21F 1
+SFR5 280-29F 1
+SFR6 300-31F 1
+SFR7 380-3EF 1
+SFR8 400-46F 1
+SFR9 480-4EF 1
+BIGRAM 2000-21EF 1
+COMMON 7B-7D 1
+STRCODE 867-D54 2
+STRING 867-D54 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/NewConfiguration/production/MouseBrains7.X.production.o
+40 cinit CODE >7170:/tmp/xcQlFb7fp.s
+40 cinit CODE >7173:/tmp/xcQlFb7fp.s
+40 cinit CODE >7286:/tmp/xcQlFb7fp.s
+43 cinit CODE >7287:/tmp/xcQlFb7fp.s
+44 cinit CODE >7291:/tmp/xcQlFb7fp.s
+45 cinit CODE >7292:/tmp/xcQlFb7fp.s
+46 cinit CODE >7293:/tmp/xcQlFb7fp.s
+47 cinit CODE >7294:/tmp/xcQlFb7fp.s
+48 cinit CODE >7295:/tmp/xcQlFb7fp.s
+49 cinit CODE >7296:/tmp/xcQlFb7fp.s
+4A cinit CODE >7297:/tmp/xcQlFb7fp.s
+4B cinit CODE >7298:/tmp/xcQlFb7fp.s
+4C cinit CODE >7299:/tmp/xcQlFb7fp.s
+4D cinit CODE >7300:/tmp/xcQlFb7fp.s
+50 cinit CODE >7317:/tmp/xcQlFb7fp.s
+51 cinit CODE >7318:/tmp/xcQlFb7fp.s
+52 cinit CODE >7322:/tmp/xcQlFb7fp.s
+53 cinit CODE >7323:/tmp/xcQlFb7fp.s
+54 cinit CODE >7324:/tmp/xcQlFb7fp.s
+55 cinit CODE >7325:/tmp/xcQlFb7fp.s
+56 cinit CODE >7326:/tmp/xcQlFb7fp.s
+57 cinit CODE >7327:/tmp/xcQlFb7fp.s
+5A cinit CODE >7331:/tmp/xcQlFb7fp.s
+5B cinit CODE >7332:/tmp/xcQlFb7fp.s
+5C cinit CODE >7333:/tmp/xcQlFb7fp.s
+5D cinit CODE >7334:/tmp/xcQlFb7fp.s
+5E cinit CODE >7335:/tmp/xcQlFb7fp.s
+5F cinit CODE >7336:/tmp/xcQlFb7fp.s
+62 cinit CODE >7342:/tmp/xcQlFb7fp.s
+62 cinit CODE >7344:/tmp/xcQlFb7fp.s
+63 cinit CODE >7345:/tmp/xcQlFb7fp.s
+64 cinit CODE >7346:/tmp/xcQlFb7fp.s
+4 intentry CODE >52:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+6 intentry CODE >55:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+E intentry CODE >57:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+11 intentry CODE >58:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+12 intentry CODE >59:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+1A intentry CODE >61:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+1D intentry CODE >62:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+1E intentry CODE >63:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+26 intentry CODE >65:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+29 intentry CODE >66:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+2A intentry CODE >67:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+2E intentry CODE >69:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+38 intentry CODE >71:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+3B intentry CODE >72:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+3C intentry CODE >81:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+3C intentry CODE >82:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/interrupt_manager.c
+46F text56 CODE >75:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+46F text56 CODE >77:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+474 text56 CODE >78:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+475 text56 CODE >81:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+479 text56 CODE >82:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+47A text56 CODE >84:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+47B text56 CODE >86:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+47C text56 CODE >89:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+488 text56 CODE >90:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+489 text56 CODE >91:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+48C text56 CODE >99:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+493 text56 CODE >100:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+49F text56 CODE >104:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4A0 text56 CODE >105:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4A4 text56 CODE >106:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4B2 text56 CODE >113:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4B3 text56 CODE >114:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4B4 text56 CODE >116:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4BA text56 CODE >119:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4C0 text56 CODE >120:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4C4 text56 CODE >121:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4C5 text56 CODE >133:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4D9 text56 CODE >135:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+4DA text56 CODE >136:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DD3 text55 CODE >62:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DD3 text55 CODE >65:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DDA text55 CODE >67:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DDF text55 CODE >69:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+D62 text54 CODE >54:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+D62 text54 CODE >56:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+D63 text54 CODE >59:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+D66 text54 CODE >60:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+D55 text53 CODE >121:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+D55 text53 CODE >123:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+2 text52 CODE >129:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+2 text52 CODE >132:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+DEF text51 CODE >108:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+DEF text51 CODE >112:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+DF0 text51 CODE >114:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+DF3 text51 CODE >116:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+DFA text51 CODE >118:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+DFF text51 CODE >122:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+D67 text50 CODE >66:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+D68 text50 CODE >68:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+D6B text50 CODE >69:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+7E3 text49 CODE >145:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7E3 text49 CODE >151:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7E9 text49 CODE >152:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7EA text49 CODE >153:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7EF text49 CODE >155:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7F3 text49 CODE >156:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7F4 text49 CODE >158:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7F9 text49 CODE >160:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7F9 text49 CODE >161:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7FB text49 CODE >162:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+7FF text49 CODE >164:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+DE0 text48 CODE >120:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+DE0 text48 CODE >124:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+DE2 text48 CODE >126:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+DE9 text48 CODE >128:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+DEE text48 CODE >130:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+D71 text46 CODE >58:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+D71 text46 CODE >61:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+D74 text46 CODE >63:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+D76 text46 CODE >64:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/dac.c
+D77 text45 CODE >174:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D77 text45 CODE >175:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D7C text45 CODE >176:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D7D text44 CODE >166:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D7D text44 CODE >167:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D82 text44 CODE >168:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D83 text43 CODE >170:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D83 text43 CODE >171:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D88 text43 CODE >172:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+E8A text42 CODE >66:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+E8A text42 CODE >71:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+E8D text42 CODE >74:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+E8F text42 CODE >77:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+E91 text42 CODE >80:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+E93 text42 CODE >83:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+E94 text42 CODE >86:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+E9B text42 CODE >87:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+EA2 text42 CODE >88:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+EA9 text42 CODE >90:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+EAB text42 CODE >92:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D89 text41 CODE >71:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+D89 text41 CODE >72:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+D8E text41 CODE >73:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DC7 text40 CODE >138:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DC7 text40 CODE >143:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DC8 text40 CODE >144:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DCA text40 CODE >146:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DD1 text40 CODE >147:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+DD2 text40 CODE >149:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/ext_int.c
+D56 text39 CODE >58:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa1.c
+D56 text39 CODE >61:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa1.c
+D59 text39 CODE >62:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa1.c
+D5A text38 CODE >58:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa2.c
+D5A text38 CODE >61:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa2.c
+D5D text38 CODE >62:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/opa2.c
+DAD text37 CODE >66:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+DAD text37 CODE >69:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+DB0 text37 CODE >71:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+DB1 text37 CODE >73:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+DB2 text37 CODE >75:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+DB4 text37 CODE >76:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+77F text36 CODE >55:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+77F text36 CODE >60:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+781 text36 CODE >61:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+782 text36 CODE >62:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+783 text36 CODE >67:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+786 text36 CODE >68:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+788 text36 CODE >69:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+78A text36 CODE >74:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+78D text36 CODE >75:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+78F text36 CODE >76:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+790 text36 CODE >81:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+792 text36 CODE >82:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+793 text36 CODE >83:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+794 text36 CODE >84:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+796 text36 CODE >89:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+798 text36 CODE >90:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+799 text36 CODE >91:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+79A text36 CODE >96:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+79D text36 CODE >97:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+79F text36 CODE >98:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+7A1 text36 CODE >103:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+7A4 text36 CODE >104:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+7A6 text36 CODE >105:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+7A8 text36 CODE >113:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+7A9 text36 CODE >116:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+7AC text36 CODE >117:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+7AE text36 CODE >118:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+7B1 text36 CODE >119:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/pin_manager.c
+D8F text35 CODE >125:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+D8F text35 CODE >126:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+D94 text35 CODE >127:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+E00 text34 CODE >64:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+E00 text34 CODE >69:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+E05 text34 CODE >72:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+E07 text34 CODE >75:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+E08 text34 CODE >78:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+E09 text34 CODE >81:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+E0A text34 CODE >84:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+E11 text34 CODE >85:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr0.c
+DB5 text33 CODE >62:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr2.c
+DB5 text33 CODE >67:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr2.c
+DB8 text33 CODE >70:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr2.c
+DB9 text33 CODE >73:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr2.c
+DBA text33 CODE >76:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr2.c
+DBC text33 CODE >77:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr2.c
+D95 text32 CODE >133:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+D95 text32 CODE >134:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+D9A text32 CODE >135:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+E24 text31 CODE >65:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+E24 text31 CODE >70:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+E27 text31 CODE >73:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+E28 text31 CODE >76:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+E2A text31 CODE >79:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+E2C text31 CODE >82:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+E33 text31 CODE >85:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+E36 text31 CODE >86:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+D5E text30 CODE >78:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+D5E text30 CODE >81:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+D61 text30 CODE >82:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EAC text29 CODE >50:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EAC text29 CODE >53:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EAF text29 CODE >54:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EB2 text29 CODE >55:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EB5 text29 CODE >56:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EB8 text29 CODE >57:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EBB text29 CODE >58:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EBE text29 CODE >59:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EC1 text29 CODE >60:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EC4 text29 CODE >61:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+EC7 text29 CODE >62:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+ECA text29 CODE >63:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+ECD text29 CODE >64:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/mcc.c
+658 text28 CODE >172:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+658 text28 CODE >175:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+65B text28 CODE >176:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+65F text28 CODE >177:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+660 text28 CODE >181:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+662 text28 CODE >182:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+665 text28 CODE >183:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+668 text28 CODE >184:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+66A text28 CODE >185:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+66C text28 CODE >186:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+66D text28 CODE >187:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+672 text28 CODE >188:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+674 text28 CODE >192:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+676 text28 CODE >193:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+679 text28 CODE >194:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+67C text28 CODE >195:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+67E text28 CODE >196:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+680 text28 CODE >197:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+681 text28 CODE >198:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+686 text28 CODE >199:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+688 text28 CODE >205:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+68A text28 CODE >206:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+68D text28 CODE >207:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+692 text28 CODE >208:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+694 text28 CODE >209:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+696 text28 CODE >210:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+69B text28 CODE >211:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E37 text27 CODE >213:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E38 text27 CODE >220:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E3D text27 CODE >221:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E3F text27 CODE >222:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E40 text27 CODE >223:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E45 text27 CODE >225:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E48 text27 CODE >227:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E4B text27 CODE >229:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E4D text27 CODE >230:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FB4 text26 CODE >234:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FB4 text26 CODE >235:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FB9 text26 CODE >236:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FBF text26 CODE >237:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FCC text26 CODE >238:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FD2 text26 CODE >239:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FDF text26 CODE >240:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+27A text25 CODE >5:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+27A text25 CODE >13:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+27C text25 CODE >14:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+280 text25 CODE >15:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+28B text25 CODE >16:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+28D text25 CODE >17:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+28D text25 CODE >18:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+291 text25 CODE >19:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+29C text25 CODE >20:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2A0 text25 CODE >22:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2A8 text25 CODE >23:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2B0 text25 CODE >24:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2B2 text25 CODE >25:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2B3 text25 CODE >26:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2BA text25 CODE >27:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2BE text25 CODE >25:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2C2 text25 CODE >30:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2C9 text25 CODE >31:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2DB text25 CODE >32:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2E3 text25 CODE >33:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2E4 text25 CODE >35:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2EB text25 CODE >36:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2F1 text25 CODE >38:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+2F6 text25 CODE >39:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+301 text25 CODE >40:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+309 text25 CODE >41:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/aldiv.c
+74C text24 CODE >147:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+74C text24 CODE >149:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+74F text24 CODE >150:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+752 text24 CODE >151:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+754 text24 CODE >152:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+759 text24 CODE >153:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+75A text24 CODE >154:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+75B text24 CODE >155:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+75C text24 CODE >156:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+75D text24 CODE >157:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+75E text24 CODE >158:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+760 text24 CODE >159:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+764 text24 CODE >160:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+765 text24 CODE >165:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+77E text24 CODE >166:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+DBD text23 CODE >132:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+DBE text23 CODE >134:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+DBE text23 CODE >136:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+DC3 text23 CODE >138:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+DC6 text23 CODE >139:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D9B text22 CODE >146:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+D9C text22 CODE >148:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+DA0 text22 CODE >149:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/eusart.c
+69C text21 CODE >8:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/nf_fputc.c
+69C text21 CODE >12:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/nf_fputc.c
+6A6 text21 CODE >13:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/nf_fputc.c
+6AA text21 CODE >14:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/nf_fputc.c
+6AB text21 CODE >15:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/nf_fputc.c
+6D3 text21 CODE >17:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/nf_fputc.c
+6DB text21 CODE >21:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/nf_fputc.c
+30A text20 CODE >670:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+30C text20 CODE >680:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+31D text20 CODE >681:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+325 text20 CODE >683:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+32A text20 CODE >684:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+32E text20 CODE >1350:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+340 text20 CODE >1351:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+348 text20 CODE >1352:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+353 text20 CODE >1353:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+359 text20 CODE >1357:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+361 text20 CODE >1358:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+364 text20 CODE >1362:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+37D text20 CODE >1363:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+387 text20 CODE >1365:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+7B2 text19 CODE >1368:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+7B4 text19 CODE >1373:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+7B8 text19 CODE >1374:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+7BB text19 CODE >1375:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+7BC text19 CODE >1376:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+7D0 text19 CODE >1375:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+7DA text19 CODE >1378:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+7E2 text19 CODE >1382:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/doprnt.c
+E12 text18 CODE >5:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/printf.c
+E12 text18 CODE >9:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/printf.c
+E17 text18 CODE >10:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/printf.c
+E23 text18 CODE >13:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/printf.c
+F62 text17 CODE >282:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F62 text17 CODE >283:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F64 text17 CODE >284:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F6E text17 CODE >285:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F7B text17 CODE >286:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F81 text17 CODE >287:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F89 text17 CODE >288:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+ECE text16 CODE >297:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+ECE text16 CODE >298:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+ED8 text16 CODE >299:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+EE1 text16 CODE >300:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+EE7 text16 CODE >301:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+EEF text16 CODE >302:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F8A text15 CODE >274:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F8A text15 CODE >275:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F8F text15 CODE >276:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F98 text15 CODE >277:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FA5 text15 CODE >278:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FAB text15 CODE >279:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FB3 text15 CODE >280:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+EF0 text14 CODE >290:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+EF0 text14 CODE >291:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+EFD text14 CODE >292:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F06 text14 CODE >293:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F0C text14 CODE >294:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F14 text14 CODE >295:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F15 text13 CODE >304:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F15 text13 CODE >305:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F1F text13 CODE >306:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F2C text13 CODE >307:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F32 text13 CODE >308:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F3A text13 CODE >309:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5FD text12 CODE >262:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5FD text12 CODE >264:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+60A text12 CODE >265:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+617 text12 CODE >266:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+61D text12 CODE >267:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+62A text12 CODE >268:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+637 text12 CODE >269:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+644 text12 CODE >270:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+64A text12 CODE >271:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+657 text12 CODE >272:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+541 text11 CODE >5:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+541 text11 CODE >13:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+543 text11 CODE >14:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+547 text11 CODE >15:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+54C text11 CODE >16:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+54E text11 CODE >18:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+552 text11 CODE >19:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+557 text11 CODE >20:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+55B text11 CODE >22:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+55D text11 CODE >23:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+563 text11 CODE >24:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+565 text11 CODE >25:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+566 text11 CODE >26:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+56B text11 CODE >27:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+56F text11 CODE >25:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+573 text11 CODE >30:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+578 text11 CODE >31:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+582 text11 CODE >32:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+586 text11 CODE >33:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+587 text11 CODE >35:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+58C text11 CODE >36:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+592 text11 CODE >38:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+597 text11 CODE >39:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+59C text11 CODE >40:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+5A0 text11 CODE >41:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/awdiv.c
+718 text10 CODE >15:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+718 text10 CODE >119:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+720 text10 CODE >121:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+725 text10 CODE >122:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+72D text10 CODE >123:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+734 text10 CODE >124:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+73B text10 CODE >125:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+743 text10 CODE >128:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+74B text10 CODE >129:/Applications/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+1D5 text9 CODE >316:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+1D5 text9 CODE >318:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+215 text9 CODE >319:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+25B text9 CODE >320:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+26D text9 CODE >321:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+274 text9 CODE >322:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+279 text9 CODE >323:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+D6C text8 CODE >115:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+D6D text8 CODE >117:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+D70 text8 CODE >118:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/tmr4.c
+4DB text7 CODE >327:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+4DB text7 CODE >343:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+509 text7 CODE >344:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+516 text7 CODE >345:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+51B text7 CODE >346:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+51B text7 CODE >347:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+529 text7 CODE >348:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+52E text7 CODE >354:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+52F text7 CODE >355:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+534 text7 CODE >356:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+53B text7 CODE >357:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+53D text7 CODE >358:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+53E text7 CODE >359:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+53F text7 CODE >361:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+540 text7 CODE >362:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E4E text6 CODE >148:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E4E text6 CODE >150:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E52 text6 CODE >153:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E53 text6 CODE >155:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E56 text6 CODE >157:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E58 text6 CODE >160:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E59 text6 CODE >161:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E5A text6 CODE >162:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E5B text6 CODE >165:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E5D text6 CODE >166:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E5F text6 CODE >167:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E60 text6 CODE >168:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E61 text6 CODE >169:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E62 text6 CODE >171:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E64 text6 CODE >172:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+E69 text6 CODE >173:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+403 text5 CODE >94:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+403 text5 CODE >96:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+40A text5 CODE >97:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+40E text5 CODE >101:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+419 text5 CODE >104:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+419 text5 CODE >106:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+41A text5 CODE >109:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+421 text5 CODE >112:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+423 text5 CODE >113:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+424 text5 CODE >114:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+425 text5 CODE >116:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+427 text5 CODE >119:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+42A text5 CODE >121:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+42E text5 CODE >124:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+438 text5 CODE >125:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+446 text5 CODE >127:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+44D text5 CODE >130:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+44F text5 CODE >133:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+452 text5 CODE >134:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+454 text5 CODE >135:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+455 text5 CODE >136:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+456 text5 CODE >137:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+457 text5 CODE >139:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+45C text5 CODE >140:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+466 text5 CODE >142:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+468 text5 CODE >143:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+46E text5 CODE >146:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/mcc_generated_files/memory.c
+5A1 text4 CODE >127:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5A1 text4 CODE >131:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5A3 text4 CODE >132:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5A5 text4 CODE >133:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5AF text4 CODE >136:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5B0 text4 CODE >137:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5C4 text4 CODE >138:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5E0 text4 CODE >139:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5F1 text4 CODE >141:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+5FC text4 CODE >142:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+66 text3 CODE >366:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+68 text3 CODE >367:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+6E text3 CODE >369:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+6F text3 CODE >371:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+74 text3 CODE >372:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+78 text3 CODE >373:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+85 text3 CODE >375:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+8A text3 CODE >376:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+8D text3 CODE >377:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+8E text3 CODE >378:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+91 text3 CODE >380:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+A6 text3 CODE >381:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+A9 text3 CODE >383:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+AF text3 CODE >384:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+B4 text3 CODE >385:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+C1 text3 CODE >387:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+C6 text3 CODE >388:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+C9 text3 CODE >389:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+CA text3 CODE >390:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+CD text3 CODE >392:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+DA text3 CODE >393:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+DD text3 CODE >395:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E2 text3 CODE >396:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E5 text3 CODE >398:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+EB text3 CODE >399:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+EF text3 CODE >403:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F4 text3 CODE >404:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+F8 text3 CODE >405:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FC text3 CODE >407:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+FE text3 CODE >408:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+101 text3 CODE >409:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+102 text3 CODE >410:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+105 text3 CODE >412:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+11A text3 CODE >413:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+11D text3 CODE >415:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+123 text3 CODE >416:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+128 text3 CODE >417:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+12C text3 CODE >419:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+12E text3 CODE >420:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+131 text3 CODE >421:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+132 text3 CODE >422:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+135 text3 CODE >424:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+142 text3 CODE >425:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+145 text3 CODE >427:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+14A text3 CODE >428:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+14D text3 CODE >430:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+154 text3 CODE >435:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+157 text3 CODE >436:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+158 text3 CODE >438:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+15B text3 CODE >439:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+15C text3 CODE >443:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+15E text3 CODE >444:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+16A text3 CODE >445:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+16D text3 CODE >446:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+16E text3 CODE >448:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+170 text3 CODE >449:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+185 text3 CODE >467:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+1BB text3 CODE >468:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+1C1 text3 CODE >469:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+1CE text3 CODE >470:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+1D4 text3 CODE >471:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E6A text2 CODE >115:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E6A text2 CODE >117:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E76 text2 CODE >118:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E81 text2 CODE >119:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+E89 text2 CODE >120:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+6DC text1 CODE >252:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+6DC text1 CODE >253:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+6DD text1 CODE >254:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+6E0 text1 CODE >255:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+6ED text1 CODE >256:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+6F6 text1 CODE >257:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+6FC text1 CODE >258:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+705 text1 CODE >259:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+717 text1 CODE >260:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+388 maintext CODE >477:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+388 maintext CODE >479:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+38B maintext CODE >480:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+38E maintext CODE >481:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+391 maintext CODE >482:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+394 maintext CODE >483:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+397 maintext CODE >488:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+39A maintext CODE >489:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3AF maintext CODE >490:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3BC maintext CODE >492:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3BD maintext CODE >493:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3BE maintext CODE >494:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3C1 maintext CODE >500:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3CC maintext CODE >502:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3DB maintext CODE >504:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3DE maintext CODE >510:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3F3 maintext CODE >517:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3FA maintext CODE >535:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+3FE maintext CODE >538:/Users/sophikravitz/MPLABXProjects/MouseBrains7.X/main.c
+DA1 clrtext CODE >7306:/tmp/xcQlFb7fp.s
+DA1 clrtext CODE >7307:/tmp/xcQlFb7fp.s
+DA2 clrtext CODE >7308:/tmp/xcQlFb7fp.s
+DA2 clrtext CODE >7309:/tmp/xcQlFb7fp.s
+DA3 clrtext CODE >7310:/tmp/xcQlFb7fp.s
+DA4 clrtext CODE >7311:/tmp/xcQlFb7fp.s
+DA5 clrtext CODE >7312:/tmp/xcQlFb7fp.s
+DA6 clrtext CODE >7313:/tmp/xcQlFb7fp.s
+DA7 inittext CODE >7275:/tmp/xcQlFb7fp.s
+DA7 inittext CODE >7276:/tmp/xcQlFb7fp.s
+DA8 inittext CODE >7277:/tmp/xcQlFb7fp.s
+DA8 inittext CODE >7278:/tmp/xcQlFb7fp.s
+DA9 inittext CODE >7279:/tmp/xcQlFb7fp.s
+DAA inittext CODE >7280:/tmp/xcQlFb7fp.s
+DAB inittext CODE >7281:/tmp/xcQlFb7fp.s
+DAC inittext CODE >7282:/tmp/xcQlFb7fp.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 1 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___awdiv@counter 20 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_HEF_persistent_state 1FC0 0 STRCODE 0 _HEF_persistent_state_text dist/NewConfiguration/production/MouseBrains7.X.production.o
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
+__size_of_FLASH_EraseBlock 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hspace_0 8009 0 ABS 0 - -
+__Hspace_1 165 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__CFG_IESO$OFF 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+__end_of_selectSomething CB0 0 CODE 0 text12 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PMCON1bits 195 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PWM3DCH 618 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PWM4DCH 61B 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_INT_CallBack 1BA6 0 CODE 0 text55 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_OPA1_Initialize 1AB4 0 CODE 0 text39 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_EXT_INT_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_battery_voltage E98 0 CODE 0 text24 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_writePersistentState 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_PIN_MANAGER_IOC 1AAC 0 CODE 0 text53 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_WDT_Initialize 1AC4 0 CODE 0 text30 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hstrings 0 0 ABS 0 strings -
+?_vfprintf 2D 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_LATA 10C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_LATB 10D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_LATC 10E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR0 15 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR2 1A 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR4 415 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_WPUA 20C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_WPUB 20D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_WPUC 20E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcJoOv1PQ.o
+_main 710 0 CODE 0 maintext dist/NewConfiguration/production/MouseBrains7.X.production.o
+_nout C7 0 BANK1 1 bssBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_prec CB 0 BANK1 1 bssBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+btemp 7E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+start 7C 0 CODE 0 init /tmp/xcJoOv1PQ.o
+_EUSART_Write 1B7A 0 CODE 0 text23 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR0_InterruptHandler E0 0 BANK1 1 nvBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of___aldiv 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of___awdiv 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_main 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_TMR0_SetInterruptHandler 1B2A 0 CODE 0 text35 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_EUSART_SetFramingErrorHandler 1B06 0 CODE 0 text44 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_EUSART_SetOverrunErrorHandler 1B12 0 CODE 0 text43 dist/NewConfiguration/production/MouseBrains7.X.production.o
+?___lmul 20 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_CLKOUTEN$ON 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+process_remote_command@code EE 0 BANK1 1 cstackBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OPTION_REGbits 95 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_writePersistentState BFA 0 CODE 0 text4 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_DAC1CON0 118 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_DAC1CON1 119 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
+__end_of_EUSART_Initialize 1D58 0 CODE 0 text42 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_readPersistentState 1D14 0 CODE 0 text2 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+_selectIncrease 1DE0 0 CODE 0 text14 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_vfpfcnvrt 710 0 CODE 0 text20 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR2_Initialize 1B6A 0 CODE 0 text33 dist/NewConfiguration/production/MouseBrains7.X.production.o
+TMR4_LoadPeriodRegister@periodVal 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+DAC_SetOutput@inputData 70 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__HdataCOMMON 0 0 ABS 0 dataCOMMON -
+__size_of_vfpfcnvrt 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+TMR0_SetInterruptHandler@InterruptHandler 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcJoOv1PQ.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcJoOv1PQ.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcJoOv1PQ.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcJoOv1PQ.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcJoOv1PQ.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcJoOv1PQ.o
+_selectSomething BFA 0 CODE 0 text12 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_INT_CallBack 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+___aldiv@divisor 28 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+wtemp0 7E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+writePersistentState@buf 2E 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+writePersistentState@idx 6F 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+_RC1STAbits 19D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EUSART_DefaultFramingErrorHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EUSART_DefaultOverrunErrorHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OPA1_Initialize 1AAC 0 CODE 0 text39 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PIN_MANAGER_IOC 1AAA 0 CODE 0 text53 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_EUSART_Write 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___aldiv@sign 32 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_TMR4_SetInterruptHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___awdiv@sign 21 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext -
+_vfpfcnvrt 614 0 CODE 0 text20 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pidataCOMMON 6 0 CODE 0 idataCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+setCurrent@DACValue 47 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_TMR4_DefaultInterruptHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+FLASH_EraseBlock@GIEBitValue 75 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ADCON0 9D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ADCON1 9E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ANSELA 18C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ANSELB 18D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ANSELC 18E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR0_DefaultInterruptHandler 4 0 CODE 0 text52 dist/NewConfiguration/production/MouseBrains7.X.production.o
+___awdiv@dividend 75 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_INT_CallBack 1BC0 0 CODE 0 text55 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_TMR4_DefaultInterruptHandler 1000 0 CODE 0 text49 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_BORCON 116 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_selectCurrent 1EC4 0 CODE 0 text17 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__LdataCOMMON 0 0 ABS 0 dataCOMMON -
+_lowBattery 1F68 0 CODE 0 text26 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_CCPR1L 291 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_FVRCONbits 117 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_INTERRUPT_InterruptManager 7C 0 CODE 0 intentry dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_initLED 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of___lmul E98 0 CODE 0 text10 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_EUSART_Write 1B8E 0 CODE 0 text23 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_battery_voltage 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_selectIncrease 1E2A 0 CODE 0 text14 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_OPA2_Initialize 1ABC 0 CODE 0 text38 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_TMR4_LoadPeriodRegister 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+_FVRCON 117 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+?_printf 35 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__LnvBANK1 0 0 ABS 0 nvBANK1 -
+__LnvBANK2 0 0 ABS 0 nvBANK2 -
+__size_of_INT_SetInterruptHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___awdiv@divisor 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+setCurrent@microamps 39 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of___aldiv 614 0 CODE 0 text25 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of___awdiv B42 0 CODE 0 text11 dist/NewConfiguration/production/MouseBrains7.X.production.o
+writePersistentState@i 6E 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_INLVLA 38C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_INLVLB 38D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_INLVLC 38E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_INTPPS E10 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_startUp 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OPTION_REG 95 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___stackhi 21EF 0 ABS 0 - /tmp/xcJoOv1PQ.o
+___stacklo 20E5 0 ABS 0 - /tmp/xcJoOv1PQ.o
+_process_remote_command CC 0 CODE 0 text3 dist/NewConfiguration/production/MouseBrains7.X.production.o
+setLEDColor@red 76 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EUSART_Initialize 1D14 0 CODE 0 text42 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__LidataCOMMON 0 0 ABS 0 idataCOMMON -
+__size_of_fputc 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_INT_ISR 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_putch 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+INT_DefaultInterruptHandler@time 72 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_TMR2_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PIN_MANAGER_Initialize EFE 0 CODE 0 text36 dist/NewConfiguration/production/MouseBrains7.X.production.o
+start_initialization 80 0 CODE 0 cinit dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ODCONA 28C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ODCONB 28D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ODCONC 28E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+FLASH_WriteBlock@flashWordArray 22 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_CCPTMRSbits 29E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_selectSomething 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EUSART_SetErrorHandler 1AEE 0 CODE 0 text45 dist/NewConfiguration/production/MouseBrains7.X.production.o
+FLASH_WriteBlock@GIEBitValue 28 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_setLEDColor 1C6E 0 CODE 0 text27 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OSCCON 99 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PMADRH 192 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PMADRL 191 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PMCON2 196 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PMDATH 194 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PMDATL 193 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___aldiv@quotient 33 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+EUSART_SetOverrunErrorHandler@interruptHandler 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_lowBattery 1FC0 0 CODE 0 text26 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_TMR4_SetInterruptHandler 1B36 0 CODE 0 text32 dist/NewConfiguration/production/MouseBrains7.X.production.o
+setLEDColor@blue 74 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_selectDecrease 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_RA5PPS E95 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_RB7PPS E9F 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_RC1REG 199 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_RC1STA 19D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_OPA1_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_RC4PPS EA4 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_RC5PPS EA5 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_EUSART_SetFramingErrorHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_PIN_MANAGER_IOC 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_EUSART_SetOverrunErrorHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OPA2_Initialize 1AB4 0 CODE 0 text38 dist/NewConfiguration/production/MouseBrains7.X.production.o
+setLEDColor@green 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_SYSTEM_Initialize 1D9C 0 CODE 0 text29 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_DAC_Initialize 1AE2 0 CODE 0 text46 dist/NewConfiguration/production/MouseBrains7.X.production.o
+clear_ram0 1B42 0 CODE 0 clrtext dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pcstackBANK1 EC 0 BANK1 1 cstackBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pcstackBANK2 163 0 BANK2 1 cstackBANK2 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_selectResetValue 1E2A 0 CODE 0 text13 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TX1REG 19A 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TX1STA 19E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_printf 1C48 0 CODE 0 text18 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_TMR4_Initialize 1C6E 0 CODE 0 text31 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_WDTCON 97 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+fputc@fp 77 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+_dac_value D6 0 BANK1 1 bssBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_initLED D38 0 CODE 0 text28 dist/NewConfiguration/production/MouseBrains7.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcJoOv1PQ.o
+__size_of_selectCurrent 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hbank4 0 0 ABS 0 bank4 -
+__Hbank5 0 0 ABS 0 bank5 -
+__Hbank6 0 0 ABS 0 bank6 -
+__Hbank7 0 0 BANK7 1 bank7 -
+__Hbank8 0 0 BANK8 1 bank8 -
+__Hbank9 0 0 BANK9 1 bank9 -
+__Hcinit CC 0 CODE 0 cinit -
+_INT_DefaultInterruptHandler 8DE 0 CODE 0 text56 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hidloc 0 0 IDLOC 0 idloc -
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hsfr10 0 0 ABS 0 sfr10 -
+__Hsfr11 0 0 ABS 0 sfr11 -
+__Hsfr12 0 0 ABS 0 sfr12 -
+__Hsfr13 0 0 ABS 0 sfr13 -
+__Hsfr14 0 0 ABS 0 sfr14 -
+__Hsfr15 0 0 ABS 0 sfr15 -
+__Hsfr16 0 0 ABS 0 sfr16 -
+__Hsfr17 0 0 ABS 0 sfr17 -
+__Hsfr18 0 0 ABS 0 sfr18 -
+__Hsfr19 0 0 ABS 0 sfr19 -
+__Hsfr20 0 0 ABS 0 sfr20 -
+__Hsfr21 0 0 ABS 0 sfr21 -
+__Hsfr22 0 0 ABS 0 sfr22 -
+__Hsfr23 0 0 ABS 0 sfr23 -
+__Hsfr24 0 0 ABS 0 sfr24 -
+__Hsfr25 0 0 ABS 0 sfr25 -
+__Hsfr26 0 0 ABS 0 sfr26 -
+__Hsfr27 0 0 ABS 0 sfr27 -
+__Hsfr28 0 0 ABS 0 sfr28 -
+__Hsfr29 0 0 ABS 0 sfr29 -
+__Hsfr30 0 0 ABS 0 sfr30 -
+__Hsfr31 0 0 ABS 0 sfr31 -
+__Hstack 0 0 STACK 2 stack -
+__Hbank10 0 0 BANK10 1 bank10 -
+__Hbank11 0 0 BANK11 1 bank11 -
+__Hbank12 0 0 BANK12 1 bank12 -
+__Hbank13 0 0 BANK13 1 bank13 -
+__Hbank14 0 0 BANK14 1 bank14 -
+__Hbank15 0 0 BANK15 1 bank15 -
+__Hbank16 0 0 BANK16 1 bank16 -
+__Hbank17 0 0 BANK17 1 bank17 -
+__Hbank18 0 0 BANK18 1 bank18 -
+__Hbank19 0 0 BANK19 1 bank19 -
+__Hbank20 0 0 BANK20 1 bank20 -
+__Hbank21 0 0 BANK21 1 bank21 -
+__Hbank22 0 0 BANK22 1 bank22 -
+__Hbank23 0 0 BANK23 1 bank23 -
+__Hbank24 0 0 BANK24 1 bank24 -
+__Hbank25 0 0 BANK25 1 bank25 -
+__Hbank26 0 0 BANK26 1 bank26 -
+__Hbank27 0 0 BANK27 1 bank27 -
+__Hbank28 0 0 BANK28 1 bank28 -
+__Hbank29 0 0 BANK29 1 bank29 -
+__Hbank30 0 0 BANK30 1 bank30 -
+__Hbank31 0 0 BANK31 1 bank31 -
+_currentIsOn A4 0 BANK1 1 dataBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+FLASH_WriteBlock@writeAddr 20 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hbigram 0 0 ABS 0 bigram -
+__Hmaintext 0 0 ABS 0 maintext -
+_BAUD1CON 19F 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_FOSC$INTOSC 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 10012 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lbank4 0 0 ABS 0 bank4 -
+__Lbank5 0 0 ABS 0 bank5 -
+__Lbank6 0 0 ABS 0 bank6 -
+__Lbank7 0 0 BANK7 1 bank7 -
+__Lbank8 0 0 BANK8 1 bank8 -
+__Lbank9 0 0 BANK9 1 bank9 -
+__Lcinit 80 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+EUSART_SetErrorHandler@interruptHandler 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lsfr10 0 0 ABS 0 sfr10 -
+__Lsfr11 0 0 ABS 0 sfr11 -
+__Lsfr12 0 0 ABS 0 sfr12 -
+__Lsfr13 0 0 ABS 0 sfr13 -
+__Lsfr14 0 0 ABS 0 sfr14 -
+__Lsfr15 0 0 ABS 0 sfr15 -
+__Lsfr16 0 0 ABS 0 sfr16 -
+__Lsfr17 0 0 ABS 0 sfr17 -
+__Lsfr18 0 0 ABS 0 sfr18 -
+__Lsfr19 0 0 ABS 0 sfr19 -
+__Lsfr20 0 0 ABS 0 sfr20 -
+__Lsfr21 0 0 ABS 0 sfr21 -
+__Lsfr22 0 0 ABS 0 sfr22 -
+__Lsfr23 0 0 ABS 0 sfr23 -
+__Lsfr24 0 0 ABS 0 sfr24 -
+__Lsfr25 0 0 ABS 0 sfr25 -
+__Lsfr26 0 0 ABS 0 sfr26 -
+__Lsfr27 0 0 ABS 0 sfr27 -
+__Lsfr28 0 0 ABS 0 sfr28 -
+__Lsfr29 0 0 ABS 0 sfr29 -
+__Lsfr30 0 0 ABS 0 sfr30 -
+__Lsfr31 0 0 ABS 0 sfr31 -
+__Lstack 0 0 STACK 2 stack -
+init_ram 1B4E 0 CODE 0 inittext dist/NewConfiguration/production/MouseBrains7.X.production.o
+__H_HEF_persistent_state_text 2000 0 STRCODE 0 _HEF_persistent_state_text -
+__end_of_startUp E30 0 CODE 0 text1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Linittext 0 0 ABS 0 inittext -
+_INTCONbits B 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 7C 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Hsfr4 0 0 ABS 0 sfr4 -
+__Hsfr5 0 0 ABS 0 sfr5 -
+__Hsfr6 0 0 ABS 0 sfr6 -
+__Hsfr7 0 0 ABS 0 sfr7 -
+__Hsfr8 0 0 ABS 0 sfr8 -
+__Hsfr9 0 0 ABS 0 sfr9 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 7C 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Lsfr4 0 0 ABS 0 sfr4 -
+__Lsfr5 0 0 ABS 0 sfr5 -
+__Lsfr6 0 0 ABS 0 sfr6 -
+__Lsfr7 0 0 ABS 0 sfr7 -
+__Lsfr8 0 0 ABS 0 sfr8 -
+__Lsfr9 0 0 ABS 0 sfr9 -
+__Ltext 0 0 ABS 0 text -
+__pstringtext1 1000 0 STRCODE 0 stringtext1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pstringtext2 102E 0 STRCODE 0 stringtext2 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pstringtext3 1058 0 STRCODE 0 stringtext3 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pstringtext4 1080 0 STRCODE 0 stringtext4 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pstringtext5 10A8 0 STRCODE 0 stringtext5 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pstringtext6 0 0 STRCODE 0 stringtext6 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pnvBANK1 DE 0 BANK1 1 nvBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pnvBANK2 161 0 BANK2 1 nvBANK2 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_DAC_Initialize 1AEE 0 CODE 0 text46 dist/NewConfiguration/production/MouseBrains7.X.production.o
+___lmul E30 0 CODE 0 text10 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PWM4CONbits 61C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__LcstackBANK2 0 0 ABS 0 cstackBANK2 -
+int$flags 7E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_INT_ISR 1ACE 0 CODE 0 text54 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_setCurrent 3AA 0 CODE 0 text9 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_selectCurrent 1F14 0 CODE 0 text17 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_WDT_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PR2 1B 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PR4 416 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__S0 8009 0 ABS 0 - -
+__S1 165 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__size_of_TMR0_ISR 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_TMR4_ISR 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_TMR0_DefaultInterruptHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__p_HEF_persistent_state_text 1FC0 0 STRCODE 0 _HEF_persistent_state_text dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR4_Initialize 1C48 0 CODE 0 text31 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_TMR0_DefaultInterruptHandler 6 0 CODE 0 text52 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_writePersistentState B42 0 CODE 0 text4 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__HidataCOMMON 0 0 ABS 0 idataCOMMON -
+_frequencyIndex E8 0 BANK1 1 nvBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_SYSTEM_Initialize 1D58 0 CODE 0 text29 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_OPA2_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_frequencyValue BB 0 BANK1 1 dataBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_selectResetValue 1E76 0 CODE 0 text13 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PWM3CONbits 619 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__HnvBANK1 0 0 ABS 0 nvBANK1 -
+__HnvBANK2 0 0 ABS 0 nvBANK2 -
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcJoOv1PQ.o
+_DAC_SetOutput 1ACE 0 CODE 0 text50 dist/NewConfiguration/production/MouseBrains7.X.production.o
+startUp@i 22 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_selectResetValue 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+setFrequency@PR4_val 3A 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pdataBANK1 A0 0 BANK1 1 dataBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_selectFrequency 1F68 0 CODE 0 text15 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_HEF_persistent_state 2000 0 STRCODE 0 _HEF_persistent_state_text dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of___lmul 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
+__LbssBANK2 0 0 ABS 0 bssBANK2 -
+__end_of_process_remote_command 3AA 0 CODE 0 text3 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_FCMEN$ON 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lstringtext1 0 0 ABS 0 stringtext1 -
+__Lstringtext2 0 0 ABS 0 stringtext2 -
+__Lstringtext3 0 0 ABS 0 stringtext3 -
+__Lstringtext4 0 0 ABS 0 stringtext4 -
+__Lstringtext5 0 0 ABS 0 stringtext5 -
+__Lstringtext6 0 0 ABS 0 stringtext6 -
+_INT_InterruptHandler E2 0 BANK1 1 nvBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+vfpfcnvrt@fmt 25 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PIE2bits 92 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_EXT_INT_Initialize 1BA6 0 CODE 0 text40 dist/NewConfiguration/production/MouseBrains7.X.production.o
+EUSART_SetFramingErrorHandler@interruptHandler 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+FLASH_WriteBlock@blockStartAddr 26 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR0_ISR 1BDE 0 CODE 0 text51 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext10 E30 0 CODE 0 text10 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext11 A82 0 CODE 0 text11 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext12 BFA 0 CODE 0 text12 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext13 1E2A 0 CODE 0 text13 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext14 1DE0 0 CODE 0 text14 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext15 1F14 0 CODE 0 text15 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext16 1D9C 0 CODE 0 text16 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext17 1EC4 0 CODE 0 text17 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext18 1C24 0 CODE 0 text18 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext19 F64 0 CODE 0 text19 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext20 614 0 CODE 0 text20 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext21 D38 0 CODE 0 text21 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext22 1B36 0 CODE 0 text22 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext23 1B7A 0 CODE 0 text23 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext24 E98 0 CODE 0 text24 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext25 4F4 0 CODE 0 text25 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext26 1F68 0 CODE 0 text26 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext27 1C6E 0 CODE 0 text27 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext28 CB0 0 CODE 0 text28 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext29 1D58 0 CODE 0 text29 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext30 1ABC 0 CODE 0 text30 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext31 1C48 0 CODE 0 text31 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext32 1B2A 0 CODE 0 text32 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext33 1B6A 0 CODE 0 text33 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext34 1C00 0 CODE 0 text34 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext35 1B1E 0 CODE 0 text35 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext36 EFE 0 CODE 0 text36 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext37 1B5A 0 CODE 0 text37 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext38 1AB4 0 CODE 0 text38 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext39 1AAC 0 CODE 0 text39 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext40 1B8E 0 CODE 0 text40 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext41 1B12 0 CODE 0 text41 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext42 1D14 0 CODE 0 text42 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext43 1B06 0 CODE 0 text43 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext44 1AFA 0 CODE 0 text44 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext45 1AEE 0 CODE 0 text45 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext46 1AE2 0 CODE 0 text46 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext48 1BC0 0 CODE 0 text48 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext49 FC6 0 CODE 0 text49 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext50 1ACE 0 CODE 0 text50 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext51 1BDE 0 CODE 0 text51 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext52 4 0 CODE 0 text52 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext53 1AAA 0 CODE 0 text53 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext54 1AC4 0 CODE 0 text54 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext55 1BA6 0 CODE 0 text55 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext56 8DE 0 CODE 0 text56 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR4_ISR 1BC0 0 CODE 0 text48 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_setCurrent 4F4 0 CODE 0 text9 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_PIN_MANAGER_Initialize F64 0 CODE 0 text36 dist/NewConfiguration/production/MouseBrains7.X.production.o
+___aldiv 4F4 0 CODE 0 text25 dist/NewConfiguration/production/MouseBrains7.X.production.o
+___awdiv A82 0 CODE 0 text11 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_TMR0_Initialize 1C24 0 CODE 0 text34 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lbank10 0 0 BANK10 1 bank10 -
+__Lbank11 0 0 BANK11 1 bank11 -
+__Lbank12 0 0 BANK12 1 bank12 -
+__Lbank13 0 0 BANK13 1 bank13 -
+__Lbank14 0 0 BANK14 1 bank14 -
+__Lbank15 0 0 BANK15 1 bank15 -
+__Lbank16 0 0 BANK16 1 bank16 -
+__Lbank17 0 0 BANK17 1 bank17 -
+__Lbank18 0 0 BANK18 1 bank18 -
+__Lbank19 0 0 BANK19 1 bank19 -
+__Lbank20 0 0 BANK20 1 bank20 -
+__Lbank21 0 0 BANK21 1 bank21 -
+__Lbank22 0 0 BANK22 1 bank22 -
+__Lbank23 0 0 BANK23 1 bank23 -
+__Lbank24 0 0 BANK24 1 bank24 -
+__Lbank25 0 0 BANK25 1 bank25 -
+__Lbank26 0 0 BANK26 1 bank26 -
+__Lbank27 0 0 BANK27 1 bank27 -
+__Lbank28 0 0 BANK28 1 bank28 -
+__Lbank29 0 0 BANK29 1 bank29 -
+__Lbank30 0 0 BANK30 1 bank30 -
+__Lbank31 0 0 BANK31 1 bank31 -
+__pmaintext 710 0 CODE 0 maintext dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lbigram 0 0 ABS 0 bigram -
+__CFG_BORV$LO 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___lmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_EUSART_SetErrorHandler 1AFA 0 CODE 0 text45 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 1000E 0 CONFIG 0 config -
+_printf 1C24 0 CODE 0 text18 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_CP$OFF 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_TMR0_ISR 1C00 0 CODE 0 text51 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_TMR4_ISR 1BDE 0 CODE 0 text48 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hinittext 0 0 ABS 0 inittext -
+TMR4_SetInterruptHandler@InterruptHandler 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_lowBattery 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+FLASH_EraseBlock@startAddr 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OPA1CON 511 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OPA2CON 515 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR0_SetInterruptHandler 1B1E 0 CODE 0 text35 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_selectIncrease 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PWM4DCLbits 61A 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EUSART_FramingErrorHandler E6 0 BANK1 1 nvBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EUSART_OverrunErrorHandler E4 0 BANK1 1 nvBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_vfprintf 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EXT_INT_Initialize 1B8E 0 CODE 0 text40 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_TMR4_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OSCSTAT 9A 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OSCTUNE 98 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ADCON0bits 9D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_selectFrequency 1F14 0 CODE 0 text15 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_ZCDDIS$ON 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EUSART_ErrorHandler 161 0 BANK2 1 nvBANK2 dist/NewConfiguration/production/MouseBrains7.X.production.o
+?_vfpfcnvrt 25 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__pbssCOMMON 78 0 COMMON 1 bssCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__HcstackBANK2 0 0 ABS 0 cstackBANK2 -
+_PIR1bits 11 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PIR2bits 12 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lend_init 7C 0 CODE 0 end_init -
+_EUSART_DefaultErrorHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_LVP$ON 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__end_of_setLEDColor 1C9C 0 CODE 0 text27 dist/NewConfiguration/production/MouseBrains7.X.production.o
+printf@ap 3A 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EUSART_SetFramingErrorHandler 1AFA 0 CODE 0 text44 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_EUSART_SetOverrunErrorHandler 1B06 0 CODE 0 text43 dist/NewConfiguration/production/MouseBrains7.X.production.o
+end_of_initialization C4 0 CODE 0 cinit dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR0_Initialize 1C00 0 CODE 0 text34 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hintentry 7C 0 CODE 0 intentry -
+__CFG_STVREN$ON 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_printf 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+fputc@c 75 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TX1STAbits 19E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_PWM3DCLbits 617 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR4_LoadPeriodRegister 1AD8 0 CODE 0 text8 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lstrings 0 0 ABS 0 strings -
+___awdiv@quotient 22 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+?___aldiv 28 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+?___awdiv 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+setCurrent@Vdac_mv 45 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_dc_frequency_flag 7A 0 COMMON 1 dataCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+vfprintf@fmt 2D 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+setFrequency@frequency_hz 37 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hreset_vec 4 0 CODE 0 reset_vec -
+_INT_SetInterruptHandler 1B12 0 CODE 0 text41 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_TMR4_LoadPeriodRegister 1AE2 0 CODE 0 text8 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__L_HEF_persistent_state_text 1FC0 0 STRCODE 0 _HEF_persistent_state_text -
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+__HbssBANK2 0 0 ABS 0 bssBANK2 -
+FLASH_WriteBlock@i 29 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_DAC_SetOutput 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_initLED CB0 0 CODE 0 text28 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_INT_SetInterruptHandler 1B1E 0 CODE 0 text41 dist/NewConfiguration/production/MouseBrains7.X.production.o
+vfpfcnvrt@ap 26 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+vfpfcnvrt@fp 2C 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext1 DB8 0 CODE 0 text1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext2 1CD4 0 CODE 0 text2 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext3 CC 0 CODE 0 text3 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext4 B42 0 CODE 0 text4 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext5 806 0 CODE 0 text5 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext6 1C9C 0 CODE 0 text6 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext7 9B6 0 CODE 0 text7 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext8 1AD8 0 CODE 0 text8 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__ptext9 3AA 0 CODE 0 text9 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_FLASH_WriteBlock 806 0 CODE 0 text5 dist/NewConfiguration/production/MouseBrains7.X.production.o
+vfprintf@ap 2F 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+vfprintf@fp 32 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+vfprintf@cfmt 33 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR4_InterruptHandler DE 0 BANK1 1 nvBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+___aldiv@dividend 2C 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_selectDecrease 1D9C 0 CODE 0 text16 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ir_code D8 0 BANK1 1 bssBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_vfprintf F64 0 CODE 0 text19 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_currentIndex EA 0 BANK1 1 nvBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+_currentValue A5 0 BANK1 1 dataBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_readPersistentState 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_FLASH_EraseBlock 1C9C 0 CODE 0 text6 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_setFrequency 9B6 0 CODE 0 text7 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_T4CONbits 417 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__Hstringtext1 0 0 ABS 0 stringtext1 -
+__Hstringtext2 0 0 ABS 0 stringtext2 -
+__Hstringtext3 0 0 ABS 0 stringtext3 -
+__Hstringtext4 0 0 ABS 0 stringtext4 -
+__Hstringtext5 0 0 ABS 0 stringtext5 -
+__Hstringtext6 0 0 ABS 0 stringtext6 -
+_startUp DB8 0 CODE 0 text1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_LPBOR$OFF 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_vfprintf FC6 0 CODE 0 text19 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_SLRCONA 30C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_SLRCONB 30D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_SLRCONC 30E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_interfaceState 78 0 COMMON 1 bssCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+EUSART_Write@txData 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_DAC_SetOutput 1AD8 0 CODE 0 text50 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of__initialization C4 0 CODE 0 cinit dist/NewConfiguration/production/MouseBrains7.X.production.o
+_INT_ISR 1AC4 0 CODE 0 text54 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+_timer0ReloadVal 79 0 COMMON 1 bssCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pidataBANK1 1E76 0 CODE 0 idataBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_SP1BRGH 19C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_SP1BRGL 19B 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+__CFG_PLLEN$OFF 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___lmul@product 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+INT_SetInterruptHandler@InterruptHandler 73 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_EUSART_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___lmul@multiplicand 24 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_selectFrequency 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+main@batt_mv 163 0 BANK2 1 cstackBANK2 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR4_DefaultInterruptHandler FC6 0 CODE 0 text49 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hend_init 80 0 CODE 0 end_init -
+__size_of_TMR0_SetInterruptHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+___aldiv@counter 31 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_HEF_persistent_state_absaddr FE0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_process_remote_command 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_INT_DefaultInterruptHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_setFrequency 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+putch@txData 74 0 COMMON 1 cstackCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_DAC_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_main 806 0 CODE 0 maintext dist/NewConfiguration/production/MouseBrains7.X.production.o
+?_battery_voltage 37 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_readPersistentState 1CD4 0 CODE 0 text2 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_selectDecrease 1DE0 0 CODE 0 text16 dist/NewConfiguration/production/MouseBrains7.X.production.o
+printf@fmt 35 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_ADRES 9B 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_fputc DB8 0 CODE 0 text21 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_RXPPS E24 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_T2CON 1C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_T4CON 417 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TRISA 8C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TRISB 8D 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TRISC 8E 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_putch 1B42 0 CODE 0 text22 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_TMR0_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+_flags CD 0 BANK1 1 bssBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_fputc D38 0 CODE 0 text21 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_setCurrent 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_battery_voltage EFE 0 CODE 0 text24 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_TMR4_SetInterruptHandler 1B2A 0 CODE 0 text32 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_putch 1B36 0 CODE 0 text22 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_width C9 0 BANK1 1 bssBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_eusartRxLastError D7 0 BANK1 1 bssBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_WDT_Initialize 1ABC 0 CODE 0 text30 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/NewConfiguration/production/MouseBrains7.X.production.o
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+__size_of_EUSART_SetErrorHandler 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_OSCILLATOR_Initialize 1B6A 0 CODE 0 text37 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_PPS1WAY$ON 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_FLASH_WriteBlock 8DE 0 CODE 0 text5 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__initialization 80 0 CODE 0 cinit dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pbssBANK1 C7 0 BANK1 1 bssBANK1 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pbssBANK2 120 0 BANK2 1 bssBANK2 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__pdataCOMMON 7A 0 COMMON 1 dataCOMMON dist/NewConfiguration/production/MouseBrains7.X.production.o
+setCurrent@Vdd_mv 3B 0 BANK0 1 cstackBANK0 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_INT_DefaultInterruptHandler 9B6 0 CODE 0 text56 dist/NewConfiguration/production/MouseBrains7.X.production.o
+_T2CONbits 1C 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__CFG_WRT$OFF 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_setFrequency A82 0 CODE 0 text7 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_FLASH_WriteBlock 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_CCP1CONbits 293 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_FLASH_EraseBlock 1CD4 0 CODE 0 text6 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__size_of_setLEDColor 0 0 ABS 0 - dist/NewConfiguration/production/MouseBrains7.X.production.o
+_OSCILLATOR_Initialize 1B5A 0 CODE 0 text37 dist/NewConfiguration/production/MouseBrains7.X.production.o
+__end_of_TMR2_Initialize 1B7A 0 CODE 0 text33 dist/NewConfiguration/production/MouseBrains7.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text2 0 E6A 1CD4 20 2
+text6 0 E4E 1C9C 1C 2
+text8 0 D6C 1AD8 5 2
+text13 0 F15 1E2A 26 2
+text14 0 EF0 1DE0 25 2
+text15 0 F8A 1F14 2A 2
+text16 0 ECE 1D9C 22 2
+text17 0 F62 1EC4 28 2
+text18 0 E12 1C24 12 2
+text22 0 D9B 1B36 6 2
+text23 0 DBD 1B7A A 2
+text26 0 FB4 1F68 2C 2
+text27 0 E37 1C6E 17 2
+text29 0 EAC 1D58 22 2
+text30 0 D5E 1ABC 4 2
+text31 0 E24 1C48 13 2
+text32 0 D95 1B2A 6 2
+text33 0 DB5 1B6A 8 2
+text34 0 E00 1C00 12 2
+text35 0 D8F 1B1E 6 2
+text37 0 DAD 1B5A 8 2
+text38 0 D5A 1AB4 4 2
+text39 0 D56 1AAC 4 2
+text40 0 DC7 1B8E C 2
+text41 0 D89 1B12 6 2
+text42 0 E8A 1D14 22 2
+text43 0 D83 1B06 6 2
+text44 0 D7D 1AFA 6 2
+text45 0 D77 1AEE 6 2
+text46 0 D71 1AE2 6 2
+text48 0 DE0 1BC0 F 2
+text50 0 D67 1ACE 5 2
+text51 0 DEF 1BDE 11 2
+text53 0 D55 1AAA 1 2
+text54 0 D62 1AC4 5 2
+text55 0 DD3 1BA6 D 2
+idataCOMMON 0 3 6 1 2
+cstackCOMMON 1 70 70 B 1
+cstackBANK0 1 20 20 50 1
+inittext 0 DA7 1B4E 6 2
+stringtext1 0 800 1000 67 2
+intentry 0 4 8 7FC 2
+reset_vec 0 0 0 3 2
+bssBANK2 1 120 120 45 1
+idataBANK1 0 F3B 1E76 27 2
+dataBANK1 1 A0 A0 50 1
+_HEF_persistent_state_text 0 FE0 1FC0 20 2
+clrtext 0 DA1 1B42 6 2
+config 0 8007 1000E 2 2
+# NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
